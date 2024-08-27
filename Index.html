@@ -4,29 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edu 4 All </title>
+    <title>Edu 4 All</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<body class="bg-white text-green-600 flex flex-col min-h-screen">
-    <header class="p-8 bg-green-600 text-white relative">
-        <h1 class="text-4xl font-bold absolute top-0 left-0 m-4">Edu4All</h1>
-    </header>
+<body class="flex flex-col min-h-screen">
+    <nav class="bg-green-500 text-white h-12">
+        <div class="container mx-auto flex items-center h-full">
+            <img src="SRC/logo1.png" class="w-16 h-16" alt="Edu4All">
+            <div class="lg:flex hidden flex-grow justify-between">
+                <div>
+                    <span class="ml-0 text-xl font-bold" style="font-family: 'Gruppo', sans-serif;">Edu4All</span>
+                </div>
+                <div>
+                    <a href="#" class="text-white lg:mr-7 bg-white-500 border-white-500 p-4 
+                    rounded-md hover:bg-green-700 hover:border border-green-400 transition duration-500 ease-in-out">Home</a>
+                    <a href="#" class="text-white lg:mr-7 bg-white-500 border-white-500 p-4 
+                    rounded-md hover:bg-green-700 hover:border border-green-400 transition duration-500 ease-in-out">Donate</a>
+                    <a href="#" class="text-white lg:mr-7 bg-white-500 border-white-500 p-4 
+                    rounded-md hover:bg-green-700 hover:border border-green-400 transition duration-500 ease-in-out">Contact</a>
+                </div> 
+                <div>
+                    <a href="#" class="text-white  lg:mr-14 bg-white-500 border-white-500 p-4 
+                    rounded-md hover:bg-green-700 hover:border border-green-400 transition duration-500 ease-in-out">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <section class="p-8 flex-grow">
-        <h2 class="text-3xl font-semibold mb-4">Nuestro Contenido</h2>
-        <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula metus ac ligula vehicula,
-            in bibendum erat facilisis.</p>
-        <a href="#" class="inline-block px-6 py-3 bg-green-600 text-white rounded-full shadow-lg hover:bg-green-700 transition-all">Free CP
-            
-        </a>
-    </section>
+    <div class="flex-grow"></div>
 
-    <footer class="p-8 bg-green-600 text-white text-center mt-auto">
-        <p>&copy; 2024 Insano Tailwind. Todos los derechos reservados.</p>
+    <footer class="bg-green-500 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p class="text-sm">&copy; 2024 Edu4All. Todos los derechos reservados.</p>
+        </div>
     </footer>
 </body>
 
 </html>
+
+
+
+
 
 
