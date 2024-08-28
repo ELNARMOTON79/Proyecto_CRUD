@@ -29,47 +29,60 @@
             <!-- Aqui va el icono grill -->
             <div class="flex flex-col flex-auto">
 
-                <div class="p-2 hover:bg-grey-100">
-                    <div class="flex flex-row space-x-3">
-                        <i class="fa-solid fa-list"></i>
+            <div class="p-2 hover:bg-green-700">
+                    <button class="flex flex-row space-x-3">
                         <!-- El hover:text-black sirve para cambiar el color 
                             Cuando pase el puntero por el texto-->
-                        <h4 class="font-bold text-white hover:text-gray-500">DashBoard</h4>
-                    </div>
+                            <h4 class="text-white hover:text-black">
+                            <i class="fa-solid fa-list"></i>
+                            DashBoard
+                            </h4>
+                    </button>
                 </div>
 
                 <div class="p-2 hover:bg-green-700">
-                    <div class="flex flex-row space-x-3">
-                        <i class="fa-solid fa-question text-white"></i>
-                        <!-- El hover:text-black sirve para cambiar el color 
-                            Cuando pase el puntero por el texto-->
-                        <h4 class="text-white hover:text-black">1er apartado</h4>
-                    </div>
+                    <button class="flex flex-row space-x-3">
+                        <h4 class="text-white hover:text-black">
+                        <i class="fa-solid fa-bookmark"></i>
+                            Actividades
+                        </h4>
+                    </button>
                 </div>
                 
                 <div class="p-2 hover:bg-green-700">
-                    <div class="flex flex-row space-x-3">
-                        <i class="fa-solid fa-question text-white"></i>
-                        <!-- El hover:text-black sirve para cambiar el color 
-                            Cuando pase el puntero por el texto-->
-                        <h4 class="text-white hover:text-black">2do apartado</h4>
-                    </div>
-                </div>                
+                    <button class="flex flex-row space-x-3">
+                        <h4 class="text-white hover:text-black">
+                        <i class="fa-solid fa-coins"></i>
+                            Recursos
+                        </h4>
+                    </button>
+                </div>
+                
+                <div class="p-2 hover:bg-green-700">
+                    <button class="flex flex-row space-x-3">
+                        <h4 class="text-white hover:text-black">
+                        <i class="fa-solid fa-flag"></i>
+
+                            Informes
+                        </h4>
+                    </button>
+                </div>
 
                 <div class="p-2 hover:bg-green-700">
-                    <div class="flex flex-row space-x-3">
-                        <i class="fa-solid fa-question text-white"></i>
-                        <!-- El hover:text-black sirve para cambiar el color 
-                            Cuando pase el puntero por el texto-->
-                        <h4 class="text-white hover:text-black">3er apartado</h4>
-                    </div>
+                    <button class="flex flex-row space-x-3">
+                        <h4 class="text-white hover:text-black">
+                        <i class="fa-solid fa-bullhorn"></i>
+
+                            Comunicación
+                        </h4>
+                    </button>
                 </div>
 
             </div>
             <!-- Boton de salir -->
                 <div class="flex flex-col">
                     <button class="rounded-full bg-green-900
-                    py-2 text-white textl-lg ">Salir</button>
+                    py-2 text-white textl-lg hover:bg-green-700">Salir</button>
                 </div>
 
         </div>
