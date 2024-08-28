@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../styles/login.css">
 </head>
+<div>
 <body>
 
     <div class="Fondo">

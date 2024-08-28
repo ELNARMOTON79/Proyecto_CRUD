@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS `edu4all `
+CREATE DATABASE IF NOT EXISTS `edu4all `;
 
 USE `edu4all `
 
