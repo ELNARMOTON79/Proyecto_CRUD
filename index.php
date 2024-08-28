@@ -12,14 +12,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-    <body class="flex flex-col min-h-screen">
-        <div class="flex-grow"></div>
-    </body>
+<body class="flex flex-col min-h-screen">
+    <?php include 'navbar.php'; ?>
+
+    <div class="flex-grow"></div>
+
+    <footer class="bg-green-500 text-white py-7">
+        <div class="container mx-auto text-center">
+            <p class="text-sm lg:mr-11">&copy; 2024.Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
 
 </html>
-
-
-
-
-
-
