@@ -90,10 +90,10 @@
 
             </div>
             <!-- Boton de salir -->
-                <div class="flex flex-col">
-                    <button class="rounded-full bg-green-900
-                    py-2 text-white textl-lg hover:bg-green-700 ">Salir</button>
-                </div>
+            <div class="flex flex-col ">
+                <a class="rounded-full bg-green-900
+                    py-2 text-white textl-lg hover:bg-green-700 text-center" href="../index.php">Exit</a>
+            </div>
 
         </div>
         <!-- Fin del 1er Componente-->
