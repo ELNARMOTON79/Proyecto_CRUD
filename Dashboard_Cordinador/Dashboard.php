@@ -37,7 +37,7 @@
             <!-- Aqui va el icono grill -->
             <div class="flex flex-col flex-auto">
 
-                <div class="p-2 hover:bg-green-700">
+                <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
                     <button class="flex flex-row space-x-3">
                         <!-- El hover:text-black sirve para cambiar el color 
                             Cuando pase el puntero por el texto-->
@@ -51,24 +51,24 @@
                 <!-- Sección Desplegable - Actividades -->
                 <div class="p-2 hover:bg-green-700 text-white">
                     <button id="toggleActividades" class="flex flex-row space-x-3 w-full focus:outline-none">
-                        <span class="text-white hover:text-black">
+                        <span class="text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                             <i class="fa-solid fa-bookmark"></i>
                             Actividades
                         </span>
                     </button>
                     <div id="submenuActividades" class="ml-6 mt-2 hidden">
-                        <a href="#" class="block text-white hover:text-black">
+                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-user-plus"></i>
                             Crear Usuario
                         </a>
-                        <a href="#" class="block text-white hover:text-black">
+                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-clipboard-list"></i>
                             Listar Actividades
                         </a>
                     </div>
                 </div>     
                 
-                <div class="p-2 hover:bg-green-700">
+                <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
                     <button class="flex flex-row space-x-3">
                         <h4 class="text-white hover:text-black">
                         <i class="fa-solid fa-coins"></i>
@@ -77,7 +77,7 @@
                     </button>
                 </div>
                 
-                <div class="p-2 hover:bg-green-700">
+                <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
                     <button class="flex flex-row space-x-3">
                         <h4 class="text-white hover:text-black">
                         <i class="fa-solid fa-flag"></i>
@@ -87,7 +87,7 @@
                     </button>
                 </div>
 
-                <div class="p-2 hover:bg-green-700">
+                <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
                     <button class="flex flex-row space-x-3">
                         <h4 class="text-white hover:text-black">
                         <i class="fa-solid fa-bullhorn"></i>

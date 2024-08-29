@@ -36,7 +36,7 @@
             <!-- Aqui va el icono grill -->
             <div class="flex flex-col flex-auto">
 
-                <div class="p-2 hover:bg-green-700">
+                <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
                     <button class="flex flex-row space-x-3">
                         
                         <!-- El hover:text-black sirve para cambiar el color 
@@ -47,7 +47,7 @@
                     </button>
                 </div>
 
-                <div class="p-2 hover:bg-green-700">
+                <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
                     <button class="flex flex-row space-x-3">
                         <h4 class="text-white hover:text-black">
                         <i class="fa-solid fa-address-book"></i>
@@ -56,7 +56,7 @@
                     </button>
                 </div>
                 
-                <div class="p-2 hover:bg-green-700">
+                <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
                     <button class="flex flex-row space-x-3">
                         <h4 class="text-white hover:text-black">
                             <i class="fa-solid fa-user-clock"></i>
@@ -64,7 +64,7 @@
                     </button>
                 </div>                
 
-                <div class="p-2 hover:bg-green-700">
+                <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
                     <button class="flex flex-row space-x-3">
                         <h4 class="text-white hover:text-black">
                         <i class="fa-solid fa-user-graduate"></i>
@@ -72,7 +72,7 @@
                     </button>
                 </div>
 
-                <div class="p-2 hover:bg-green-700">
+                <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
                     <button class="flex flex-row space-x-3">
                         <h4 class="text-white hover:text-black">
                         <i class="fa-solid fa-gear"></i>
@@ -80,7 +80,7 @@
                     </button>
                 </div>
 
-                <div class="p-2 hover:bg-green-700">
+                <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
                     <button class="flex flex-row space-x-3">
                         <h4 class="text-white hover:text-black">
                         <i class="fa-solid fa-bullhorn"></i>

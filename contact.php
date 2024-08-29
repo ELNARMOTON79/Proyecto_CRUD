@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/stylecontact.css">
 </head>
 <body>
-    <?php include 'navbar.php'; ?>
+    <!--<?php include 'navbar.php'; ?>-->
 
     <form action="" method="POST">
         <h2>Contact us</h2>
@@ -24,6 +24,6 @@
         </div>
     </form>
 
-    <?php include 'footer.php'; ?>
+    <!--<?php include 'footer.php'; ?>-->
 </body>
 </html>
