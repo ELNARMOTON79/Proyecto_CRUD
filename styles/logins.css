@@ -4,15 +4,7 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: url(../SRC/img_login.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
-}
+
  .Fondo{
     width: 430px;
     background: #fff;
