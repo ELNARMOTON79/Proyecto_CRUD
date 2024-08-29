@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/stylecontact.css">
 </head>
 <body>
-    
+    import
     <form action="https://formsubmit.co/your@email.com" method="POST">
         <h2>Contact us</h2>
         <div class="input-group">
