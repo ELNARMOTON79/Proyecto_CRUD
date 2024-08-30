@@ -8,7 +8,14 @@
 </head>
 <body class="bg-cover bg-center h-screen" style="background-image: url('SRC/fondo.jpg');">
   <div class="flex items-center justify-center h-full">
-    <div class="bg-white bg-opacity-90 p-8 rounded-lg shadow-md max-w-md w-full">
+    <div class="relative bg-white bg-opacity-90 p-8 rounded-lg shadow-md max-w-md w-full">
+      <!-- Botón de cierre -->
+      <a href="index.php" class="absolute top-0 right-0 mt-2 mr-2 text-gray-600 hover:text-gray-800">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </a>
+
       <h1 class="text-2xl font-bold text-green-600 mb-6 text-center">Join Us</h1>
       <form action="" method="post" class="space-y-4">
         <div>
