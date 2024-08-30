@@ -16,12 +16,28 @@
     <?php include 'navbar.php'; ?>
 
     <div class="flex-grow"></div>
-
-    <footer class="bg-green-500 text-white py-7">
+    <?php include 'footer.php'; ?>
+    <!--<footer class="bg-green-500 text-white py-8">
         <div class="container mx-auto text-center">
-            <p class="text-sm lg:mr-11">&copy; 2024.Todos los derechos reservados.</p>
+            <p class="fa-2x text-lg lg:mr-11">&copy; 2024.Todos los derechos reservados.</p>
         </div>
-    </footer>
+        <div class="container mx-auto text-center"></div>
+        <a href="index.php" class="text-white px-3 py-2 rounded-md hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('index.php'); ?>">
+                    <i class="fa-solid fa-house"></i>    
+                        Home
+                    </a>
+                    <a href="about.php" class="text-white px-3 py-2 rounded-md hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('about.php'); ?>">
+                    <i class="fa-solid fa-users-gear"></i>
+                    About Us
+                    </a>
+                    <a href="contact.php" class="text-white px-3 py-2 rounded-md hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('contact.php'); ?>">
+                    <i class="fa-solid fa-phone"></i>
+                    Contact
+                    </a>
+                    <a href="profile.php" class="text-white px-3 py-2 rounded-md hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('profile.php'); ?>">
+                        <i class="fa-solid fa-user"></i>
+                        Login
+    </footer>-->
 </body>
 
 </html>

@@ -21,16 +21,26 @@
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
-                    <img src="SRC/logo.png" class="w-12 h-12 mr-2" alt="Edu4All">
-                    <span class="text-xl font-bold" style="font-family: 'Gruppo', sans-serif;">Edu4All</span>
+                    <img src="SRC/logo.png" class="scale-150 w-12 h-12 mr-2" alt="Edu4All">
+                    <span class="text-x2 fa-2x font-bold ml-3">Edu4All</span>
                 </div>
                 
                 <div class="hidden md:flex items-center space-x-4">
-                    <a href="index.php" class="text-white px-3 py-2 rounded-md hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('index.php'); ?>">Home</a>
-                    <a href="about.php" class="text-white px-3 py-2 rounded-md hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('about.php'); ?>">About Us</a>
-                    <a href="contact.php" class="text-white px-3 py-2 rounded-md hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('contact.php'); ?>">Contact</a>
+                    <a href="index.php" class="text-white px-3 py-2 rounded-md hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('index.php'); ?>">
+                    <i class="fa-solid fa-house"></i>    
+                        Home
+                    </a>
+                    <a href="about.php" class="text-white px-3 py-2 rounded-md hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('about.php'); ?>">
+                    <i class="fa-solid fa-users-gear"></i>
+                    About Us
+                    </a>
+                    <a href="contact.php" class="text-white px-3 py-2 rounded-md hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('contact.php'); ?>">
+                    <i class="fa-solid fa-phone"></i>
+                    Contact
+                    </a>
                     <a href="profile.php" class="text-white px-3 py-2 rounded-md hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('profile.php'); ?>">
                         <i class="fa-solid fa-user"></i>
+                        Login
                     </a>
                 </div>
                 
@@ -60,5 +70,15 @@
             menu.classList.toggle('hidden');
         });
     </script>
+    <div class="slider-box">
+        <ul>
+            <li>
+                
+            </li>
+        </ul>
+    </div>
+
+    <p>
+    </p>
 </body>
 </html>
