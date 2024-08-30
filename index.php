@@ -16,7 +16,6 @@
     <?php include 'navbar.php'; ?>
 
     <div class="flex-grow"></div>
-<<<<<<< HEAD
     <?php include 'footer.php'; ?>
     <!--<footer class="bg-green-500 text-white py-8">
         <div class="container mx-auto text-center">
@@ -39,10 +38,8 @@
                         <i class="fa-solid fa-user"></i>
                         Login
     </footer>-->
-=======
 
     <?include 'footer.php'; ?>
->>>>>>> 21cb35ccaee579b6d62dc8c9c5351fd18c291213
 </body>
 
 </html>
