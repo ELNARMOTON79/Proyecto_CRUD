@@ -38,7 +38,7 @@
                     <i class="fa-solid fa-phone"></i>
                     Contact
                     </a>
-                    <a href="profile.php" class="text-white px-3 py-2 rounded-md hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('profile.php'); ?>">
+                    <a href="logins/login.php" class="text-white px-3 py-2 rounded-md hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('logins/login.php'); ?>">
                         <i class="fa-solid fa-user"></i>
                         Login
                     </a>
@@ -57,7 +57,7 @@
                 <a href="index.php" class="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('index.php'); ?>">Home</a>
                 <a href="about.php" class="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('about.php'); ?>">About Us</a>
                 <a href="contact.php" class="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('contact.php'); ?>">Contact</a>
-                <a href="profile.php" class="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('profile.php'); ?>">
+                <a href="logins/logins.php" class="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('logins/login.php'); ?>">
                     <i class="fa-solid fa-user mr-2"></i>Profile
                 </a>
             </div>
