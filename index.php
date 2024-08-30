@@ -15,7 +15,7 @@
 <body class="flex flex-col min-h-screen">
     <?php include 'navbar.php'; ?>
     <div class="flex-grow"></div>
-    <?php include 'footer.php'; ?>
+    
     <div class="slider-box">
         <ul>
             <li>
@@ -26,7 +26,7 @@
             </li>
         </ul>
     </div>
-    <?include 'footer.php'; ?>
+    <?php include 'footer.php'; ?>
 </body>
 
 </html>
