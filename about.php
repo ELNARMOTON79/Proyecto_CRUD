@@ -17,11 +17,7 @@
 
     <div class="flex-grow"></div>
 
-    <footer class="bg-green-500 text-white py-7">
-        <div class="container mx-auto text-center">
-            <p class="text-sm lg:mr-11">&copy; 2024.Todos los derechos reservados.</p>
-        </div>
-    </footer>
+    <?php include 'footer.php'; ?>
 </body>
 
 </html>
