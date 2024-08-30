@@ -9,7 +9,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Script para usar la biblioteca de Fon Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Script para mostrar la fecha actual-->
+    <!-- Es el CDN para mostrar la grafica chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
 
 </head>
@@ -18,58 +19,117 @@
     <!-- Primer Componente aqui -->
     <div class="flex flex-row">
 
-        <div class="flex flex-col bg-green-500 h-screen justify-between w-64
+        <div class="flex flex-col bg-green-500 fixed h-screen justify-between w-64
                     py-4 px-2">
             
-            <!-- El titulo de la dashboard-->
-            <div class="flex items-center justify-between text-white text-3x1 px-5">
-                <b>Edu4All</b>
+            <!-- El título de la dashboard -->
+            <div class="flex items-center text-white text-3x1 px-5">
+                <div class="flex-shrink-0 h-10 w-10">
+                    <img class="scale-150 h-10 w-10 rounded-full" 
+                        src="../img/logo.png" 
+                    alt="">
+                </div>
+            <!-- Agregue la clase ml-3 para poder crear un espacion entre
+                la imagen y el texto y este no se distorcione -->
+                <b class="fa-2x ml-3">Edu4All</b>
             </div>
 
             <!-- Aqui va el icono grill -->
             <div class="flex flex-col flex-auto">
 
-                <div class="p-2 hover:bg-grey-100">
-                    <div class="flex flex-row space-x-3">
-                        <i class="fa-solid fa-list"></i>
+            <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
+                    <button class="flex flex-row space-x-3">
                         <!-- El hover:text-black sirve para cambiar el color 
                             Cuando pase el puntero por el texto-->
-                        <h4 class="font-bold text-white hover:text-gray-500">DashBoard</h4>
+                            <h4 class="text-white hover:text-black">
+                            <i class="fa-solid fa-list"></i>
+                            DashBoard
+                            </h4>
+                            
+                    </button>
+                </div>
+
+                <!-- Sección Desplegable - Usuarios
+                    La forma de activar el JS es con el id="toggleUsuarios"-->
+                <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">   
+                    <button id="toggleUsuarios" class="flex flex-row space-x-3 w-full focus:outline-none">
+                    <span class="text-white hover:text-black">
+                        <i class="fa-solid fa-user"></i>
+                        Usuarios
+                    </span>
+                    </button>
+                    <div id="submenu" class="ml-6 mt-2 hidden">
+                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                        <i class="fa-solid fa-user-plus"></i>
+                            Crear Usuario
+                        </a>
+                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                        <i class="fa-solid fa-list-check"></i>
+                            Listar Usuario</a>
                     </div>
                 </div>
 
-                <div class="p-2 hover:bg-green-700">
-                    <div class="flex flex-row space-x-3">
-                        <i class="fa-solid fa-question text-white"></i>
-                        <!-- El hover:text-black sirve para cambiar el color 
-                            Cuando pase el puntero por el texto-->
-                        <h4 class="text-white hover:text-black">1er apartado</h4>
+                <!-- Sección Desplegable - Actividades -->
+                <div class="p-2 hover:bg-green-700 text-white rounded-md transition duration-500 ease-in-out">
+                    <button id="toggleActividades" class="flex flex-row space-x-3 w-full focus:outline-none">
+                        <span class="text-white hover:text-black ">
+                            <i class="fa-solid fa-bookmark"></i>
+                            Actividades
+                        </span>
+                    </button>
+                    <div id="submenuActividades" class="ml-6 mt-2 hidden">
+                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                        <i class="fa-solid fa-pen"></i>
+                            Crear Actividades</a>
+                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                            Listar Actividades
+                        </a>
                     </div>
-                </div>
-                
-                <div class="p-2 hover:bg-green-700">
-                    <div class="flex flex-row space-x-3">
-                        <i class="fa-solid fa-question text-white"></i>
-                        <!-- El hover:text-black sirve para cambiar el color 
-                            Cuando pase el puntero por el texto-->
-                        <h4 class="text-white hover:text-black">2do apartado</h4>
-                    </div>
-                </div>                
+                </div>             
 
-                <div class="p-2 hover:bg-green-700">
-                    <div class="flex flex-row space-x-3">
-                        <i class="fa-solid fa-question text-white"></i>
-                        <!-- El hover:text-black sirve para cambiar el color 
-                            Cuando pase el puntero por el texto-->
-                        <h4 class="text-white hover:text-black">3er apartado</h4>
-                    </div>
+                <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
+                    <button class="flex flex-row space-x-3">
+                        <h4 class="text-white hover:text-black">
+                        <i class="fa-solid fa-chart-line"></i>
+                            Monitoreo Desempeño
+                        </h4>
+                    </button>
+                </div>
+
+                <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
+                    <button class="flex flex-row space-x-3">
+                        <h4 class="text-white hover:text-black">
+                        <i class="fa-solid fa-coins"></i>
+                            Recursos
+                        </h4>
+                    </button>
+                </div>
+
+                <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
+                    <button class="flex flex-row space-x-3">
+                        <h4 class="text-white hover:text-black">
+                        <i class="fa-solid fa-flag"></i>
+                            Informes
+                        </h4>
+                    </button>
+                </div>
+
+                <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
+                    <button class="flex flex-row space-x-3">
+                        <h4 class="text-white hover:text-black">
+                        <i class="fa-solid fa-bullhorn"></i>
+                            
+                            Comunicación
+                        </h4>
+                    </button>
                 </div>
 
             </div>
             <!-- Boton de salir -->
-                <div class="flex flex-col">
-                    <button class="rounded-full bg-green-900
-                    py-2 text-white textl-lg ">Salir</button>
+                <div class="flex flex-col ">
+                    <a class="rounded-full bg-green-900
+                    py-2 text-white textl-lg hover:bg-green-700 text-center" href="../index.php">Exit</a>
                 </div>
 
         </div>
@@ -77,14 +137,24 @@
         
 
         <!-- Segundo Componente aqui -->    
-            <div class="flex-auto">
+            <div class="flex-auto ml-64">
                 <div class="flex flex-col">
                     <div class="flex flex-col bg-white">
                         <div class="flex flex-row space-x-3">
-                            <h4 class="font-bold text-gray-500 p-1">DashBoard</h4>
+                            <!-- La clase translate-y-2 desplaza la imagen 0.5rem (8px) hacia abajo -->
+                            <div class="flex-shrink-0 h-10 w-10 relative">
+                                <img class="ml-3 h-10 w-10 rounded-full translate-y-2" 
+                                    src="https://cdn.icon-icons.com/icons2/2104/PNG/512/manager_icon_129392.png" 
+                                    alt="">
+                            </div>
+                            <h4 class="fa-2x font-bold text-gray-500 p-1">Bienvenido $admin </h4>
                         </div>
-                        <!-- Aqui poner un script para modificar la fecha -->
-                        <p class="text-gray-400 p-1" id="current-date-time"></p>
+                        <!-- Aqui va a ir el correo del admin-->
+                        <div class="text-sm text-gray-500 p-1">
+                            admin@ucol.mx
+                            <!-- Aqui se encuetra para mostrar la fecha -->
+                            <p class="text-gray-400 p-1 text-right" id="current-date-time"></p> 
+                        </div>
                     </div>
                     <div class="min-h-screen bg-blue-50">
                         <div class="mt-8 grid gap-10 lg:grid-cols-3 sm-grid-cols-2 p-4">
@@ -206,120 +276,8 @@
                 </div>
             </div>
     </div>
-    <!-- Required chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+    <!-- Script para jalar el javascripts.js-->
+    <script src="javascripts.js"></script>
     
-    
-<!-- Script para actualizar la fecha y hora -->
-<script>
-    function actualizarFechaHora() {
-        const ahora = new Date();
-
-        // Opciones para formatear la fecha en español
-        const opcionesFecha = { day: 'numeric', month: 'long' };
-        const fechaFormateada = ahora.toLocaleDateString('es-ES', opcionesFecha);
-
-        // Opciones para formatear la hora en formato de 24 horas
-        const opcionesHora = { 
-            hour: '2-digit', 
-            minute: '2-digit', 
-            second: '2-digit', 
-            hour12: false 
-        };
-        const horaFormateada = ahora.toLocaleTimeString('es-ES', opcionesHora);
-
-        // Combinar fecha y hora
-        const fechaHora = `${fechaFormateada} ${horaFormateada}`;
-
-        // Insertar la fecha y hora en el elemento con id="current-date-time"
-        document.getElementById('current-date-time').textContent = fechaHora;
-    }
-
-    // Ejecutar la función una vez al cargar la página
-    actualizarFechaHora();
-
-    // Actualizar la hora cada segundo
-    setInterval(actualizarFechaHora, 1000);
-
-
-
-
-    /*
-    Scrip para la grafica, se va a cambiar luego cuando 
-    tengamos los datos de las personas registradas uotras cosas 
-    */
-
-    const labels = ["January", "February", "March", "April", "May", "June"];
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: "My First dataset",
-            backgroundColor: "hsl(252, 82.9%, 67.8%)",
-            borderColor: "hsl(252, 82.9%, 67.8%)",
-            data: [0, 10, 5, 2, 20, 30, 45],
-        }, ],
-    };
-
-    const configLineChart = {
-        type: "line",
-        data,
-        options: {},
-    };
-
-    var chartLine = new Chart(
-        document.getElementById("chartLine"),
-        configLineChart
-    );
-
-
-
-    const dataRadar = {
-        labels: [
-        "Reservation 1",
-        "Reservation 2",
-        "Reservation 3",
-        "Reservation 4",
-        "Reservation 5",
-        "Reservation 6",
-        "Reservation 7",
-        ],
-        datasets: [{
-            label: "My First Dataset",
-            data: [65, 59, 90, 81, 56, 55, 40],
-            fill: true,
-            backgroundColor: "rgba(255,105,180)",
-            borderColor: "rgb(255,20,147)",
-            pointBackgroundColor: "rgb(133, 105, 241)",
-            pointBorderColor: "#fff",
-            pointHoverBackgroundColor: "#fff",
-            pointHoverBorderColor: "rgb(133, 105, 241)",
-        },
-        {
-            label: "My Second Dataset",
-            data: [28, 48, 40, 19, 96, 27, 100],
-            fill: true,
-            backgroundColor: "rgba(255,105,180)",
-            borderColor: "rgb(0,191,255)",
-            pointBackgroundColor: "rgb(54, 162, 235)",
-            pointBorderColor: "#fff",
-            pointHoverBackgroundColor: "#fff",
-            pointHoverBorderColor: "rgb(54, 162, 235)",
-        },
-        ],
-    };
-
-    const configRadarChart = {
-        type: "radar",
-        data: dataRadar,
-        options: {},
-    };
-
-    var chartBar = new Chart(
-        document.getElementById("chartRadar"),
-        configRadarChart
-    );
-
-</script>
 </body>
 </html>

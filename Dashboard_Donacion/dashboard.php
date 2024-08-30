@@ -19,9 +19,18 @@
     <!-- Primer Componente aqui -->
     <div class="flex flex-row">
 
+        <!-- 
+        Para solucionar el error que tenia de que el sidebar no se podia adaptar
+        a las dimensiones de la pantalla, la solucion fue que al "div" del sidebar
+        le agregue a la clase el atributo "fidex" y para evitar afectar a los demas
+        "div" donde estaba la grafica, lo solucione agregando "ml-64" como en el 
+        siguiente ejemplo: (Antes: <div class="flex-auto">) 
+        (Después: <div class="flex-auto ml-64">)
+        Solución del sidebar : (Antes: <div class="flex flex-col bg-green-500 h-screen justify-between w-64 py-4 px-2">)
+        (Después: <div class="flex flex-col bg-green-500 fixed h-screen justify-between w-64 py-4 px-2">)
+        -->
         <div class="flex flex-col bg-green-500 fixed h-screen justify-between w-64
-                    py-4 px-2">
-            
+                    py-4 px-2 ">
             <!-- El título de la dashboard -->
             <div class="flex items-center text-white text-3x1 px-5">
                 <div class="flex-shrink-0 h-10 w-10">
@@ -42,67 +51,42 @@
                         <!-- El hover:text-black sirve para cambiar el color 
                             Cuando pase el puntero por el texto-->
                             <h4 class="text-white hover:text-black">
-                            <i class="fa-solid fa-list"></i>
-                            DashBoard
-                            </h4>
+                            <i class="fa-solid fa-coins"></i>
+                            Donar</h4>
                     </button>
                 </div>
 
-                <!-- Sección Desplegable - Actividades -->
-                <div class="p-2 hover:bg-green-700 text-white">
-                    <button id="toggleActividades" class="flex flex-row space-x-3 w-full focus:outline-none">
-                        <span class="text-white hover:text-black rounded-md transition duration-500 ease-in-out">
-                            <i class="fa-solid fa-bookmark"></i>
-                            Actividades
-                        </span>
-                    </button>
-                    <div id="submenuActividades" class="ml-6 mt-2 hidden">
-                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
-                        <i class="fa-solid fa-user-plus"></i>
-                            Crear Usuario
-                        </a>
-                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
-                        <i class="fa-solid fa-clipboard-list"></i>
-                            Listar Actividades
-                        </a>
-                    </div>
-                </div>     
-                
                 <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
                     <button class="flex flex-row space-x-3">
                         <h4 class="text-white hover:text-black">
-                        <i class="fa-solid fa-coins"></i>
-                            Recursos
-                        </h4>
+                        <i class="fa-solid fa-eye"></i>
+                            Seguimiento de Donación</h4>
                     </button>
-                </div>
-                
-                <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
-                    <button class="flex flex-row space-x-3">
-                        <h4 class="text-white hover:text-black">
-                        <i class="fa-solid fa-flag"></i>
-
-                            Informes
-                        </h4>
-                    </button>
-                </div>
+                </div>              
 
                 <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
                     <button class="flex flex-row space-x-3">
                         <h4 class="text-white hover:text-black">
                         <i class="fa-solid fa-bullhorn"></i>
-
-                            Comunicación
-                        </h4>
+                            Comunicación</h4>
                     </button>
                 </div>
 
+                <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
+                    <button class="flex flex-row space-x-3">
+                        <h4 class="text-white hover:text-black">
+                        <i class="fa-solid fa-gear"></i>
+                            Ajustes</h4>
+                    </button>
+                </div>
+
+
             </div>
             <!-- Boton de salir -->
-                <div class="flex flex-col ">
-                    <a class="rounded-full bg-green-900
+            <div class="flex flex-col ">
+                <a class="rounded-full bg-green-900
                     py-2 text-white textl-lg hover:bg-green-700 text-center" href="../index.php">Exit</a>
-                </div>
+            </div>
 
         </div>
         <!-- Fin del 1er Componente-->
@@ -113,17 +97,17 @@
                 <div class="flex flex-col">
                     <div class="flex flex-col bg-white">
                         <div class="flex flex-row space-x-3">
-                                <!-- La clase translate-y-2 desplaza la imagen 0.5rem (8px) hacia abajo -->
+                                <!-- Imagen predeterminada para los donantes -->
                             <div class="flex-shrink-0 h-10 w-10 relative">
                                 <img class="ml-3 h-10 w-10 rounded-full translate-y-2" 
-                                    src="https://cdn.icon-icons.com/icons2/1494/PNG/512/administrator_102921.png" 
+                                    src="https://cdn.icon-icons.com/icons2/93/PNG/256/new_add_user_16734.png" 
                                     alt="">
                             </div>
-                            <h4 class="fa-2x font-bold text-gray-500 p-1">Bienvenido $cordinador</h4>
+                            <h4 class="fa-2x font-bold text-gray-500 p-1">Bienvenido $donador</h4>
                         </div>
-                        <!-- Aqui va a ir el correo del cordinador-->
+                        <!-- Aqui va a ir el correo del donante si es que proporciono uno-->
                         <div class="text-sm text-gray-500 p-1">
-                            cordinador@ucol.mx
+                            donador@ucol.mx
                             <!-- Aqui se encuetra para mostrar la fecha -->
                             <p class="text-gray-400 p-1 text-right" id="current-date-time"></p> 
                         </div>
@@ -157,8 +141,8 @@
                             </div>
                             <!-- El segundo componente termina aqui -->
                         </div>
+                        <!-- Otro va a iniciar aqui -->
 
-                        <!-- Mostrar graficas -->
                         <div class="mt-5 grid lg:grid-cols-3 md:grid-cols-3 p-4 gap-3">
                             <div class="col-span-2 bg-white p-8 flex-col rounded shadow-sm">
                                 <b class="flex flex-row text-gray-500">Graficos de cuanta raza se mete a la school</b>
@@ -250,8 +234,5 @@
     </div>
     <!-- Script para jalar el javascripts.js-->
     <script src="javascripts.js"></script>
-    
-
-    
 </body>
 </html>
