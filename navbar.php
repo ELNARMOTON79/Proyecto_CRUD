@@ -70,14 +70,6 @@
             menu.classList.toggle('hidden');
         });
     </script>
-    <div class="slider-box">
-        <ul>
-            <li>
-                
-            </li>
-        </ul>
-    </div>
-
     <p>
     </p>
 </body>
