@@ -17,3 +17,15 @@ Esta solución busca no solo mejorar la eficiencia operativa de la ONG, sino tam
 - 📍 **Seguimiento del impacto en las comunidades atendidas.**
 
 ## 🛠️ Tecnologías Utilizadas
+
+- **Frontend**: 
+  - **HTML5** y **CSS3** 
+  - **Tailwind CSS**
+  
+- **Backend**:
+  - **PHP**
+  - **MySQL** 
+
+- **Herramientas y Servicios**:
+  - **XAMPP**
+  - **Git** y **GitHub**
