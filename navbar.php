@@ -17,12 +17,20 @@
     }
     ?>
 
-    <nav class="bg-green-500 text-white">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center">
-                    <img src="SRC/logo.png" class="scale-150 w-12 h-12 mr-2" alt="Edu4All">
-                    <span class="text-x2 fa-2x font-bold ml-3">Edu4All</span>
+<div class="nav-bar">
+      <a href="" class="logo">
+      <img src="SRC/logo.png" class="scale-150 w-12 h-12 mr-2" alt="Edu4All">
+        Edu4All</a>
+      <div class="navigation">
+        <div class="nav-items">
+          <i class="uil uil-times nav-close-btn"></i>
+          <a href="index.php"><i class="uil uil-home"></i> Home</a>
+          <a href="#"><i class="uil uil-compass"></i> Explore</a>
+          <a href="about.php"><i class="uil uil-info-circle"></i> About</a>
+          <a href="Donate.html"><i class="uil uil-document-layout-left"></i> Donate</a>
+          <a href="contact.php"><i class="uil uil-envelope"></i> Contact</a>
+        </div>
+      </div>
                 </div>
                 
                 <div class="hidden md:flex items-center space-x-4">
