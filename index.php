@@ -11,24 +11,9 @@
 </head>
 <body>
 
-  <header>
-    <div class="nav-bar">
-      <a href="" class="logo">
-      <img src="SRC/logo.png" class="scale-150 w-12 h-12 mr-2" alt="Edu4All">
-        Edu4All</a>
-      <div class="navigation">
-        <div class="nav-items">
-          <i class="uil uil-times nav-close-btn"></i>
-          <a href="index.php"><i class="uil uil-home"></i> Home</a>
-          <a href="#"><i class="uil uil-compass"></i> Explore</a>
-          <a href="about.php"><i class="uil uil-info-circle"></i> About</a>
-          <a href="Donate.html"><i class="uil uil-document-layout-left"></i> Donate</a>
-          <a href="contact.php"><i class="uil uil-envelope"></i> Contact</a>
-        </div>
-      </div>
-      <i class="uil uil-apps nav-menu-btn"></i>
-    </div>
-  </header>
+  <?php
+  include 'navbar.php'
+  ?>
 
   <section class="home">
     <div class="media-icons">
@@ -95,17 +80,12 @@
   </section>
 
   <section class="about section">
-    <h2>Seasons of the year</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <h2>Por que rafa es gey?</h2>
+    <p>La orientación sexual, incluyendo ser gay, es una parte natural y personal de quién es una persona. Ser gay significa que alguien se siente atraído emocional y/o físicamente hacia personas del mismo género. No es algo que se elige o que puede ser cambiado; es simplemente una parte de la identidad de alguien,
+    como lo son otras características personales, como la personalidad o las preferencias.
+Cada persona es única y la orientación sexual es solo una de las muchas cosas que conforman a un individuo. Lo más importante es recordar que la orientación sexual no define completamente a una persona y no cambia el valor o la importancia de la amistad. Ser amigo de alguien significa aceptar y apoyar a esa persona por quien es, independientemente de su orientación sexual.
+
+Si tienes preguntas sobre esto, es útil hablar con tu amigo de manera abierta y respetuosa, si ambos se sienten cómodos. La comprensión y la aceptación son clave en cualquier relación..</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
     aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
     aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint

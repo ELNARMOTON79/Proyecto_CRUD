@@ -9,12 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 </head>
-<body class="flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen bg-cover bg-center" style="background-image: url('SRC/Carrucel/imagen1.jpg');">
     <?php include 'navbar.php'; ?>
 
-    <div class="flex-grow flex justify-center items-center">
+    <div class="flex-grow flex justify-center items-center mt-20"> <!-- Margen superior añadido aquí -->
         <form class="bg-white p-8 custom-box-shadow rounded-2xl w-[300px] text-center">
             <h2 class="text-[#283629] text-[28px] font-bold mb-6">Contact us</h2>
             
