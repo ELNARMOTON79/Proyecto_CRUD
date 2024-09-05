@@ -27,43 +27,41 @@
         <div class="swiper-slide">
           <img src="SRC/Carrucel/imagen1.jpg" alt="">
           <div class="text-content">
-            <h2 class="title">Edu4All <span>Season</span></h2>
-            <p>Edu4All es un proyecto generado por estudiates de la Universidad de Colima con la finalidad de darle una educacion pareja a los niños</p>
-            <button class="read-btn">Read More <i class="uil uil-arrow-right"></i></button>
+            <h2 class="title">Edu4All</h2>
+            <p>Edu4All es un proyecto generado por estudiates
+              de la Universidad de Colima con la finalidad de darle una educacion pareja a los niños</p>
+            
           </div>
         </div>
         <div class="swiper-slide dark-layer">
           <img src="SRC/Carrucel/imagen5.jpg" alt="">
           <div class="text-content">
-            <h2 class="title">Winter <span>Season</span></h2>
-            <p>Winter is the coldest season of the year in polar and temperate zones. It occurs
-            between autumn and spring.The tilt of Earth's axis causes seasons; winter occurs
-            when a hemisphere is oriented away from the Sun. Different cultures define different
-            dates as the start of winter, and some use a definition based on weather.</p>
-            <button class="read-btn">Read More <i class="uil uil-arrow-right"></i></button>
+            <h2 class="title">Edu4All</h2>
+            <p>Edu4All es una plataforma educativa creada para asegurar que todos los niños tengan acceso
+            a contenidos de calidad. Con una amplia variedad de recursos, la página busca fomentar el aprendizaje
+            equitativo y ofrecer oportunidades que ayuden al desarrollo integral de cada estudiante..</p>
+            <button class="read-btn">About <i class="uil uil-arrow-right"></i></button>
           </div>
         </div>
         <div class="swiper-slide dark-layer">
           <img src="SRC/Carrucel/imagen3.jpg" alt="">
           <div class="text-content">
-            <h2 class="title">Summer <span>Season</span></h2>
-            <p>Summer is the hottest of the four temperate seasons, occurring after spring and
-            before autumn. At or aroundthe summer solstice, the earliest sunrise and latest
-            sunset occurs, daylight hours are longest and dark hours are shortest, with day
-            length decreasing as the season progresses after the solstice.</p>
-            <button class="read-btn">Read More <i class="uil uil-arrow-right"></i></button>
+            <h2 class="title">Edu4All</h2>
+            <p>Edu4All está dedicada a crear un espacio donde todos los niños puedan aprender 
+              en igualdad de condiciones. A través de sus recursos accesibles, la página promueve
+              una educación inclusiva que apoya el crecimiento académico y personal de cada estudiante..</p>
+            <button class="read-btn">About <i class="uil uil-arrow-right"></i></button>
           </div>
         </div>
         <div class="swiper-slide">
           <img src="SRC/Carrucel/imagen4.jpg" alt="">
           <div class="text-content">
-            <h2 class="title">Spring <span>Season</span></h2>
-            <p>Spring, also known as springtime, is one of the four temperate seasons, succeeding
-            winter and preceding summer. There are various technical definitions of spring, but
-            local usage of the term varies according to local climate, cultures and customs. When
-            it is spring in the Northern Hemisphere, it is autumn in the Southern Hemisphere and
-            vice versa.</p>
-            <button class="read-btn">Read More <i class="uil uil-arrow-right"></i></button>
+            <h2 class="title">Edu4All</h2>
+            <p>Edu4All se compromete a ofrecer a cada niño la posibilidad de acceder
+              a una educación de calidad. A través de su plataforma, la página proporciona
+              recursos educativos que fomentan el aprendizaje y ayudan a los niños a alcanzar
+              sus metas académicas.</p>
+            <button class="read-btn">About <i class="uil uil-arrow-right"></i></button>
           </div>
         </div>
       </div>
@@ -86,36 +84,9 @@
 Cada persona es única y la orientación sexual es solo una de las muchas cosas que conforman a un individuo. Lo más importante es recordar que la orientación sexual no define completamente a una persona y no cambia el valor o la importancia de la amistad. Ser amigo de alguien significa aceptar y apoyar a esa persona por quien es, independientemente de su orientación sexual.
 
 Si tienes preguntas sobre esto, es útil hablar con tu amigo de manera abierta y respetuosa, si ambos se sienten cómodos. La comprensión y la aceptación son clave en cualquier relación..</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>.</p>
+    <p></p>
+    <p></p>
   </section>
 
   <script src="swiper-bundle.min.js"></script>
