@@ -13,7 +13,9 @@
 <body class="flex flex-col min-h-screen bg-cover bg-center" style="background-image: url('SRC/Carrucel/imagen1.jpg');">
     <?php include 'navbar.php'; ?>
 
-    <div class="flex-grow flex justify-center items-center mt-20"> <!-- Margen superior añadido aquí -->
+    <section class="hero"></section> <br><br><br><br>
+
+    <div class="flex-grow flex justify-center items-center"> 
         <form class="bg-white p-8 custom-box-shadow rounded-2xl w-[300px] text-center">
             <h2 class="text-[#283629] text-[28px] font-bold mb-6">Contact us</h2>
             
@@ -40,6 +42,7 @@
             <button class="btn w-full p-3 rounded-full text-white font-bold custom-input-box-shadow bg-[#51D94C] hover:bg-[#50E048] transition duration-300 focus:outline-none focus:ring-2 focus:ring-green-300" type="submit">Send</button>
         </form>
     </div>
+    <section class="hero"></section> <br><br><br>
 
     <?php include 'footer.php'; ?>
 </body>

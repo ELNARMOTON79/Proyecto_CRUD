@@ -27,34 +27,40 @@
         </div>
     </section>
 
-    <!-- Key Features -->
     <section class="features">
-        <div class="container">
-            <h2 class="text-center">What We Offer</h2>
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">📚</div>
-                    <h3>Diverse Courses</h3>
-                    <p>Wide range of subjects for all interests and skill levels</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">👥</div>
-                    <h3>Global Community</h3>
-                    <p>Connect with learners and educators worldwide</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🌐</div>
-                    <h3>Accessible Learning</h3>
-                    <p>Learn anytime, anywhere with our flexible online platform</p>
-                </div>
+    <div class="container">
+        <div class="text-center bg-white/30 backdrop-blur-lg p-4 rounded-lg">
+        <h2 class="text-center text-4xl font-bold mb-8">what we offer</h2>
+           
+        </div>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <div class="feature-icon">📚</div>
+                <h3>Diverse Courses</h3>
+                <p>Wide range of subjects for all interests and skill levels</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">👥</div>
+                <h3>Global Community</h3>
+                <p>Connect with learners and educators worldwide</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🌐</div>
+                <h3>Accessible Learning</h3>
+                <p>Learn anytime, anywhere with our flexible online platform</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Team Section -->
 <section class="team py-12">
     <div class="container mx-auto">
-        <h2 class="text-center text-4xl font-bold mb-8">Meet Our Team</h2>
+    <div class="text-center bg-white/30 backdrop-blur-lg p-4 rounded-lg">
+    <h2 class="text-center text-4xl font-bold mb-8">Meet Our Team</h2>
+ </div>
+      
         <div class="flex flex-wrap justify-center items-center gap-8">
         <div class="team-member text-center">
                 <img src="/placeholder.svg?height=200&width=200" alt="Heydi la Cpera" class="mx-auto rounded-full">

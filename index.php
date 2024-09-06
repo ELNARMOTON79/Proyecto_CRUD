@@ -30,7 +30,6 @@
             <h2 class="title">Edu4All</h2>
             <p>Edu4All es un proyecto generado por estudiates
               de la Universidad de Colima con la finalidad de darle una educacion pareja a los niños</p>
-            
           </div>
         </div>
         <div class="swiper-slide dark-layer">
