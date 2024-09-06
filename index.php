@@ -25,7 +25,7 @@
     <div class="swiper bg-slider">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="SRC/Carrucel/imagen1.jpg" alt="">
+          <img src="SRC/Carrucel/1.png" alt="">
           <div class="text-content">
             <h2 class="title">Edu4All</h2>
             <p>Edu4All es un proyecto generado por estudiates
@@ -34,34 +34,34 @@
           </div>
         </div>
         <div class="swiper-slide dark-layer">
-          <img src="SRC/Carrucel/imagen5.jpg" alt="">
+          <img src="SRC/Carrucel/2.png" alt="">
           <div class="text-content">
             <h2 class="title">Edu4All</h2>
             <p>Edu4All es una plataforma educativa creada para asegurar que todos los niños tengan acceso
             a contenidos de calidad. Con una amplia variedad de recursos, la página busca fomentar el aprendizaje
             equitativo y ofrecer oportunidades que ayuden al desarrollo integral de cada estudiante..</p>
-            <button class="read-btn">About <i class="uil uil-arrow-right"></i></button>
+            
           </div>
         </div>
         <div class="swiper-slide dark-layer">
-          <img src="SRC/Carrucel/imagen3.jpg" alt="">
+          <img src="SRC/Carrucel/3.png" alt="">
           <div class="text-content">
             <h2 class="title">Edu4All</h2>
             <p>Edu4All está dedicada a crear un espacio donde todos los niños puedan aprender 
               en igualdad de condiciones. A través de sus recursos accesibles, la página promueve
               una educación inclusiva que apoya el crecimiento académico y personal de cada estudiante..</p>
-            <button class="read-btn">About <i class="uil uil-arrow-right"></i></button>
+            
           </div>
         </div>
         <div class="swiper-slide">
-          <img src="SRC/Carrucel/imagen4.jpg" alt="">
+          <img src="SRC/Carrucel/4.png" alt="">
           <div class="text-content">
             <h2 class="title">Edu4All</h2>
             <p>Edu4All se compromete a ofrecer a cada niño la posibilidad de acceder
               a una educación de calidad. A través de su plataforma, la página proporciona
               recursos educativos que fomentan el aprendizaje y ayudan a los niños a alcanzar
               sus metas académicas.</p>
-            <button class="read-btn">About <i class="uil uil-arrow-right"></i></button>
+            
           </div>
         </div>
       </div>
@@ -69,10 +69,10 @@
     
     <div class="bg-slider-thumbs">
       <div class="swiper-wrapper thumbs-container">
-        <img src="SRC/Carrucel/imagen1.jpg" class="swiper-slide" alt="">
-        <img src="SRC/Carrucel/imagen5.jpg" class="swiper-slide" alt="">
-        <img src="SRC/Carrucel/imagen3.jpg" class="swiper-slide" alt="">
-        <img src="SRC/Carrucel/imagen4.jpg" class="swiper-slide" alt="">
+        <img src="SRC/Carrucel/1.png" class="swiper-slide" alt="">
+        <img src="SRC/Carrucel/2.png" class="swiper-slide" alt="">
+        <img src="SRC/Carrucel/3.png" class="swiper-slide" alt="">
+        <img src="SRC/Carrucel/4.png" class="swiper-slide" alt="">
       </div>
     </div>
   </section>

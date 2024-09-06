@@ -9,98 +9,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style_about.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<body class="flex flex-col min-h-screen bg-cover bg-center" style="background-image: url('SRC/About/background.jpg');">
+<body class="flex flex-col min-h-screen bg-cover bg-center" style="background-image: url('SRC/About/about1.png');">
     <?php include 'navbar.php'; ?>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #4caf50;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #45a049;
-        }
-
-        .mission, .features, .team {
-            padding: 60px 0;
-        }
-
-        .mission {
-            background-color: #ADD8E6;
-            font-size: 1.25rem; /* Aumenta el tamaño del texto en toda la sección */
-        }
-
-        .mission h2 {
-            font-size: 2.5rem; /* Ajusta el tamaño del título */
-        }
-
-        .mission p {
-            font-size: 1.5rem; /* Ajusta el tamaño del párrafo */
-        }
-
-        .feature-grid, .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .feature-item, .team-member {
-            background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-icon {
-            font-size: 2em;
-            color: #2e7d32;
-            margin-bottom: 15px;
-        }
-
-        .team-member img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-        }
-
-        h2 {
-            color: #1b5e20;
-        }
-
-        h3 {
-            color: #2e7d32;
-        }
-    </style>
 
     <!-- Hero Section -->
     <section class="hero"></section> <br><br><br>
@@ -154,7 +68,7 @@
             </div>
             <div class="team-member text-center">
                 <img src="SRC/About/imagen9.jpg" alt="ToolKid" height="200" width="200" class="mx-auto rounded-full">
-                <h3 class="text-2xl mt-4">ToolKid</h3>
+                <h3 class="text-2xl mt-4">ToolKid👻</h3>
                 <p class="text-gray-600">Director of Global Partnerships de CP</p>
             </div>
             <div class="team-member text-center">
@@ -170,7 +84,7 @@
         </div>
     </div>
 </section>
-
+    
     <?php include 'footer.php'; ?>
 
 </body>
