@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Website Landing Page With Full Screen Draggable Image Slider - Html, Css & Javascript</title>
+  <title>EDU4ALL</title>
   <link rel="stylesheet" href="styles/swiper-bundle.min.css">
   <link rel="stylesheet" href="styles/carrucel.css">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <link rel="icon" href="SRC/logo_god.png">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
