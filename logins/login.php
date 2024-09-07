@@ -16,7 +16,7 @@
            </svg>
        </a>
 
-       <form action="#">
+       <form action="#" method="POST">
         <h1>Login</h1>
 
         <div class="contenedor">
@@ -31,7 +31,7 @@
         <a href="#">Forgot your password?</a>
        </div>
 
-       <button type="submit" class="btn">Login</button>
+       <button type="submit" name="login" class="btn">Login</button>
 
        <div class="Registro-enlaces">
         <p>Don't you have an account? <a href="../joinus.php">Create account</a></p>
@@ -42,3 +42,7 @@
     
 </body>
 </html>
+
+<?php
+    include 'login_var.php';
+?>
