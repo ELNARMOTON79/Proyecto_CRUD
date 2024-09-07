@@ -25,7 +25,12 @@
 
        <div class="contenedor">
         <input type="password" name="password" placeholder="Password" required>
-       </div> 
+       </div>
+       
+       <div class="mt-4 flex items-center">
+            <input type="checkbox" id="terms" name="terms" required class="h-4 w-4 text-green-500">
+            <label for="terms" class="ml-2 text-gray-700">I accept the <a href="#" class="text-green-500 underline">Terms and Conditions</a></label>
+        </div>
 
        <div class="Recordar">
         <a href="#">Forgot your password?</a>

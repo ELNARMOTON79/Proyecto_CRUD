@@ -30,8 +30,8 @@
           <input type="email" name="email" id="email" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
         </div>
         <div>
-          <label for="phone" class="block text-sm font-medium text-green-600">Phone:</label>
-          <input type="tel" name="phone" id="phone" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
+          <label for="password" class="block text-sm font-medium text-green-600">Password:</label>
+          <input type="password" name="password" id="password" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
         </div>
         <div>
           <label for="gender" class="block text-sm font-medium text-green-600">Gender:</label>
