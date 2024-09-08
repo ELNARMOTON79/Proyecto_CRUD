@@ -20,7 +20,7 @@
         <h1>Login</h1>
 
         <div class="contenedor">
-            <input type="text" name="user" placeholder="User" required>
+            <input type="text" name="user" placeholder="E-mail" required>
         </div>
 
        <div class="contenedor">
@@ -49,5 +49,5 @@
 </html>
 
 <?php
-    include 'login_var.php';
+    include('login_var.php');
 ?>
