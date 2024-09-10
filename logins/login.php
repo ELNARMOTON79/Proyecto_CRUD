@@ -49,5 +49,15 @@
 </html>
 
 <?php
-    include('login_var.php');
+    //include('login_var.php');
+    if(isset($_POST['login']))
+    {
+        //Guardar datos ingresados en las variables
+        $correo = $_POST['user'];
+        $password = $_POST['password'];
+
+        require_once '../Conexion/contacto.php';
+        $obj = new Contacto();
+        $obj->login($correo, $password);
+    }
 ?>
