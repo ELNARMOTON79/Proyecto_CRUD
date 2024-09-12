@@ -20,7 +20,7 @@
         <h1>Login</h1>
 
         <div class="contenedor">
-            <input type="text" name="user" placeholder="E-mail" required>
+            <input type="text" name="email" placeholder="E-mail" required>
         </div>
 
        <div class="contenedor">
@@ -49,15 +49,5 @@
 </html>
 
 <?php
-    //include('login_var.php');
-    if(isset($_POST['login']))
-    {
-        //Guardar datos ingresados en las variables
-        $correo = $_POST['user'];
-        $password = $_POST['password'];
-
-        require_once '../Conexion/contacto.php';
-        $obj = new Contacto();
-        $obj->login($correo, $password);
-    }
+    include('login_var.php');
 ?>
