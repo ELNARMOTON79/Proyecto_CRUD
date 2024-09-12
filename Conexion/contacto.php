@@ -44,5 +44,16 @@
                 }
             }
         }
+
+        public function eliminar ($id){  
+            $this->sentencia = "DELETE FROM usuarios WHERE id = '$id'";
+            $resultado = $this->ejecutar_sentencia();
+            
+        }
+        public function consultar(){
+            $this->sentencia = "SELECT * FROM usuarios";
+            $result = $this->obtener_sentencia();
+            return $result;
+        }
     }
 ?>
