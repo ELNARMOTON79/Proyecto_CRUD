@@ -76,6 +76,11 @@
                         <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-list-check"></i>
                             Listar Usuario</a>
+
+                        <a href="eliminarusuario.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                        <i class="fa-solid fa-user-xmark"></i>
+                            Eliminar Usuario</a>
+
                     </div>
                 </div>
 
