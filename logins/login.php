@@ -20,7 +20,7 @@
         <h1>Login</h1>
 
         <div class="contenedor">
-            <input type="text" name="user" placeholder="E-mail" required>
+            <input type="text" name="email" placeholder="E-mail" required>
         </div>
 
        <div class="contenedor">
