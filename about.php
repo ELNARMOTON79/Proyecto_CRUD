@@ -58,9 +58,9 @@
 <section class="team py-12">
     <div class="container mx-auto">
     <div class="text-center bg-white/30 backdrop-blur-lg p-4 rounded-lg">
-    <h2 class="text-center text-4xl font-bold mb-8">Meet Our Team</h2>
+    <h2 class="text-center text-4xl font-bold mb-8">Meet Our Team</h2> 
  </div>
-      
+ <br></br>
         <div class="flex flex-wrap justify-center items-center gap-8">
         <div class="team-member text-center">
                 <img src="/placeholder.svg?height=200&width=200" alt="Heydi la Cpera" class="mx-auto rounded-full">

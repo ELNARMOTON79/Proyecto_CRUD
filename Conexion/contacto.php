@@ -57,19 +57,9 @@
         }
         public function subir($name, $age, $email, $password, $gender, $role)
         {
-            $this->sentencia = "INSERT INTO usuarios (name, age, email, password, gender, role) VALUES ('$name, $age, $email, $password, $gender, $role')";
+            $this->sentencia = "INSERT INTO usuarios (nombre, correo, password, genero, edad, tipo_usuario) VALUES ('$name', '$email', '$password', '$gender', '$age', '$role')";
             $result = $this->obtener_sentencia();
             return $result;
-        }
-        public function obtenerPorId($id){
-            $this->sentencia = "SELECT * FROM usuarios WHERE id
-            ='$id'";
-            return $this->obtner_sentencia();
-        }
-        public function modificar($id, $name, $age, $email, $password, $gender, $role) {
-        $this->sentencia = "INSERT INTO usuarios (nombre, correo, password, genero, edad, tipo_usuario, fecha_nac)
-        id = '$id'";
-        return $this->ejecutar_sentencia(); 
         }
         
     }
