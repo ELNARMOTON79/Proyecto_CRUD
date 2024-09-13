@@ -63,9 +63,13 @@
                         <i class="fa-solid fa-user-plus"></i>
                             Crear Usuario
                         </a>
+                        <a href="modificaruser.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                        <i class="fa-solid fa-user-pen"></i>
+                            Modificar Usuario</a>
                         <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-list-check"></i>
                             Listar Usuario</a>
+                        
                     </div>
                 </div>
 
