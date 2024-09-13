@@ -19,6 +19,7 @@
               <i class="fas fa-home fa-lg"></i>
           </a>
       </div>
+      
 
       <!-- Título del formulario -->
       <h1 class="text-2xl font-bold text-green-600 mb-6 text-center">Join Us</h1>

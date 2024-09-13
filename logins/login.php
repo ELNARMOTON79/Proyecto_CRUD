@@ -17,6 +17,7 @@
            <!-- Icono de casa -->
            <a href="../index.php" class="text-green-600 hover:text-green-800">
                <i class="fas fa-home fa-lg"> </i>
+               
            </a>
        </div>
 
