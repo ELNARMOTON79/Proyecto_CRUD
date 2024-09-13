@@ -8,10 +8,11 @@
     class Contacto extends Conexion {
         
         //login
-        public function login() {
-            $this->sentencia = "SELECT * FROM users WHERE email = '$this->email' AND password = '$this->password'";
-            $result = $this->obtener_sentencia();
-            return $result;
+        public function login($correo, $password)
+        {
+            //Sentencia SQL de como funciona
+            $this->sentencia = "SELECT nombre, correo, password, tipo_usuario FROM usuarios WHERE correo = '$correo' AND password = '$password';";
+            $resultado = $this->ejecutar_sentencia();
         }
         //Metodo para consultar usuarios
         public function consultar($id, $nombre, $correo, $genero, $tipo_usuario){
