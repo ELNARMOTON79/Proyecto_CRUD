@@ -19,6 +19,7 @@
               <i class="fas fa-home fa-lg"></i>
           </a>
       </div>
+      
 
       <!-- Título del formulario -->
       <h1 class="text-2xl font-bold text-green-600 mb-6 text-center">Join Us</h1>
@@ -59,10 +60,30 @@
           </select>
         </div>
         <div class="flex justify-center">
-          <button type="submit" class="mt-4 px-4 py-2 bg-green-600 text-white font-semibold rounded-md shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">Submit</button>
+          <button type="submit" name="enviar" class="mt-4 px-4 py-2 bg-green-600 text-white font-semibold rounded-md shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">Submit</button>
         </div>
       </form>
     </div>
   </div>
 </body>
 </html>
+<?php
+  if (isset($_POST['enviar'])){
+    $name = $_POST['name'];
+    $age = $_POST['age'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $gender = $_POST['gender'];
+    $role = $_POST['role'];
+    require_once("Conexion/contacto.php");
+    echo $name;
+    echo $age;
+    echo $email;
+    echo $password;
+    echo $gender;
+    echo $role;
+    $obj = new contacto();
+    $obj-> subir($name, $age, $email, $password, $gender, $role);
+    echo "Datos Guardados";
+  }
+?>

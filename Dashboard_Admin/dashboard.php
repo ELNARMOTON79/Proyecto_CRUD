@@ -69,7 +69,7 @@
                     </span>
                     </button>
                     <div id="submenu" class="ml-6 mt-2 hidden">
-                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                        <a href="../joinus.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-user-plus"></i>
                             Crear Usuario
                         </a>

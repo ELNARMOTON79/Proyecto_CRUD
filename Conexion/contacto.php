@@ -55,5 +55,12 @@
             $result = $this->obtener_sentencia();
             return $result;
         }
+        public function subir($name, $age, $email, $password, $gender, $role)
+        {
+            $this->sentencia = "INSERT INTO usuarios (nombre, correo, password, genero, edad, tipo_usuario) VALUES ('$name', '$email', '$password', '$gender', '$age', '$role')";
+            $result = $this->obtener_sentencia();
+            return $result;
+        }
+        
     }
 ?>

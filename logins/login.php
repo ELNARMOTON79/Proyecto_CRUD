@@ -17,9 +17,9 @@
            <!-- Icono de casa -->
            <a href="../index.php" class="text-green-600 hover:text-green-800">
                <i class="fas fa-home fa-lg"> </i>
+               
            </a>
        </div>
-
        <!-- Formulario de login -->
        <form action="#" method="POST">
            <h1>Login</h1>
