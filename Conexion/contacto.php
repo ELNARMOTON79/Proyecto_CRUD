@@ -2,7 +2,7 @@
 
     include ("conexion.php");
 
-    class Contacto exStends Conexion {
+    class Contacto extends Conexion {
         
         //login
         public function login($correo, $password)
