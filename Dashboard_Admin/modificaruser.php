@@ -10,6 +10,8 @@ $tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : '
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario con Tailwind</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Script para usar la biblioteca de Fon Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="bg-gray-100 p-8">
     <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md">
@@ -21,12 +23,15 @@ $tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : '
                         alt="">
                 </div>
                 <div>
-                    <h4 class="fa-2x font-bold text-gray-500 p-1 py-4">Usted ingreso como <?php echo "$tipo_usuario" ?> </h4> 
+                    <h4 class=" font-bold text-gray-500 p-1 py-4">Usted ingreso como <?php echo "$tipo_usuario" ?> </h4> 
                 </div>
             </div>
             <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div>
-                    <label for="idmodificar" class="block text-sm font-medium text-gray-700">Seleccionar usuario</label>
+                    <label for="idmodificar" class="block text-sm font-medium text-gray-700">
+                    <i class="fa-solid fa-user mr-2"></i>    
+                        Seleccionar usuario
+                    </label>
                     <select name="idmodificar" id="idmodificar" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                         <?php
                             require_once("../Conexion/contacto.php");
@@ -66,23 +71,31 @@ $tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : '
 
                     echo "<div class='grid grid-cols-1 gap-6 sm:grid-cols-2'>";
                     echo "<div>";
-                    echo "<label for='nombre' class='block text-sm font-medium text-gray-700'>Nombre</label>";
+                    echo "<label for='nombre' class='block text-sm font-medium text-gray-700'>";
+                    echo "<i class='fa-solid fa-user mr-2'></i>Nombre";
+                    echo "</label>";
                     echo "<input type='text' name='nombre' value='".$registro['nombre']."' class='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm'>";
                     echo "</div>";
 
                     echo "<div>";
-                    echo "<label for='correo' class='block text-sm font-medium text-gray-700'>Correo</label>";
+                    echo "<label for='correo' class='block text-sm font-medium text-gray-700'>";
+                    echo "<i class='fa-solid fa-envelope mr-2'></i>Correo";
+                    echo "</label>";
                     echo "<input type='text' name='correo' value='".$registro['correo']."' class='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm'>";
                     echo "</div>";
                     echo "</div>";
 
                     echo "<div>";
-                    echo "<label for='edad' class='block text-sm font-medium text-gray-700'>Edad</label>";
+                    echo "<label for='edad' class='block text-sm font-medium text-gray-700'>";
+                    echo "<i class='fa-solid fa-cake-candles mr-2'></i>Edad";
+                    echo "</label>";
                     echo "<input type='number' name='edad' value='".$registro['edad']."' class='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm'>";
                     echo "</div>";
 
                     echo "<div>";
-                    echo "<label for='sexo' class='block text-sm font-medium text-gray-700'>Sexo</label>";
+                    echo "<label for='sexo' class='block text-sm font-medium text-gray-700'>";
+                    echo "<i class='fa-solid fa-venus-mars mr-2'></i>Sexo";
+                    echo "</label>";
                     echo "<select name='sexo' class='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm'>";
                     if ($registro['sexo'] == 'Hombre') {
                         echo "<option value='Hombre' selected>Hombre</option>";
