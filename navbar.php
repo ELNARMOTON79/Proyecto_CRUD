@@ -1,76 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edu4All</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Website Landing Page With Full Screen Draggable Image Slider - Html, Css & Javascript</title>
+  <link rel="stylesheet" href="styles/swiper-bundle.min.css">
+  <link rel="stylesheet" href="styles/carrucel.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <?php
-    $current_page = basename($_SERVER['PHP_SELF']);
-    function is_active($page_name) {
-        global $current_page;
-        return $current_page == $page_name ? 'bg-green-700' : '';
-    }
-    ?>
-
-    <nav class="bg-green-500 text-white">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center">
-                    <img src="SRC/logo.png" class="scale-150 w-12 h-12 mr-2" alt="Edu4All">
-                    <span class="text-x2 fa-2x font-bold ml-3">Edu4All</span>
-                </div>
-                
-                <div class="hidden md:flex items-center space-x-4">
-                    <a href="index.php" class="text-white px-3 py-2 rounded-md hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('index.php'); ?>">
-                    <i class="fa-solid fa-house"></i>    
-                        Home
-                    </a>
-                    <a href="about.php" class="text-white px-3 py-2 rounded-md hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('about.php'); ?>">
-                    <i class="fa-solid fa-users-gear"></i>
-                    About Us
-                    </a>
-                    <a href="contact.php" class="text-white px-3 py-2 rounded-md hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('contact.php'); ?>">
-                    <i class="fa-solid fa-phone"></i>
-                    Contact
-                    </a>
-                    <a href="logins/login.php" class="text-white px-3 py-2 rounded-md hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('logins/login.php'); ?>">
-                        <i class="fa-solid fa-user"></i>
-                        Login
-                    </a>
-                </div>
-                
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-white">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <div id="mobile-menu" class="hidden md:hidden">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.php" class="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('index.php'); ?>">Home</a>
-                <a href="about.php" class="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('about.php'); ?>">About Us</a>
-                <a href="contact.php" class="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('contact.php'); ?>">Contact</a>
-                <a href="logins/logins.php" class="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-green-700 transition duration-500 ease-in-out <?php echo is_active('logins/login.php'); ?>">
-                    <i class="fa-solid fa-user mr-2"></i>Profile
-                </a>
-            </div>
-        </div>
-    </nav>
-
-    <script>
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            var menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-    </script>
-    <p>
-    </p>
+<header class="bg-primary text-primary-foreground p-4">
+  <div class="nav-bar container mx-auto flex items-center justify-between">
+    <div class="flex items-center">
+      <a href="/" class="logo flex items-center text-2xl font-bold">
+        <img src="SRC/logo.png" class="w-16 h-16 mr-2" alt="Edu4All logo">
+        Edu4All
+      </a>
+    </div>
+    <div class="navigation">
+      <div class="nav-items hidden md:flex space-x-4">
+        <a href="index.php" class="flex items-center"><i class="uil uil-home mr-1"></i> Home</a>
+        <a href="contact.php" class="flex items-center"><i class="uil uil-compass mr-1"></i> Contact</a>
+        <a href="about.php" class="flex items-center"><i class="uil uil-info-circle mr-1"></i> About</a>
+        <a href="logins/login.php" class="flex items-center"><i class="uil uil-document-layout-left mr-1"></i>Login</a>
+      </div>
+    </div>
+    <button class="nav-menu-btn md:hidden" aria-label="Toggle menu">
+      <i class="uil uil-apps"></i>
+    </button>
+  </div>
+</header>
 </body>
 </html>

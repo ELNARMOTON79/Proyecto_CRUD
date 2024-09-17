@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    // Verifica si la sesión contiene los datos
+    if (!isset($_SESSION['nombre'])) {
+        // Si no existe una sesión válida, redirige al usuario a la página de login
+        header('Location: ../index.php');
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -87,12 +96,10 @@
                             Comunicación</h4>
                     </button>
                 </div>
-
             </div>
             <!-- Boton de salir -->
                 <div class="flex flex-col ">
-                    <a class="rounded-full bg-green-900
-                    py-2 text-white textl-lg hover:bg-green-700 text-center" href="../index.php">Exit</a>
+                <a class="rounded-full bg-green-900 py-2 text-white textl-lg hover:bg-green-700 text-center" href="../logins/logout.php">Log Out</a>
                 </div>
 
         </div>
@@ -110,12 +117,13 @@
                                 src="https://img.icons8.com/plasticine/100/among-us.png" 
                                 alt="">
                         </div>
-
-                            <h4 class="fa-2x font-bold text-gray-500 p-1">Bienvenido $alumno</h4>
+                        <h4 class="fa-2x font-bold text-gray-500 p-1">Bienvenido <?php echo htmlspecialchars($_SESSION['nombre']); ?></h4>
                         </div>
                         <!-- Aqui va a ir el correo del alumno-->
                         <div class="text-sm text-gray-500 p-1">
-                            alumno@ucol.mx
+                            <?php
+                                echo $_SESSION['correo'];
+                            ?>
                             <!-- Aqui se encuetra para mostrar la fecha -->
                         <p class="text-gray-400 p-1 text-right" id="current-date-time"></p> 
                         </div>

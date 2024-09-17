@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['nombre'])) {
+        header('Location: ../index.php');
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -91,8 +98,7 @@
             </div>
             <!-- Boton de salir -->
             <div class="flex flex-col ">
-                <a class="rounded-full bg-green-900
-                    py-2 text-white textl-lg hover:bg-green-700 text-center" href="../index.php">Exit</a>
+                <a class="rounded-full bg-green-900 py-2 text-white textl-lg hover:bg-green-700 text-center" href="../logins/logout.php">Exit</a>
             </div>
 
         </div>
@@ -110,11 +116,13 @@
                                     src="https://cdn.icon-icons.com/icons2/466/PNG/512/Teacher-male512_44209.png" 
                                     alt="">
                             </div>
-                            <h4 class="fa-2x font-bold text-gray-500 p-1">Bienvenido $maestro</h4>
+                            <h4 class="fa-2x font-bold text-gray-500 p-1">Bienvenido <?php echo htmlspecialchars($_SESSION['nombre']); ?></h4>
                         </div>
                         <!-- Aqui va a ir el correo del maestro-->
                         <div class="text-sm text-gray-500 p-1">
-                            maestro@ucol.mx
+                            <?php
+                                echo $_SESSION['correo'];
+                            ?>
                             <!-- Aqui se encuetra para mostrar la fecha -->
                             <p class="text-gray-400 p-1 text-right" id="current-date-time"></p> 
                         </div>
