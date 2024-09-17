@@ -10,11 +10,6 @@
             //Sentencia SQL de como funciona
             $this->sentencia = "SELECT nombre, correo, password, tipo_usuario FROM usuarios WHERE correo = '$correo' AND password = '$password';";
             $resultado = $this->ejecutar_sentencia();
-<<<<<<< HEAD
-        }
-        //Metodo para consultar usuarios
-        public function consultar($id, $nombre, $correo, $genero, $tipo_usuario){
-=======
 
             //Redirecciones de acuerdo al tipo de usuario
             if($row = $resultado->fetch_assoc()){
@@ -56,12 +51,10 @@
             
         }
         public function consultar(){
->>>>>>> e2d3f3059e9486dbc437f8137713e493b204eee8
             $this->sentencia = "SELECT * FROM usuarios";
             $result = $this->obtener_sentencia();
             return $result;
         }
-<<<<<<< HEAD
         //Metodo para consultar por ID
         public function obtenerPorId($id) {
             $this->sentencia = "SELECT * FROM usuarios WHERE id = '$id'";
@@ -72,14 +65,11 @@
             $this->sentencia = "UPDATE usuarios SET nombre = '$nombre', correo = '$correo', edad = '$edad', genero = '$sexo' WHERE id = '$id'";
             return $this->ejecutar_sentencia();
         }
-=======
         public function subir($name, $age, $email, $password, $gender, $role)
         {
             $this->sentencia = "INSERT INTO usuarios (nombre, correo, password, genero, edad, tipo_usuario) VALUES ('$name', '$email', '$password', '$gender', '$age', '$role')";
             $result = $this->obtener_sentencia();
             return $result;
         }
-        
->>>>>>> e2d3f3059e9486dbc437f8137713e493b204eee8
     }
 ?>
