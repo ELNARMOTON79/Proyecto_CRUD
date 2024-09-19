@@ -19,7 +19,6 @@
 		private function cerrar_conexion(){
 			$this->conexion->close(); 
 		}
-
 		public function ejecutar_sentencia(){
 			$this->abrir_conexion();
 			$bandera = $this->conexion->query($this->sentencia);
