@@ -56,8 +56,6 @@ $resultado = $obj->consultar_actividades();
             </tr>
         <?php endwhile; ?>
     </table>
-    <?php else: ?>
     <p>No se encontraron actividades.</p>
-<?php endif; ?>
 </body>
 </html>
