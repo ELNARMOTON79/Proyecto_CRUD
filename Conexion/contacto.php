@@ -58,9 +58,10 @@
         public function consultar_actividades() {
             $this->sentencia = "SELECT * FROM actividades";
             $resultado = $this->obtener_sentencia();
-            return $result;
+            return $resultado;
         }
 
+        //Metodo para consultar por ID
         public function obtenerPorId($id) {
             $this->sentencia = "SELECT * FROM usuarios WHERE id = '$id'";
             return $this->obtener_sentencia();
@@ -70,6 +71,18 @@
             $this->sentencia = "UPDATE usuarios SET nombre = '$nombre', correo = '$correo', edad = '$edad', genero = '$sexo' WHERE id = '$id'";
             return $this->ejecutar_sentencia();
         }
+        //Metodo para crear actividades
+        public function crear_actividades($nombre_actividad, $descripcion, $fk_materia) {
+            $this->sentencia = "INSERT INTO actividades (nombre_actividad, descripcion, fk_materia) VALUES ('$nombre_actividad', '$descripcion', '$fk_materia')";
+            return $this->ejecutar_sentencia();
+        }
+        //Metodo para obtener materias de programas        
+        public function obtenerMaterias() {
+            $this->sentencia = "SELECT id, nombre_materia FROM programas";
+            return $this->obtener_sentencia();
+        }
+        
+            
     }
     
     
