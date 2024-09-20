@@ -13,7 +13,7 @@
 <header class="bg-primary text-primary-foreground p-4">
   <div class="nav-bar container mx-auto flex items-center justify-between">
     <div class="flex items-center">
-      <a href="/" class="logo flex items-center text-2xl font-bold">
+      <a href="index.php" class="logo flex items-center text-2xl font-bold">
         <img src="SRC/logo.png" class="w-16 h-16 mr-2" alt="Edu4All logo">
         Edu4All
       </a>
