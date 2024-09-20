@@ -72,8 +72,8 @@
             return $this->ejecutar_sentencia();
         }
         //Metodo para crear actividades
-        public function crear_actividades($nombre_actividad, $descripcion, $fk_materia) {
-            $this->sentencia = "INSERT INTO actividades (nombre_actividad, descripcion, fk_materia) VALUES ('$nombre_actividad', '$descripcion', '$fk_materia')";
+        public function crear_actividades($nombre_actividad, $descripcion, $fk_materia, $fecha, $duracion) {
+            $this->sentencia = "INSERT INTO actividades (nombre_actividad, descripcion, fk_materia, fecha, duracion) VALUES ('$nombre_actividad', '$descripcion', '$fk_materia', '$fecha', '$duracion')";
             return $this->ejecutar_sentencia();
         }
         //Metodo para obtener materias de programas        
