@@ -24,10 +24,5 @@
         <div>
             <p class="fa-2x text-lg">Designed, built and maintained by <span class="text-white">ToolKid</span> &copy; 2024</p>
         </div>
-        <div>
-        <a href="profile.php" class="text-blue-600 hover:text-green-700 transition duration-500 ease-in-out text-3x1">
-        <i class="fa-solid fa-book-open-reader"></i>
-            Politicas de Privacidad
-        </div>
     </div>
 </footer>

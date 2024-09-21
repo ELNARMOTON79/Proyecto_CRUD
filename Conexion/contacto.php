@@ -37,7 +37,24 @@ class Contacto extends Conexion {
                 exit();
             }
         }
+<<<<<<< HEAD
         return false;
+=======
+        public function eliminar($id){  
+            $this->sentencia = "DELETE FROM usuarios WHERE id = '$id'";
+            $resultado = $this->ejecutar_sentencia(); 
+        }
+        public function consultar(){
+            $this->sentencia = "SELECT * FROM usuarios";
+            $result = $this->obtener_sentencia();
+            return $result;
+        }
+        public function consultar_actividades() {
+            $this->sentencia = "SELECT * FROM actividades";
+            $resultado = $this->obtener_sentencia();
+            return $result;
+        }
+>>>>>>> f83ea3ab12f5361beec9c3893beca68d034b523a
     }
 
     public function eliminar($id) {  

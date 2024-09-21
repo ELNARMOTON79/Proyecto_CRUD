@@ -1,6 +1,6 @@
 <?php
 require_once("../Conexion/contacto.php");
-$obj = new actividades();
+$obj = new Contacto();
 $resultado = $obj->consultar_actividades();
 ?>
 
@@ -39,11 +39,11 @@ $resultado = $obj->consultar_actividades();
     <div></div>
     <table>
         <tr>
-            <th>nombre</th>
-            <th>descripcion</th>
-            <th>fk_materia</th>
-            <th>fecha</th>
-            <th>duracion</th>
+            <th>name</th>
+            <th>Description</th>
+            <th>Subject</th>
+            <th>Date</th>
+            <th>Duration</th>
         </tr>
         <?php while ($registro = $resultado->fetch_assoc()): ?>
             <tr>
@@ -56,6 +56,6 @@ $resultado = $obj->consultar_actividades();
             </tr>
         <?php endwhile; ?>
     </table>
-    <p>No se encontraron actividades.</p>
+    <p>No activities found.</p>
 </body>
 </html>
