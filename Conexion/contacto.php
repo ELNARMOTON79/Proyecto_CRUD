@@ -44,13 +44,10 @@
                 }
             }
         }
-
-        public function eliminar ($id){  
+        public function eliminar($id){  
             $this->sentencia = "DELETE FROM usuarios WHERE id = '$id'";
-            $resultado = $this->ejecutar_sentencia();
-            
+            $resultado = $this->ejecutar_sentencia(); 
         }
-        
         public function consultar(){
             $this->sentencia = "SELECT * FROM usuarios";
             $result = $this->obtener_sentencia();
