@@ -1,14 +1,11 @@
-CREATE DATABASE escuela;
-
-USE escuela;
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-09-2024 a las 15:38:04
+-- Tiempo de generación: 18-09-2024 a las 04:51:07
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,7 +31,9 @@ CREATE TABLE `actividades` (
   `id` int(11) NOT NULL,
   `nombre_actividad` varchar(100) DEFAULT NULL,
   `descripcion` text DEFAULT NULL,
-  `fk_materia` int(11) DEFAULT NULL
+  `fk_materia` int(11) DEFAULT NULL,
+  `fecha` date NOT NULL,
+  `duracion` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -156,9 +155,7 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `password`, `genero`, `edad`, `tipo_usuario`, `fecha_nac`) VALUES
 (1, 'rafa', 'rvuelvas@ucol.mx', '14122005', 'hombre', 18, 'admin', '2005-12-14'),
 (2, 'samis', 'hguzman@ucol.mx', '123456', 'mujer', 21, 'teacher', '2002-12-13'),
-(3, 'Gerardo', 'ggutierrez@ucol.mx', '123456', 'hombre', 24, 'cordinator', '1999-12-17'),
-(4, 'Luis', 'lalaniz@ucol.mx', '123456', 'hombre', 24, 'student', '1999-12-16'),
-(5, 'Jesus', 'jrivera@ucol.mx', '123456', 'hombre', 24, 'donation', '1999-12-16');
+(3, 'Gerardo', 'ggutierrez@ucol.mx', '123456', 'hombre', 24, 'cordinator', '1999-12-17');
 
 --
 -- Índices para tablas volcadas
@@ -239,7 +236,7 @@ ALTER TABLE `reporte_gastos`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restricciones para tablas volcadas
