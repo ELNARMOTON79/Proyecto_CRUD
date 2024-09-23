@@ -1,47 +1,56 @@
 <?php
-include ("conexion.php");
 
-class Contacto extends Conexion {
-    
-    public function login($correo, $password) {
-        $stmt = $this->conexion->prepare("SELECT id, nombre, correo, password, tipo_usuario FROM usuarios WHERE correo = ?");
-        $stmt->bind_param("s", $correo);
-        $stmt->execute();
-        $result = $stmt->get_result();
+    include ("conexion.php");
+
+    class Contacto extends Conexion {
         
-        if ($row = $result->fetch_assoc()) {
-            if (password_verify($password, $row['password'])) {
-                session_start();
-                $_SESSION['id'] = $row['id'];
-                $_SESSION['nombre'] = $row['nombre'];
-                $_SESSION['correo'] = $row['correo'];
-                $_SESSION['tipo_usuario'] = $row['tipo_usuario'];
+        //login
+        public function login($correo, $password)
+        {
+            //Sentencia SQL de como funciona
+            $this->sentencia = "SELECT nombre, correo, password, tipo_usuario FROM usuarios WHERE correo = '$correo' AND password = '$password';";
+            $resultado = $this->ejecutar_sentencia();
 
-                switch ($row['tipo_usuario']) {
-                    case 'admin':
+            //Redirecciones de acuerdo al tipo de usuario
+            if($row = $resultado->fetch_assoc()){
+                if($row['correo'] == $correo && $row['password'] == $password){
+                    //Guardar datos del usaurio en variables de sesion
+                    session_start();
+                    $_SESSION['nombre'] = $row['nombre'];
+                    $_SESSION['correo'] = $row['correo'];
+                    $_SESSION['tipo_usuario'] = $row['tipo_usuario'];
+
+                    //Redirigir al dashboard de acuerdo al tipo_usuario
+                    if($row['tipo_usuario'] == 'admin')
+                    {
                         header("location: ../Dashboard_Admin/dashboard.php");
-                        break;
-                    case 'student':
+                    }
+                    if($row['tipo_usuario'] == 'student')
+                    {
                         header("location: ../Dashboard_Alumno/dashboard.php");
-                        break;
-                    case 'teacher':
+                    }
+                    if($row['tipo_usuario'] == 'teacher')
+                    {
                         header("location: ../Dashboard_Maestro/dashboard.php");
-                        break;
-                    case 'donation':
+                    }
+                    if($row['tipo_usuario'] == 'donation')
+                    {
                         header("location: ../Dashboard_Donacion/dashboard.php");
-                        break;
-                    case 'cordinator':
+                    }
+                    if($row['tipo_usuario'] == 'cordinator')
+                    {
                         header("location: ../Dashboard_Cordinador/dashboard.php");
-                        break;
+                    }
                 }
-                exit();
             }
         }
 
-        public function eliminar($id){  
+        public function eliminar ($id){  
             $this->sentencia = "DELETE FROM usuarios WHERE id = '$id'";
-            $resultado = $this->ejecutar_sentencia(); 
+            $resultado = $this->ejecutar_sentencia();
+            
         }
+        
         public function consultar(){
             $this->sentencia = "SELECT * FROM usuarios";
             $result = $this->obtener_sentencia();
@@ -50,33 +59,32 @@ class Contacto extends Conexion {
         public function consultar_actividades() {
             $this->sentencia = "SELECT * FROM actividades";
             $resultado = $this->obtener_sentencia();
-            return $result;
+            return $resultado;
         }
-    }
 
-    public function eliminar($id) {  
-        $stmt = $this->conexion->prepare("DELETE FROM usuarios WHERE id = ?");
-        $stmt->bind_param("i", $id);
-        return $stmt->execute();
+        //Metodo para consultar por ID
+        public function obtenerPorId($id) {
+            $this->sentencia = "SELECT * FROM usuarios WHERE id = '$id'";
+            return $this->obtener_sentencia();
+        }
+        //Metodo para modificar
+        public function modificar($id, $nombre, $correo, $edad, $sexo) {
+            $this->sentencia = "UPDATE usuarios SET nombre = '$nombre', correo = '$correo', edad = '$edad', genero = '$sexo' WHERE id = '$id'";
+            return $this->ejecutar_sentencia();
+        }
+        //Metodo para crear actividades
+        public function crear_actividades($nombre_actividad, $descripcion, $fk_materia, $fecha, $duracion) {
+            $this->sentencia = "INSERT INTO actividades (nombre_actividad, descripcion, fk_materia, fecha, duracion) VALUES ('$nombre_actividad', '$descripcion', '$fk_materia', '$fecha', '$duracion')";
+            return $this->ejecutar_sentencia();
+        }
+        //Metodo para obtener materias de programas        
+        public function obtenerMaterias() {
+            $this->sentencia = "SELECT id, nombre_materia FROM programas";
+            return $this->obtener_sentencia();
+        }
+        
+            
     }
-
-    public function consultar() {
-        $stmt = $this->conexion->prepare("SELECT * FROM usuarios");
-        $stmt->execute();
-        return $stmt->get_result();
-    }
-
-    public function crearUsuario($name, $age, $email, $password, $gender, $role) {
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-        $stmt = $this->conexion->prepare("INSERT INTO usuarios (nombre, correo, password, genero, edad, tipo_usuario) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssss", $name, $email, $hashed_password, $gender, $age, $role);
-        return $stmt->execute();
-    }
-
-    public function modificar_actividades($id, $nombre_actividad, $descripcion, $fk_materia, $fecha, $duracion) {
-        $stmt = $this->conexion->prepare("UPDATE actividades SET nombre_actividad = ?, descripcion = ?, fk_materia = ?, fecha = ?, duracion = ? WHERE id = ?");
-        $stmt->bind_param("sssssi", $nombre_actividad, $descripcion, $fk_materia, $fecha, $duracion, $id);
-        return $stmt->execute();
-    }
-}
+    
+    
 ?>
