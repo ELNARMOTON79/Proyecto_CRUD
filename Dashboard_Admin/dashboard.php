@@ -98,7 +98,7 @@
                         <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-pen"></i>
                             Crear Actividades</a>
-                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                        <a href="listaractividades.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-clipboard-list"></i>
                             Listar Actividades
                         </a>
