@@ -116,3 +116,16 @@
         document.getElementById("chartRadar"),
         configRadarChart
     );
+
+    // Función para manejar la selección de la fecha y tiempo en Crear Actividades
+    function calcularDuracion() {
+        const fechaInicio = new Date(document.getElementById("fecha_inicio").value + " " + document.getElementById("hora_inicio").value);
+        const fechaFin = new Date(document.getElementById("fecha_fin").value + " " + document.getElementById("hora_fin").value);
+        
+        if (fechaFin > fechaInicio) {
+            const duracion = (fechaFin - fechaInicio) / 1000; // Duración en segundos
+            document.getElementById("duracion").value = duracion;
+        } else {
+            alert("La fecha de finalización debe ser posterior a la de inicio.");
+        }
+    }
