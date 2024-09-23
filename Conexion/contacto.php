@@ -37,9 +37,7 @@ class Contacto extends Conexion {
                 exit();
             }
         }
-<<<<<<< HEAD
-        return false;
-=======
+
         public function eliminar($id){  
             $this->sentencia = "DELETE FROM usuarios WHERE id = '$id'";
             $resultado = $this->ejecutar_sentencia(); 
@@ -54,7 +52,6 @@ class Contacto extends Conexion {
             $resultado = $this->obtener_sentencia();
             return $result;
         }
->>>>>>> f83ea3ab12f5361beec9c3893beca68d034b523a
     }
 
     public function eliminar($id) {  
