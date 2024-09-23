@@ -130,6 +130,7 @@ $tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : '
     </div>
     <!-- Script para jalar el javascripts.js-->
     <script src="javascripts.js"></script>
+    <div></div>
 </body>
 
 </html>
