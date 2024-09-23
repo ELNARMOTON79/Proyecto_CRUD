@@ -9,7 +9,11 @@ $resultado = $obj->consultar();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Usuarios.</title>
+    <title>Lista de Usuarios</title>
+      <!-- Script para usar tailwind -->
+      <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Script para usar la biblioteca de Fon Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,35 +22,35 @@ $resultado = $obj->consultar();
             background-color: #f4f4f4;
         }
         .table-container {
-            max-width: 900px; /* Limita el ancho de la tabla */
-            margin: 0 auto; /* Centra la tabla horizontalmente */
-            padding: 20px; /* Espacio alrededor de la tabla */
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            border-radius: 10px; /* Bordes redondeados */
-            overflow: hidden; /* Para que los bordes redondeados se apliquen bien */
+            border-radius: 10px;
+            overflow: hidden;
             background-color: white;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle algo de profundidad */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
         th, td {
             padding: 12px 15px;
-            text-align: justify; /* Justificación del contenido */
+            text-align: justify;
         }
         th {
-            background-color: #16A34A; /* Color de fondo de la cabecera */
+            background-color: #16A34A;
             color: white;
         }
         td {
-            background-color: white; /* Color de las celdas de datos */
+            background-color: white;
             border-bottom: 1px solid #ddd;
         }
         tr:nth-child(even) {
-            background-color: #f9f9f9; /* Alternancia de color para filas pares */
+            background-color: #f9f9f9;
         }
         tr:hover {
-            background-color: #ddd; /* Color al hacer hover sobre las filas */
+            background-color: #ddd;
         }
     </style>
 </head>
@@ -69,6 +73,14 @@ $resultado = $obj->consultar();
                 </tr>
             <?php endwhile; ?>
         </table>
+        <br>
+        <a href="dashboard.php" style="text-decoration: none;">
+            <button style="padding: 10px 15px; background-color: #16A34A; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                <i class="fa-solid fa-arrow-left"></i>
+                Regresar
+                
+            </button>
+        </a>
     </div>
 </body>
 </html>
