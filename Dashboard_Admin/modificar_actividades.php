@@ -86,9 +86,9 @@ Elegir Materia
             </div>
 
             <div class="flex justify-end space-x-4 mt-6">
-    <button type="button" onclick="window.location.href='dashboard.php'"
-        class="px-4 py-2 border border-green-500 text-sm font-medium rounded-md shadow-sm text-green-500 bg-white hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
-        Cancelar
+            <button type="button" onclick="window.location.href='http://localhost/Proyecto_CRUD/Dashboard_Admin/dashboard.php';"
+                    class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-200 focus:outline-none transition duration-500">
+                    Cancelar
     </button>
     <button type="submit" name="modificar"
         class="px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
