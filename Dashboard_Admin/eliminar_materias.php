@@ -30,7 +30,7 @@
                     }
                     $resultado = $obj->consultar_programas();
                     while ($registro = $resultado->fetch_assoc()) {
-                        echo "<option value='".$registro["id"]."'>".$registro["nombre_programas"]."</option>";
+                        echo "<option value='".$registro["id"]."'>".$registro["nombre_materia"]."</option>";
                     }
                 ?>
             </select>
