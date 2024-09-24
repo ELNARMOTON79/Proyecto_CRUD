@@ -85,10 +85,21 @@
         //metodo para eliminar actividades.
         public function eliminar_actividades($id){
             $this->sentencia = "DELETE FROM actividades WHERE id = '$id'";
-             return $this->ejecutar_sentencia();
+            return $this->ejecutar_sentencia();
         }
         
-            
+        public function consultar_programas() {
+            $this->sentencia = "SELECT * FROM programas";
+            $resultado = $this->obtener_sentencia();
+            return $resultado;
+        }
+        
+        public function eliminar_programas($id){
+            $this->sentencia = "DELETE FROM programas WHERE id = '$id'";
+            return $this->ejecutar_sentencia();
+        }
+
+
     }
     
     
