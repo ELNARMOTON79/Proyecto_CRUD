@@ -82,6 +82,11 @@
             $this->sentencia = "SELECT id, nombre_materia FROM programas";
             return $this->obtener_sentencia();
         }
+        //metodo para eliminar actividades.
+        public function eliminar_actividades($id){
+            $this->sentencia = "DELETE FROM actividades WHERE id = '$id'";
+             return $this->ejecutar_sentencia();
+        }
         
             
     }
