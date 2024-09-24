@@ -88,16 +88,18 @@
             return $this->ejecutar_sentencia();
         }
         
-        public function eliminar_materias($id){
-            $this->sentencia = "DELETE FROM Materias WHERE id = '$id'";
-            return $this->ejecutar_sentencia();
-        }
-
-        public function consultar_materias() {
-            $this->sentencia = "SELECT * FROM Materias";
+        public function consultar_programas() {
+            $this->sentencia = "SELECT * FROM programas";
             $resultado = $this->obtener_sentencia();
             return $resultado;
         }
+        
+        public function eliminar_programas($id){
+            $this->sentencia = "DELETE FROM programas WHERE id = '$id'";
+            return $this->ejecutar_sentencia();
+        }
+
+
     }
     
     

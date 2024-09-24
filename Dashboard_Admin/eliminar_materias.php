@@ -18,19 +18,19 @@
         <form action="" method="post" class="space-y-6" id="deleteUserForm">
         <!-- User Selection -->
         <div>
-            <label for="ideleminar" class="block mb-2 text-sm font-semibold text-gray-700">Selecciona una actividad</label>
+            <label for="ideleminar" class="block mb-2 text-sm font-semibold text-gray-700">Selecciona una Materia</label>
             <select name="ideleminar" id="ideleminar" 
                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
-                <option value="Seleccionar Actividad">Seleccionar Actividad</option>
+                <option value="Seleccionar Materia">Seleccionar Materia</option>
                 <?php
                     require_once("../Conexion/contacto.php");
                     $obj = new contacto();
                     if (isset($_POST["eliminar"])) {
-                        $obj->eliminar_actividades($_POST["ideleminar"]);
+                        $obj->eliminar_programas($_POST["ideleminar"]);
                     }
-                    $resultado = $obj->consultar_actividades();
+                    $resultado = $obj->consultar_programas();
                     while ($registro = $resultado->fetch_assoc()) {
-                        echo "<option value='".$registro["id"]."'>".$registro["nombre_actividad"]."</option>";
+                        echo "<option value='".$registro["id"]."'>".$registro["nombre_programas"]."</option>";
                     }
                 ?>
             </select>
@@ -41,7 +41,7 @@
             <button type="button" 
                 class="w-full bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition duration-300"
                 onclick="mostrarModal()">
-                Eliminar Actividad
+                Eliminar Materia
             </button>
         </div>
 
@@ -49,7 +49,7 @@
         <div id="modalConfirmar" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden">
             <div class="bg-white rounded-lg shadow-lg max-w-sm w-full p-8">
                 <h2 class="text-xl font-semibold text-gray-700 mb-4">Confirmación de Eliminación</h2>
-                <p class="mb-6 text-gray-600">¿Estás seguro de que deseas eliminar esta actividad?</p>
+                <p class="mb-6 text-gray-600">¿Estás seguro de que deseas eliminar esta Materia?</p>
                 <div class="flex justify-end space-x-4">
                     <button type="button" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600" 
                             onclick="ocultarModal()">Cancelar</button>
@@ -65,7 +65,7 @@
         <?php
         if (isset($_POST['eliminar'])) {
             echo "<p id='success-message' class='mt-6 text-lg font-semibold text-center text-green-700 bg-green-100 p-4 rounded-lg'>
-                  Actividad eliminada correctamente</p>";
+                Materia eliminada correctamente</p>";
         }
         ?>
 
