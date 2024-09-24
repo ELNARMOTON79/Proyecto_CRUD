@@ -5,8 +5,9 @@
         // Si no existe una sesión válida, redirige al usuario a la página de login
         header('Location: ../index.php');
         exit();
-        
     }
+    $showForm = isset($_GET['action']) && $_GET['action'] =='infouser';
+    $showForm1 = isset($_GET['action']) && $_GET['action'] =='';
 ?>
 
 <!DOCTYPE html>
@@ -52,10 +53,12 @@
                     <button class="flex flex-row space-x-3">
                         <!-- El hover:text-black sirve para cambiar el color 
                             Cuando pase el puntero por el texto-->
+                            <a href="?action=infouser">
                             <h4 class="text-white hover:text-black">
                             <i class="fa-solid fa-list"></i>
                             DashBoard
                             </h4>
+                            </a>
                             
                     </button>
                 </div>
@@ -189,30 +192,13 @@
         
 
         <!-- Segundo Componente aqui -->    
-            <div class="flex-auto ml-64">
-                <div class="flex flex-col">
-                    <div class="flex flex-col bg-white">
-                        <div class="flex flex-row space-x-3">
-                            <!-- La clase translate-y-2 desplaza la imagen 0.5rem (8px) hacia abajo -->
-                            <div class="flex-shrink-0 h-10 w-10 relative">
-                                <img class="ml-3 h-10 w-10 rounded-full translate-y-2" 
-                                    src="https://cdn.icon-icons.com/icons2/2104/PNG/512/manager_icon_129392.png" 
-                                    alt="">
-                            </div>
-                            <h4 class="fa-2x font-bold text-gray-500 p-1">Bienvenido <?php echo htmlspecialchars($_SESSION['nombre']); ?></h4>
-                        </div>
-                        <!-- Aqui va a ir el correo del admin-->
-                        <div class="text-sm text-gray-500 p-1">
-                            <?php
-                                echo $_SESSION['correo'];
-                            ?>
-                            <!-- Aqui se encuetra para mostrar la fecha -->
-                            <p class="text-gray-400 p-1 text-right" id="current-date-time"></p> 
-                        </div>
-                    </div>
-                    
-            </div>
+            
     </div>
+    <main class="flex-1 p-6">
+    <?php if ((!$showForm && !$showForm1)): ?>
+    <?php include 'infouser.php'; ?>
+    <?php endif; ?>
+    </main>
     <!-- Script para jalar el javascripts.js-->
     <script src="javascripts.js"></script>
     
