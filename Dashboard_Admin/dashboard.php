@@ -111,7 +111,34 @@
                             Eliminar Actividades
                         </a>
                     </div>
+                </div>    
+
+                <div class="p-2 hover:bg-green-700 text-white rounded-md transition duration-500 ease-in-out">
+                    <button id="toggleMaterias" class="flex flex-row space-x-3 w-full focus:outline-none">
+                        <span class="text-white hover:text-black ">
+                        <i class="fa-solid fa-list-check"></i>
+                            Materias
+                        </span>
+                    </button>
+                    <div id="submenuMaterias" class="ml-6 mt-2 hidden">
+                        <a href="prueba.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                        <i class="fa-solid fa-pen"></i>
+                            Crear Materias</a>
+                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                            Listar Materias
+                        </a>
+                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                        <i class="fa-sharp fa-solid fa-gears"></i>
+                            Modificar Materias
+                        </a>
+                        <a href="eliminar_materias.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                        <i class="fa-solid fa-trash-can"></i>
+                            Eliminar Materias
+                        </a>
+                    </div>
                 </div>             
+
 
                 <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
                     <button class="flex flex-row space-x-3">
