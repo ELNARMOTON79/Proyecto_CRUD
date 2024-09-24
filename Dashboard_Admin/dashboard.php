@@ -122,7 +122,7 @@
                         </span>
                     </button>
                     <div id="submenuMaterias" class="ml-6 mt-2 hidden">
-                        <a href="prueba.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                        <a href="crear_materias.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-pen"></i>
                             Crear Materias</a>
                         <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
