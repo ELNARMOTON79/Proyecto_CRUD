@@ -81,11 +81,11 @@
         public function obtenerMaterias() {
             $this->sentencia = "SELECT id, nombre_materia FROM programas";
             return $this->obtener_sentencia();
-            
+
         }
         //Metodo para crear materias
         public function crear_materias($nombre_materia, $objetivo, $unidad) {
-            $this->sentencia = "INSERT INTO programas (nombre_materia, objetivo, unidad) VALUES ('$nombre_materia', '$objetivo', '$unidad)";
+            $this->sentencia = "INSERT INTO programas (nombre_materia, objetivos, unidad) VALUES ('$nombre_materia', '$objetivo', '$unidad')";
             return $this->ejecutar_sentencia();
         }
     }
