@@ -40,7 +40,7 @@ $resultado = $obj->consultar();
         </table>
         <br>
         <a href="dashboard.php" class="inline-block mt-4">
-            <button class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500">
+            <button class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 ">
                 <i class="fa-solid fa-arrow-left"></i>
                 Go back
             </button>
