@@ -63,14 +63,14 @@ $tipo_materia = isset($_SESSION['tipo_materia']) ? $_SESSION['tipo_materia'] : '
 
         <?php
         if (isset($_POST['crear'])) {
-            $nombre_materias = $_POST['nombre_materia'];
+            $nombre_materia = $_POST['nombre_materia'];
             $objetivo = $_POST['objetive'];
             $unidad = $_POST['unit'];
 
             
             require_once("../Conexion/contacto.php");
             $obj = new Contacto();
-            $obj->crear_materias($nombre_materias, $objetivo, $unidad);
+            $obj->crear_materias($nombre_materia, $objetivo, $unidad);
 
             echo "<p class='text-green-600 mt-4'>Create succesfully created.</p>";
         }

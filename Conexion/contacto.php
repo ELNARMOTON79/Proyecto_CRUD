@@ -79,7 +79,7 @@
         }
         //Metodo para obtener materias de programas        
         public function obtenerMaterias() {
-            $this->sentencia = "SELECT id, nombre_materia FROM programas";
+            $this->sentencia = "SELECT id, nombre_materia,  objetivos, actividades, unidad FROM programas";
             return $this->obtener_sentencia();
 
         }
@@ -88,6 +88,7 @@
             $this->sentencia = "INSERT INTO programas (nombre_materia, objetivos, unidad) VALUES ('$nombre_materia', '$objetivo', '$unidad')";
             return $this->ejecutar_sentencia();
         }
+
     }
     
     

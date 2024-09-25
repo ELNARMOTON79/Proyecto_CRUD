@@ -2,7 +2,7 @@
 <?php
 require_once("../Conexion/contacto.php");
 $obj = new Contacto();
-$resultado = $obj->consultar_programas();
+$resultado = $obj->obtenerMaterias();
 ?>
 
 <!DOCTYPE html>
@@ -34,15 +34,14 @@ $resultado = $obj->consultar_programas();
                     <tr class="even:bg-gray-100 hover:bg-gray-200">
                         <td class="px-6 py-4"><?php echo htmlspecialchars($registro["id"]); ?></td>
                         <td class="px-6 py-4"><?php echo htmlspecialchars($registro["nombre_materia"]); ?></td>
-                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["fk_materia"]); ?></td>
                         <td class="px-6 py-4"><?php echo htmlspecialchars($registro["objetivos"]); ?></td>
-                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["actividades"]); ?></td>
+                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["actividades"] ?? ''); ?></td>
                         <td class="px-6 py-4"><?php echo htmlspecialchars($registro["unidad"]); ?></td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>
         </table> 
-        <p>No activities found.</p>
+        <p>Materias listadas.</p>
         <br>
         <a href="dashboard.php" class="inline-block mt-4">
             <button class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-500 ease-in-out">
