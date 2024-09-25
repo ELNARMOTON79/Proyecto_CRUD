@@ -14,7 +14,7 @@
             //Redirecciones de acuerdo al tipo de usuario
             if($row = $resultado->fetch_assoc()){
                 if($row['correo'] == $correo && $row['password'] == $password){
-                    //Guardar datos del usaurio en variables de sesion
+                    //Guardar datos del usaurio en variables de sesion 
                     session_start();
                     $_SESSION['nombre'] = $row['nombre'];
                     $_SESSION['correo'] = $row['correo'];
@@ -81,25 +81,13 @@
         public function obtenerMaterias() {
             $this->sentencia = "SELECT id, nombre_materia FROM programas";
             return $this->obtener_sentencia();
+            
         }
-        //metodo para eliminar actividades.
-        public function eliminar_actividades($id){
-            $this->sentencia = "DELETE FROM actividades WHERE id = '$id'";
+        //Metodo para crear materias
+        public function crear_materias($nombre_materia, $objetivo, $unidad) {
+            $this->sentencia = "INSERT INTO programas (nombre_materia, objetivo, unidad) VALUES ('$nombre_materia', '$objetivo', '$unidad)";
             return $this->ejecutar_sentencia();
         }
-        
-        public function consultar_programas() {
-            $this->sentencia = "SELECT * FROM programas";
-            $resultado = $this->obtener_sentencia();
-            return $resultado;
-        }
-        
-        public function eliminar_programas($id){
-            $this->sentencia = "DELETE FROM programas WHERE id = '$id'";
-            return $this->ejecutar_sentencia();
-        }
-
-
     }
     
     

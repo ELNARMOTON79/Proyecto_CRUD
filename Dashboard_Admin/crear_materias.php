@@ -33,10 +33,10 @@ $tipo_materia = isset($_SESSION['tipo_materia']) ? $_SESSION['tipo_materia'] : '
 
 
             <div>
-                <label for="activities" class="block text-sm font-medium text-gray-700">
-                    <i class="fa-solid fa-calendar-alt mr-2"></i>activities
+                <label for="objeive" class="block text-sm font-medium text-gray-700">
+                    <i class="fa-solid fa-calendar-alt mr-2"></i>objetive
                 </label>
-                <input type="activities" name="activities" id="activities" required
+                <input type="text" name="objetive" id="activities" required
                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
             </div>
 
@@ -44,42 +44,13 @@ $tipo_materia = isset($_SESSION['tipo_materia']) ? $_SESSION['tipo_materia'] : '
                 <label for="Unit" class="block text-sm font-medium text-gray-700">
                     <i class="fa-solid fa-clock mr-2"></i>unit
                 </label>
-                <input type="unit" name="unit" id="unit" required
+                <input type="number" name="unit" id="unit" required
                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
             </div>
 
             <input type="hidden" name="duracion" id="duracion">
 
-            <div>
-                <label for="descripcion" class="block text-sm font-medium text-gray-700">
-                    <i class="fa-solid fa-align-left mr-2"></i>Descripción
-                </label>
-                <textarea name="descripcion" id="descripcion" required
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"></textarea>
-            </div>
-
-            <div>
-                <label for="fk_materia" class="block text-sm font-medium text-gray-700">
-                    <i class="fa-solid fa-book mr-2"></i>materia
-                </label>
-                <select name="fk_materia" id="fk_materia" 
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                    <?php
-                    require_once("../Conexion/contacto.php");
-                    $obj = new Contacto();
-                    $resultado = $obj->obtenerMaterias(); // Asegúrate de que este método devuelva las materias con sus IDs
-
-                    if ($resultado) {
-                        while ($materia = $resultado->fetch_assoc()) {
-                            echo "<option value='" . $materia['id'] . "'>" . $materia['nombre_materia'] . "</option>";
-                        }
-                    } else {
-                        echo "<option>No subject found</option>";
-                    }
-                    ?>
-                </select>
-            </div>
-
+            
             <div class="flex justify-end space-x-4 mt-6">
                 <button type="button" onclick="window.location.href='http://localhost/Proyecto_CRUD/Dashboard_Admin/dashboard.php';"
                     class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-200 focus:outline-none transition duration-500">
@@ -92,14 +63,14 @@ $tipo_materia = isset($_SESSION['tipo_materia']) ? $_SESSION['tipo_materia'] : '
 
         <?php
         if (isset($_POST['crear'])) {
-            $nombre_materias = $_POST['nombre_materias'];
-            $objetivo = $_POST['objetivo'];
-            $fk_materias = $_POST['fk_materias'];
-            $unidad = $_POST['unidad'];
+            $nombre_materias = $_POST['nombre_materia'];
+            $objetivo = $_POST['objetive'];
+            $unidad = $_POST['unit'];
+
             
             require_once("../Conexion/contacto.php");
             $obj = new Contacto();
-            $obj->crear_materias($nombre_materias, $objetivo, $fk_materias, $unidad);
+            $obj->crear_materias($nombre_materias, $objetivo, $unidad);
 
             echo "<p class='text-green-600 mt-4'>Create succesfully created.</p>";
         }
