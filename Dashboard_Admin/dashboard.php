@@ -5,7 +5,6 @@
         // Si no existe una sesión válida, redirige al usuario a la página de login
         header('Location: ../index.php');
         exit();
-        
     }
 ?>
 
@@ -66,24 +65,24 @@
                     <button id="toggleUsuarios" class="flex flex-row space-x-3 w-full focus:outline-none">
                     <span class="text-white hover:text-black">
                         <i class="fa-solid fa-user"></i>
-                        Usuarios
+                        User
                     </span>
                     </button>
                     <div id="submenu" class="ml-6 mt-2 hidden">
                         <a href="../joinus.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-user-plus"></i>
-                            Crear Usuario
+                            Create user
                         </a>
                         <a href="modificaruser.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-user-pen"></i>
-                            Modificar Usuario</a>
+                            Modify user</a>
                         <a href="listausuarios.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-list-check"></i>
-                            Listar Usuario</a>
+                            List user</a>
 
                         <a href="eliminarusuario.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-user-xmark"></i>
-                            Eliminar Usuario</a>
+                            Delete user</a>
                     </div>
                 </div>
 
@@ -92,60 +91,59 @@
                     <button id="toggleActividades" class="flex flex-row space-x-3 w-full focus:outline-none">
                         <span class="text-white hover:text-black ">
                             <i class="fa-solid fa-bookmark"></i>
-                            Actividades
+                            Activities
                         </span>
                     </button>
                     <div id="submenuActividades" class="ml-6 mt-2 hidden">
                         <a href="crear_actividades.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-pen"></i>
-                            Crear Actividades</a>
-                        <a href="listaractividades.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                            Create activities</a>
+                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-clipboard-list"></i>
-                            Listar Actividades
+                            List activities
                         </a>
                         <a href="modificar_actividades.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-sharp fa-solid fa-gears"></i>
-                            Modificar Actividades
+                            Modify activities
                         </a>
                         <a href="eliminaractividad.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-trash-can"></i>
-                            Eliminar Actividades
+                            Delete activities
                         </a>
                     </div>
-                </div>    
-
+                </div>
                 <div class="p-2 hover:bg-green-700 text-white rounded-md transition duration-500 ease-in-out">
                     <button id="toggleMaterias" class="flex flex-row space-x-3 w-full focus:outline-none">
                         <span class="text-white hover:text-black ">
-                        <i class="fa-solid fa-list-check"></i>
-                            Materias
+                        <i class="fa-solid fa-book"></i>
+                            Subjects
                         </span>
                     </button>
                     <div id="submenuMaterias" class="ml-6 mt-2 hidden">
-                        <a href="crear_materias.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-pen"></i>
                             Crear Materias</a>
                         <a href="listarmaterias.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                            Create Subject</a>
+                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-clipboard-list"></i>
-                            Listar Materias
+                            List Subject
                         </a>
                         <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-sharp fa-solid fa-gears"></i>
-                            Modificar Materias
+                            Modify Subject
                         </a>
-                        <a href="eliminar_materias.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-trash-can"></i>
-                            Eliminar Materias
+                            Delete Subject
                         </a>
                     </div>
-                </div>             
-
-
+                </div>
                 <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
                     <button class="flex flex-row space-x-3">
                         <h4 class="text-white hover:text-black">
                         <i class="fa-solid fa-chart-line"></i>
-                            Monitoreo Desempeño
+                            Performance monitoring
                         </h4>
                     </button>
                 </div>
@@ -154,7 +152,7 @@
                     <button class="flex flex-row space-x-3">
                         <h4 class="text-white hover:text-black">
                         <i class="fa-solid fa-coins"></i>
-                            Recursos
+                            Resources
                         </h4>
                     </button>
                 </div>
@@ -163,7 +161,7 @@
                     <button class="flex flex-row space-x-3">
                         <h4 class="text-white hover:text-black">
                         <i class="fa-solid fa-flag"></i>
-                            Informes
+                            Information
                         </h4>
                     </button>
                 </div>
@@ -173,7 +171,7 @@
                         <h4 class="text-white hover:text-black">
                         <i class="fa-solid fa-bullhorn"></i>
                             
-                            Comunicación
+                            Communication
                         </h4>
                     </button>
                 </div>
@@ -199,7 +197,7 @@
                                     src="https://cdn.icon-icons.com/icons2/2104/PNG/512/manager_icon_129392.png" 
                                     alt="">
                             </div>
-                            <h4 class="fa-2x font-bold text-gray-500 p-1">Bienvenido <?php echo htmlspecialchars($_SESSION['nombre']); ?></h4>
+                            <h4 class="fa-2x font-bold text-gray-500 p-1">welcome <?php echo htmlspecialchars($_SESSION['nombre']); ?></h4>
                         </div>
                         <!-- Aqui va a ir el correo del admin-->
                         <div class="text-sm text-gray-500 p-1">
@@ -210,7 +208,52 @@
                             <p class="text-gray-400 p-1 text-right" id="current-date-time"></p> 
                         </div>
                     </div>
-                    
+                    <div class="min-h-screen bg-blue-50">
+                        <div class="mt-8 grid gap-10 lg:grid-cols-3 sm-grid-cols-2 p-4">
+                            <!-- El panel inicia aqui -->
+                            <div class="flex items-center bg-white rounded shadow-sm justify-between p-5">
+                                <div class="text-sm text-gray-400">Total number of teachear
+                                    <div class="text-3x1 font-medium text-gray-600 p-1">34</div>
+                                </div>
+                                <div class="text-pink-500">
+                                    <i class="fa-solid fa-circle-arrow-left fa-2x"></i>
+                                </div>
+                            </div>
+                            <div class="flex items-center bg-white rounded shadow-sm justify-between p-5">
+                                <div class="text-sm text-gray-400">Total number of students
+                                    <div class="text-3x1 font-medium text-gray-600 p-1">223</div>
+                                </div>
+                                <div class="text-pink-500">
+                                    <i class="fa-solid fa-circle-arrow-right fa-2x"></i>
+                                </div>
+                            </div>
+                            <div class="flex items-center bg-white rounded shadow-sm justify-between p-5">
+                                <div class="text-sm text-gray-400">Total number of donators
+                                    <div class="text-3x1 font-medium text-gray-600 p-1">91283</div>
+                                </div>
+                                <div class="text-pink-500">
+                                    <i class="fa-solid fa-house-user fa-2x"></i>                                
+                                </div>
+                            </div>
+                            <!-- El segundo componente termina aqui -->
+                        </div>
+                        <!-- Otro va a iniciar aqui -->
+
+                        <div class="mt-5 grid lg:grid-cols-3 md:grid-cols-3 p-4 gap-3">
+                            <div class="col-span-2 bg-white p-8 flex-col rounded shadow-sm">
+                                <b class="flex flex-row text-gray-500">Student graphics</b>
+                                <canvas class="p-5" id="chartLine"></canvas>
+                            </div>
+
+                            <div class="flex flex-col p-8 bg-white rounded shadow-sm">
+                                <b class="flex flex-row text-gray-500">Occupation percentage</b>
+                                <canvas class="p-5" id="chartRadar"></canvas>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </div>
             </div>
     </div>
     <!-- Script para jalar el javascripts.js-->

@@ -28,35 +28,24 @@ actualizarFechaHora();
 // Actualizar la hora cada segundo
 setInterval(actualizarFechaHora, 1000);
 
-//Scrip para desplegar la seccion
-document
-  .getElementById("toggleUsuarios")
-  .addEventListener("click", function () {
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Aquí va todo el código de addEventListener
+  document.getElementById("toggleUsuarios").addEventListener("click", function () {
     var submenu = document.getElementById("submenu");
     submenu.classList.toggle("hidden");
   });
 
-// Manejo del submenu de Actividades
-document
-  .getElementById("toggleActividades")
-  .addEventListener("click", function () {
+  document.getElementById("toggleActividades").addEventListener("click", function () {
     var submenu = document.getElementById("submenuActividades");
     submenu.classList.toggle("hidden");
   });
 
-// Manejo del submenu de Materias
-document
-  .getElementById("toggleMaterias")
-  .addEventListener("click", function () {
+  document.getElementById("toggleMaterias").addEventListener("click", function () {
     var submenu = document.getElementById("submenuMaterias");
     submenu.classList.toggle("hidden");
   });
-
-/*
-    Scrip para la grafica, se va a cambiar luego cuando 
-    tengamos los datos de las personas registradas uotras cosas 
-    */
-
+});
 const labels = ["January", "February", "March", "April", "May", "June"];
 const data = {
   labels: labels,

@@ -9,7 +9,7 @@ $resultado = $obj->consultar();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List user</title>
+    <title>Lista de Usuarios</title>
     <!-- Script para usar tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Script para usar la biblioteca de Font Awesome -->
@@ -17,14 +17,14 @@ $resultado = $obj->consultar();
 </head>
 <body class="bg-gray-100 p-8">
     <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-        <h1 class="text-2xl font-bold mb-6">List user</h1>
+        <h1 class="text-2xl font-bold mb-6">Lista de Usuarios</h1>
         <table class="min-w-full table-auto border-collapse border border-gray-300 rounded-lg overflow-hidden shadow">
             <thead>
                 <tr class="bg-green-600 text-white">
-                    <th class="px-6 py-3 text-left">Name</th>
-                    <th class="px-6 py-3 text-left">Email</th>
-                    <th class="px-6 py-3 text-left">Age</th>
-                    <th class="px-6 py-3 text-left">Gender</th>
+                    <th class="px-6 py-3 text-left">Nombre</th>
+                    <th class="px-6 py-3 text-left">Correo</th>
+                    <th class="px-6 py-3 text-left">Edad</th>
+                    <th class="px-6 py-3 text-left">Género</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,7 +42,7 @@ $resultado = $obj->consultar();
         <a href="dashboard.php" class="inline-block mt-4">
             <button class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 ">
                 <i class="fa-solid fa-arrow-left"></i>
-                Go back
+                Regresar
             </button>
         </a>
     </div>

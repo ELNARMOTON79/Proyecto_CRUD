@@ -8,18 +8,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-cover bg-center h-screen" style="background-image: url('SRC/fondo.jpg');">
+<body class="bg-cover bg-center h-screen" style="background-image: url('SRC/EDU4ALL 2.png');">
   <div class="flex items-center justify-center h-full">
-    <div class="relative bg-white bg-opacity-90 p-8 rounded-lg shadow-md max-w-md w-full">
-      
+    <div class="relative bg-white p-8 rounded-lg shadow-md max-w-md w-full" style="box-shadow: 0 0 20px 5px rgba(34, 197, 94, 0.5);">
       <!-- Iconos de casita y tacha -->
       <div class="absolute top-0 right-0 mt-2 mr-2 flex space-x-4">
           <!-- Icono de casita en color verde -->
-          <a href="index.php" class="text-green-500 hover:text-green-700">
+          <a href="logins/login.php" class="text-green-500 hover:text-green-700">
               <i class="fas fa-home fa-lg"></i>
           </a>
       </div>
-      
 
       <!-- Título del formulario -->
       <h1 class="text-2xl font-bold text-green-600 mb-6 text-center">Join Us</h1>
@@ -67,6 +65,7 @@
   </div>
 </body>
 </html>
+
 <?php
   if (isset($_POST['enviar'])){
     $name = $_POST['name'];
