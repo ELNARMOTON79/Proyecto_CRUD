@@ -88,6 +88,11 @@
             $this->sentencia = "INSERT INTO programas (nombre_materia, objetivos, unidad) VALUES ('$nombre_materia', '$objetivo', '$unidad')";
             return $this->ejecutar_sentencia();
         }
+        //metodo para eliminar actividades.
+        public function eliminar_actividades($id){
+            $this->sentencia = "DELETE FROM actividades WHERE id = '$id'";
+             return $this->ejecutar_sentencia();
+        }
     }
     
     
