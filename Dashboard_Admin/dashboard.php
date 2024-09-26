@@ -122,10 +122,8 @@
                     <div id="submenuMaterias" class="ml-6 mt-2 hidden">
                         <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-pen"></i>
-                            Crear Materias</a>
+                            Create Subjects</a>
                         <a href="listarmaterias.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
-                            Create Subject</a>
-                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-clipboard-list"></i>
                             List Subject
                         </a>
