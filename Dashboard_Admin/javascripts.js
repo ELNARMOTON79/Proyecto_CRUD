@@ -28,6 +28,7 @@ actualizarFechaHora();
 // Actualizar la hora cada segundo
 setInterval(actualizarFechaHora, 1000);
 
+
 document.addEventListener("DOMContentLoaded", function () {
   // Aquí va todo el código de addEventListener
   document.getElementById("toggleUsuarios").addEventListener("click", function () {
@@ -45,12 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
     submenu.classList.toggle("hidden");
   });
 });
-
-/*
-    Scrip para la grafica, se va a cambiar luego cuando 
-    tengamos los datos de las personas registradas uotras cosas 
-    */
-
 const labels = ["January", "February", "March", "April", "May", "June"];
 const data = {
   labels: labels,
