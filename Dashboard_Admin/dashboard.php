@@ -78,7 +78,7 @@
                             Modify user</a>
                         <a href="listausuarios.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-list-check"></i>
-                            List User</a>
+                            List user</a>
 
                         <a href="eliminarusuario.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-user-xmark"></i>
