@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-cover bg-center h-screen" style="background-image: url('SRC/imagendifuminada2.png');">
+<body class="bg-cover bg-center h-screen" style="background-image: url('SRC/EDU4ALL 2.png');">
   <div class="flex items-center justify-center h-full">
     <div class="relative bg-white p-8 rounded-lg shadow-md max-w-md w-full" style="box-shadow: 0 0 20px 5px rgba(34, 197, 94, 0.5);">
       <!-- Iconos de casita y tacha -->

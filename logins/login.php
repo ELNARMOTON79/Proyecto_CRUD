@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../styles/logins.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-cover bg-center" style="background-image: url('../SRC/imagendifuminada.png');">
+<body class="bg-cover bg-center" style="background-image: url('../SRC/EDU4ALL.png');">
 
     <div class="Fondo relative">
        <!-- Icono de casa y tacha -->
