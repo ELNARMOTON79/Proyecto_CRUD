@@ -111,8 +111,32 @@
                             Delete activities
                         </a>
                     </div>
-                </div>             
-
+                </div>
+                <div class="p-2 hover:bg-green-700 text-white rounded-md transition duration-500 ease-in-out">
+                    <button id="toggleMaterias" class="flex flex-row space-x-3 w-full focus:outline-none">
+                        <span class="text-white hover:text-black ">
+                        <i class="fa-solid fa-book"></i>
+                            Subjects
+                        </span>
+                    </button>
+                    <div id="submenuMaterias" class="ml-6 mt-2 hidden">
+                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                        <i class="fa-solid fa-pen"></i>
+                            Create Subject</a>
+                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                            List Subject
+                        </a>
+                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                        <i class="fa-sharp fa-solid fa-gears"></i>
+                            Modify Subject
+                        </a>
+                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                        <i class="fa-solid fa-trash-can"></i>
+                            Delete Subject
+                        </a>
+                    </div>
+                </div>
                 <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
                     <button class="flex flex-row space-x-3">
                         <h4 class="text-white hover:text-black">
