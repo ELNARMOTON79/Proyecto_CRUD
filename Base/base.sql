@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-09-2024 a las 04:51:07
+-- Tiempo de generación: 26-09-2024 a las 15:57:54
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.0.30
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -118,6 +118,24 @@ CREATE TABLE `programas` (
   `unidad` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `programas`
+--
+
+INSERT INTO `programas` (`id`, `nombre_materia`, `objetivos`, `actividades`, `unidad`) VALUES
+(1, 'ejeeee', 'eeeejee', NULL, '2434'),
+(2, 'Ejemplo22', 'testeo22', NULL, '234423424'),
+(3, 'wefffwef', 'sfgdfgsdgsg', NULL, '13765334'),
+(4, 'Ejemplo111', 'eeeejee1111', NULL, '1245467434'),
+(5, 'ferggdgdg', 'dfsdfsdfsdf', NULL, '1274576'),
+(6, 'fsofijsdij', 'oijodifsod', NULL, '35'),
+(7, 'pwjpdfnsdkn', 'pknfkdnlskdfnlsdk', NULL, '684984'),
+(8, 'dgfdpsdmspdofspd', 'npwfkdnfskdnfslkn', NULL, '6469864'),
+(9, 'osijgisjgpsojg', 'ofpeinpsdkvn', NULL, '65654654'),
+(10, 'spgsmgpsnmgsmd', 'osnsndgljsndgl', NULL, '4884561'),
+(11, 'dkfpofbmdfknbdkfbn', 'dnslknlksdgns', NULL, '49849841'),
+(12, 'fglmdñlmdñblb', 'ñlsñlvmsñdlm', NULL, '984165');
+
 -- --------------------------------------------------------
 
 --
@@ -153,8 +171,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `password`, `genero`, `edad`, `tipo_usuario`, `fecha_nac`) VALUES
-(1, 'rafa', 'rvuelvas@ucol.mx', '14122005', 'hombre', 18, 'admin', '2005-12-14'),
-(2, 'samis', 'hguzman@ucol.mx', '123456', 'mujer', 21, 'teacher', '2002-12-13'),
+(1, 'rafa', 'rvuelvas@ucol.mx', '14122005', 'Mujer', 21, 'admin', '2005-12-14'),
+(2, 'samis', 'hguzman@ucol.mx', '123456', 'Mujer', 25, 'teacher', '2002-12-13'),
 (3, 'Gerardo', 'ggutierrez@ucol.mx', '123456', 'hombre', 24, 'cordinator', '1999-12-17');
 
 --
@@ -225,6 +243,12 @@ ALTER TABLE `usuarios`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `programas`
+--
+ALTER TABLE `programas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `reporte_gastos`
