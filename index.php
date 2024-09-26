@@ -77,18 +77,6 @@
     </div>
   </section>
 
-  <section class="about section">
-    <h2>Por que rafa es gey?</h2>
-    <p>La orientación sexual, incluyendo ser gay, es una parte natural y personal de quién es una persona. Ser gay significa que alguien se siente atraído emocional y/o físicamente hacia personas del mismo género. No es algo que se elige o que puede ser cambiado; es simplemente una parte de la identidad de alguien,
-    como lo son otras características personales, como la personalidad o las preferencias.
-Cada persona es única y la orientación sexual es solo una de las muchas cosas que conforman a un individuo. Lo más importante es recordar que la orientación sexual no define completamente a una persona y no cambia el valor o la importancia de la amistad. Ser amigo de alguien significa aceptar y apoyar a esa persona por quien es, independientemente de su orientación sexual.
-
-Si tienes preguntas sobre esto, es útil hablar con tu amigo de manera abierta y respetuosa, si ambos se sienten cómodos. La comprensión y la aceptación son clave en cualquier relación..</p>
-    <p>.</p>
-    <p></p>
-    <p></p>
-  </section>
-
   <script src="swiper-bundle.min.js"></script>
   <script src="main.js"></script>
 
