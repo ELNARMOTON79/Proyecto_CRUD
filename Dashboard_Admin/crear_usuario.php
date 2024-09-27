@@ -81,7 +81,7 @@
     $password = $_POST['password'];
     $gender = $_POST['gender'];
     $role = $_POST['role'];
-    require_once("Conexion/contacto.php");
+    require_once("../Conexion/contacto.php");
     $obj = new contacto();
     $obj-> subir_users($name, $age, $email, $password, $gender, $role);
     echo "Datos Guardados";

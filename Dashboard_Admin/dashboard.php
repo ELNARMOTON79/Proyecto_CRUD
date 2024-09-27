@@ -29,6 +29,7 @@
         <?php
             include 'mensaje_bienvenida.php';
         ?>
+        
     </div>
     <!-- Script para jalar el javascripts.js-->
     <script src="javascripts.js"></script>
