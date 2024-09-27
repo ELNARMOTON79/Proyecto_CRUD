@@ -9,8 +9,8 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-cover bg-center h-screen" style="background-image: url('SRC/EDU4ALL 2.png');">
-  <div class="flex items-center justify-center h-full">
-    <div class="relative bg-white p-8 rounded-lg shadow-md max-w-md w-full" style="box-shadow: 0 0 20px 5px rgba(34, 197, 94, 0.5);">
+<div class="flex items-center justify-center h-full bg-black bg-opacity-50">
+    <div class="relative bg-white p-8 rounded-lg shadow-md max-w-md w-full">
       <!-- Iconos de casita y tacha -->
       <div class="absolute top-0 right-0 mt-2 mr-2 flex space-x-4">
           <!-- Icono de casita en color verde -->
@@ -56,6 +56,10 @@
             <option value="teacher">Teacher</option>
             <option value="student">Student</option>
           </select>
+        </div>
+        <div class="mt-4 flex items-center">
+          <input type="checkbox" id="terms" name="terms" required class="h-4 w-4 text-green-500">
+          <label for="terms" class="ml-2 text-gray-700">I accept the <a href="#" class="text-green-500 underline">Terms and Conditions</a></label>
         </div>
         <div class="flex justify-center">
           <button type="submit" name="enviar" class="mt-4 px-4 py-2 bg-green-600 text-white font-semibold rounded-md shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">Submit</button>
