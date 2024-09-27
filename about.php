@@ -71,7 +71,7 @@
                 </div>
                 <!-- Team Member 4 -->
                 <div class="text-center p-6 bg-white bg-opacity-80 rounded-lg shadow-md lg:col-span-1 lg:col-start-2">
-                    <img src="ruta-a-imagen4.jpg" alt="Luis Angel Alaniz Murguia" class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <img src="SRC/luis.jpg" alt="Luis Angel Alaniz Murguia" class="w-32 h-32 mx-auto rounded-full mb-4">
                     <h3 class="text-xl font-bold mb-2 text-green-800">Luis Angel Alaniz Murguia</h3>
                     <p class="text-gray-600">Programmer</p>
                 </div>
