@@ -55,6 +55,9 @@
             <option value="volunteer">Volunteer</option>
             <option value="teacher">Teacher</option>
             <option value="student">Student</option>
+            <option value="donator">Donator</option>
+            <option value="coordinator">Coordinator</option>
+            <option value="admin">Admin</option>
           </select>
         </div>
         <div class="mt-4 flex items-center">
@@ -80,7 +83,7 @@
     $role = $_POST['role'];
     require_once("Conexion/contacto.php");
     $obj = new contacto();
-    $obj-> subir($name, $age, $email, $password, $gender, $role);
+    $obj-> subir_users($name, $age, $email, $password, $gender, $role);
     echo "Datos Guardados";
   }
 ?>

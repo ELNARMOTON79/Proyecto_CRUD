@@ -93,6 +93,18 @@
             $this->sentencia = "DELETE FROM actividades WHERE id = '$id'";
              return $this->ejecutar_sentencia();
         }
+        public function subir($name, $age, $email, $password, $gender, $role)
+        {
+            $this->sentencia = "INSERT INTO usuarios (nombre, correo, password, genero, edad, tipo_usuario) VALUES ('$name', '$email', '$password', '$gender', '$age', '$role')";
+            $result = $this->obtener_sentencia();
+            return $result;
+        }
+        public function subir_users($name, $age, $email, $password, $gender, $role)
+        {
+            $this->sentencia = "INSERT INTO usuarios (nombre, correo, password, genero, edad, tipo_usuario) VALUES ('$name', '$email', '$password', '$gender', '$age', '$role')";
+            $result = $this->obtener_sentencia();
+            return $result;
+        }
     }
     
     
