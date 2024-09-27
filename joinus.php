@@ -59,7 +59,7 @@
         </div>
         <div class="mt-4 flex items-center">
           <input type="checkbox" id="terms" name="terms" required class="h-4 w-4 text-green-500">
-          <label for="terms" class="ml-2 text-gray-700">I accept the <a href="#" class="text-green-500 underline">Terms and Conditions</a></label>
+          <label for="terms" class="ml-2 text-gray-700">I accept the <a href="SRC/Politica_de_privacidad_Edu4All.pdf" class="text-green-500 underline">Terms and Conditions</a></label>
         </div>
         <div class="flex justify-center">
           <button type="submit" name="enviar" class="mt-4 px-4 py-2 bg-green-600 text-white font-semibold rounded-md shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">Submit</button>
