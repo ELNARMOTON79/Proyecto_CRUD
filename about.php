@@ -1,98 +1,92 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edu4All About Us</title>
+    <title>About Us - Edu 4 All</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/style_about.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<body class="flex flex-col min-h-screen bg-cover bg-center" style="background-image: url('SRC/About/about1.png');">
+<body class="bg-cover bg-center bg-no-repeat text-gray-800" style="background-image: url('SRC/About/about1.png');">
+    <!-- Navbar (Incluido desde PHP) -->
     <?php include 'navbar.php'; ?>
 
-    <!-- Hero Section -->
-    <section class="hero"></section> <br><br><br>
+    <!-- Main Content -->
+    <main class="container mx-auto bg-white bg-opacity-80 rounded-lg p-6 mt-20 mb-20 shadow-md">
+        <!-- Our Mission Section -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-4 text-green-600">Our Mission</h2>
+            <p class="text-lg text-center text-gray-700">
+                At Edu 4 All, we believe that quality education should be accessible to everyone, regardless of their background or location. Our mission is to break down barriers to learning and create a global community of lifelong learners.
+            </p>
+        </section>
 
-    <!-- Mission Statement -->
-    <section class="mission">
-        <div class="container text-center">
-            <h2>Our Mission</h2>
-            <p>At Edu 4 All, we believe that quality education should be accessible to everyone, regardless of their background or location. Our mission is to break down barriers to learning and create a global community of lifelong learners.</p>
-        </div>
-    </section>
+        <!-- What We Offer Section -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8 text-green-600">What We Offer</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Diverse Courses -->
+                <div class="text-center p-6 bg-white bg-opacity-80 rounded-lg shadow-md">
+                    <div class="text-6xl mb-4 text-green-600">📚</div>
+                    <h3 class="text-xl font-bold mb-2 text-green-700">Diverse Courses</h3>
+                    <p class="text-gray-600">Wide range of subjects for all interests and skill levels</p>
+                </div>
+                <!-- Global Community -->
+                <div class="text-center p-6 bg-white bg-opacity-80 rounded-lg shadow-md">
+                    <div class="text-6xl mb-4 text-green-600">👥</div>
+                    <h3 class="text-xl font-bold mb-2 text-green-800">Global Community</h3>
+                    <p class="text-gray-600">Connect with learners and educators worldwide</p>
+                </div>
+                <!-- Accessible Learning -->
+                <div class="text-center p-6 bg-white bg-opacity-80 rounded-lg shadow-md">
+                    <div class="text-6xl mb-4 text-green-600">🌐</div>
+                    <h3 class="text-xl font-bold mb-2 text-green-800">Accessible Learning</h3>
+                    <p class="text-gray-600">Learn anytime, anywhere with our flexible online platform</p>
+                </div>
+            </div>
+        </section>
 
-    <section class="features">
-    <div class="container">
-        <div class="text-center bg-white/30 backdrop-blur-lg p-4 rounded-lg">
-        <h2 class="text-center text-4xl font-bold mb-8">what we offer</h2>
-           
-        </div>
-        <div class="feature-grid">
-            <div class="feature-item">
-                <div class="feature-icon">📚</div>
-                <h3>Diverse Courses</h3>
-                <p>Wide range of subjects for all interests and skill levels</p>
+        <!-- Meet Our Team Section -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8 text-green-600">Meet Our Team</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="text-center p-6 bg-white bg-opacity-80 rounded-lg shadow-md">
+                    <img src="SRC/rafa.jpg" alt="Rafael Alexandro Vuelvas Pérez" class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h3 class="text-xl font-bold mb-2 text-green-800">Rafael Alexandro Vuelvas Pérez</h3>
+                    <p class="text-gray-600">Programmer</p>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="text-center p-6 bg-white bg-opacity-80 rounded-lg shadow-md">
+                    <img src="SRC/heidy.jpg" alt="Heidy Samantha Guzmán Márquez" class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h3 class="text-xl font-bold mb-2 text-green-800">Heidy Samantha Guzmán Márquez</h3>
+                    <p class="text-gray-600">Programmer</p>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="text-center p-6 bg-white bg-opacity-80 rounded-lg shadow-md">
+                    <img src="ruta-a-imagen3.jpg" alt="Gerardo Adonai Gutierrez Rúa" class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h3 class="text-xl font-bold mb-2 text-green-800">Gerardo Adonai Gutierrez Rúa</h3>
+                    <p class="text-gray-600">Programmer</p>
+                </div>
+                <!-- Team Member 4 -->
+                <div class="text-center p-6 bg-white bg-opacity-80 rounded-lg shadow-md lg:col-span-1 lg:col-start-2">
+                    <img src="ruta-a-imagen4.jpg" alt="Luis Angel Alaniz Murguia" class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h3 class="text-xl font-bold mb-2 text-green-800">Luis Angel Alaniz Murguia</h3>
+                    <p class="text-gray-600">Programmer</p>
+                </div>
+                <!-- Team Member 5 -->
+                <div class="text-center p-6 bg-white bg-opacity-80 rounded-lg shadow-md lg:col-span-1 lg:col-start-3">
+                    <img src="SRC/jesus.jpg" alt="Jesus Guadalupe Rivera Meza" class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h3 class="text-xl font-bold mb-2 text-green-800">Jesus Guadalupe Rivera Meza</h3>
+                    <p class="text-gray-600">Programmer</p>
+                </div>
             </div>
-            <div class="feature-item">
-                <div class="feature-icon">👥</div>
-                <h3>Global Community</h3>
-                <p>Connect with learners and educators worldwide</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">🌐</div>
-                <h3>Accessible Learning</h3>
-                <p>Learn anytime, anywhere with our flexible online platform</p>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
+    </main>
 
-
-    <!-- Team Section -->
-<section class="team py-12">
-    <div class="container mx-auto">
-    <div class="text-center bg-white/30 backdrop-blur-lg p-4 rounded-lg">
-    <h2 class="text-center text-4xl font-bold mb-8">Meet Our Team</h2> 
- </div>
- <br></br>
-        <div class="flex flex-wrap justify-center items-center gap-8">
-        <div class="team-member text-center">
-                <img src="SRC/rafa.jpg" alt="Rafa" class="mx-auto rounded-full">
-                <h3 class="text-2xl mt-4">Rafael Alexandro Vuelvas Pérez</h3>
-                <p class="text-gray-600">programmer</p>
-            </div>
-            <div class="team-member text-center">
-                <img src="SRC/heidy.jpg" alt="Heidy" class="mx-auto rounded-full">
-                <h3 class="text-2xl mt-4">Heidy Samantha Guzmán Márquez</h3>
-                <p class="text-gray-600">Programmer</p>
-            </div>
-            <div class="team-member text-center">
-                <img src="" alt="Gerardo" height="200" width="200" class="mx-auto rounded-full">
-                <h3 class="text-2xl mt-4">Gerardo Adonai Gutierrez Rúa</h3>
-                <p class="text-gray-600">Programmer</p>
-            </div>
-            <div class="team-member text-center">
-                <img src="" alt="Luis" class="mx-auto rounded-full">
-                <h3 class="text-2xl mt-4">Luis Angel Alaniz Murguia</h3>
-                <p class="text-gray-600">Programmer</p>
-            </div>
-            <div class="team-member text-center">
-                <img src="SRC/jesus.jpg" alt="Jesus" class="mx-auto rounded-full">
-                <h3 class="text-2xl mt-4">Jesus Guadalupe Rivera Meza</h3>
-                <p class="text-gray-600">Programmer</p>
-            </div>
-        </div>
-    </div>
-</section>
-    
+    <!-- Footer (Incluido desde PHP) -->
     <?php include 'footer.php'; ?>
-
 </body>
 
 </html>

@@ -10,7 +10,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-<header class="bg-primary text-primary-foreground p-4">
+<header class="bg-primary text-primary-foreground p-4 backdrop-blur-lg bg-opacity-60">
   <div class="nav-bar container mx-auto flex items-center justify-between">
     <div class="flex items-center">
       <a href="index.php" class="logo flex items-center text-2xl font-bold">
