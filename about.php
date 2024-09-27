@@ -63,29 +63,29 @@
  <br></br>
         <div class="flex flex-wrap justify-center items-center gap-8">
         <div class="team-member text-center">
-                <img src="/placeholder.svg?height=200&width=200" alt="Heydi la Cpera" class="mx-auto rounded-full">
-                <h3 class="text-2xl mt-4">Rafa (Lider)</h3>
-                <p class="text-gray-600">Experta creadora de CP y co Founder</p>
+                <img src="SRC/rafa.jpg" alt="Rafa" class="mx-auto rounded-full">
+                <h3 class="text-2xl mt-4">Rafael Alexandro Vuelvas Pérez</h3>
+                <p class="text-gray-600">programmer</p>
             </div>
             <div class="team-member text-center">
-                <img src="/placeholder.svg?height=200&width=200" alt="Heydi la Cpera" class="mx-auto rounded-full">
-                <h3 class="text-2xl mt-4">Heydi</h3>
-                <p class="text-gray-600">Experta creadora de CP y co Founder</p>
+                <img src="SRC/heidy.jpg" alt="Heidy" class="mx-auto rounded-full">
+                <h3 class="text-2xl mt-4">Heidy Samantha Guzmán Márquez</h3>
+                <p class="text-gray-600">Programmer</p>
             </div>
             <div class="team-member text-center">
-                <img src="SRC/About/imagen9.jpg" alt="ToolKid" height="200" width="200" class="mx-auto rounded-full">
-                <h3 class="text-2xl mt-4">ToolKid👻</h3>
-                <p class="text-gray-600">Director of Global Partnerships de CP</p>
+                <img src="" alt="Gerardo" height="200" width="200" class="mx-auto rounded-full">
+                <h3 class="text-2xl mt-4">Gerardo Adonai Gutierrez Rúa</h3>
+                <p class="text-gray-600">Programmer</p>
             </div>
             <div class="team-member text-center">
-                <img src="/placeholder.svg?height=200&width=200" alt="Heydi la Cpera" class="mx-auto rounded-full">
-                <h3 class="text-2xl mt-4">Luis</h3>
-                <p class="text-gray-600">Experta creadora de CP y co Founder</p>
+                <img src="" alt="Luis" class="mx-auto rounded-full">
+                <h3 class="text-2xl mt-4">Luis Angel Alaniz Murguia</h3>
+                <p class="text-gray-600">Programmer</p>
             </div>
             <div class="team-member text-center">
-                <img src="/placeholder.svg?height=200&width=200" alt="Heydi la Cpera" class="mx-auto rounded-full">
-                <h3 class="text-2xl mt-4">Jesus</h3>
-                <p class="text-gray-600">Experta creadora de CP y co Founder</p>
+                <img src="SRC/jesus.jpg" alt="Jesus" class="mx-auto rounded-full">
+                <h3 class="text-2xl mt-4">Jesus Guadalupe Rivera Meza</h3>
+                <p class="text-gray-600">Programmer</p>
             </div>
         </div>
     </div>
