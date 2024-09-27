@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="swiper-slide dark-layer">
-          <img src="SRC/Carrucel/2.png" alt="">
+          <img src="SRC/Carrucel/10.png" alt="">
           <div class="text-content">
             <h2 class="title">Edu4All</h2>
             <p>Edu4All es una plataforma educativa creada para asegurar que todos los niños tengan acceso
@@ -70,7 +70,7 @@
     <div class="bg-slider-thumbs">
       <div class="swiper-wrapper thumbs-container">
         <img src="SRC/Carrucel/1.png" class="swiper-slide" alt="">
-        <img src="SRC/Carrucel/2.png" class="swiper-slide" alt="">
+        <img src="SRC/Carrucel/10.png" class="swiper-slide" alt="">
         <img src="SRC/Carrucel/3.png" class="swiper-slide" alt="">
         <img src="SRC/Carrucel/4.png" class="swiper-slide" alt="">
       </div>
