@@ -15,27 +15,6 @@ $resultado = $obj->consultar_actividades();
     <!-- Script para usar la biblioteca de Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<<<<<<< HEAD
-<body>
-    <div></div>
-    <table>
-        <tr>
-            <th>name</th>
-            <th>Description</th>
-            <th>Subject</th>
-            <th>Date</th>
-        </tr>
-        <?php while ($registro = $resultado->fetch_assoc()): ?>
-            <tr>
-                <td><?php echo $registro["nombre_actividad"]; ?></td>
-                <td><?php echo $registro["descripcion"]; ?></td>
-                <td><?php echo $registro["fk_materia"]; ?></td>
-                <td><?php echo $registro["fecha"]; ?></td>
-            
-            </tr>
-        <?php endwhile; ?>
-    </table>
-=======
 <body class="bg-gray-100 p-8">
     <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
         <h1 class="text-2xl font-bold mb-6">List user</h1>
@@ -46,7 +25,6 @@ $resultado = $obj->consultar_actividades();
                     <th class="px-6 py-3 text-left">Description</th>
                     <th class="px-6 py-3 text-left">Subject</th>
                     <th class="px-6 py-3 text-left">Date</th>
-                    <th class="px-6 py-3 text-left">Duration</th>
                 </tr>
             </thead>
             <tbody>
@@ -56,12 +34,10 @@ $resultado = $obj->consultar_actividades();
                         <td class="px-6 py-4"><?php echo htmlspecialchars($registro["descripcion"]); ?></td>
                         <td class="px-6 py-4"><?php echo htmlspecialchars($registro["fk_materia"]); ?></td>
                         <td class="px-6 py-4"><?php echo htmlspecialchars($registro["fecha"]); ?></td>
-                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["duracion"]); ?></td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>
         </table>
-        <p>No activities found.</p>
         <br>
         <a href="dashboard.php" class="inline-block mt-4">
             <button class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500">
@@ -70,6 +46,5 @@ $resultado = $obj->consultar_actividades();
             </button>
         </a>
     </div>
->>>>>>> 127a1ee3a8e78be47dbdda75328b50c4b5a1706d
 </body>
 </html>
