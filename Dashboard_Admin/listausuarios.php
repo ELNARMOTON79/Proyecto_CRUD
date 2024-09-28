@@ -30,15 +30,15 @@ $resultado = $obj->consultar();
             <tbody>
                 <?php while ($registro = $resultado->fetch_assoc()): ?>
                     <tr class="even:bg-gray-100 hover:bg-gray-200">
-                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["Name"]); ?></td>
-                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["E-mail"]); ?></td>
-                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["Age"]); ?></td>
-                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["Gender"]); ?></td>
+                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["nombre"]); ?></td>
+                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["correo"]); ?></td>
+                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["edad"]); ?></td>
+                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["genero"]); ?></td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>
         </table>
-        <p>No activities found.</p>
+
         <br>
         <a href="dashboard.php" class="inline-block mt-4">
             <button class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500">

@@ -52,11 +52,11 @@ $resultado = $obj->consultar_actividades();
             <tbody>
                 <?php while ($registro = $resultado->fetch_assoc()): ?>
                     <tr class="even:bg-gray-100 hover:bg-gray-200">
-                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["Name"]); ?></td>
-                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["Description"]); ?></td>
-                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["Subject"]); ?></td>
-                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["Date"]); ?></td>
-                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["Duration"]); ?></td>
+                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["nombre_actividad"]); ?></td>
+                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["descripcion"]); ?></td>
+                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["fk_materia"]); ?></td>
+                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["fecha"]); ?></td>
+                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["duracion"]); ?></td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>
