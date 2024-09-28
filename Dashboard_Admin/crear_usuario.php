@@ -1,8 +1,5 @@
 
-      <h1 class="text-2xl font-bold text-green-600 mb-6 text-center">Join Us</h1>
-
-      <!-- Formulario -->
-      <form action="" method="post" class="max-w-4xl mx-auto mt-10 p-6 space-y-6">
+      <form action="" method="post" class="space-y-4">
         <div>
           <label for="name" class="block text-sm font-medium text-green-600">Name:</label>
           <input type="text" name="name" id="name" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
@@ -47,6 +44,7 @@
           <button type="submit" name="enviar" class="mt-4 px-4 py-2 bg-green-600 text-white font-semibold rounded-md shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">Submit</button>
         </div>
       </form>
+
 
 <?php
   if (isset($_POST['enviar'])){

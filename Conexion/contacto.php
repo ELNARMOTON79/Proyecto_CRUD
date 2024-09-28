@@ -109,7 +109,13 @@
             $result = $this->obtener_sentencia();
             return $result;
         }
+        public function consultaxtipo($tipo_usuario)
+        {
+            $this->sentencia = "SELECT * FROM usuarios WHERE tipo_usuario = '$tipo_usuario'";
+            $result = $this->obtener_sentencia();
+            return $result;
 
+        }
         //Contar total de maestros
         public function total_maestros(){
             $this->sentencia = "SELECT COUNT(*) as total_maestros FROM usuarios WHERE tipo_usuario = 'teacher'";
