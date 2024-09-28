@@ -1,24 +1,24 @@
 <div class="flex-auto ml-64">
                 <div class="flex flex-col">
-                    <div class="flex flex-col bg-white">
-                        <div class="flex flex-row space-x-3">
-                            <!-- La clase translate-y-2 desplaza la imagen 0.5rem (8px) hacia abajo -->
-                            <div class="flex-shrink-0 h-10 w-10 relative">
-                                <img class="ml-3 h-10 w-10 rounded-full translate-y-2" 
-                                    src="https://cdn.icon-icons.com/icons2/2104/PNG/512/manager_icon_129392.png" 
-                                    alt="">
-                            </div>
-                            <h4 class="fa-2x font-bold text-gray-500 p-1">welcome <?php echo htmlspecialchars($_SESSION['nombre']); ?></h4>
+                    <div class="flex items-center bg-white p-4 space-x-4">
+                        <!-- Imagen del usuario -->
+                        <div class="flex-shrink-0 h-16 w-16 relative">
+                            <img class="h-full w-full rounded-full" 
+                                src="https://cdn.icon-icons.com/icons2/2104/PNG/512/manager_icon_129392.png" 
+                                alt="User Avatar">
                         </div>
-                        <!-- Aqui va a ir el correo del admin-->
-                        <div class="text-sm text-gray-500 p-1">
-                            <?php
-                                echo $_SESSION['correo'];
-                            ?>
-                            <!-- Aqui se encuetra para mostrar la fecha -->
-                            <p class="text-gray-400 p-1 text-right" id="current-date-time"></p> 
+                        <!-- Contenedor de bienvenida y correo -->
+                        <div class="flex flex-col justify-center">
+                            <!-- Mensaje de bienvenida -->
+                            <h4 class="text-lg font-bold text-gray-500">Welcome <?php echo htmlspecialchars($_SESSION['nombre']); ?></h4>
+                            <!-- Correo del usuario -->
+                            <div class="text-sm text-gray-500">
+                                <?php echo $_SESSION['correo']; ?>
+                            </div>
                         </div>
                     </div>
+                    <!-- Fecha actual -->
+                    <p class="text-gray-400 text-xs text-right" id="current-date-time"></p>
                     <div class="min-h-screen bg-blue-50">
                         <div class="mt-8 grid gap-10 lg:grid-cols-3 sm-grid-cols-2 p-4">
                             <!-- El panel inicia aqui -->
