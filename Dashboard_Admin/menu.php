@@ -67,7 +67,7 @@
                         <a href="crear_actividades.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-pen"></i>
                             Create activities</a>
-                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                        <a href="listaractividades.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-clipboard-list"></i>
                             List activities
                         </a>
@@ -89,7 +89,7 @@
                         </span>
                     </button>
                     <div id="submenuMaterias" class="ml-6 mt-2 hidden">
-                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                        <a href="crear_materias.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                         <i class="fa-solid fa-pen"></i>
                             Create Subject</a>
                         <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
@@ -120,25 +120,6 @@
                         <h4 class="text-white hover:text-black">
                         <i class="fa-solid fa-coins"></i>
                             Resources
-                        </h4>
-                    </button>
-                </div>
-
-                <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
-                    <button class="flex flex-row space-x-3">
-                        <h4 class="text-white hover:text-black">
-                        <i class="fa-solid fa-flag"></i>
-                            Information
-                        </h4>
-                    </button>
-                </div>
-
-                <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
-                    <button class="flex flex-row space-x-3">
-                        <h4 class="text-white hover:text-black">
-                        <i class="fa-solid fa-bullhorn"></i>
-                            
-                            Communication
                         </h4>
                     </button>
                 </div>
