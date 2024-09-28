@@ -105,6 +105,25 @@
             $result = $this->obtener_sentencia();
             return $result;
         }
+
+        //Contar total de maestros
+        public function total_maestros(){
+            $this->sentencia = "SELECT COUNT(*) as total_maestros FROM usuarios WHERE tipo_usuario = 'teacher'";
+            $result = $this->obtener_sentencia();
+            return $result;
+        }
+        //Contar total de estudiantes
+        public function total_estudiantes(){
+            $this->sentencia = "SELECT COUNT(*) as total_estudiantes FROM usuarios WHERE tipo_usuario = 'student'";
+            $result = $this->obtener_sentencia();
+            return $result;
+        }
+        //Contar total de donadores
+        public function total_donadores(){
+            $this->sentencia = "SELECT COUNT(*) as total_donadores FROM usuarios WHERE tipo_usuario = 'donator'";
+            $result = $this->obtener_sentencia();
+            return $result;
+        }
     }
     
     

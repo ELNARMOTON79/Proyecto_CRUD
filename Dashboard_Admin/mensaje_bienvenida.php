@@ -24,7 +24,7 @@
                             <!-- El panel inicia aqui -->
                             <div class="flex items-center bg-white rounded shadow-sm justify-between p-5">
                                 <div class="text-sm text-gray-400">Total number of teachear
-                                    <div class="text-3x1 font-medium text-gray-600 p-1">34</div>
+                                    <div class="text-3x1 font-medium text-gray-600 p-1"><?php echo total_maestros(); ?></div>
                                 </div>
                                 <div class="text-pink-500">
                                     <i class="fa-solid fa-circle-arrow-left fa-2x"></i>
@@ -32,7 +32,7 @@
                             </div>
                             <div class="flex items-center bg-white rounded shadow-sm justify-between p-5">
                                 <div class="text-sm text-gray-400">Total number of students
-                                    <div class="text-3x1 font-medium text-gray-600 p-1">223</div>
+                                    <div class="text-3x1 font-medium text-gray-600 p-1"><?php echo total_estudiantes(); ?></div>
                                 </div>
                                 <div class="text-pink-500">
                                     <i class="fa-solid fa-circle-arrow-right fa-2x"></i>
@@ -40,13 +40,12 @@
                             </div>
                             <div class="flex items-center bg-white rounded shadow-sm justify-between p-5">
                                 <div class="text-sm text-gray-400">Total number of donators
-                                    <div class="text-3x1 font-medium text-gray-600 p-1">91283</div>
+                                    <div class="text-3x1 font-medium text-gray-600 p-1"><?php echo total_donadores(); ?></div>
                                 </div>
                                 <div class="text-pink-500">
-                                    <i class="fa-solid fa-house-user fa-2x"></i>                                
+                                    <i class="fa-solid fa-circle-arrow-right fa-2x"></i>
                                 </div>
                             </div>
-                            <!-- El segundo componente termina aqui -->
                         </div>
                         <!-- Otro va a iniciar aqui -->
 
