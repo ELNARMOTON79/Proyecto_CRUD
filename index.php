@@ -18,9 +18,9 @@
 
   <section class="home">
     <div class="media-icons">
-      <a href="#"><i class="uil uil-facebook-f"></i></a>
-      <a href="#"><i class="uil uil-instagram"></i></a>
-      <a href="#"><i class="uil uil-twitter"></i></a>
+
+      <a href="https://www.instagram.com/edu4all_oficial/"><i class="uil uil-instagram"></i></a>
+      <a href="https://x.com/CaleidosOficial"><i class="uil uil-twitter"></i></a>
     </div>
 
     <div class="swiper bg-slider">

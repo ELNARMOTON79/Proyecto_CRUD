@@ -16,7 +16,7 @@
         <span class="text-x2 fa-2x font-bold ml-3">Edu4All</span>
         </div> 
         <div>
-            <p class="fa-2x text-lg">Designed, built and maintained by <span class="text-white">ToolKid</span> &copy; 2024</p>
+            <p class="fa-2x text-lg">Designed, built and maintained by <span class="text-white">team 5</span> &copy; 2024</p>
         </div>
     </div>
 </footer>

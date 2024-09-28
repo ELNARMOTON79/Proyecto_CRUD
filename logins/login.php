@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    include 'login_var.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,16 +25,22 @@
                         <i class="fas fa-home fa-lg"></i>
                     </a>
                 </div>
-                <h2 class="text-2xl font-bold mb-6 text-center text-green-600">Login</h2>
+                <a class="logo flex items-center text-2xl font-bold mb-6 text-center text-green-600">
+                <img src="../SRC/logoblanco.png" class="w-17 h-14 mr-3" alt="logo">
+                Login
+
+                </a>
                 <!-- Formulario con método POST para PHP -->
                 <form action="" method="POST">
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="email">E-mail</label>
                         <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" name="email" type="email" placeholder="E-mail" required>
                     </div>
-                    <div class="mb-6">
+                    <div class="mb-6 relative">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Password</label>
                         <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" name="password" type="password" placeholder="Password" required>
+                        <!-- Icono de mostrar/ocultar contraseña -->
+                        <span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="position:absolute; right: 10px; top: 40px; cursor: pointer;"></span>
                     </div>
                     <div class="flex items-center justify-between mb-4">
                         <a class="inline-block align-baseline font-bold text-sm text-green-600 hover:text-green-800" href="#">
@@ -48,9 +59,16 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Script para mostrar/ocultar la contraseña
+        document.querySelector('.toggle-password').addEventListener('click', function (e) {
+            const passwordField = document.querySelector('#password');
+            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordField.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+            this.classList.toggle('fa-eye');
+        });
+    </script>
 </body>
 </html>
-
-<?php
-    include 'login_var.php';
-?>
