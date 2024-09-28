@@ -1,7 +1,4 @@
-<?php
-session_start();
-$tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : 'Invitado';
-?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -21,59 +18,20 @@ $tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : '
                 src="https://cdn.icon-icons.com/icons2/2104/PNG/512/manager_icon_129392.png"
                 alt="">
         </div>
-        <div>
-            <h4 class="font-bold text-gray-500 p-1 py-4">Usted ingresó como <?php echo "$tipo_usuario"; ?></h4>
-        </div>
+        <br><br>
 
         <form action="" method="post" class="space-y-6">
             <div>
                 <label for="nombre_actividad" class="block text-sm font-medium text-gray-700">
-                    <i class="fa-solid fa-tasks mr-2"></i>Nombre Actividad
+                    <i class="fa-solid fa-tasks mr-2"></i>Name Activity
                 </label>
                 <input type="text" name="nombre_actividad" id="nombre_actividad" required
                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
             </div>
-
-            <!-- Fecha de Inicio y Fin -->
-            <div>
-                <label for="fecha_inicio" class="block text-sm font-medium text-gray-700">
-                    <i class="fa-solid fa-calendar mr-2"></i>Fecha de Inicio
-                </label>
-                <input type="date" name="fecha_inicio" id="fecha_inicio" required
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-            </div>
-
-            <div>
-                <label for="fecha_fin" class="block text-sm font-medium text-gray-700">
-                    <i class="fa-solid fa-calendar-alt mr-2"></i>Fecha de Fin
-                </label>
-                <input type="date" name="fecha_fin" id="fecha_fin" required
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-            </div>
-
-            <!-- Hora de Inicio y Fin -->
-            <div>
-                <label for="hora_inicio" class="block text-sm font-medium text-gray-700">
-                    <i class="fa-solid fa-clock mr-2"></i>Hora de Inicio
-                </label>
-                <input type="time" name="hora_inicio" id="hora_inicio" required
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-            </div>
-
-            <div>
-                <label for="hora_fin" class="block text-sm font-medium text-gray-700">
-                    <i class="fa-solid fa-clock mr-2"></i>Hora de Fin
-                </label>
-                <input type="time" name="hora_fin" id="hora_fin" required
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-            </div>
-
-            <!-- Campo oculto para duración en segundos -->
-            <input type="hidden" name="duracion" id="duracion">
-
+            
             <div>
                 <label for="descripcion" class="block text-sm font-medium text-gray-700">
-                    <i class="fa-solid fa-align-left mr-2"></i>Descripción
+                    <i class="fa-solid fa-align-left mr-2"></i>Description
                 </label>
                 <textarea name="descripcion" id="descripcion" required
                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"></textarea>
@@ -101,6 +59,17 @@ $tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : '
                 </select>
             </div>
 
+            <div>
+                <label for="fecha_fin" class="block text-sm font-medium text-gray-700">
+                    <i class="fa-solid fa-calendar-alt mr-2"></i>Final Date
+                </label>
+                <input type="date" name="fecha_fin" id="fecha_fin" required
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+            </div>
+
+            <!-- Campo oculto para duración en segundos -->
+            <input type="hidden" name="duracion" id="duracion">
+            
             <div class="flex justify-end space-x-4 mt-6">
                 <button type="button" onclick="window.location.href='http://localhost/Proyecto_CRUD/Dashboard_Admin/dashboard.php';"
                     class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-200 focus:outline-none transition duration-500">
@@ -116,13 +85,11 @@ $tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : '
             $nombre_actividad = $_POST['nombre_actividad'];
             $descripcion = $_POST['descripcion'];
             $fk_materia = $_POST['fk_materia'];
-            $fecha_inicio = $_POST['fecha_inicio'];
             $fecha_fin = $_POST['fecha_fin'];
-            $duracion = $_POST['duracion'];
 
             require_once("../Conexion/contacto.php");
             $obj = new Contacto();
-            $obj->crear_actividades($nombre_actividad, $descripcion, $fk_materia, "$fecha_inicio a $fecha_fin", $duracion);
+            $obj->crear_actividades($nombre_actividad, $descripcion, $fk_materia, $fecha_fin);
 
             echo "<p class='text-green-600 mt-4'>Actividad creada exitosamente.</p>";
         }

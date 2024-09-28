@@ -43,7 +43,6 @@ $resultado = $obj->consultar_actividades();
             <th>Description</th>
             <th>Subject</th>
             <th>Date</th>
-            <th>Duration</th>
         </tr>
         <?php while ($registro = $resultado->fetch_assoc()): ?>
             <tr>
@@ -51,11 +50,9 @@ $resultado = $obj->consultar_actividades();
                 <td><?php echo $registro["descripcion"]; ?></td>
                 <td><?php echo $registro["fk_materia"]; ?></td>
                 <td><?php echo $registro["fecha"]; ?></td>
-                <td><?php echo $registro["duracion"]; ?></td>
             
             </tr>
         <?php endwhile; ?>
     </table>
-    <p>No activities found.</p>
 </body>
 </html>
