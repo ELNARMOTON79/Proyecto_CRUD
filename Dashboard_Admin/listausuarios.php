@@ -9,7 +9,7 @@ $resultado = $obj->consultar();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Usuarios</title>
+    <title>List user</title>
     <!-- Script para usar tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Script para usar la biblioteca de Font Awesome -->
@@ -17,32 +17,33 @@ $resultado = $obj->consultar();
 </head>
 <body class="bg-gray-100 p-8">
     <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-        <h1 class="text-2xl font-bold mb-6">Lista de Usuarios</h1>
+        <h1 class="text-2xl font-bold mb-6">List user</h1>
         <table class="min-w-full table-auto border-collapse border border-gray-300 rounded-lg overflow-hidden shadow">
             <thead>
                 <tr class="bg-green-600 text-white">
-                    <th class="px-6 py-3 text-left">Nombre</th>
-                    <th class="px-6 py-3 text-left">Correo</th>
-                    <th class="px-6 py-3 text-left">Edad</th>
-                    <th class="px-6 py-3 text-left">Género</th>
+                    <th class="px-6 py-3 text-left">Name</th>
+                    <th class="px-6 py-3 text-left">E-mail</th>
+                    <th class="px-6 py-3 text-left">Age</th>
+                    <th class="px-6 py-3 text-left">Gender</th>
                 </tr>
             </thead>
             <tbody>
                 <?php while ($registro = $resultado->fetch_assoc()): ?>
                     <tr class="even:bg-gray-100 hover:bg-gray-200">
-                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["nombre"]); ?></td>
-                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["correo"]); ?></td>
-                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["edad"]); ?></td>
-                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["genero"]); ?></td>
+                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["Name"]); ?></td>
+                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["E-mail"]); ?></td>
+                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["Age"]); ?></td>
+                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["Gender"]); ?></td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>
         </table>
+        <p>No activities found.</p>
         <br>
         <a href="dashboard.php" class="inline-block mt-4">
             <button class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500">
                 <i class="fa-solid fa-arrow-left"></i>
-                Regresar
+                Go back
             </button>
         </a>
     </div>
