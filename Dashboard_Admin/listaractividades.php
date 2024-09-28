@@ -3,19 +3,6 @@ require_once("../Conexion/contacto.php");
 $obj = new Contacto();
 $resultado = $obj->consultar_actividades();
 ?>
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List user</title>
-    <!-- Script para usar tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Script para usar la biblioteca de Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body class="bg-gray-100 p-8">
     <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
         <h1 class="text-2xl font-bold mb-6">List user</h1>
         <table class="min-w-full table-auto border-collapse border border-gray-300 rounded-lg overflow-hidden shadow">
@@ -46,5 +33,3 @@ $resultado = $obj->consultar_actividades();
             </button>
         </a>
     </div>
-</body>
-</html>

@@ -46,4 +46,19 @@
         }
         return $total_donadores;
     }
+
+    //Show forms para cada acción
+    $showForm0 = isset($_GET['action']) && $_GET['action'] == 'dashboard';
+    $showForm1 = isset($_GET['action']) && $_GET['action'] == 'crear_usuario';
+    $showForm2 = isset($_GET['action']) && $_GET['action'] == 'modificar_usuario';
+    $showForm3 = isset($_GET['action']) && $_GET['action'] == 'listar_usuarios';
+    $showForm4 = isset($_GET['action']) && $_GET['action'] == 'eliminar_usuario';
+    $showForm5 = isset($_GET['action']) && $_GET['action'] == 'crear_actividades';
+    $showForm6 = isset($_GET['action']) && $_GET['action'] == 'listar_actividades';
+    $showForm7 = isset($_GET['action']) && $_GET['action'] == 'modificar_actividades';
+    $showForm8 = isset($_GET['action']) && $_GET['action'] == 'eliminar_actividades';
+    $showForm9 = isset($_GET['action']) && $_GET['action'] == 'crear_materias';
+    $showForm10 = isset($_GET['action']) && $_GET['action'] == 'listar_materias';
+    $showForm11 = isset($_GET['action']) && $_GET['action'] == 'modificar_materias';
+    $showForm12 = isset($_GET['action']) && $_GET['action'] == 'eliminar_materias';
 ?>
