@@ -1,5 +1,5 @@
 
-        <form action="" method="post" class="space-y-6">
+        <form action="" method="post" class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
             <!-- Selección de Actividad -->
             <div class="space-y-2">
                 <label for="actividad" class="block text-sm font-medium text-gray-700">Modificar Actividad</label>
