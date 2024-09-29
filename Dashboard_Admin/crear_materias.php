@@ -1,6 +1,6 @@
 
-
         <form action="" method="post" class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold mb-6">Create Subject</h1>
             <div>
                 <label for="nombre_actividad" class="block text-sm font-medium text-gray-700">
                     <i class="fa-solid fa-tasks mr-2"></i>Name matter

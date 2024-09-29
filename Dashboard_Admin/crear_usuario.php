@@ -1,5 +1,6 @@
 
       <form action="" method="post" class="max-w-4xl mx-auto mt-10 p-6 bg-white rounded-lg shadow space-y-6">
+      <h1 class="text-2xl font-bold mb-6">Create User</h1>
         <div>
           <label for="name" class="block text-sm font-medium text-green-600">Name:</label>
           <input type="text" name="name" id="name" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">

@@ -30,6 +30,7 @@ $totalPaginas = ceil($totalRegistros / $registrosPorPagina);
                     <th class="px-6 py-3 text-left">Objective</th>
                     <th class="px-6 py-3 text-left">Activitie</th>
                     <th class="px-6 py-3 text-left">Unit</th>
+                    <th class="px-6 py-3 text-left">Actions</th>
                 </tr>
             </thead>
             <tbody>
