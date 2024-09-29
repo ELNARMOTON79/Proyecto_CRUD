@@ -23,7 +23,7 @@
         ?>
         <main class="flex-1 p-6">
             <?php
-                if ((!$showForm0 && !$showForm2 && !$showForm3 && !$showForm4 && !$showForm5 && !$showForm6 && !$showForm7 && !$showForm8 && !$showForm9 && !$showForm10 && !$showForm11 && !$showForm12) || $showForm0):
+                if ((!$showForm0 && !$showForm1 && !$showForm2 && !$showForm3 && !$showForm4 && !$showForm5 && !$showForm6 && !$showForm7 && !$showForm8 && !$showForm9 && !$showForm10 && !$showForm11 && !$showForm12) || $showForm0):
                     include 'mensaje_bienvenida.php';
                 endif;
 

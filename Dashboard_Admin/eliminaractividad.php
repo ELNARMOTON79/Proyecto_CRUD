@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliminar Actividades</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 p-8">
+
     <!-- Container for delete activity form -->
-    <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md">
+    <div class="max-w-4xl mx-auto mt-10 p-6 bg-white rounded-lg shadow space-y-6">
         <div class="flex items-center mb-6">
-            <img class="h-10 w-10 rounded-full" src="https://cdn.icon-icons.com/icons2/2104/PNG/512/manager_icon_129392.png" alt="Icono de usuario">
             <h4 class="font-bold text-green-500 ml-4">Eliminar Actividades</h4>
         </div>
 
@@ -95,5 +86,4 @@
             }
         }, 5000); // 5000 ms = 5 seconds
     </script>
-</body>
-</html>
+
