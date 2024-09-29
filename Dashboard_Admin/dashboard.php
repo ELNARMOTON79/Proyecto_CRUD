@@ -64,7 +64,7 @@
                 endif;
 
                 if ($showForm10):
-                    include '#';
+                    include 'listarmaterias.php';
                 endif;
 
                 if ($showForm11):
