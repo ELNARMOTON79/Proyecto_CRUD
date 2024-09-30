@@ -29,7 +29,6 @@
           <label for="role" class="block text-sm font-medium text-green-600">Role:</label>
           <select name="role" id="role" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
             <option value="" disabled selected>Select an option</option>
-            <option value="volunteer">Volunteer</option>
             <option value="teacher">Teacher</option>
             <option value="student">Student</option>
             <option value="donator">Donator</option>
