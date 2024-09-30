@@ -39,10 +39,6 @@
                     include 'listausuarios.php';
                 endif;
 
-                if ($showForm4):
-                    include 'eliminarusuario.php';
-                endif;
-
                 if ($showForm5):
                     include 'crear_actividades.php';
                 endif;
