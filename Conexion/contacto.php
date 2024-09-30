@@ -134,6 +134,16 @@
             $result = $this->obtener_sentencia();
             return $result;
         }
+        //Funcion para obtener las materias de 5 en 5
+        public function obtenerMateriasConLimite($offset, $limite) {
+            $this->sentencia = "SELECT id, nombre_materia, objetivos, actividades, unidad FROM programas LIMIT $offset, $limite";
+            return $this->obtener_sentencia();
+        }
+        public function contarTotalMaterias() {
+            $this->sentencia = "SELECT COUNT(*) as total FROM programas";
+            $resultado = $this->obtener_sentencia();
+            return $resultado->fetch_assoc()['total'];
+        }
     }
     
     

@@ -71,12 +71,12 @@
             echo "<i class='fa-solid fa-venus-mars mr-2'></i>Sexo";
             echo "</label>";
             echo "<select name='sexo' class='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm'>";
-            if ($registro['sexo'] == 'Hombre') {
-                echo "<option value='Hombre' selected>Hombre</option>";
-                echo "<option value='Mujer'>Mujer</option>";
+            if ($registro['genero'] == 'Hombre') {
+                echo "<option value='Hombre' selected>Men</option>";
+                echo "<option value='Mujer'>Woman</option>";
             } else {
-                echo "<option value='Hombre'>Hombre</option>";
-                echo "<option value='Mujer' selected>Mujer</option>";
+                echo "<option value='Hombre'>Men</option>";
+                echo "<option value='Mujer' selected>Woman</option>";
             }
             echo "</select>";
             echo "</div>";

@@ -47,10 +47,6 @@
                     <i class="fa-solid fa-list-check"></i>
                     List user
                 </a>
-                <a href="?action=eliminar_usuario" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
-                    <i class="fa-solid fa-user-xmark"></i>
-                    Delete user
-                </a>
             </div>
         </div>
 

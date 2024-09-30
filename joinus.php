@@ -44,8 +44,8 @@
           <label for="gender" class="block text-sm font-medium text-green-600">Gender:</label>
           <select name="gender" id="gender" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
             <option value="" disabled selected>Select an option</option>
-            <option value="Man">Man</option>
-            <option value="Woman">Woman</option>
+            <option value="Hombre">Man</option>
+            <option value="Mujer">Woman</option>
           </select>
         </div>
         <div>

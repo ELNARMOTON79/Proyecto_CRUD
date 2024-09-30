@@ -5,6 +5,7 @@ $tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : '
 <!DOCTYPE html>
 <html lang="es">
 
+<<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,6 +22,10 @@ $tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : '
         </div>
         <form action="" method="post" class="space-y-6">
             <div>
+=======
+        <form action="" method="post" class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+            <!-- Selección de Actividad -->
+>>>>>>> 3b21bf0fbcdf0cc0dc0a0334b93f96a39cb03c28
             <div class="space-y-2">
     <label for="actividad" class="block text-sm font-medium text-gray-700">
     Modificar Actividad
