@@ -40,6 +40,16 @@ $totalPaginas = ceil($totalRegistros / $registrosPorPagina);
                         <td class="px-6 py-4"><?php echo htmlspecialchars($registro["objetivos"]); ?></td>
                         <td class="px-6 py-4"><?php echo htmlspecialchars($registro["actividades"] ?? ''); ?></td>
                         <td class="px-6 py-4"><?php echo htmlspecialchars($registro["unidad"]); ?></td>
+                        <td class="px-6 py-4">
+                            <!-- Botón de Editar con ícono -->
+                            <a href="edit_user.php?id=<?php echo $registro['id']; ?>" class="text-blue-600 hover:text-blue-800 mr-2">
+                                <i class="fas fa-edit"></i> <!-- Ícono de editar -->
+                            </a>
+                            <!-- Botón de Eliminar con ícono -->
+                            <a href="delete_user.php?id=<?php echo $registro['id']; ?>" class="text-red-600 hover:text-red-800" onclick="return confirm('Are you sure you want to delete this user?');">
+                                <i class="fas fa-trash-alt"></i> <!-- Ícono de eliminar -->
+                            </a>
+                        </td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>
