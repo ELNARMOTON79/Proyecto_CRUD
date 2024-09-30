@@ -5,7 +5,7 @@ $resultado = $obj->consultar_actividades();
 ?>
 
     <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-        <h1 class="text-2xl font-bold mb-6">List user</h1>
+        <h1 class="text-2xl font-bold mb-6">List activities</h1>
         <table class="min-w-full table-auto border-collapse border border-gray-300 rounded-lg overflow-hidden shadow">
             <thead>
                 <tr class="bg-green-600 text-white">
