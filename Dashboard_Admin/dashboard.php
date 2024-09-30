@@ -68,7 +68,7 @@
                 endif;
 
                 if ($showForm11):
-                    include '#';
+                    include 'modificar_materia.php';
                 endif;
 
                 if ($showForm12):

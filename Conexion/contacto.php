@@ -97,6 +97,11 @@
             $this->sentencia = "UPDATE actividades SET descripcion = '$descripcion', fk_materia = '$fk_materia', fecha = '$fecha' WHERE nombre_actividad = '$nombre_actividad'";
             return $this->ejecutar_sentencia();
         }
+        //metodo para modificar materia
+        public function modificar_materia($nombre_actividad, $descripcion, $fk_materia, $fecha, $duracion) {
+             $this->sentencia = "UPDATE actividades SET descripcion = '$descripcion', fk_materia = '$fk_materia', fecha = '$fecha' WHERE nombre_actividad = '$nombre_actividad'";
+                return $this->ejecutar_sentencia();
+         }
         public function subir($name, $age, $email, $password, $gender, $role)
         {
             $this->sentencia = "INSERT INTO usuarios (nombre, correo, password, genero, edad, tipo_usuario) VALUES ('$name', '$email', '$password', '$gender', '$age', '$role')";
