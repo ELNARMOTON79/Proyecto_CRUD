@@ -57,10 +57,17 @@
             return $result;
         }
         public function consultar_actividades() {
-            $this->sentencia = "SELECT * FROM actividades";
+            // Modificar la consulta SQL para hacer un JOIN entre actividades y programas
+            $this->sentencia = "
+                SELECT actividades.*, programas.nombre_materia 
+                FROM actividades 
+                JOIN programas ON actividades.fk_materia = programas.id";
+                
+            // Ejecutar la consulta y obtener los resultados
             $resultado = $this->obtener_sentencia();
             return $resultado;
         }
+        
 
         //Metodo para consultar por ID
         public function obtenerPorId($id) {
@@ -115,6 +122,14 @@
             $result = $this->obtener_sentencia();
             return $result;
 
+        }
+        public function consultar_actividades_por_materia($materia_id) {
+            $this->sentencia = "
+                SELECT actividades.*, programas.nombre_materia 
+                FROM actividades 
+                JOIN programas ON actividades.fk_materia = programas.id
+                WHERE actividades.fk_materia = $materia_id";  // Filtrar por el ID de la materia seleccionada
+            return $this->obtener_sentencia();  // Usando el mismo método que ya tienes
         }
         //Contar total de maestros
         public function total_maestros(){

@@ -31,10 +31,6 @@
                     include 'crear_usuario.php';
                 endif;
 
-                if ($showForm2):
-                    include 'modificaruser.php';
-                endif;
-
                 if ($showForm3):
                     include 'listausuarios.php';
                 endif;
@@ -49,10 +45,6 @@
 
                 if ($showForm7):
                     include 'modificar_actividades.php';
-                endif;
-
-                if ($showForm8):
-                    include 'eliminaractividad.php';
                 endif;
 
                 if ($showForm9):

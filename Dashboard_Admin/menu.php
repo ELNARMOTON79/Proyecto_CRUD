@@ -39,10 +39,6 @@
                     <i class="fa-solid fa-user-plus"></i>
                     Create user
                 </a>
-                <a href="?action=modificar_usuario" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
-                    <i class="fa-solid fa-user-pen"></i>
-                    Modify user
-                </a>
                 <a href="?action=listar_usuarios" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                     <i class="fa-solid fa-list-check"></i>
                     List user
@@ -72,10 +68,6 @@
                 <a href="?action=modificar_actividades" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                     <i class="fa-sharp fa-solid fa-gears"></i>
                     Modify activities
-                </a>
-                <a href="?action=eliminar_actividades" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
-                    <i class="fa-solid fa-trash-can"></i>
-                    Delete activities
                 </a>
             </div>
         </div>

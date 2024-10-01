@@ -14,17 +14,33 @@ if (isset($_POST['eliminar']) && isset($_POST['id'])) {
     $mostrarExito = true;
 }
 
-$tipo_usuario = isset($_POST['tipo_usuario']) ? $_POST['tipo_usuario'] : '';
+// Verificar si se ha presionado el botón de modificar
+$registroParaModificar = null;
+if (isset($_POST['modificarBtn']) && isset($_POST['idmodificar'])) {
+    $idModificar = $_POST['idmodificar'];
+    $resultadoModificar = $obj->obtenerPorId($idModificar);
+    if ($resultadoModificar) {
+        $registroParaModificar = $resultadoModificar->fetch_assoc();
+    }
+}
 
+// Verificar si se ha enviado el formulario para modificar un usuario
+if (isset($_POST['modificar'])) {
+    $id = $_POST['id'];
+    $nombre = $_POST['nombre'];
+    $correo = $_POST['correo'];
+    $edad = $_POST['edad'];
+    $sexo = $_POST['sexo'];
+    $obj->modificar($id, $nombre, $correo, $edad, $sexo);
+    echo "<p class='text-green-600 mt-4'>Datos modificados</p>";
+}
+
+// Obtener los usuarios
+$tipo_usuario = isset($_POST['tipo_usuario']) ? $_POST['tipo_usuario'] : '';
 if ($tipo_usuario !== '') {
     $resultado = $obj->consultaxtipo($tipo_usuario);
 } else {
     $resultado = $obj->consultar();
-}
-
-// Verificar si el resultado no es nulo
-if ($resultado === null) {
-    die("Error al ejecutar la consulta.");
 }
 ?>
 
@@ -49,7 +65,7 @@ if ($resultado === null) {
                 <th class="px-6 py-3 text-left">E-mail</th>
                 <th class="px-6 py-3 text-left">Age</th>
                 <th class="px-6 py-3 text-left">Gender</th>
-                <th class="px-6 py-3 text-left">Rol</th>
+                <th class="px-6 py-3 text-left">Role</th>
                 <th class="px-6 py-3 text-left">Actions</th>
             </tr>
         </thead>
@@ -63,12 +79,15 @@ if ($resultado === null) {
                     <td class="px-6 py-4"><?php echo htmlspecialchars($registro["tipo_usuario"]);?></td>
                     <td class="px-6 py-4">
                         <!-- Botón de Editar con ícono -->
-                        <a href="edit_user.php?id=<?php echo $registro['id']; ?>" class="text-blue-600 hover:text-blue-800 mr-2">
-                            <i class="fas fa-edit"></i> <!-- Ícono de editar -->
-                        </a>
+                        <form action="" method="POST" style="display:inline;">
+                            <input type="hidden" name="idmodificar" value="<?php echo $registro['id']; ?>">
+                            <button type="submit" name="modificarBtn" class="text-blue-600 hover:text-blue-800 mr-2">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </form>
                         <!-- Botón de Eliminar con ícono, activando modal -->
                         <a href="#" onclick="mostrarModal(<?php echo $registro['id']; ?>)" class="text-red-600 hover:text-red-800">
-                            <i class="fas fa-trash-alt"></i> <!-- Ícono de eliminar -->
+                            <i class="fas fa-trash-alt"></i>
                         </a>
                     </td>
                 </tr>
@@ -103,10 +122,63 @@ if ($resultado === null) {
     </div>
 </div>
 <script>
-    // Mostrar el modal de éxito por 2 segundos
     setTimeout(function() {
         document.getElementById('modalExito').classList.add('hidden');
-    }, 2000); // 2000 milisegundos = 2 segundos
+    }, 2000);
+</script>
+<?php endif; ?>
+
+<!-- Modal para Editar Usuario -->
+<?php if ($registroParaModificar): ?>
+<div id="modalEditar" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
+    <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-8">
+        <h2 class="text-xl font-semibold text-gray-700 mb-4">Modify User</h2>
+        <form action="" method="POST">
+            <input type="hidden" name="id" value="<?php echo $registroParaModificar['id']; ?>">
+
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div>
+                    <label for="nombre" class="block text-sm font-medium text-gray-700">
+                        <i class="fa-solid fa-user mr-2"></i>Name
+                    </label>
+                    <input type="text" name="nombre" value="<?php echo $registroParaModificar['nombre']; ?>" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                </div>
+                <div>
+                    <label for="correo" class="block text-sm font-medium text-gray-700">
+                        <i class="fa-solid fa-envelope mr-2"></i>Email
+                    </label>
+                    <input type="text" name="correo" value="<?php echo $registroParaModificar['correo']; ?>" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                </div>
+            </div>
+
+            <div>
+                <label for="edad" class="block text-sm font-medium text-gray-700">
+                    <i class="fa-solid fa-cake-candles mr-2"></i>Age
+                </label>
+                <input type="number" name="edad" value="<?php echo $registroParaModificar['edad']; ?>" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+            </div>
+
+            <div>
+                <label for="sexo" class="block text-sm font-medium text-gray-700">
+                    <i class="fa-solid fa-venus-mars mr-2"></i>Sex
+                </label>
+                <select name="sexo" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                    <option value="Hombre" <?php echo $registroParaModificar['genero'] == 'Hombre' ? 'selected' : ''; ?>>Men</option>
+                    <option value="Mujer" <?php echo $registroParaModificar['genero'] == 'Mujer' ? 'selected' : ''; ?>>Woman</option>
+                </select>
+            </div>
+
+            <div class="flex justify-end space-x-4 mt-6">
+                <button type="button" onclick="ocultarModalEditar()" class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-200">Cancel</button>
+                <input type="submit" name="modificar" value="Modify" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700">
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    function ocultarModalEditar() {
+        document.getElementById('modalEditar').classList.add('hidden');
+    }
 </script>
 <?php endif; ?>
 
