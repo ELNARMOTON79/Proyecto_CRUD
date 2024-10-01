@@ -4,6 +4,7 @@ $obj = new Contacto();
 
 // Variable para controlar si se muestra el modal de éxito
 $mostrarExito = false;
+$mostrarExito2 = false;
 
 // Verificar si se ha enviado el formulario para eliminar un usuario
 if (isset($_POST['eliminar']) && isset($_POST['id'])) {
@@ -32,7 +33,7 @@ if (isset($_POST['modificar'])) {
     $edad = $_POST['edad'];
     $sexo = $_POST['sexo'];
     $obj->modificar($id, $nombre, $correo, $edad, $sexo);
-    echo "<p class='text-green-600 mt-4'>Datos modificados</p>";
+    $mostrarExito2 = true;
 }
 
 // Obtener los usuarios
@@ -128,6 +129,19 @@ if ($tipo_usuario !== '') {
 </script>
 <?php endif; ?>
 
+<?php if ($mostrarExito2): ?>
+<div id="modalExito" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
+    <div class="bg-green-500 rounded-lg shadow-lg max-w-sm w-full p-8 text-white">
+        <h2 class="text-xl font-semibold mb-4">User successfully modified</h2>
+    </div>
+</div>
+<script>
+    setTimeout(function() {
+        document.getElementById('modalExito').classList.add('hidden');
+    }, 2000);
+</script>
+<?php endif; ?>
+
 <!-- Modal para Editar Usuario -->
 <?php if ($registroParaModificar): ?>
 <div id="modalEditar" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
@@ -160,7 +174,7 @@ if ($tipo_usuario !== '') {
 
             <div>
                 <label for="sexo" class="block text-sm font-medium text-gray-700">
-                    <i class="fa-solid fa-venus-mars mr-2"></i>Sex
+                    <i class="fa-solid fa-venus-mars mr-2"></i>Gender
                 </label>
                 <select name="sexo" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
                     <option value="Hombre" <?php echo $registroParaModificar['genero'] == 'Hombre' ? 'selected' : ''; ?>>Men</option>

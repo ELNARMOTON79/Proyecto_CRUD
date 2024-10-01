@@ -1,7 +1,4 @@
-<?php
-session_start();
-$tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : 'Invitado';
-?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -15,15 +12,11 @@ $tipo_usuario = isset($_SESSION['tipo_usuario']) ? $_SESSION['tipo_usuario'] : '
 
 <body class="bg-gray-100 p-8">
     <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md">
-        <div class="flex items-center mb-6">
-            <img class="h-10 w-10 rounded-full" src="https://cdn.icon-icons.com/icons2/2104/PNG/512/manager_icon_129392.png" alt="Icono de usuario">
-            <h4 class="font-bold text-gray-500 ml-4">Usted ingresó como <?php echo htmlspecialchars($tipo_usuario); ?></h4>
-        </div>
         <form action="" method="post" class="space-y-6">
             <div>
             <div class="space-y-2">
     <label for="actividad" class="block text-sm font-medium text-gray-700">
-    Modificar Actividad
+        Modificar Actividad
     </label>
     <select
     id="actividad"

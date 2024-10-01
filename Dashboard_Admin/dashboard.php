@@ -43,10 +43,6 @@
                     include 'listaractividades.php';
                 endif;
 
-                if ($showForm7):
-                    include 'modificar_actividades.php';
-                endif;
-
                 if ($showForm9):
                     include 'crear_materias.php';
                 endif;

@@ -4,11 +4,12 @@ $obj = new Contacto();
 
 // Variable para controlar si se muestra el modal de éxito
 $mostrarExito = false;
+$mostrarExito2 = false;
 
 // Verificar si se ha enviado el formulario para eliminar una actividad
 if (isset($_POST['eliminar']) && isset($_POST['id'])) {
     $idEliminar = $_POST['id'];
-    $obj->eliminar($idEliminar);
+    $obj->eliminar_actividades($idEliminar);
     
     // Activar la variable para mostrar el modal de éxito
     $mostrarExito = true;
@@ -18,10 +19,20 @@ if (isset($_POST['eliminar']) && isset($_POST['id'])) {
 $registroParaModificar = null;
 if (isset($_POST['modificarBtn']) && isset($_POST['idmodificar'])) {
     $idModificar = $_POST['idmodificar'];
-    $resultadoModificar = $obj->obtenerPorId($idModificar);
+    $resultadoModificar = $obj->consultar_actividades($idModificar);
     if ($resultadoModificar) {
         $registroParaModificar = $resultadoModificar->fetch_assoc();
     }
+}
+
+if (isset($_POST['modificar'])) {
+    $id = $_POST['id'];
+    $nombre = $_POST['nombre'];
+    $description = $_POST['description'];
+    $fk_materia = $_POST['fk_materia'];
+    $fecha = $_POST['fecha'];
+    $obj->modificar_actividades($id, $nombre, $description, $fk_materia, $fecha);
+    $mostrarExito2 = true;
 }
 
 // Obtener la materia seleccionada para filtrar
@@ -73,9 +84,12 @@ if ($materia_filtrada !== '') {
                     <td class="px-6 py-4"><?php echo htmlspecialchars($registro["fecha"]); ?></td>
                     <td class="px-6 py-4">
                         <!-- Botón de Editar con ícono -->
-                        <a href="edit_user.php?id=<?php echo $registro['id']; ?>" class="text-blue-600 hover:text-blue-800 mr-2">
-                            <i class="fas fa-edit"></i>
-                        </a>
+                        <form action="" method="POST" style="display:inline;">
+                            <input type="hidden" name="idmodificar" value="<?php echo $registro['id']; ?>">
+                            <button type="submit" name="modificarBtn" class="text-blue-600 hover:text-blue-800 mr-2">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </form>
                         <!-- Botón de Eliminar con ícono -->
                         <a href="#" onclick="mostrarModal(<?php echo $registro['id']; ?>)" class="text-red-600 hover:text-red-800">
                             <i class="fas fa-trash-alt"></i>
@@ -119,7 +133,80 @@ if ($materia_filtrada !== '') {
     }, 2000);
 </script>
 <?php endif; ?>
+<!-- Modal para Mensaje de Éxito -->
+<?php if ($mostrarExito2): ?>
+<div id="modalExito" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
+    <div class="bg-green-500 rounded-lg shadow-lg max-w-sm w-full p-8 text-white">
+        <h2 class="text-xl font-semibold mb-4">Activity successfully modified</h2>
+    </div>
+</div>
+<script>
+    setTimeout(function() {
+        document.getElementById('modalExito').classList.add('hidden');
+    }, 2000);
+</script>
+<?php endif; ?>
 
+<?php if ($registroParaModificar): ?>
+<!-- Modal para Editar actividades -->
+    <?php 
+    // Asegurarse de obtener las materias para el modal
+    $materias = $obj->obtenerMaterias(); 
+    ?>
+<div id="modalEditar" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
+    <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-8">
+        <h2 class="text-xl font-semibold text-gray-700 mb-4">Modify Activity</h2>
+        <form action="" method="POST">
+            <input type="hidden" name="id" value="<?php echo $registroParaModificar['id']; ?>">
+
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div>
+                    <label for="nombre" class="block text-sm font-medium text-gray-700">
+                        <i class="fa-solid fa-clipboard mr-2"></i>Activity Name
+                    </label>
+                    <input type="text" name="nombre" value="<?php echo $registroParaModificar['nombre_actividad']; ?>" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                </div>
+                <div>
+                    <label for="description" class="block text-sm font-medium text-gray-700">
+                        <i class="fa-solid fa-align-left mr-2"></i>Description
+                    </label>
+                    <input type="text" name="description" value="<?php echo $registroParaModificar['descripcion']; ?>" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                </div>
+            </div>
+
+            <div>
+                <label for="fk_materia" class="block text-sm font-medium text-gray-700">
+                    <i class="fa-solid fa-book mr-2"></i>Materia
+                </label>
+                <select name="fk_materia" id="fk_materia" class="block w-full p-2 border border-gray-300 rounded">
+                    <?php while ($materia = $materias->fetch_assoc()): ?>
+                        <option value="<?php echo $materia['id']; ?>" <?php echo $registroParaModificar['fk_materia'] == $materia['id'] ? 'selected' : ''; ?>>
+                            <?php echo htmlspecialchars($materia['nombre_materia']); ?>
+                        </option>
+                    <?php endwhile; ?>
+                </select>
+            </div>
+
+            <div>
+                <label for="fecha" class="block text-sm font-medium text-gray-700">
+                    <i class="fa-solid fa-calendar-alt mr-2"></i>Date
+                </label>
+                <input type="date" name="fecha" value="<?php echo $registroParaModificar['fecha']; ?>" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+            </div>
+
+            <div class="flex justify-end space-x-4 mt-6">
+                <button type="button" onclick="ocultarModalEditar()" class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-200">Cancel</button>
+                <input type="submit" name="modificar" value="Modify" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700">
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    function ocultarModalEditar() {
+        document.getElementById('modalEditar').classList.add('hidden');
+    }
+</script>
+<?php endif; ?>
 <script>
     // Mostrar el modal de confirmación con el ID de la actividad
     function mostrarModal(activityId) {

@@ -105,10 +105,16 @@
             $this->sentencia = "DELETE FROM actividades WHERE id = '$id'";
              return $this->ejecutar_sentencia();
         }
-        public function modificar_actividades($nombre_actividad, $descripcion, $fk_materia, $fecha, $duracion) {
-            $this->sentencia = "UPDATE actividades SET descripcion = '$descripcion', fk_materia = '$fk_materia', fecha = '$fecha' WHERE nombre_actividad = '$nombre_actividad'";
+        public function modificar_actividades($id, $nombre_actividad, $descripcion, $fk_materia, $fecha) {
+            $this->sentencia = "UPDATE actividades SET nombre_actividad = '$nombre_actividad', descripcion = '$descripcion', fk_materia = '$fk_materia', fecha = '$fecha' WHERE id = '$id'";
             return $this->ejecutar_sentencia();
         }
+        public function obtenerPorIdactividades($id) {
+            $this->sentencia = "SELECT actividades.*, programas.nombre_materia FROM actividades JOIN programas ON actividades.fk_materia = programas.id WHERE actividades.id = '$id'";
+            return $this->obtener_sentencia();
+        }
+        
+        
         public function subir($name, $age, $email, $password, $gender, $role)
         {
             $this->sentencia = "INSERT INTO usuarios (nombre, correo, password, genero, edad, tipo_usuario) VALUES ('$name', '$email', '$password', '$gender', '$age', '$role')";

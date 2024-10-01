@@ -65,10 +65,6 @@
                     <i class="fa-solid fa-clipboard-list"></i>
                     List activities
                 </a>
-                <a href="?action=modificar_actividades" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
-                    <i class="fa-sharp fa-solid fa-gears"></i>
-                    Modify activities
-                </a>
             </div>
         </div>
 
