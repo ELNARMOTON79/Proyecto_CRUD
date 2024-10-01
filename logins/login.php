@@ -1,6 +1,6 @@
 <?php
-    session_start();
-    include 'login_var.php';
+session_start();
+include 'login_var.php';
 ?>
 
 <!DOCTYPE html>
@@ -26,10 +26,25 @@
                     </a>
                 </div>
                 <a class="logo flex items-center text-2xl font-bold mb-6 text-center text-green-600">
-                <img src="../SRC/logoblanco.png" class="w-17 h-14 mr-3" alt="logo">
-                Login
-
+                    <img src="../SRC/logoblanco.png" class="w-17 h-14 mr-3" alt="logo">
+                    Login
                 </a>
+
+                <!-- Mostrar mensaje de error si las credenciales son incorrectas -->
+                <?php if (isset($_GET['error']) && $_GET['error'] == 1): ?>
+                    <div id="error-message" class="bg-red-500 text-white py-2 px-4 rounded-lg mb-4 text-center">
+                        User o password incorrect.
+                    </div>
+                    <script>
+                        setTimeout(function() {
+                            var errorMessage = document.getElementById('error-message');
+                            if (errorMessage) {
+                                errorMessage.style.display = 'none';
+                            }
+                        }, 4000); // El mensaje desaparece después de 4 segundos
+                    </script>
+                <?php endif; ?>
+
                 <!-- Formulario con método POST para PHP -->
                 <form action="" method="POST">
                     <div class="mb-4">

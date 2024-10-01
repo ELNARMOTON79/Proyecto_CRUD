@@ -4,47 +4,52 @@
 
     class Contacto extends Conexion {
         
-        //login
         public function login($correo, $password)
         {
-            //Sentencia SQL de como funciona
+            // Sentencia SQL para buscar el usuario
             $this->sentencia = "SELECT nombre, correo, password, tipo_usuario FROM usuarios WHERE correo = '$correo' AND password = '$password';";
             $resultado = $this->ejecutar_sentencia();
-
-            //Redirecciones de acuerdo al tipo de usuario
-            if($row = $resultado->fetch_assoc()){
-                if($row['correo'] == $correo && $row['password'] == $password){
-                    //Guardar datos del usaurio en variables de sesion 
+    
+            // Verificar si el usuario existe
+            if ($row = $resultado->fetch_assoc()) {
+                if ($row['correo'] == $correo && $row['password'] == $password) {
+                    // Iniciar sesión y guardar variables de sesión
                     session_start();
                     $_SESSION['nombre'] = $row['nombre'];
                     $_SESSION['correo'] = $row['correo'];
                     $_SESSION['tipo_usuario'] = $row['tipo_usuario'];
-
-                    //Redirigir al dashboard de acuerdo al tipo_usuario
-                    if($row['tipo_usuario'] == 'admin')
-                    {
-                        header("location: ../Dashboard_Admin/dashboard.php");
+    
+                    // Redirigir al dashboard de acuerdo al tipo_usuario
+                    switch ($row['tipo_usuario']) {
+                        case 'admin':
+                            header("location: ../Dashboard_Admin/dashboard.php");
+                            break;
+                        case 'student':
+                            header("location: ../Dashboard_Alumno/dashboard.php");
+                            break;
+                        case 'teacher':
+                            header("location: ../Dashboard_Maestro/dashboard.php");
+                            break;
+                        case 'donation':
+                            header("location: ../Dashboard_Donacion/dashboard.php");
+                            break;
+                        case 'cordinator':
+                            header("location: ../Dashboard_Cordinador/dashboard.php");
+                            break;
+                        default:
+                            header("location: login.php?error=1");
+                            break;
                     }
-                    if($row['tipo_usuario'] == 'student')
-                    {
-                        header("location: ../Dashboard_Alumno/dashboard.php");
-                    }
-                    if($row['tipo_usuario'] == 'teacher')
-                    {
-                        header("location: ../Dashboard_Maestro/dashboard.php");
-                    }
-                    if($row['tipo_usuario'] == 'donation')
-                    {
-                        header("location: ../Dashboard_Donacion/dashboard.php");
-                    }
-                    if($row['tipo_usuario'] == 'cordinator')
-                    {
-                        header("location: ../Dashboard_Cordinador/dashboard.php");
-                    }
+                    exit(); // Detener ejecución después de la redirección
                 }
+            } else {
+                // Si no se encuentra el usuario, redirigir con un error
+                header("location: login.php?error=1");
+                exit();
             }
         }
-
+    
+    
         public function eliminar ($id){  
             $this->sentencia = "DELETE FROM usuarios WHERE id = '$id'";
             $resultado = $this->ejecutar_sentencia();

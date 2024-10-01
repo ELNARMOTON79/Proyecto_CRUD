@@ -38,6 +38,7 @@ if ($materia_filtrada !== '') {
 }
 ?>
 
+<<<<<<< HEAD
 <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
     <h1 class="text-2xl font-bold mb-6">List Activities</h1>
     
@@ -81,6 +82,18 @@ if ($materia_filtrada !== '') {
                             <i class="fas fa-trash-alt"></i>
                         </a>
                     </td>
+=======
+    <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold mb-6">List activities</h1>
+        <table class="min-w-full table-auto border-collapse border border-gray-300 rounded-lg overflow-hidden shadow">
+            <thead>
+                <tr class="bg-green-600 text-white">
+                    <th class="px-6 py-3 text-left">Name</th>
+                    <th class="px-6 py-3 text-left">Description</th>
+                    <th class="px-6 py-3 text-left">Subject</th>
+                    <th class="px-6 py-3 text-left">Date</th>
+                    <th class="px-6 py-3 text-left">Actions</th>
+>>>>>>> 4241430783a4ff32a2c3b835bff57e6ee3b43877
                 </tr>
             <?php endwhile; ?>
         </tbody>
