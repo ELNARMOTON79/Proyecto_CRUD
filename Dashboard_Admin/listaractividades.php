@@ -32,7 +32,7 @@ if (isset($_POST['modificar'])) {
     $fk_materia = $_POST['fk_materia'];
     $fecha = $_POST['fecha'];
     $obj->modificar_actividades($id, $nombre, $description, $fk_materia, $fecha);
-    $mostrarExito2 = true;
+    //$mostrarExito2 = true;
 }
 
 // Obtener la materia seleccionada para filtrar

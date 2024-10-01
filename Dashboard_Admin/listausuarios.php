@@ -33,7 +33,7 @@ if (isset($_POST['modificar'])) {
     $edad = $_POST['edad'];
     $sexo = $_POST['sexo'];
     $obj->modificar($id, $nombre, $correo, $edad, $sexo);
-    $mostrarExito2 = true;
+    //$mostrarExito2 = true;
 }
 
 // Obtener los usuarios

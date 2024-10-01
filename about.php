@@ -65,7 +65,7 @@
                 </div>
                 <!-- Team Member 3 -->
                 <div class="text-center p-6 bg-white bg-opacity-80 rounded-lg shadow-md">
-                    <img src="ruta-a-imagen3.jpg" alt="Gerardo Adonai Gutierrez Rúa" class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <img src="SRC/gerardo.jpg" alt="Gerardo Adonai Gutierrez Rúa" class="w-32 h-32 mx-auto rounded-full mb-4">
                     <h3 class="text-xl font-bold mb-2 text-green-800">Gerardo Adonai Gutierrez Rúa</h3>
                     <p class="text-gray-600">Programmer</p>
                 </div>
