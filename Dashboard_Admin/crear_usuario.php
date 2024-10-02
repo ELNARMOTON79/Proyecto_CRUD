@@ -1,5 +1,6 @@
 <?php
   $mostrarExito = false; // Variable para controlar si se muestra el modal de éxito
+  $mostrarExito1 = false;
 
   if (isset($_POST['enviar'])){
     $name = $_POST['name'];
@@ -9,13 +10,19 @@
     $gender = $_POST['gender'];
     $role = $_POST['role'];
 
-    // Simulando la subida de los datos
-    require_once("../Conexion/contacto.php");
-    $obj = new contacto();
-    $obj->subir_users($name, $age, $email, $password, $gender, $role);
+    if ($age <= 0 || $age > 99)
+    {
+        $mostrarExito1 =true;
+    }else
+    {
+        // Simulando la subida de los datos
+        require_once("../Conexion/contacto.php");
+        $obj = new contacto();
+        $obj->subir_users($name, $age, $email, $password, $gender, $role);
 
-    // Mostrar el modal de éxito
-    $mostrarExito = true;
+        // Mostrar el modal de éxito
+        $mostrarExito = true;
+    }
   }
 ?>
 
@@ -34,9 +41,10 @@
         <label for="email" class="block text-sm font-medium text-green-600">Email:</label>
         <input type="email" name="email" id="email" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
     </div>
-    <div>
+    <div class="relative">
         <label for="password" class="block text-sm font-medium text-green-600">Password:</label>
         <input type="password" name="password" id="password" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
+        <span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password absolute right-3 top-10 cursor-pointer"></span>
     </div>
     <div>
         <label for="gender" class="block text-sm font-medium text-green-600">Gender:</label>
@@ -68,11 +76,40 @@
     <div class="bg-green-500 rounded-lg shadow-lg max-w-sm w-full p-8 text-white">
         <h2 class="text-xl font-semibold mb-4">User created successfully</h2>
     </div>
+    <script>
+        // Mostrar el modal de éxito por 2 segundos
+        setTimeout(function() {
+            document.getElementById('modalExito').classList.add('hidden');
+        }, 5000);
+    </script>
+</div>
+<?php endif; ?>
+
+<!-- Modal para Mensaje de Error en Edad -->
+<?php if ($mostrarExito1): ?>
+<div id="modalExito" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
+    <div class="bg-green-500 rounded-lg shadow-lg max-w-sm w-full p-8 text-white">
+        <h2 class="text-xl font-semibold mb-4">Enter a valid age</h2>
+    </div>
 </div>
 <script>
-    // Mostrar el modal de éxito por 2 segundos
+    // Mostrar el modal de error por 2 segundos
     setTimeout(function() {
         document.getElementById('modalExito').classList.add('hidden');
-    }, 2000); // 2000 milisegundos = 2 segundos
+    }, 2000);
 </script>
-<?php endif; ?>
+<?php endif;?>
+
+<script>
+    // Script para mostrar/ocultar la contraseña
+    document.querySelector('.toggle-password').addEventListener('click', function (e) {
+        const passwordField = document.querySelector('#password');
+        const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordField.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+        this.classList.toggle('fa-eye');
+    });
+</script>
+
+<!-- Incluir FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">

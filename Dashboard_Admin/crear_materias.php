@@ -21,8 +21,11 @@
                 <label for="unidad" class="block text-sm font-medium text-gray-700">
                     <i class="fa-solid fa-clock mr-2"></i>Unit
                 </label>
-                <input type="number" name="unidad" id="unidad" required
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                <select name="unidad" id="">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
             </div>
 
             <input type="hidden" name="duracion" id="duracion">
