@@ -87,14 +87,6 @@
                     <i class="fa-solid fa-clipboard-list"></i>
                     List Subject
                 </a>
-                <a href="?action=modificar_materias" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
-                    <i class="fa-sharp fa-solid fa-gears"></i>
-                    Modify Subject
-                </a>
-                <a href="?action=eliminar_materias" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
-                    <i class="fa-solid fa-trash-can"></i>
-                    Delete Subject
-                </a>
             </div>
         </div>
 

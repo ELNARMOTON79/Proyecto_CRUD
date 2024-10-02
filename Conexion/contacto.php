@@ -49,7 +49,6 @@
             }
         }
     
-    
         public function eliminar ($id){  
             $this->sentencia = "DELETE FROM usuarios WHERE id = '$id'";
             $resultado = $this->ejecutar_sentencia();
@@ -114,7 +113,6 @@
             return $this->obtener_sentencia();
         }
         
-        
         public function subir($name, $age, $email, $password, $gender, $role)
         {
             $this->sentencia = "INSERT INTO usuarios (nombre, correo, password, genero, edad, tipo_usuario) VALUES ('$name', '$email', '$password', '$gender', '$age', '$role')";
@@ -161,14 +159,23 @@
             return $result;
         }
         //Funcion para obtener las materias de 5 en 5
-        public function obtenerMateriasConLimite($offset, $limite) {
-            $this->sentencia = "SELECT id, nombre_materia, objetivos, actividades, unidad FROM programas LIMIT $offset, $limite";
+        public function consultarmaterias() {
+            $this->sentencia = "SELECT * FROM programas;";
             return $this->obtener_sentencia();
         }
-        public function contarTotalMaterias() {
-            $this->sentencia = "SELECT COUNT(*) as total FROM programas";
-            $resultado = $this->obtener_sentencia();
-            return $resultado->fetch_assoc()['total'];
+        public function eliminar_materias($idEliminar)
+        {
+            $this->sentencia = "DELETE FROM programas WHERE id = '$idEliminar';";
+            $resultado = $this->ejecutar_sentencia();
+        }
+        public function obtenerPorIdmateria($idModificar) {
+            $this->sentencia = "SELECT * FROM programas WHERE id = '$idModificar'";
+            return $this->obtener_sentencia();
+        }
+        public function modificar_materia($id, $nombre, $objetivo, $unidad)
+        {
+            $this->sentencia = "UPDATE programas SET nombre_materia = '$nombre', objetivos = '$objetivo', unidad = '$unidad' WHERE id = '$id'";
+            return $this->ejecutar_sentencia();
         }
     }
     

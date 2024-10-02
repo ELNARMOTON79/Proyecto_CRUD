@@ -50,14 +50,6 @@
                 if ($showForm10):
                     include 'listarmaterias.php';
                 endif;
-
-                if ($showForm11):
-                    include '#';
-                endif;
-
-                if ($showForm12):
-                    include 'eliminar_materias.php';
-                endif;
             ?>
         </main>
         
