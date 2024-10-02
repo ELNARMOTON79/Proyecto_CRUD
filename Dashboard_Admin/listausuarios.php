@@ -4,6 +4,7 @@ $obj = new Contacto();
 
 // Variable para controlar si se muestra el modal de éxito
 $mostrarExito = false;
+$mostrarExito1 = false;
 $mostrarExito2 = false;
 
 // Verificar si se ha enviado el formulario para eliminar un usuario
@@ -32,8 +33,14 @@ if (isset($_POST['modificar'])) {
     $correo = $_POST['correo'];
     $edad = $_POST['edad'];
     $sexo = $_POST['sexo'];
-    $obj->modificar($id, $nombre, $correo, $edad, $sexo);
-    //$mostrarExito2 = true;
+
+    if($edad <=0 || $edad > 99)
+    {
+        $mostrarExito1 = true;
+    }else{
+        $obj->modificar($id, $nombre, $correo, $edad, $sexo);
+        $mostrarExito2 = true;
+    }
 }
 
 // Obtener los usuarios
@@ -211,3 +218,17 @@ if ($tipo_usuario !== '') {
         document.getElementById('modalConfirmar').classList.add('hidden');
     }
 </script>
+<!-- Modal para Mensaje de Error en Edad -->
+<?php if ($mostrarExito1): ?>
+<div id="modalExito" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
+    <div class="bg-green-500 rounded-lg shadow-lg max-w-sm w-full p-8 text-white">
+        <h2 class="text-xl font-semibold mb-4">Enter a valid age</h2>
+    </div>
+</div>
+<script>
+    // Mostrar el modal de error por 2 segundos
+    setTimeout(function() {
+        document.getElementById('modalExito').classList.add('hidden');
+    }, 2000);
+</script>
+<?php endif;?>
