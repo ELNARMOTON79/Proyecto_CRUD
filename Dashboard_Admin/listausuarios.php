@@ -56,6 +56,8 @@ if ($tipo_usuario !== '') {
             <option value="Admin" <?php echo $tipo_usuario == 'Admin' ? 'selected' : ''; ?>>Admin</option>
             <option value="Teacher" <?php echo $tipo_usuario == 'Teacher' ? 'selected' : ''; ?>>Teacher</option>
             <option value="Student" <?php echo $tipo_usuario == 'Student' ? 'selected' : ''; ?>>Student</option>
+            <option value="donator" <?php echo $tipo_usuario == 'donator' ? 'selected' : ''; ?>>Donator</option>
+            <option value="coordinator" <?php echo $tipo_usuario == 'coordinator' ? 'selected' : ''; ?>>Cordinator</option>
         </select>
     </form>
 
