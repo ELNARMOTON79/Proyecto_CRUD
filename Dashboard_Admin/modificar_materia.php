@@ -7,7 +7,7 @@
                     <option value="">Selecciona una materia</option>
                 </select>
             </div>
-
+            
             <!-- Descripción -->
             <div>
                 <label for="descripcion" class="block text-sm font-medium text-gray-700">
