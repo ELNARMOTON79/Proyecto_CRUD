@@ -186,7 +186,7 @@ if ($tipo_usuario !== '') {
                     <i class="fa-solid fa-venus-mars mr-2"></i>Gender
                 </label>
                 <select name="sexo" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
-                    <option value="Hombre" <?php echo $registroParaModificar['genero'] == 'Hombre' ? 'selected' : ''; ?>>Men</option>
+                    <option value="Hombre" <?php echo $registroParaModificar['genero'] == 'Hombre' ? 'selected' : ''; ?>>Man</option>
                     <option value="Mujer" <?php echo $registroParaModificar['genero'] == 'Mujer' ? 'selected' : ''; ?>>Woman</option>
                 </select>
             </div>
