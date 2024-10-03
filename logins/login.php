@@ -15,7 +15,7 @@ include 'login_var.php';
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="flex items-center justify-center h-screen bg-green-100">
-    <div class="relative bg-cover bg-center h-screen w-full" style="background-image: url('../SRC/EDU4ALL.png');">
+    <div class="relative bg-cover bg-center h-screen w-full" style="background-image: url('../SRC/carrucel/12.png');">
         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
             <div class="bg-white rounded-lg shadow-lg p-8 w-96 relative">
                 <!-- Mover el icono de la casa aquí, fuera del formulario -->
@@ -88,9 +88,3 @@ include 'login_var.php';
 </body>
 </html>
 
-<script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
-<script>
-    Weglot.initialize({
-        api_key: 'wg_90eabc8cd0c4b5bafabb42bb6dd7d8899'
-    });
-</script>

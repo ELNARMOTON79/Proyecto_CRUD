@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-cover bg-center h-screen" style="background-image: url('SRC/EDU4ALL 2.png');">
+<body class="bg-cover bg-center h-screen" style="background-image: url('SRC/Carrucel/11.png');">
 <div class="flex items-center justify-center h-full bg-black bg-opacity-50">
     <div class="relative bg-white p-8 rounded-lg shadow-md max-w-md w-full">
       <!-- Iconos de casita y tacha -->
@@ -34,11 +34,11 @@
         </div>
         <div>
           <label for="email" class="block text-sm font-medium text-green-600">Email:</label>
-          <input type="email" name="email" id="email" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
+          <input type="email" name="email" id="email" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500" placeholder="youremail@gmail.com">
         </div>
         <div>
           <label for="password" class="block text-sm font-medium text-green-600">Password:</label>
-          <input type="password" name="password" id="password" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
+          <input type="password" name="password" id="password" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500" placeholder="Password">
         </div>
         <div>
           <label for="gender" class="block text-sm font-medium text-green-600">Gender:</label>
@@ -78,16 +78,18 @@
     $password = $_POST['password'];
     $gender = $_POST['gender'];
     $role = $_POST['role'];
-    require_once("Conexion/contacto.php");
-    $obj = new contacto();
-    $obj-> subir($name, $age, $email, $password, $gender, $role);
-    echo "Datos Guardados";
+    
+    if ($age <= 17 || $age > 60)
+    {
+        $mostrarExito1 =true;
+    }else
+    {
+      require_once("Conexion/contacto.php");
+      $obj = new contacto();
+      $obj-> subir($name, $age, $email, $password, $gender, $role);
+      echo "Datos Guardados";
+    }
+    
   }
 ?>
 
-<script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
-<script>
-    Weglot.initialize({
-        api_key: 'wg_90eabc8cd0c4b5bafabb42bb6dd7d8899'
-    });
-</script>

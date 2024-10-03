@@ -10,7 +10,7 @@
     $gender = $_POST['gender'];
     $role = $_POST['role'];
 
-    if ($age <= 0 || $age > 99)
+    if ($age <= 17 || $age > 60)
     {
         $mostrarExito1 =true;
     }else

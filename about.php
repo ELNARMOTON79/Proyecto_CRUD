@@ -91,9 +91,3 @@
 
 </html>
 
-<script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
-<script>
-    Weglot.initialize({
-        api_key: 'wg_90eabc8cd0c4b5bafabb42bb6dd7d8899'
-    });
-</script>
