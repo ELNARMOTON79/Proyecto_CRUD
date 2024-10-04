@@ -2,13 +2,15 @@
 
     <!-- El título de la dashboard -->
     <div class="flex items-center text-white text-3xl px-5">
-        <div class="flex-shrink-0 h-10 w-10">
-            <img class="scale-150 h-9 w-15 rounded-full" 
-                src="../SRC/logoblanco.png" 
-                alt="">
-        </div>
-        <b>Edu4All</b>
+    <div class="flex-shrink-0">
+        <!-- Aumentamos el tamaño de la imagen y agregamos forma redonda -->
+        <img class="w-18 h-16 rounded-full" 
+             src="../SRC/logoblanco1.png" 
+             alt="Logo Edu4All">
     </div>
+    <b class="ml-0 text-4xl">Edu4All</b>
+</div>
+
 
     <!-- Aquí va el icono grill -->
     <div class="flex flex-col flex-auto">

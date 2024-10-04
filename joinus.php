@@ -94,3 +94,49 @@
   }
 ?>
 
+<script>
+    // Bloquear números en el campo de nombre
+    document.getElementById('name').addEventListener('keypress', function (e) {
+        const char = String.fromCharCode(e.keyCode);
+        if (!/^[a-zA-Z\s]+$/.test(char)) {
+            e.preventDefault();
+        }
+    });
+
+    // Bloquear letras en el campo de edad
+    document.getElementById('age').addEventListener('input', function (e) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    });
+
+    // Validar el formulario antes de enviar
+    function validateForm() {
+        const name = document.getElementById('name').value;
+        const age = document.getElementById('age').value;
+
+        const nameRegex = /^[A-Za-z\s]+$/; // Solo letras y espacios
+        const ageRegex = /^[0-9]+$/; // Solo números
+
+        // Validar el campo de nombre
+        if (!nameRegex.test(name)) {
+            alert('Please enter a valid name (letters only).');
+            return false;
+        }
+
+        // Validar el campo de edad
+        if (!ageRegex.test(age)) {
+            alert('Please enter a valid age (numbers only).');
+            return false;
+        }
+
+        return true; // Si todo está bien, enviar el formulario
+    }
+
+    // Script para mostrar/ocultar la contraseña
+    document.querySelector('.toggle-password').addEventListener('click', function (e) {
+        const passwordField = document.querySelector('#password');
+        const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordField.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+        this.classList.toggle('fa-eye');
+    });
+</script>
