@@ -9,7 +9,7 @@
             <div class="flex flex-col justify-center">
                 <!-- Mensaje de bienvenida -->
                 <h4 class="text-lg font-bold text-gray-500">
-                    Welcome <?php echo htmlspecialchars($_SESSION['nombre']); ?>
+                    Welcome, <?php echo htmlspecialchars($_SESSION['nombre']); ?>
                 </h4>
                 <!-- Correo del usuario -->
                 <div class="text-sm text-gray-500">

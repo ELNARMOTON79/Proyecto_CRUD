@@ -10,11 +10,10 @@
     $gender = $_POST['gender'];
     $role = $_POST['role'];
 
-    if ($age <= 17 || $age > 60)
+    if ($age <= 17 || $age > 99)
     {
         $mostrarExito1 =true;
-    }else
-    {
+    } else {
         // Simulando la subida de los datos
         require_once("../Conexion/contacto.php");
         $obj = new contacto();
@@ -29,7 +28,7 @@
 <div class="inset-0 flex items-center justify-center">
     <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-8">
         <h2 class="text-xl font-semibold text-gray-700 mb-4">Create User</h2>
-        <form action="" method="POST">
+        <form action="" method="POST" onsubmit="return validateForm()">
             <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div>
                     <label for="name" class="block text-sm font-medium text-gray-700">
@@ -123,7 +122,46 @@
 </script>
 <?php endif;?>
 
+<!-- Incluir FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 <script>
+    // Bloquear números en el campo de nombre
+    document.getElementById('name').addEventListener('keypress', function (e) {
+        const char = String.fromCharCode(e.keyCode);
+        if (!/^[a-zA-Z\s]+$/.test(char)) {
+            e.preventDefault();
+        }
+    });
+
+    // Bloquear letras en el campo de edad
+    document.getElementById('age').addEventListener('input', function (e) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    });
+
+    // Validar el formulario antes de enviar
+    function validateForm() {
+        const name = document.getElementById('name').value;
+        const age = document.getElementById('age').value;
+
+        const nameRegex = /^[A-Za-z\s]+$/; // Solo letras y espacios
+        const ageRegex = /^[0-9]+$/; // Solo números
+
+        // Validar el campo de nombre
+        if (!nameRegex.test(name)) {
+            alert('Please enter a valid name (letters only).');
+            return false;
+        }
+
+        // Validar el campo de edad
+        if (!ageRegex.test(age)) {
+            alert('Please enter a valid age (numbers only).');
+            return false;
+        }
+
+        return true; // Si todo está bien, enviar el formulario
+    }
+
     // Script para mostrar/ocultar la contraseña
     document.querySelector('.toggle-password').addEventListener('click', function (e) {
         const passwordField = document.querySelector('#password');
@@ -133,6 +171,3 @@
         this.classList.toggle('fa-eye');
     });
 </script>
-
-<!-- Incluir FontAwesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">

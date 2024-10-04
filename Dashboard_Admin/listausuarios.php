@@ -162,7 +162,7 @@ if ($tipo_usuario !== '') {
 <div id="modalEditar" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
     <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-8">
         <h2 class="text-xl font-semibold text-gray-700 mb-4">Edit User</h2>
-        <form action="" method="POST">
+        <form action="" method="POST" onsubmit="return validateEditForm()">
             <input type="hidden" name="id" value="<?php echo $registroParaModificar['id']; ?>">
 
             <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -170,7 +170,7 @@ if ($tipo_usuario !== '') {
                     <label for="nombre" class="block text-sm font-medium text-gray-700">
                         <i class="fa-solid fa-user mr-2"></i>Name
                     </label>
-                    <input type="text" name="nombre" value="<?php echo $registroParaModificar['nombre']; ?>" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                    <input type="text" name="nombre" id="nombre" value="<?php echo $registroParaModificar['nombre']; ?>" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
                 </div>
                 <div>
                     <label for="correo" class="block text-sm font-medium text-gray-700">
@@ -184,7 +184,7 @@ if ($tipo_usuario !== '') {
                 <label for="edad" class="block text-sm font-medium text-gray-700">
                     <i class="fa-solid fa-cake-candles mr-2"></i>Age
                 </label>
-                <input type="number" name="edad" value="<?php echo $registroParaModificar['edad']; ?>" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                <input type="number" name="edad" id="edad" value="<?php echo $registroParaModificar['edad']; ?>" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
             </div>
 
             <div>
@@ -208,8 +208,45 @@ if ($tipo_usuario !== '') {
     function ocultarModalEditar() {
         document.getElementById('modalEditar').classList.add('hidden');
     }
+
+    // Bloquear números en el campo de nombre
+    document.getElementById('nombre').addEventListener('keypress', function (e) {
+        const char = String.fromCharCode(e.keyCode);
+        if (!/^[a-zA-Z\s]+$/.test(char)) {
+            e.preventDefault();
+        }
+    });
+
+    // Bloquear letras en el campo de edad
+    document.getElementById('edad').addEventListener('input', function (e) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    });
+
+    // Validar el formulario antes de enviar
+    function validateEditForm() {
+        const nombre = document.getElementById('nombre').value;
+        const edad = document.getElementById('edad').value;
+
+        const nameRegex = /^[A-Za-z\s]+$/; // Solo letras y espacios
+        const ageRegex = /^[0-9]+$/; // Solo números
+
+        // Validar el campo de nombre
+        if (!nameRegex.test(nombre)) {
+            alert('Please enter a valid name (letters only).');
+            return false;
+        }
+
+        // Validar el campo de edad
+        if (!ageRegex.test(edad)) {
+            alert('Please enter a valid age (numbers only).');
+            return false;
+        }
+
+        return true; // Si todo está bien, enviar el formulario
+    }
 </script>
 <?php endif; ?>
+
 
 <!-- Scripts -->
 <script>

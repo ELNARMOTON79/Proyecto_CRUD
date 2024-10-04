@@ -113,7 +113,7 @@
 
     <!-- Botón de salir -->
     <div class="flex flex-col">
-        <a class="rounded-full bg-green-900 py-2 text-white text-lg hover:bg-green-700 text-center" href="../logins/logout.php">Exit</a>
+        <a class="rounded-full bg-green-900 py-2 text-white text-lg hover:bg-green-700 text-center" href="../logins/logout.php">Sign Out</a>
     </div>
 
 </div>
