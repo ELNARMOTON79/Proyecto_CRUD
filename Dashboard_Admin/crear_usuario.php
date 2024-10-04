@@ -87,7 +87,6 @@
             </div>
 
             <div class="flex justify-end space-x-4 mt-6">
-                <button type="button" onclick="ocultarModalEditar()" class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-200">Cancel</button>
                 <input type="submit" name="enviar" value="Submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700">
             </div>
         </form>
@@ -104,7 +103,7 @@
         // Mostrar el modal de éxito por 2 segundos
         setTimeout(function() {
             document.getElementById('modalExito').classList.add('hidden');
-        }, 5000);
+        }, 2000);
     </script>
 </div>
 <?php endif; ?>

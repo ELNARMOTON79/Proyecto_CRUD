@@ -62,7 +62,7 @@ $resultado = $obj->consultarmaterias(); // No se pasa offset ni límite
                                 <button type="submit" name="modificarBtn" class="relative group text-blue-600 hover:text-blue-800 mr-2">
                                     <i class="fas fa-edit"></i>
                                     <span class="absolute bottom-full mb-2 hidden w-max p-2 text-xs text-white bg-gray-700 rounded opacity-0 group-hover:block group-hover:opacity-100">
-                                        Modify
+                                        Edit
                                     </span>
                                 </button>
                             </form>
@@ -122,7 +122,7 @@ $resultado = $obj->consultarmaterias(); // No se pasa offset ni límite
 <?php if ($registroParaModificar): ?>
 <div id="modalEditar" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
     <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-8">
-        <h2 class="text-xl font-semibold text-gray-700 mb-4">Modify Subject</h2>
+        <h2 class="text-xl font-semibold text-gray-700 mb-4">Edit Subject</h2>
         <form action="" method="POST">
             <input type="hidden" name="id" value="<?php echo $registroParaModificar['id']; ?>">
 
@@ -145,12 +145,16 @@ $resultado = $obj->consultarmaterias(); // No se pasa offset ni límite
                 <label for="unidad" class="block text-sm font-medium text-gray-700">
                     <i class="fa-solid fa-layer-group mr-2"></i>Unit
                 </label>
-                <input type="number" name="unidad" value="<?php echo $registroParaModificar['unidad']; ?>" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                <select name="unidad" id="role" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                    <option value="1"<?php echo $registroParaModificar['unidad'] == '1' ? 'selected' : ''; ?>>1</option>
+                    <option value="2" <?php echo $registroParaModificar['unidad'] == '2' ? 'selected' : ''; ?>>2</option>
+                    <option value="3" <?php echo $registroParaModificar['unidad'] == '3' ? 'selected' : ''; ?>>3</option>
+                </select>
             </div>
 
             <div class="flex justify-end space-x-4 mt-6">
                 <button type="button" onclick="ocultarModalEditar()" class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-200">Cancel</button>
-                <input type="submit" name="modificar" value="Modify" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700">
+                <input type="submit" name="modificar" value="Edit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700">
             </div>
         </form>
     </div>

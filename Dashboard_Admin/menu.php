@@ -3,7 +3,7 @@
     <!-- El título de la dashboard -->
     <div class="flex items-center text-white text-3xl px-5">
         <div class="flex-shrink-0 h-10 w-10">
-            <img class="scale-150 h-9 w-10 rounded-full" 
+            <img class="scale-150 h-9 w-15 rounded-full" 
                 src="../SRC/logoblanco.png" 
                 alt="">
         </div>

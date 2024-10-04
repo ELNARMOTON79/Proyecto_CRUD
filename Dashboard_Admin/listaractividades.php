@@ -89,7 +89,7 @@ if ($materia_filtrada !== '') {
                             <button type="submit" name="modificarBtn" class="relative group text-blue-600 hover:text-blue-800 mr-2">
                                 <i class="fas fa-edit"></i>
                                 <span class="absolute bottom-full mb-2 hidden w-max p-2 text-xs text-white bg-gray-700 rounded opacity-0 group-hover:block group-hover:opacity-100">
-                                    Modify
+                                    Edit
                                 </span>
                             </button>
                         </form>
@@ -161,7 +161,7 @@ if ($materia_filtrada !== '') {
     ?>
     <div id="modalEditar" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
     <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-8">
-        <h2 class="text-xl font-semibold text-gray-700 mb-4">Modify Activity</h2>
+        <h2 class="text-xl font-semibold text-gray-700 mb-4">Edit Activity</h2>
         <form action="" method="POST">
             <input type="hidden" name="id" value="<?php echo $registroParaModificar['id']; ?>">
 
@@ -184,7 +184,7 @@ if ($materia_filtrada !== '') {
                 <label for="fk_materia" class="block text-sm font-medium text-gray-700">
                     <i class="fa-solid fa-book mr-2"></i>Materia
                 </label>
-                <select name="fk_materia" id="fk_materia" class="block w-full p-2 border border-gray-300 rounded">
+                <select name="fk_materia" id="fk_materia" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
                     <?php while ($materia = $materias->fetch_assoc()): ?>
                         <option value="<?php echo $materia['id']; ?>" <?php echo $registroParaModificar['fk_materia'] == $materia['id'] ? 'selected' : ''; ?>>
                             <?php echo htmlspecialchars($materia['nombre_materia']); ?>
@@ -202,7 +202,7 @@ if ($materia_filtrada !== '') {
 
             <div class="flex justify-end space-x-4 mt-6">
                 <button type="button" onclick="ocultarModalEditar()" class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-200">Cancel</button>
-                <input type="submit" name="modificar" value="Modify" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700">
+                <input type="submit" name="modificar" value="Edit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700">
             </div>
         </form>
     </div>

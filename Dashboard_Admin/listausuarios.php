@@ -94,7 +94,7 @@ if ($tipo_usuario !== '') {
                             <button type="submit" name="modificarBtn" class="relative group text-blue-600 hover:text-blue-800 mr-2">
                                 <i class="fas fa-edit"></i>
                                 <span class="absolute bottom-full mb-2 hidden w-max p-2 text-xs text-white bg-gray-700 rounded opacity-0 group-hover:block group-hover:opacity-100">
-                                    Modify
+                                    Edit
                                 </span>
                             </button>
                         </form>
@@ -161,7 +161,7 @@ if ($tipo_usuario !== '') {
 <?php if ($registroParaModificar): ?>
 <div id="modalEditar" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
     <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-8">
-        <h2 class="text-xl font-semibold text-gray-700 mb-4">Modify User</h2>
+        <h2 class="text-xl font-semibold text-gray-700 mb-4">Edit User</h2>
         <form action="" method="POST">
             <input type="hidden" name="id" value="<?php echo $registroParaModificar['id']; ?>">
 
@@ -199,7 +199,7 @@ if ($tipo_usuario !== '') {
 
             <div class="flex justify-end space-x-4 mt-6">
                 <button type="button" onclick="ocultarModalEditar()" class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-200">Cancel</button>
-                <input type="submit" name="modificar" value="Modify" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700">
+                <input type="submit" name="modificar" value="Edit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700">
             </div>
         </form>
     </div>
