@@ -47,7 +47,7 @@
                 </div>
             </div>
         </section>
-
+    
 <!-- Meet Our Team Section -->
 <section class="mb-12">
     <h2 class="text-3xl font-bold text-center mb-8 text-green-600">Meet Our Team</h2>
@@ -84,8 +84,7 @@
         </div>
     </div>
 </section>
-
-
+</main>
     <?php include 'footer.php'; ?>
 </body>
 
