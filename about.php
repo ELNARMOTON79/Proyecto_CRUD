@@ -13,7 +13,8 @@
     <?php include 'navbar.php'; ?>
 
     <!-- Main Content -->
-    <main class="container mx-auto bg-white bg-opacity-80 rounded-lg p-6 mt-20 mb-20 shadow-md">
+    <main class="container mx-auto bg-white bg-opacity-80 rounded-lg p-6 mt-40 mb-10 shadow-md pt-5">
+
         <!-- Our Mission Section -->
         <section class="mb-12">
             <h2 class="text-3xl font-bold text-center mb-4 text-green-600">Our Mission</h2>
