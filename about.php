@@ -48,45 +48,44 @@
             </div>
         </section>
 
-        <!-- Meet Our Team Section -->
-        <section class="mb-12">
-            <h2 class="text-3xl font-bold text-center mb-8 text-green-600">Meet Our Team</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Team Member 1 -->
-                <div class="text-center p-6 bg-white bg-opacity-80 rounded-lg shadow-md">
-                    <img src="SRC/rafa.jpg" alt="Rafael Alexandro Vuelvas Pérez" class="w-32 h-32 mx-auto rounded-full mb-4">
-                    <h3 class="text-xl font-bold mb-2 text-green-800">Rafael Alexandro Vuelvas Pérez</h3>
-                    <p class="text-gray-600">Programmer</p>
-                </div>
-                <!-- Team Member 2 -->
-                <div class="text-center p-6 bg-white bg-opacity-80 rounded-lg shadow-md">
-                    <img src="SRC/heidy.jpg" alt="Heidy Samantha Guzmán Márquez" class="w-32 h-32 mx-auto rounded-full mb-4">
-                    <h3 class="text-xl font-bold mb-2 text-green-800">Heidy Samantha Guzmán Márquez</h3>
-                    <p class="text-gray-600">Programmer</p>
-                </div>
-                <!-- Team Member 3 -->
-                <div class="text-center p-6 bg-white bg-opacity-80 rounded-lg shadow-md">
-                    <img src="SRC/gerardo.jpg" alt="Gerardo Adonai Gutierrez Rúa" class="w-32 h-32 mx-auto rounded-full mb-4">
-                    <h3 class="text-xl font-bold mb-2 text-green-800">Gerardo Adonai Gutierrez Rúa</h3>
-                    <p class="text-gray-600">Programmer</p>
-                </div>
-                <!-- Team Member 4 -->
-                <div class="text-center p-6 bg-white bg-opacity-80 rounded-lg shadow-md lg:col-span-1 lg:col-start-2">
-                    <img src="SRC/luis.jpg" alt="Luis Angel Alaniz Murguia" class="w-32 h-32 mx-auto rounded-full mb-4">
-                    <h3 class="text-xl font-bold mb-2 text-green-800">Luis Angel Alaniz Murguia</h3>
-                    <p class="text-gray-600">Programmer</p>
-                </div>
-                <!-- Team Member 5 -->
-                <div class="text-center p-6 bg-white bg-opacity-80 rounded-lg shadow-md lg:col-span-1 lg:col-start-3">
-                    <img src="SRC/jesus.jpg" alt="Jesus Guadalupe Rivera Meza" class="w-32 h-32 mx-auto rounded-full mb-4">
-                    <h3 class="text-xl font-bold mb-2 text-green-800">Jesus Guadalupe Rivera Meza</h3>
-                    <p class="text-gray-600">Programmer</p>
-                </div>
-            </div>
-        </section>
-    </main>
+<!-- Meet Our Team Section -->
+<section class="mb-12">
+    <h2 class="text-3xl font-bold text-center mb-8 text-green-600">Meet Our Team</h2>
+    <div class="flex flex-wrap justify-center gap-8">
+        <!-- Team Member 1 -->
+        <div class="text-center p-6 bg-white bg-opacity-80 rounded-lg shadow-md">
+            <img src="SRC/rafa.jpg" alt="Rafael Alexandro Vuelvas Pérez" class="w-32 h-32 mx-auto rounded-full mb-4">
+            <h3 class="text-xl font-bold mb-2 text-green-800">Rafael Alexandro Vuelvas Pérez</h3>
+            <p class="text-gray-600">Programmer</p>
+        </div>
+        <!-- Team Member 2 -->
+        <div class="text-center p-6 bg-white bg-opacity-80 rounded-lg shadow-md">
+            <img src="SRC/heidy.jpg" alt="Heidy Samantha Guzmán Márquez" class="w-32 h-32 mx-auto rounded-full mb-4">
+            <h3 class="text-xl font-bold mb-2 text-green-800">Heidy Samantha Guzmán Márquez</h3>
+            <p class="text-gray-600">Programmer</p>
+        </div>
+        <!-- Team Member 3 -->
+        <div class="text-center p-6 bg-white bg-opacity-80 rounded-lg shadow-md">
+            <img src="SRC/gerardo.jpg" alt="Gerardo Adonai Gutierrez Rúa" class="w-32 h-32 mx-auto rounded-full mb-4">
+            <h3 class="text-xl font-bold mb-2 text-green-800">Gerardo Adonai Gutierrez Rúa</h3>
+            <p class="text-gray-600">Programmer</p>
+        </div>
+        <!-- Team Member 4 -->
+        <div class="text-center p-6 bg-white bg-opacity-80 rounded-lg shadow-md">
+            <img src="SRC/luis.jpg" alt="Luis Angel Alaniz Murguia" class="w-32 h-32 mx-auto rounded-full mb-4">
+            <h3 class="text-xl font-bold mb-2 text-green-800">Luis Angel Alaniz Murguia</h3>
+            <p class="text-gray-600">Programmer</p>
+        </div>
+        <!-- Team Member 5 -->
+        <div class="text-center p-6 bg-white bg-opacity-80 rounded-lg shadow-md">
+            <img src="SRC/jesus.jpg" alt="Jesus Guadalupe Rivera Meza" class="w-32 h-32 mx-auto rounded-full mb-4">
+            <h3 class="text-xl font-bold mb-2 text-green-800">Jesus Guadalupe Rivera Meza</h3>
+            <p class="text-gray-600">Programmer</p>
+        </div>
+    </div>
+</section>
 
-    <!-- Footer (Incluido desde PHP) -->
+
     <?php include 'footer.php'; ?>
 </body>
 

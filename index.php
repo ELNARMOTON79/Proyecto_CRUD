@@ -80,6 +80,9 @@
   <script src="swiper-bundle.min.js"></script>
   <script src="main.js"></script>
 
+  <?php 
+  include 'footer.php';
+  ?>
 </body>
 </html>
 
