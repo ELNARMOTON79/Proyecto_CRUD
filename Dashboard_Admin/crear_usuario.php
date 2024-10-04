@@ -26,49 +26,73 @@
   }
 ?>
 
-<!-- Formulario de Creación de Usuario -->
-<form action="" method="post" class="max-w-4xl mx-auto mt-10 p-6 bg-white rounded-lg shadow space-y-6">
-    <h1 class="text-2xl font-bold mb-6">Create User</h1>
-    <div>
-        <label for="name" class="block text-sm font-medium text-green-600">Name:</label>
-        <input type="text" name="name" id="name" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
+<div class="inset-0 flex items-center justify-center">
+    <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-8">
+        <h2 class="text-xl font-semibold text-gray-700 mb-4">Create User</h2>
+        <form action="" method="POST">
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700">
+                        <i class="fa-solid fa-user mr-2"></i>Name:
+                    </label>
+                    <input type="text" name="name" id="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" placeholder="Name">
+                </div>
+                <div>
+                    <label for="age" class="block text-sm font-medium text-gray-700">
+                        <i class="fa-solid fa-hashtag mr-2"></i>Age:
+                    </label>
+                    <input type="number" name="age" id="age" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" placeholder="Age">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 mt-4">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">
+                        <i class="fa-solid fa-envelope mr-2"></i>Email:
+                    </label>
+                    <input type="email" name="email" id="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" placeholder="youremail@gmail.com">
+                </div>
+                <div class="relative">
+                    <label for="password" class="block text-sm font-medium text-gray-700">
+                        <i class="fa-solid fa-lock mr-2"></i>Password:
+                    </label>
+                    <input type="password" name="password" id="password" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" placeholder="Password">
+                    <span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password absolute right-3 top-10 cursor-pointer"></span>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <label for="gender" class="block text-sm font-medium text-gray-700">
+                    <i class="fa-solid fa-venus-mars mr-2"></i>Gender:
+                </label>
+                <select name="gender" id="gender" required class="block w-full p-2 border border-gray-300 rounded">
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="Hombre">Man</option>
+                    <option value="Mujer">Woman</option>
+                </select>
+            </div>
+
+            <div class="mt-4">
+                <label for="role" class="block text-sm font-medium text-gray-700">
+                    <i class="fa-solid fa-user-tag mr-2"></i>Role:
+                </label>
+                <select name="role" id="role" required class="block w-full p-2 border border-gray-300 rounded">
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="student">Student</option>
+                    <option value="donator">Donator</option>
+                    <option value="coordinator">Coordinator</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+
+            <div class="flex justify-end space-x-4 mt-6">
+                <button type="button" onclick="ocultarModalEditar()" class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-200">Cancel</button>
+                <input type="submit" name="enviar" value="Submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700">
+            </div>
+        </form>
     </div>
-    <div>
-        <label for="age" class="block text-sm font-medium text-green-600">Age:</label>
-        <input type="number" name="age" id="age" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
-    </div>
-    <div>
-        <label for="email" class="block text-sm font-medium text-green-600">Email:</label>
-        <input type="email" name="email" id="email" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
-    </div>
-    <div class="relative">
-        <label for="password" class="block text-sm font-medium text-green-600">Password:</label>
-        <input type="password" name="password" id="password" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
-        <span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password absolute right-3 top-10 cursor-pointer"></span>
-    </div>
-    <div>
-        <label for="gender" class="block text-sm font-medium text-green-600">Gender:</label>
-        <select name="gender" id="gender" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
-            <option value="" disabled selected>Select an option</option>
-            <option value="Hombre">Man</option>
-            <option value="Mujer">Woman</option>
-        </select>
-    </div>
-    <div>
-        <label for="role" class="block text-sm font-medium text-green-600">Role:</label>
-        <select name="role" id="role" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
-            <option value="" disabled selected>Select an option</option>
-            <option value="teacher">Teacher</option>
-            <option value="student">Student</option>
-            <option value="donator">Donator</option>
-            <option value="coordinator">Coordinator</option>
-            <option value="admin">Admin</option>
-        </select>
-    </div>
-    <div class="flex justify-center">
-        <button type="submit" name="enviar" class="mt-4 px-4 py-2 bg-green-600 text-white font-semibold rounded-md shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">Submit</button>
-    </div>
-</form>
+</div>
 
 <!-- Modal para Mensaje de Éxito -->
 <?php if ($mostrarExito): ?>

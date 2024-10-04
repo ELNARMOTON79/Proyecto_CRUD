@@ -18,17 +18,17 @@ include 'login_var.php';
     <div class="relative bg-cover bg-center h-screen w-full" style="background-image: url('../SRC/carrucel/12.png');">
         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
             <div class="bg-white rounded-lg shadow-lg p-8 w-96 relative">
-                <!-- Mover el icono de la casa aquí, fuera del formulario -->
-                <div class="absolute top-0 right-0 mt-2 mr-2 flex space-x-4">
-                    <!-- Icono de casita en color verde -->
+                <div class="flex justify-between items-center mb-6">
+                    <!-- Logo y texto centrados -->
+                    <div class="logo flex items-center text-2xl font-bold text-green-600">
+                        <img src="../SRC/logoblanco.png" class="w-17 h-14 mr-3" alt="logo">
+                        Login
+                    </div>
+                    <!-- Icono de casita alineado a la derecha -->
                     <a href="../index.php" class="text-green-500 hover:text-green-700">
                         <i class="fas fa-home fa-lg"></i>
                     </a>
                 </div>
-                <a class="logo flex items-center text-2xl font-bold mb-6 text-center text-green-600">
-                    <img src="../SRC/logoblanco.png" class="w-17 h-14 mr-3" alt="logo">
-                    Login
-                </a>
 
                 <!-- Mostrar mensaje de error si las credenciales son incorrectas -->
                 <?php if (isset($_GET['error']) && $_GET['error'] == 1): ?>
@@ -55,7 +55,7 @@ include 'login_var.php';
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Password</label>
                         <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" name="password" type="password" placeholder="Password" required>
                         <!-- Icono de mostrar/ocultar contraseña -->
-                        <span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="position:absolute; right: 10px; top: 40px; cursor: pointer;"></span>
+                        <span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password absolute right-3 top-10 cursor-pointer text-gray-500 hover:text-green-600"></span>
                     </div>
                     <div class="flex items-center justify-between mb-4">
                         <a class="inline-block align-baseline font-bold text-sm text-green-600 hover:text-green-800" href="#">
@@ -72,6 +72,7 @@ include 'login_var.php';
                     <p class="text-gray-600 text-sm">Don't you have an account? <a href="../joinus.php" class="text-green-600 font-bold hover:underline">Create account</a></p>
                 </div>
             </div>
+
         </div>
     </div>
 

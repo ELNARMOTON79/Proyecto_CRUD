@@ -26,11 +26,11 @@
       <form action="" method="post" class="space-y-4">
         <div>
           <label for="name" class="block text-sm font-medium text-green-600">Name:</label>
-          <input type="text" name="name" id="name" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
+          <input type="text" name="name" id="name" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500" placeholder="Name">
         </div>
         <div>
           <label for="age" class="block text-sm font-medium text-green-600">Age:</label>
-          <input type="number" name="age" id="age" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
+          <input type="number" name="age" id="age" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500" placeholder="Age">
         </div>
         <div>
           <label for="email" class="block text-sm font-medium text-green-600">Email:</label>

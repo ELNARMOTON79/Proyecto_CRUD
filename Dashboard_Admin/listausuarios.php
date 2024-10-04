@@ -91,13 +91,19 @@ if ($tipo_usuario !== '') {
                         <!-- Botón de Editar con ícono -->
                         <form action="" method="POST" style="display:inline;">
                             <input type="hidden" name="idmodificar" value="<?php echo $registro['id']; ?>">
-                            <button type="submit" name="modificarBtn" class="text-blue-600 hover:text-blue-800 mr-2">
+                            <button type="submit" name="modificarBtn" class="relative group text-blue-600 hover:text-blue-800 mr-2">
                                 <i class="fas fa-edit"></i>
+                                <span class="absolute bottom-full mb-2 hidden w-max p-2 text-xs text-white bg-gray-700 rounded opacity-0 group-hover:block group-hover:opacity-100">
+                                    Modify
+                                </span>
                             </button>
                         </form>
                         <!-- Botón de Eliminar con ícono, activando modal -->
-                        <a href="#" onclick="mostrarModal(<?php echo $registro['id']; ?>)" class="text-red-600 hover:text-red-800">
+                        <a href="#" onclick="mostrarModal(<?php echo $registro['id']; ?>)" class="relative group text-red-600 hover:text-red-800">
                             <i class="fas fa-trash-alt"></i>
+                            <span class="absolute bottom-full mb-2 hidden w-max p-2 text-xs text-white bg-gray-700 rounded opacity-0 group-hover:block group-hover:opacity-100">
+                                Delete
+                            </span>
                         </a>
                     </td>
                 </tr>
