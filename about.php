@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Edu 4 All</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="SRC/EDU4ALL..png">
 </head>
 
 <body class="bg-cover bg-center bg-no-repeat text-gray-800" style="background-image: url('SRC/About/about1.png');">

@@ -6,7 +6,7 @@
   <title>Edu4All Join Us</title>
   <!-- Agregar enlace de Font Awesome para los iconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="icon" href="SRC/logoblanco.png">
+  <link rel="icon" href="SRC/EDU4ALL..png">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-cover bg-center h-screen" style="background-image: url('SRC/Carrucel/11.png');">
