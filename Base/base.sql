@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-09-2024 a las 04:51:07
+-- Tiempo de generación: 06-10-2024 a las 20:57:16
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.0.30
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,8 +32,7 @@ CREATE TABLE `actividades` (
   `nombre_actividad` varchar(100) DEFAULT NULL,
   `descripcion` text DEFAULT NULL,
   `fk_materia` int(11) DEFAULT NULL,
-  `fecha` date NOT NULL,
-  `duracion` int(10) NOT NULL
+  `fecha` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -118,6 +117,18 @@ CREATE TABLE `programas` (
   `unidad` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `programas`
+--
+
+INSERT INTO `programas` (`id`, `nombre_materia`, `objetivos`, `actividades`, `unidad`) VALUES
+(18, 'Estructura de Datos', 'To understand and implement fundamental data structures, such as arrays, linked lists, stacks, queues, trees, and graphs, for efficient data management and problem-solving in computer programming.', NULL, '1'),
+(19, 'Estructura de Computadoras', 'To explore the fundamental principles of computer architecture, including the design and functionality of processors, memory systems, and input/output devices, to understand how hardware components interact to execute software efficiently.', NULL, '1'),
+(20, 'Legislación y Derecho Informático ', 'To examine the legal frameworks and regulations governing information technology, focusing on data protection, intellectual property, cybersecurity, and the ethical implications of technology in society.', NULL, '1'),
+(21, 'Matemáticas Discretas ', 'To develop a strong foundation in discrete mathematical structures, including logic, set theory, combinatorics, graph theory, and algorithms, essential for solving complex problems in computer science and related fields.', NULL, '1'),
+(22, 'Metodologías Agiles', 'To understand and apply Agile principles and frameworks, such as Scrum and Kanban, for efficient project management, promoting flexibility, collaboration, and continuous improvement in software development processes.', NULL, '1'),
+(23, 'Bases de Datos', 'To understand the principles of database design, implementation, and management, including relational models, SQL, and normalization, to efficiently store, retrieve, and manipulate data in various applications.', NULL, '1');
+
 -- --------------------------------------------------------
 
 --
@@ -153,9 +164,11 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `password`, `genero`, `edad`, `tipo_usuario`, `fecha_nac`) VALUES
-(1, 'rafa', 'rvuelvas@ucol.mx', '14122005', 'hombre', 18, 'admin', '2005-12-14'),
-(2, 'samis', 'hguzman@ucol.mx', '123456', 'mujer', 21, 'teacher', '2002-12-13'),
-(3, 'Gerardo', 'ggutierrez@ucol.mx', '123456', 'hombre', 24, 'cordinator', '1999-12-17');
+(1, 'Rafael', 'rvuelvas@ucol.mx', '14122005', 'Mujer', 21, 'Administrator', '2005-12-14'),
+(12, 'Luis', 'lalaniz@ucol.mx', '123456', 'Hombre', 24, 'Student', '0000-00-00'),
+(27, 'Samiis', 'hguzman2@ucol.mx', '123456', 'Mujer', 21, 'Teacher', '0000-00-00'),
+(28, 'Gerardo', 'ggera@ucol.mx', '123456', 'Hombre', 24, 'Donor', '0000-00-00'),
+(30, 'Jesus', 'jrivera@ucol.mx', '123456', 'Hombre', 24, 'Cordinator', '0000-00-00');
 
 --
 -- Índices para tablas volcadas
@@ -227,6 +240,18 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `actividades`
+--
+ALTER TABLE `actividades`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT de la tabla `programas`
+--
+ALTER TABLE `programas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
 -- AUTO_INCREMENT de la tabla `reporte_gastos`
 --
 ALTER TABLE `reporte_gastos`
@@ -236,7 +261,7 @@ ALTER TABLE `reporte_gastos`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- Restricciones para tablas volcadas

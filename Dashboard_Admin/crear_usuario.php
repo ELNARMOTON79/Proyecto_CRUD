@@ -55,9 +55,10 @@
                     <label for="password" class="block text-sm font-medium text-gray-700">
                         <i class="fa-solid fa-lock mr-2"></i>Password:
                     </label>
-                    <input type="password" name="password" id="password" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" placeholder="Password">
-                    <span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password absolute right-3 top-10 cursor-pointer"></span>
+                    <input type="password" name="password" id="password" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm pr-10" placeholder="Password">
+                    <span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password absolute right-2 top-7 cursor-pointer"></span>
                 </div>
+
             </div>
 
             <div class="mt-4">
@@ -77,11 +78,11 @@
                 </label>
                 <select name="role" id="role" required class="block w-full p-2 border border-gray-300 rounded">
                     <option value="" disabled selected>Select an option</option>
-                    <option value="teacher">Teacher</option>
-                    <option value="student">Student</option>
-                    <option value="donator">Donator</option>
-                    <option value="coordinator">Coordinator</option>
-                    <option value="admin">Admin</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Student">Student</option>
+                    <option value="Sonator">Donator</option>
+                    <option value="Cordinator">Coordinator</option>
+                    <option value="Administrator">Administrator</option>
                 </select>
             </div>
 

@@ -21,19 +21,19 @@
     
                     // Redirigir al dashboard de acuerdo al tipo_usuario
                     switch ($row['tipo_usuario']) {
-                        case 'admin':
+                        case 'Administrator':
                             header("location: ../Dashboard_Admin/dashboard.php");
                             break;
-                        case 'student':
+                        case 'Student':
                             header("location: ../Dashboard_Alumno/dashboard.php");
                             break;
-                        case 'teacher':
+                        case 'Teacher':
                             header("location: ../Dashboard_Maestro/dashboard.php");
                             break;
-                        case 'donation':
+                        case 'Donor':
                             header("location: ../Dashboard_Donacion/dashboard.php");
                             break;
-                        case 'cordinator':
+                        case 'Cordinator':
                             header("location: ../Dashboard_Cordinador/dashboard.php");
                             break;
                         default:
