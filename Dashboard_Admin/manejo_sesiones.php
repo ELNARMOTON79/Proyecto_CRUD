@@ -14,7 +14,7 @@
         $result = $contacto->consultar();
         $total_maestros = 0;
         while($row = $result->fetch_assoc()){
-            if($row['tipo_usuario'] == 'teacher'){
+            if($row['tipo_usuario'] == 'Teacher'){
                 $total_maestros++;
             }
         }
@@ -27,7 +27,7 @@
         $result = $contacto->consultar();
         $total_estudiantes = 0;
         while($row = $result->fetch_assoc()){
-            if($row['tipo_usuario'] == 'student'){
+            if($row['tipo_usuario'] == 'Student'){
                 $total_estudiantes++;
             }
         }
@@ -40,7 +40,7 @@
         $result = $contacto->consultar();
         $total_donadores = 0;
         while($row = $result->fetch_assoc()){
-            if($row['tipo_usuario'] == 'donator'){
+            if($row['tipo_usuario'] == 'Donors'){
                 $total_donadores++;
             }
         }

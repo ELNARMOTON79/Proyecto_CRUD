@@ -20,7 +20,7 @@
             <a href="?action=dashboard" class="flex flex-row space-x-3">
                 <h4 class="text-white hover:text-black">
                     <i class="fa-solid fa-list"></i>
-                    DashBoard
+                    Dashboard
                 </h4>
             </a>
         </div>

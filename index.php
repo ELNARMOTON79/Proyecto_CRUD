@@ -12,6 +12,7 @@
 </head>
 <body>
 
+
   <?php
   include 'navbar.php'
   ?>
@@ -60,7 +61,7 @@
             <p>Edu4All is committed to offering every child the opportunity to access
               to quality education. Through its platform, the page provides
               educational resources that encourage learning and help children achieve
-              your academic goals.</p>
+              your academic goal .</p>
             
           </div>
         </div>
