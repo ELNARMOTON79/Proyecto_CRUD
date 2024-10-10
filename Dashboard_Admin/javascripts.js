@@ -1,51 +1,44 @@
-// Script para actualizar la fecha y hora
-function actualizarFechaHora() {
-  const ahora = new Date();
-
-  // Opciones para formatear la fecha en español
-  const opcionesFecha = { day: "numeric", month: "long" };
-  const fechaFormateada = ahora.toLocaleDateString("es-ES", opcionesFecha);
-
-  // Opciones para formatear la hora en formato de 24 horas
-  const opcionesHora = {
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    hour12: false,
-  };
-  const horaFormateada = ahora.toLocaleTimeString("es-ES", opcionesHora);
-
-  // Combinar fecha y hora
-  const fechaHora = `${fechaFormateada} ${horaFormateada}`;
-
-  // Insertar la fecha y hora en el elemento con id="current-date-time"
-  document.getElementById("current-date-time").textContent = fechaHora;
-}
-
-// Ejecutar la función una vez al cargar la página
-actualizarFechaHora();
-
-// Actualizar la hora cada segundo
-setInterval(actualizarFechaHora, 1000);
-
-
 document.addEventListener("DOMContentLoaded", function () {
-  // Aquí va todo el código de addEventListener
+  // Toggle Usuarios
   document.getElementById("toggleUsuarios").addEventListener("click", function () {
     var submenu = document.getElementById("submenu");
+    var icon = document.getElementById("iconUsuarios");
     submenu.classList.toggle("hidden");
+    // Cambiar el símbolo según el estado del menú
+    if (submenu.classList.contains("hidden")) {
+      icon.innerHTML = '<i class="fa fa-plus"></i>';
+    } else {
+      icon.innerHTML = '<i class="fa fa-minus"></i>';
+    }
   });
 
+  // Toggle Actividades
   document.getElementById("toggleActividades").addEventListener("click", function () {
     var submenu = document.getElementById("submenuActividades");
+    var icon = document.getElementById("iconActividades");
     submenu.classList.toggle("hidden");
+    // Cambiar el símbolo según el estado del menú
+    if (submenu.classList.contains("hidden")) {
+      icon.innerHTML = '<i class="fa fa-plus"></i>';
+    } else {
+      icon.innerHTML = '<i class="fa fa-minus"></i>';
+    }
   });
 
+  // Toggle Materias
   document.getElementById("toggleMaterias").addEventListener("click", function () {
     var submenu = document.getElementById("submenuMaterias");
+    var icon = document.getElementById("iconMaterias");
     submenu.classList.toggle("hidden");
+    // Cambiar el símbolo según el estado del menú
+    if (submenu.classList.contains("hidden")) {
+      icon.innerHTML = '<i class="fa fa-plus"></i>';
+    } else {
+      icon.innerHTML = '<i class="fa fa-minus"></i>';
+    }
   });
 });
+
 const labels = ["January", "February", "March", "April", "May", "June"];
 const data = {
   labels: labels,
