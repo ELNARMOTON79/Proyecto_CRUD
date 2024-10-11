@@ -80,7 +80,7 @@
                     <option value="" disabled selected>Select an option</option>
                     <option value="Teacher">Teacher</option>
                     <option value="Student">Student</option>
-                    <option value="Sonator">Donator</option>
+                    <option value="Donor">Donator</option>
                     <option value="Cordinator">Coordinator</option>
                     <option value="Administrator">Administrator</option>
                 </select>
