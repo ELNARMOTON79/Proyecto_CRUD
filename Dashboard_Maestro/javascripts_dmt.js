@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const miGrafica = new Chart(ctxBar, {
       type: 'bar',
       data: {
-          labels: ['Alumnos', 'Maestros', 'Donadores'], // Eje X
+          labels: ['1er Año', '2do Año', '3er Año'], // Eje X
           datasets: [{
               label: 'Cantidad',
               data: [35, 15, 25], // Datos para cada categoría
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
               },
               title: {
                   display: true,
-                  text: 'Distribución de Alumnos, Maestros y Donadores'
+                  text: 'Distribución de Alumnos por año'
               }
           }
       }

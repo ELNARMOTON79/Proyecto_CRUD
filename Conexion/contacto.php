@@ -4,47 +4,51 @@
 
     class Contacto extends Conexion {
         
-        //login
         public function login($correo, $password)
         {
-            //Sentencia SQL de como funciona
+            // Sentencia SQL para buscar el usuario
             $this->sentencia = "SELECT nombre, correo, password, tipo_usuario FROM usuarios WHERE correo = '$correo' AND password = '$password';";
             $resultado = $this->ejecutar_sentencia();
-
-            //Redirecciones de acuerdo al tipo de usuario
-            if($row = $resultado->fetch_assoc()){
-                if($row['correo'] == $correo && $row['password'] == $password){
-                    //Guardar datos del usaurio en variables de sesion 
+    
+            // Verificar si el usuario existe
+            if ($row = $resultado->fetch_assoc()) {
+                if ($row['correo'] == $correo && $row['password'] == $password) {
+                    // Iniciar sesión y guardar variables de sesión
                     session_start();
                     $_SESSION['nombre'] = $row['nombre'];
                     $_SESSION['correo'] = $row['correo'];
                     $_SESSION['tipo_usuario'] = $row['tipo_usuario'];
-
-                    //Redirigir al dashboard de acuerdo al tipo_usuario
-                    if($row['tipo_usuario'] == 'admin')
-                    {
-                        header("location: ../Dashboard_Admin/dashboard.php");
+    
+                    // Redirigir al dashboard de acuerdo al tipo_usuario
+                    switch ($row['tipo_usuario']) {
+                        case 'Administrator':
+                            header("location: ../Dashboard_Admin/dashboard.php");
+                            break;
+                        case 'Student':
+                            header("location: ../Dashboard_Alumno/dashboard.php");
+                            break;
+                        case 'Teacher':
+                            header("location: ../Dashboard_Maestro/dashboard.php");
+                            break;
+                        case 'Donor':
+                            header("location: ../Dashboard_Donacion/dashboard.php");
+                            break;
+                        case 'Cordinator':
+                            header("location: ../Dashboard_Cordinador/dashboard.php");
+                            break;
+                        default:
+                            header("location: login.php?error=1");
+                            break;
                     }
-                    if($row['tipo_usuario'] == 'student')
-                    {
-                        header("location: ../Dashboard_Alumno/dashboard.php");
-                    }
-                    if($row['tipo_usuario'] == 'teacher')
-                    {
-                        header("location: ../Dashboard_Maestro/dashboard.php");
-                    }
-                    if($row['tipo_usuario'] == 'donation')
-                    {
-                        header("location: ../Dashboard_Donacion/dashboard.php");
-                    }
-                    if($row['tipo_usuario'] == 'cordinator')
-                    {
-                        header("location: ../Dashboard_Cordinador/dashboard.php");
-                    }
+                    exit(); // Detener ejecución después de la redirección
                 }
+            } else {
+                // Si no se encuentra el usuario, redirigir con un error
+                header("location: login.php?error=1");
+                exit();
             }
         }
-
+    
         public function eliminar ($id){  
             $this->sentencia = "DELETE FROM usuarios WHERE id = '$id'";
             $resultado = $this->ejecutar_sentencia();
@@ -57,10 +61,17 @@
             return $result;
         }
         public function consultar_actividades() {
-            $this->sentencia = "SELECT * FROM actividades";
+            // Modificar la consulta SQL para hacer un JOIN entre actividades y programas
+            $this->sentencia = "
+                SELECT actividades.*, programas.nombre_materia 
+                FROM actividades 
+                JOIN programas ON actividades.fk_materia = programas.id";
+                
+            // Ejecutar la consulta y obtener los resultados
             $resultado = $this->obtener_sentencia();
             return $resultado;
         }
+        
 
         //Metodo para consultar por ID
         public function obtenerPorId($id) {
@@ -93,8 +104,8 @@
             $this->sentencia = "DELETE FROM actividades WHERE id = '$id'";
              return $this->ejecutar_sentencia();
         }
-        public function modificar_actividades($nombre_actividad, $descripcion, $fk_materia, $fecha, $duracion) {
-            $this->sentencia = "UPDATE actividades SET descripcion = '$descripcion', fk_materia = '$fk_materia', fecha = '$fecha' WHERE nombre_actividad = '$nombre_actividad'";
+        public function modificar_actividades($id, $nombre_actividad, $descripcion, $fk_materia, $fecha) {
+            $this->sentencia = "UPDATE actividades SET nombre_actividad = '$nombre_actividad', descripcion = '$descripcion', fk_materia = '$fk_materia', fecha = '$fecha' WHERE id = '$id'";
             return $this->ejecutar_sentencia();
         }
         //metodo para modificar materia
@@ -121,33 +132,45 @@
             return $result;
 
         }
+        public function consultar_actividades_por_materia($materia_id) {
+            $this->sentencia = "
+                SELECT actividades.*, programas.nombre_materia 
+                FROM actividades 
+                JOIN programas ON actividades.fk_materia = programas.id
+                WHERE actividades.fk_materia = $materia_id";  // Filtrar por el ID de la materia seleccionada
+            return $this->obtener_sentencia();  // Usando el mismo método que ya tienes
+        }
         //Contar total de maestros
         public function total_maestros(){
-            $this->sentencia = "SELECT COUNT(*) as total_maestros FROM usuarios WHERE tipo_usuario = 'teacher'";
+            $this->sentencia = "SELECT COUNT(*) as total_maestros FROM usuarios WHERE tipo_usuario = 'Teacher';";
             $result = $this->obtener_sentencia();
             return $result;
         }
         //Contar total de estudiantes
         public function total_estudiantes(){
-            $this->sentencia = "SELECT COUNT(*) as total_estudiantes FROM usuarios WHERE tipo_usuario = 'student'";
+            $this->sentencia = "SELECT COUNT(*) as total_estudiantes FROM usuarios WHERE tipo_usuario = 'Student';";
             $result = $this->obtener_sentencia();
             return $result;
         }
         //Contar total de donadores
         public function total_donadores(){
-            $this->sentencia = "SELECT COUNT(*) as total_donadores FROM usuarios WHERE tipo_usuario = 'donator'";
+            $this->sentencia = "SELECT COUNT(*) as total_donadores FROM usuarios WHERE tipo_usuario = 'Donor';";
             $result = $this->obtener_sentencia();
             return $result;
         }
         //Funcion para obtener las materias de 5 en 5
-        public function obtenerMateriasConLimite($offset, $limite) {
-            $this->sentencia = "SELECT id, nombre_materia, objetivos, actividades, unidad FROM programas LIMIT $offset, $limite";
+        public function consultarmaterias() {
+            $this->sentencia = "SELECT * FROM programas;";
             return $this->obtener_sentencia();
         }
-        public function contarTotalMaterias() {
-            $this->sentencia = "SELECT COUNT(*) as total FROM programas";
-            $resultado = $this->obtener_sentencia();
-            return $resultado->fetch_assoc()['total'];
+        public function eliminar_materias($idEliminar)
+        {
+            $this->sentencia = "DELETE FROM programas WHERE id = '$idEliminar';";
+            $resultado = $this->ejecutar_sentencia();
+        }
+        public function obtenerPorIdmateria($idModificar) {
+            $this->sentencia = "SELECT * FROM programas WHERE id = '$idModificar'";
+            return $this->obtener_sentencia();
         }
     }
     

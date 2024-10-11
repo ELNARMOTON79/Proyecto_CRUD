@@ -9,7 +9,7 @@
             <div class="flex flex-col justify-center">
                 <!-- Mensaje de bienvenida -->
                 <h4 class="text-lg font-bold text-gray-500">
-                    Welcome <?php echo htmlspecialchars($_SESSION['nombre']); ?>
+                    Welcome, <?php echo htmlspecialchars($_SESSION['nombre']); ?>
                 </h4>
                 <!-- Correo del usuario -->
                 <div class="text-sm text-gray-500">
@@ -57,7 +57,7 @@
             <!-- Otro va a iniciar aqui -->
             <div class="mt-5 grid lg:grid-cols-3 md:grid-cols-3 p-4 gap-3">
                 <div class="col-span-2 bg-white p-8 flex-col rounded shadow-sm">
-                    <b class="flex flex-row text-gray-500">Student graphics</b>
+                    <b class="flex flex-row text-gray-500">Total donations</b>
                     <canvas class="p-5" id="chartLine"></canvas>
                 </div>
                 <div class="flex flex-col p-8 bg-white rounded shadow-sm">

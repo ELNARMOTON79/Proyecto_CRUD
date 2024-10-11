@@ -30,10 +30,20 @@
                     <div class="text-pink-500">
                         <i class="fa-solid fa-circle-arrow-right fa-2x"></i>
                     </div>
+                    <div class="flex items-center bg-white rounded shadow-sm justify-between p-5">
+                    <div class="text-sm text-gray-400">
+                        Total 1er año
+                        <div class="text-3xl font-medium text-gray-600 p-1">
+                            <?php echo total_estudiantes(); ?>
+                        </div>
+                    </div>
+                    <div class="text-pink-500">
+                        <i class="fa-solid fa-circle-arrow-right fa-2x"></i>
+                    </div>
+                </div>
                 </div>
             </div>
             <div class="mt-8">
-                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Total graph</h2>
                 <div class="max-w-3xl mx-auto bg-white shadow-md rounded-lg p-6">
                     <canvas id="miGrafica" class="w-full"></canvas>
                 </div>
