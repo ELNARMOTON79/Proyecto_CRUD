@@ -192,6 +192,18 @@
             $this->sentencia = "UPDATE programas SET nombre_materia = '$nombre', objetivos = '$objetivo', unidad = '$unidad' WHERE id = '$id'";
             return $this->ejecutar_sentencia();
         }
+        //obtener las materias
+        public function obtenerMateriasConLimite1($offset, $limite) {
+            $this->sentencia = "SELECT * FROM programas LIMIT $offset, $limite";
+            return $this->obtener_sentencia();
+        }
+        
+        public function contarTotalMaterias1() {
+            $this->sentencia = "SELECT COUNT(*) as total FROM programas";
+            $resultado = $this->obtener_sentencia();
+            return $resultado->fetch_assoc()['total'];
+        }
+
     }
     
     
