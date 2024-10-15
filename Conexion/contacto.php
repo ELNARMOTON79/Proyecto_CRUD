@@ -113,6 +113,17 @@
              $this->sentencia = "UPDATE actividades SET descripcion = '$descripcion', fk_materia = '$fk_materia', fecha = '$fecha' WHERE nombre_actividad = '$nombre_actividad'";
                 return $this->ejecutar_sentencia();
          }
+         //metodo para crear calificacion
+         public function crear_calificacion($unidad_1, $unidad_2, $unidad_3){
+            $this->sentencia = "INSERT INTO calificaciones(unidad_1, unidad_2, unidad_3) VALUES ('$unidad_1', '$unidad_2', '$unidad_3')";
+            return $this->ejecutar_sentencia();
+         }
+         // Método para modificar calificación
+        public function modificar_calificacion($id, $unidad_1, $unidad_2, $unidad_3) {
+            $this->sentencia = "UPDATE calificaciones SET unidad_1 = '$unidad_1', unidad_2 = '$unidad_2', unidad_3 = '$unidad_3' WHERE id = '$id'";
+            return $this->ejecutar_sentencia();
+        }
+
         public function subir($name, $age, $email, $password, $gender, $role)
         {
             $this->sentencia = "INSERT INTO usuarios (nombre, correo, password, genero, edad, tipo_usuario) VALUES ('$name', '$email', '$password', '$gender', '$age', '$role')";
