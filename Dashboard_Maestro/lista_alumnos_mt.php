@@ -17,7 +17,7 @@ if (isset($_POST['modificarBtn']) && isset($_POST['idmodificar'])) {
     }
 }
 
-// Verificar si se ha enviado el formulario para modificar un usuario
+// Verificar si se ha enviado el formulario para modificar o crear una calificación
 if (isset($_POST['modificar'])) {
     $id = $_POST['id'];
     $nombre = $_POST['nombre'];
@@ -25,11 +25,21 @@ if (isset($_POST['modificar'])) {
     $unidad_2 = $_POST['unidad_2'];
     $unidad_3 = $_POST['unidad_3'];
 
-    if($unidad_1 < 0 || $unidad_1 > 10 || $unidad_2 < 0 || $unidad_2 > 10 || $unidad_3 < 0 || $unidad_3 > 10) {
+    if($unidad_1 <= 0 || $unidad_1 >= 100 || $unidad_2 <= 0 || $unidad_2 >= 100 || $unidad_3 <= 0 || $unidad_3 >= 100) {
         $mostrarExito1 = true;
     } else {
-        $obj->modificar($id, $nombre, $unidad_1, $unidad_2, $unidad_3);
-        $mostrarExito2 = true;
+        // Verificar si ya existen las calificaciones del usuario
+        $calificacionExistente = $obj->obtenerPorId($id);
+        
+        if ($calificacionExistente) {
+            // Si ya existe, modificar la calificación
+            $obj->modificar_calificacion($id, $nombre, $unidad_1, $unidad_2, $unidad_3);
+            $mostrarExito2 = true;
+        } else {
+            // Si no existe, crear una nueva calificación
+            $obj->crear_calificacion($unidad_1, $unidad_2, $unidad_3);
+            $mostrarExito2 = true;
+        }
     }
 }
 
@@ -79,9 +89,9 @@ $resultado = $obj->consultaxtipo($tipo_usuario);
 
                         <!-- Botón de Confirmar -->
                         <a href="#" onclick="confirmarCambios(<?php echo $registro['id']; ?>)" class="text-green-600 hover:text-green-800 mr-2" id="confirmar-<?php echo $registro['id']; ?>" style="display:none;">
-                            <i class="fa-solid fa-circle-check"></i>
+                            <i class="fa-solid fa-circle-check"></i> 
                         </a>
-
+                         
                         <!-- Botón de Cancelar -->
                         <a href="#" onclick="cancelarCambios(<?php echo $registro['id']; ?>)" class="text-red-600 hover:text-red-800" id="cancelar-<?php echo $registro['id']; ?>" style="display:none;">
                             <i class="fa-solid fa-rectangle-xmark"></i>
