@@ -115,7 +115,7 @@
          }
          //metodo para crear calificacion
          public function crear_calificacion($unidad_1, $unidad_2, $unidad_3){
-            $this->sentencia = "INSERT INTO calificaciones(unidad_1, unidad_2, unidad_3) VALUES ('$unidad_1', '$unidad_2', '$unidad_3')";
+            $this->sentencia = "INSERT INTO calificaciones (unidad_1, unidad_2, unidad_3) VALUES ('$unidad_1', '$unidad_2', '$unidad_3')";
             return $this->ejecutar_sentencia();
          }
          // Método para modificar calificación
