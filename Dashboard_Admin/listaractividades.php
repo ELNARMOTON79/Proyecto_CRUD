@@ -9,8 +9,7 @@ $mostrarExito2 = false;
 // Verificar si se ha enviado el formulario para eliminar una actividad
 if (isset($_POST['eliminar']) && isset($_POST['id'])) {
     $idEliminar = $_POST['id'];
-    $obj->eliminar_actividades($idEliminar);
-    
+    $obj->eliminar_actividades($idEliminar);    
     // Activar la variable para mostrar el modal de éxito
     $mostrarExito = true;
 }
@@ -126,6 +125,24 @@ if ($materia_filtrada !== '') {
     </div>
 </div>
 
+<!-- Modal para Confirmar modificacion -->
+<div id="modalConfirmar2" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden">
+    <div class="bg-white rounded-lg shadow-lg max-w-sm w-full p-8">
+        <h2 class="text-xl font-semibold text-gray-700 mb-4">Confirmation of the change</h2>
+        <p class="mb-6 text-gray-600">Are you sure you want to modify this activity?</p>
+        <div class="flex justify-end space-x-4">
+            <button type="button" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600" 
+                    onclick="ocultarModal()">Cancel</button>
+            <form method="POST">
+                <input type="hidden" name="id" id="modify" value="">
+                <button type="submit" name="eliminar" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
+                    Delete
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
 <!-- Modal para Mensaje de Éxito -->
 <?php if ($mostrarExito): ?>
 <div id="modalExito" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
@@ -202,7 +219,7 @@ if ($materia_filtrada !== '') {
 
             <div class="flex justify-end space-x-4 mt-6">
                 <button type="button" onclick="ocultarModalEditar()" class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-200">Cancel</button>
-                <input type="submit" name="modificar" value="Edit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700">
+                <input type="submit" onclick="mostrarModal1()" name="modificar" value="Edit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700">
             </div>
         </form>
     </div>
@@ -223,5 +240,16 @@ if ($materia_filtrada !== '') {
     // Ocultar el modal de confirmación
     function ocultarModal() {
         document.getElementById('modalConfirmar').classList.add('hidden');
+    }
+
+    // Mostrar el modal de confirmación con el ID de la actividad
+    function mostrarModal1(activityId) {
+        document.getElementById('modify').value = activityId;
+        document.getElementById('modalConfirmar2').classList.remove('hidden');
+    }
+
+    // Ocultar el modal de confirmación
+    function ocultarModal1() {
+        document.getElementById('modalConfirmar2').classList.add('hidden');
     }
 </script>

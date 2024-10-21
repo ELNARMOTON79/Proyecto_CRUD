@@ -177,7 +177,5 @@
             $this->sentencia = "UPDATE programas SET nombre_materia = '$nombre', objetivos = '$objetivo', unidad = '$unidad' WHERE id = '$id'";
             return $this->ejecutar_sentencia();
         }
-    }
-    
-    
+    }  
 ?>
