@@ -15,35 +15,6 @@ $offset = ($paginaActual - 1) * $limite; // Calcular el offset
 $totalRegistros = $obj->contarTotalActividades();
 $totalPaginas = ceil($totalRegistros / $limite);
 
-// Verificar si se ha enviado el formulario para eliminar una actividad
-if (isset($_POST['eliminar']) && isset($_POST['id'])) {
-    $idEliminar = $_POST['id'];
-    $obj->eliminar_actividades($idEliminar);
-    
-    // Activar la variable para mostrar el modal de éxito
-    $mostrarExito = true;
-}
-
-// Verificar si se ha presionado el botón de modificar
-$registroParaModificar = null;
-if (isset($_POST['modificarBtn']) && isset($_POST['idmodificar'])) {
-    $idModificar = $_POST['idmodificar'];
-    $resultadoModificar = $obj->consultar_actividades($idModificar);
-    if ($resultadoModificar) {
-        $registroParaModificar = $resultadoModificar->fetch_assoc();
-    }
-}
-
-if (isset($_POST['modificar'])) {
-    $id = $_POST['id'];
-    $nombre = $_POST['nombre'];
-    $description = $_POST['description'];
-    $fk_materia = $_POST['fk_materia'];
-    $fecha = $_POST['fecha'];
-    $obj->modificar_actividades($id, $nombre, $description, $fk_materia, $fecha);
-    $mostrarExito2 = true;
-}
-
 // Obtener las actividades con límite y offset
 $resultado = $obj->obtenerActividadesConLimite($offset, $limite);
 

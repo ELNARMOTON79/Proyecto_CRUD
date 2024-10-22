@@ -13,34 +13,6 @@ $offset = ($paginaActual - 1) * $limite; // Calcular el offset
 $totalRegistros = $obj->contarTotalMaterias1();
 $totalPaginas = ceil($totalRegistros / $limite);
 
-// Verificar si se ha enviado el formulario para eliminar un usuario
-if (isset($_POST['eliminar']) && isset($_POST['id'])) {
-    $idEliminar = $_POST['id'];
-    $obj->eliminar_materias($idEliminar);
-    
-    // Activar la variable para mostrar el modal de éxito
-    $mostrarExito = true;
-}
-
-// Verificar si se ha presionado el botón de modificar
-$registroParaModificar = null;
-if (isset($_POST['modificarBtn']) && isset($_POST['idmodificar'])) {
-    $idModificar = $_POST['idmodificar'];
-    $resultadoModificar = $obj->obtenerPorIdmateria($idModificar);
-    if ($resultadoModificar) {
-        $registroParaModificar = $resultadoModificar->fetch_assoc();
-    }
-}
-
-// Verificar si se ha enviado el formulario para modificar un usuario
-if (isset($_POST['modificar'])) {
-    $id = $_POST['id'];
-    $nombre = $_POST['nombre_materia'];
-    $objetivo = $_POST['objetivo'];
-    $unidad = $_POST['unidad'];
-    $obj->modificar_materia($id, $nombre, $objetivo, $unidad);
-}
-
 // Obtener las materias con límite y offset
 $resultado = $obj->obtenerMateriasConLimite1($offset, $limite);
 
