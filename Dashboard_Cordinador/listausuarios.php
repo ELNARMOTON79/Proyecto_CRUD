@@ -54,19 +54,9 @@ if ($tipo_usuario !== '') {
 
 <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
     <h1 class="text-2xl font-bold mb-6">List user</h1>
-    
-    <!-- Formulario de filtro -->
-    <form method="POST" class="mb-4" id="filterForm">
-        <label for="tipo_usuario" class="block mb-2 text-gray-700">Filter by user role:</label>
-        <select name="tipo_usuario" id="tipo_usuario" class="block w-full p-2 border border-gray-300 rounded" onchange="document.getElementById('filterForm').submit();">
-            <option value="">All Roles</option>
-            <option value="Admin" <?php echo $tipo_usuario == 'Admin' ? 'selected' : ''; ?>>Administrator</option>
-            <option value="Teacher" <?php echo $tipo_usuario == 'Teacher' ? 'selected' : ''; ?>>Teacher</option>
-            <option value="Student" <?php echo $tipo_usuario == 'Student' ? 'selected' : ''; ?>>Student</option>
-            <option value="donator" <?php echo $tipo_usuario == 'donator' ? 'selected' : ''; ?>>Donator</option>
-            <option value="coordinator" <?php echo $tipo_usuario == 'coordinator' ? 'selected' : ''; ?>>Cordinator</option>
-        </select>
-    </form>
+
+    <!-- Command Palette para filtrar -->
+    <input type="text" id="commandPalette" placeholder="Search..." class="block w-full p-2 border border-gray-300 rounded mb-4">
 
     <table class="min-w-full table-auto border-collapse border border-gray-300 rounded-lg overflow-hidden shadow">
         <thead>
@@ -79,16 +69,15 @@ if ($tipo_usuario !== '') {
                 <th class="px-6 py-3 text-left">Actions</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="userTable">
             <?php while ($registro = $resultado->fetch_assoc()): ?>
                 <tr class="even:bg-gray-100 hover:bg-gray-200">
                     <td class="px-6 py-4"><?php echo htmlspecialchars($registro["nombre"]); ?></td>
                     <td class="px-6 py-4"><?php echo htmlspecialchars($registro["correo"]); ?></td>
                     <td class="px-6 py-4"><?php echo htmlspecialchars($registro["edad"]); ?></td>
                     <td class="px-6 py-4"><?php echo htmlspecialchars($registro["genero"]); ?></td>
-                    <td class="px-6 py-4"><?php echo htmlspecialchars($registro["tipo_usuario"]);?></td>
+                    <td class="px-6 py-4"><?php echo htmlspecialchars($registro["tipo_usuario"]); ?></td>
                     <td class="px-6 py-4">
-                        <!-- Botón de Editar con ícono -->
                         <form action="" method="POST" style="display:inline;">
                             <input type="hidden" name="idmodificar" value="<?php echo $registro['id']; ?>">
                             <button type="submit" name="modificarBtn" class="relative group text-blue-600 hover:text-blue-800 mr-2">
@@ -98,7 +87,6 @@ if ($tipo_usuario !== '') {
                                 </span>
                             </button>
                         </form>
-                        <!-- Botón de Eliminar con ícono, activando modal -->
                         <a href="#" onclick="mostrarModal(<?php echo $registro['id']; ?>)" class="relative group text-red-600 hover:text-red-800">
                             <i class="fas fa-trash-alt"></i>
                             <span class="absolute bottom-full mb-2 hidden w-max p-2 text-xs text-white bg-gray-700 rounded opacity-0 group-hover:block group-hover:opacity-100">
@@ -111,6 +99,7 @@ if ($tipo_usuario !== '') {
         </tbody>
     </table>
 </div>
+
 
 <!-- Modal para Confirmar Eliminación -->
 <div id="modalConfirmar" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden">
@@ -129,6 +118,20 @@ if ($tipo_usuario !== '') {
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById('commandPalette').addEventListener('input', function() {
+        const filter = this.value.toLowerCase();
+        const rows = document.querySelectorAll('#userTable tr');
+
+        rows.forEach(row => {
+            const cells = row.querySelectorAll('td');
+            const rowText = Array.from(cells).map(cell => cell.textContent.toLowerCase()).join(' ');
+            row.style.display = rowText.includes(filter) ? '' : 'none';
+        });
+    });
+</script>
+
 
 <!-- Modal para Mensaje de Éxito -->
 <?php if ($mostrarExito): ?>
