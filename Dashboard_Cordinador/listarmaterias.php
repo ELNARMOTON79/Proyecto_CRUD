@@ -60,7 +60,6 @@ $queryString = http_build_query($queryArray);
                 <th class="px-6 py-3 text-left">Subject</th>
                 <th class="px-6 py-3 text-left">Objective</th>
                 <th class="px-6 py-3 text-left">Unit</th>
-                <th class="px-6 py-3 text-left">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -70,17 +69,6 @@ $queryString = http_build_query($queryArray);
                         <td class="px-6 py-4"><?php echo htmlspecialchars($registro["nombre_materia"]); ?></td>
                         <td class="px-6 py-4"><?php echo htmlspecialchars($registro["objetivos"]); ?></td>
                         <td class="px-6 py-4"><?php echo htmlspecialchars($registro["unidad"]); ?></td>
-                        <td class="px-6 py-4">
-                            <form action="" method="POST" style="display:inline;">
-                                <input type="hidden" name="idmodificar" value="<?php echo $registro['id']; ?>">
-                                <button type="submit" name="modificarBtn" class="text-blue-600 hover:text-blue-800 mr-2">
-                                    <i class="fas fa-edit"></i> Edit
-                                </button>
-                            </form>
-                            <a href="#" onclick="mostrarModal(<?php echo $registro['id']; ?>)" class="text-red-600 hover:text-red-800">
-                                <i class="fas fa-trash-alt"></i> Delete
-                            </a>
-                        </td>
                     </tr>
                 <?php endwhile; ?>
             <?php else: ?>
@@ -134,16 +122,3 @@ $queryString = http_build_query($queryArray);
     </div>
 </div>
 
-<!-- Scripts -->
-<script>
-    // Mostrar el modal de confirmación con el ID del usuario
-    function mostrarModal(userId) {
-        document.getElementById('deleteUserId').value = userId;
-        document.getElementById('modalConfirmar').classList.remove('hidden');
-    }
-
-    // Ocultar el modal de confirmación
-    function ocultarModal() {
-        document.getElementById('modalConfirmar').classList.add('hidden');
-    }
-</script>

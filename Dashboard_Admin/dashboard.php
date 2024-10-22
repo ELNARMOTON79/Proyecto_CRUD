@@ -48,110 +48,11 @@
                     include 'crear_materias.php';
                 endif;
 
-<<<<<<< HEAD
-                <!-- Sección Desplegable - Actividades -->
-                <div class="p-2 hover:bg-green-700 text-white rounded-md transition duration-500 ease-in-out">
-                    <button id="toggleActividades" class="flex flex-row space-x-3 w-full focus:outline-none">
-                        <span class="text-white hover:text-black ">
-                            <i class="fa-solid fa-bookmark"></i>
-                            Activities
-                        </span>
-                    </button>
-                    <div id="submenuActividades" class="ml-6 mt-2 hidden">
-                        <a href="crear_actividades.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
-                        <i class="fa-solid fa-pen"></i>
-                            Create activities</a>
-                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
-                        <i class="fa-solid fa-clipboard-list"></i>
-                            List activities
-                        </a>
-                        <a href="modificar_actividades.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
-                        <i class="fa-sharp fa-solid fa-gears"></i>
-                            Modify activities
-                        </a>
-                        <a href="eliminaractividad.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
-                        <i class="fa-solid fa-trash-can"></i>
-                            Delete activities
-                        </a>
-                    </div>
-                </div>
-                <div class="p-2 hover:bg-green-700 text-white rounded-md transition duration-500 ease-in-out">
-                    <button id="toggleMaterias" class="flex flex-row space-x-3 w-full focus:outline-none">
-                        <span class="text-white hover:text-black ">
-                        <i class="fa-solid fa-book"></i>
-                            Subjects
-                        </span>
-                    </button>
-                    <div id="submenuMaterias" class="ml-6 mt-2 hidden">
-                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
-                        <i class="fa-solid fa-pen"></i>
-                            Create Subjects</a>
-                        <a href="listarmaterias.php" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
-                        <i class="fa-solid fa-clipboard-list"></i>
-                            List Subject
-                        </a>
-                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
-                        <i class="fa-sharp fa-solid fa-gears"></i>
-                            Modify Subject
-                        </a>
-                        <a href="#" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
-                        <i class="fa-solid fa-trash-can"></i>
-                            Delete Subject
-                        </a>
-                    </div>
-                </div>
-                <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
-                    <button class="flex flex-row space-x-3">
-                        <h4 class="text-white hover:text-black">
-                        <i class="fa-solid fa-chart-line"></i>
-                            Performance monitoring
-                        </h4>
-                    </button>
-                </div>
-
-                <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
-                    <button class="flex flex-row space-x-3">
-                        <h4 class="text-white hover:text-black">
-                        <i class="fa-solid fa-coins"></i>
-                            Resources
-                        </h4>
-                    </button>
-                </div>
-
-                <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
-                    <button class="flex flex-row space-x-3">
-                        <h4 class="text-white hover:text-black">
-                        <i class="fa-solid fa-flag"></i>
-                            Information
-                        </h4>
-                    </button>
-                </div>
-
-                <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
-                    <button class="flex flex-row space-x-3">
-                        <h4 class="text-white hover:text-black">
-                        <i class="fa-solid fa-bullhorn"></i>
-                            
-                            Communication
-                        </h4>
-                    </button>
-                </div>
-
-            </div>
-            <!-- Boton de salir -->
-                <div class="flex flex-col ">
-                    <a class="rounded-full bg-green-900 py-2 text-white textl-lg hover:bg-green-700 text-center" href="../logins/logout.php">Exit</a>
-                </div>
-
-        </div>
-        <!-- Fin del 1er Componente-->
-=======
                 if ($showForm10):
                     include 'listarmaterias.php';
                 endif;
             ?>
         </main>
->>>>>>> 4efdefa507366136cc06faa41bc3370f20e0b45f
         
     </div>
     <!-- Script para jalar el javascripts.js-->

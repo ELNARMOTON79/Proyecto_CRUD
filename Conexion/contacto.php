@@ -204,6 +204,23 @@
             return $resultado->fetch_assoc()['total'];
         }
 
+        
+        // Obtener las actividades con paginación
+        public function obtenerActividadesConLimite($offset, $limite) {
+            $this->sentencia = "SELECT actividades.*, programas.nombre_materia FROM actividades 
+                                INNER JOIN programas ON actividades.fk_materia = programas.id 
+                                LIMIT $offset, $limite";
+            return $this->obtener_sentencia();
+        }
+        
+        // Contar el total de actividades
+        public function contarTotalActividades() {
+            $this->sentencia = "SELECT COUNT(*) as total FROM actividades";
+            $resultado = $this->obtener_sentencia();
+            return $resultado->fetch_assoc()['total'];
+        }
+        
+
     }
     
     
