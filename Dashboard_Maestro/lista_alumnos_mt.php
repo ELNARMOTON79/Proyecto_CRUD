@@ -53,7 +53,7 @@ $resultado = $obj->consultaxtipo($tipo_usuario);
 
     <!-- Título para el input de búsqueda -->
     <label for="commandPalette" class="block text-sm font-medium text-gray-700 mb-2">Enter student name</label>
-    <input type="text" id="commandPalette" placeholder="Search..." class="block w-full p-2 border border-gray-300 rounded mb-4">
+    <input type="text" id="commandPalette" placeholder="Search..." class="block w-1/4 p-2 border border-gray-300 rounded mb-4">
 
     <table id="userTable" class="min-w-full table-auto border-collapse border border-gray-300 rounded-lg overflow-hidden shadow">
         <thead>
