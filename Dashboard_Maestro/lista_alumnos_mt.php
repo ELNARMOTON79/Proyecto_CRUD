@@ -51,7 +51,11 @@ $resultado = $obj->consultaxtipo($tipo_usuario);
 <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
     <h1 class="text-2xl font-bold mb-6">List Students</h1>
 
-    <table class="min-w-full table-auto border-collapse border border-gray-300 rounded-lg overflow-hidden shadow">
+    <!-- Título para el input de búsqueda -->
+    <label for="commandPalette" class="block text-sm font-medium text-gray-700 mb-2">Enter student name</label>
+    <input type="text" id="commandPalette" placeholder="Search..." class="block w-full p-2 border border-gray-300 rounded mb-4">
+
+    <table id="userTable" class="min-w-full table-auto border-collapse border border-gray-300 rounded-lg overflow-hidden shadow">
         <thead>
             <tr class="bg-green-600 text-white">
                 <th class="px-6 py-3 text-left">Name</th>
@@ -103,7 +107,19 @@ $resultado = $obj->consultaxtipo($tipo_usuario);
     </table>
 </div>
 
+<!-- Script para la busqueda por Command Palette -->
 <script>
+    document.getElementById('commandPalette').addEventListener('input', function() {
+        const filter = this.value.toLowerCase();
+        const rows = document.querySelectorAll('#userTable tbody tr');
+
+        rows.forEach(row => {
+            const cells = row.querySelectorAll('td');
+            const rowText = Array.from(cells).map(cell => cell.textContent.toLowerCase()).join(' ');
+            row.style.display = rowText.includes(filter) ? '' : 'none';
+        });
+    });
+
 // Almacenar los valores originales de las calificaciones
 let valoresOriginales = {};
 
@@ -168,3 +184,4 @@ function cancelarCambios(id) {
     document.getElementById('cancelar-' + id).style.display = 'none';
 }
 </script>
+
