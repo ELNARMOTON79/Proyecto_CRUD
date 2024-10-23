@@ -121,7 +121,8 @@ var originalChartRadar = new Chart(
   originalConfigRadarChart
 );
 
-// Configuración del nuevo gráfico de línea (Donaciones en un transcurso de 6 meses)
+
+    // Configuración del nuevo gráfico de línea (Donaciones en un transcurso de 6 meses)
 const newLabels = ["January", "February", "March", "April", "May", "June"];
 const newDataLineChart = {
   labels: newLabels,
@@ -157,61 +158,63 @@ var newChartLine = new Chart(
   newConfigLineChart
 );
 
-// Configuración del nuevo gráfico de radar (Historial de transacciones)
-const newDataRadarChart = {
+// Configuración del gráfico de dona con transacciones relacionadas con dinero
+const donutData = {
   labels: [
-    "Transacción 1",
-    "Transacción 2",
-    "Transacción 3",
-    "Transacción 4",
-    "Transacción 5",
-    "Transacción 6",
-    "Transacción 7",
+    "Compras",
+    "Ventas",
+    "Donaciones",
+    "Pagos de servicios",
+    "Reembolsos",
+    "Intereses ganados",
+    "Tarifas de transacción",
   ],
   datasets: [
     {
-      label: "Historial de transacciones",
-      data: [65, 59, 90, 81, 56, 55, 40], // Datos de ejemplo
-      fill: true,
-      backgroundColor: "rgba(255,105,180,0.5)",
-      borderColor: "rgb(255,20,147)",
-      pointBackgroundColor: "rgb(133, 105, 241)",
-      pointBorderColor: "#fff",
-      pointHoverBackgroundColor: "#fff",
-      pointHoverBorderColor: "rgb(133, 105, 241)",
-    },
-    {
-      label: "Comparación mensual",
-      data: [28, 48, 40, 19, 96, 27, 100], // Datos de ejemplo
-      fill: true,
-      backgroundColor: "rgba(0,191,255,0.5)",
-      borderColor: "rgb(0,191,255)",
-      pointBackgroundColor: "rgb(54, 162, 235)",
-      pointBorderColor: "#fff",
-      pointHoverBackgroundColor: "#fff",
-      pointHoverBorderColor: "rgb(54, 162, 235)",
+      label: "Transacciones Monetarias",
+      data: [1200, 1500, 800, 1000, 400, 300, 200], // Ejemplos de montos en dinero
+      backgroundColor: [
+        "rgba(75, 192, 192, 0.5)",
+        "rgba(255, 159, 64, 0.5)",
+        "rgba(153, 102, 255, 0.5)",
+        "rgba(255, 206, 86, 0.5)",
+        "rgba(54, 162, 235, 0.5)",
+        "rgba(255, 105, 180, 0.5)",
+        "rgba(0, 191, 255, 0.5)",
+      ],
+      borderColor: [
+        "rgb(75, 192, 192)",
+        "rgb(255, 159, 64)",
+        "rgb(153, 102, 255)",
+        "rgb(255, 206, 86)",
+        "rgb(54, 162, 235)",
+        "rgb(255, 105, 180)",
+        "rgb(0, 191, 255)",
+      ],
+      borderWidth: 1,
     },
   ],
 };
 
-const newConfigRadarChart = {
-  type: "radar",
-  data: newDataRadarChart,
+const donutConfig = {
+  type: "doughnut",
+  data: donutData,
   options: {
     responsive: true,
     plugins: {
       legend: {
-        position: 'top',
+        position: "top",
       },
-      title: {
-        display: true,
-        text: 'Historial de transacciones'
-      }
-    }
+      tooltip: {
+        enabled: true,
+      },
+    },
   },
 };
 
-var newChartRadar = new Chart(
-  document.getElementById("newChartRadar"),
-  newConfigRadarChart
+// Crear el gráfico de dona
+var donutChart = new Chart(
+  document.getElementById("donutChart"), // El ID del canvas sigue siendo el mismo
+  donutConfig
 );
+

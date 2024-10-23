@@ -55,9 +55,9 @@
         </main>
         
     </div>
-    <!-- Script para jalar el javascripts.js-->
+   <!-- Script para jalar el javascripts.js-->
     <script src="javascripts.js"></script>
-    
+     
 </body>
 </html>
 

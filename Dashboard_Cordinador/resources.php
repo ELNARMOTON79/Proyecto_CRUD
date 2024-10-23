@@ -58,13 +58,15 @@
             <div class="mt-5 grid lg:grid-cols-3 md:grid-cols-3 p-4 gap-3">
                 <div class="col-span-2 bg-white p-8 flex-col rounded shadow-sm">
                     <b class="flex flex-row text-gray-500">Donaciones en un transcurso de 6 meses</b>
-                    <canvas class="p-5" id="newChartLine"></canvas> <!-- Cambiado a newChartLine -->
+                    <canvas class="p-5" id="newChartLine"></canvas> 
                 </div>
                 <div class="flex flex-col p-8 bg-white rounded shadow-sm">
                     <b class="flex flex-row text-gray-500">Historial de transacciones</b>
-                    <canvas class="p-5" id="newChartRadar"></canvas> <!-- Cambiado a newChartRadar -->
+                    <canvas class="p-5" id="donutChart"></canvas> 
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+    
