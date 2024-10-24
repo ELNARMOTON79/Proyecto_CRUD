@@ -11,13 +11,13 @@ if ($tipo_usuario !== '') {
 }
 ?>
 
-<div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+<div class="max-w-6xl translate-x-32 mx-auto bg-white p-8 rounded-lg shadow-lg">
     <h1 class="text-2xl font-bold mb-6">List user</h1>
 
     <!-- Command Palette para filtrar -->
-    <input type="text" id="commandPalette" placeholder="Search..." class="block w-full p-2 border border-gray-300 rounded mb-4">
+    <input type="text" id="commandPalette" placeholder="Search..." class="block w-1/5 p-2 border border-gray-300 rounded mb-4">
 
-    <table class="min-w-full table-auto border-collapse border border-gray-300 rounded-lg overflow-hidden shadow">
+    <table class="min-w-full mx-auto table-auto border-collapse border border-gray-300 rounded-lg overflow-hidden shadow">
         <thead>
             <tr class="bg-green-600 text-white">
                 <th class="px-6 py-3 text-left">Name</th>

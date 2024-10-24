@@ -25,7 +25,7 @@ unset($queryArray['pagina']); // Eliminar el parámetro 'pagina' de la URL
 $queryString = http_build_query($queryArray);
 ?>
 
-<div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+<div class="max-w-6xl translate-x-32 mx-auto bg-white p-8 rounded-lg shadow-lg">
     <h1 class="text-2xl font-bold mb-6">List Activities</h1>
 
     <table class="min-w-full table-auto border-collapse border border-gray-300 rounded-lg overflow-hidden shadow">
