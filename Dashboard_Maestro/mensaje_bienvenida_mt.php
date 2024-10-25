@@ -3,7 +3,7 @@
         <div class="flex items-center bg-white p-4 space-x-4">
             <!-- Imagen del usuario -->
             <div class="flex-shrink-0 h-16 w-16 relative">
-                <img class="h-full w-full rounded-full" src="https://cdn.icon-icons.com/icons2/2104/PNG/512/manager_icon_129392.png" alt="User Avatar">
+                <img class="h-full w-full rounded-full" src="../SRC/luis.jpg" alt="User Avatar">
             </div>
             <!-- Contenedor de bienvenida y correo -->
             <div class="flex flex-col justify-center">

@@ -50,7 +50,7 @@ if ($materia_filtrada !== '') {
 ?>
 
 <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-    <h1 class="text-2xl font-bold mb-6">List Activities</h1>
+    <h1 class="text-2xl font-bold mb-6">Activities List</h1>
     
     <!-- Formulario de filtro por materia -->
     <form method="POST" class="mb-4" id="filterForm">

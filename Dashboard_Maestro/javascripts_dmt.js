@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
       submenu.classList.toggle("hidden");
       // Cambiar el símbolo según el estado del menú
       if (submenu.classList.contains("hidden")) {
-          icon.innerHTML = '<i class="fa fa-plus"></i>';
+            icon.innerHTML = '<i class="fa fa-minus"></i>';
       } else {
-          icon.innerHTML = '<i class="fa fa-minus"></i>';
+          
       }
   });
 

@@ -37,7 +37,7 @@ $resultado = $obj->consultarmaterias(); // No se pasa offset ni límite
 ?>
 
 <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-    <h1 class="text-2xl font-bold mb-6">List Subjects</h1>
+    <h1 class="text-2xl font-bold mb-6">Subjects List</h1>
 
     <table class="min-w-full table-auto border-collapse border border-gray-300 rounded-lg overflow-hidden shadow">
         <thead>

@@ -18,38 +18,40 @@ if (isset($_POST['modificarBtn']) && isset($_POST['idmodificar'])) {
 }
 
 // Verificar si se ha enviado el formulario para modificar o crear una calificación
-if (isset($_POST['modificar'])) {
-    $id = $_POST['id'];
-    $nombre = $_POST['nombre'];
+if (isset($_POST['idmodificar']) && isset($_POST['unidad_1']) && isset($_POST['unidad_2']) && isset($_POST['unidad_3'])) {
+    $id = $_POST['idmodificar'];
     $unidad_1 = $_POST['unidad_1'];
     $unidad_2 = $_POST['unidad_2'];
     $unidad_3 = $_POST['unidad_3'];
 
-    if($unidad_1 <= 0 || $unidad_1 >= 100 || $unidad_2 <= 0 || $unidad_2 >= 100 || $unidad_3 <= 0 || $unidad_3 >= 100) {
+    if($unidad_1 >= 0 && $unidad_1 <= 100 && $unidad_2 >= 0 && $unidad_2 <= 100 && $unidad_3 >= 0 && $unidad_3 <= 100) {
         $mostrarExito1 = true;
-    } else {
-        // Verificar si ya existen las calificaciones del usuario
-        $calificacionExistente = $obj->obtenerPorId($id);
         
-        if ($calificacionExistente) {
+        // Verificar si ya existen las calificaciones del usuario
+        $calificacionExistente = $obj->obtenerPorId_calificaion($id);
+        if ($calificacionExistente->num_rows > 0) {
             // Si ya existe, modificar la calificación
-            $obj->modificar_calificacion($id, $nombre, $unidad_1, $unidad_2, $unidad_3);
-            $mostrarExito2 = true;
+            $obj->modificar_calificacion($id, $unidad_1, $unidad_2, $unidad_3);
         } else {
             // Si no existe, crear una nueva calificación
-            $obj->crear_calificacion($unidad_1, $unidad_2, $unidad_3);
+            $obj->crear_calificacion($id, $unidad_1, $unidad_2, $unidad_3);
             $mostrarExito2 = true;
         }
+    } else {
+
     }
 }
 
 // Obtener solo los usuarios de tipo estudiante
 $tipo_usuario = 'Student';
 $resultado = $obj->consultaxtipo($tipo_usuario);
+
+//Obtener todas las calificaciones
+$calificaciones = $obj->obtener_calificaciones();
 ?>
 
-<div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-    <h1 class="text-2xl font-bold mb-6">List Students</h1>
+<div class="max-w-6xl translate-x-32 mx-auto bg-white p-8 rounded-lg shadow-lg">
+    <h1 class="text-2xl font-bold mb-6">Students List</h1>
 
     <!-- Título para el input de búsqueda -->
     <label for="commandPalette" class="block text-sm font-medium text-gray-700 mb-2">Enter student name</label>
@@ -67,41 +69,45 @@ $resultado = $obj->consultaxtipo($tipo_usuario);
             </tr>
         </thead>
         <tbody>
-            <?php while ($registro = $resultado->fetch_assoc()): ?>
-                <tr class="even:bg-gray-100 hover:bg-gray-200">
-                    <td class="px-6 py-4"><?php echo htmlspecialchars($registro["nombre"]); ?></td>
-                    <td class="px-6 py-4"><?php echo htmlspecialchars($registro["correo"]); ?></td>
+            <?php while ($registro = $resultado->fetch_assoc()): 
+                // Obtener las calificaciones del estudiante actual
+                $calificacionesEstudiante = $obj->obtenerPorId_calificaion($registro['id']);
+                $calificacion = $calificacionesEstudiante->fetch_assoc();
+            ?>
+                <form action="#" method="POST" style="display:inline;">
+                    <tr class="even:bg-gray-100 hover:bg-gray-200">
                     
-                    <!-- Inputs de calificaciones bloqueados inicialmente -->
-                    <td class="px-6 py-4">
-                        <input type="number" class="w-20 border rounded-md calificacion" id="u1-<?php echo $registro['id']; ?>" value="<?php echo htmlspecialchars($registro['unidad_1'] ?? 0); ?>" disabled>
-                    </td>
-                    <td class="px-6 py-4">
-                        <input type="number" class="w-20 border rounded-md calificacion" id="u2-<?php echo $registro['id']; ?>" value="<?php echo htmlspecialchars($registro['unidad_2'] ?? 0); ?>" disabled>
-                    </td>
-                    <td class="px-6 py-4">
-                        <input type="number" class="w-20 border rounded-md calificacion" id="u3-<?php echo $registro['id']; ?>" value="<?php echo htmlspecialchars($registro['unidad_3'] ?? 0); ?>" disabled>
-                    </td>
-                    <td class="px-6 py-4">
                         <!-- Botón de Editar -->
-                        <form action="" method="POST" style="display:inline;">
+                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["nombre"]); ?></td>
+                        <td class="px-6 py-4"><?php echo htmlspecialchars($registro["correo"]); ?></td>
+                        <!-- Inputs de calificaciones bloqueados inicialmente -->
+                        <td class="px-6 py-4">
+                            <input type="text" class="w-20 border rounded-md calificacion" name="unidad_1" id="u1-<?php echo $registro['id']; ?>" value="<?php echo htmlspecialchars($calificacion['unidad_1'] ?? 0); ?>" disabled>
+                        </td>
+                        <td class="px-6 py-4">
+                            <input type="text" class="w-20 border rounded-md calificacion" name="unidad_2" id="u2-<?php echo $registro['id']; ?>" value="<?php echo htmlspecialchars($calificacion['unidad_2'] ?? 0); ?>" disabled>
+                        </td>
+                        <td class="px-6 py-4">
+                            <input type="text" class="w-20 border rounded-md calificacion" name="unidad_3" id="u3-<?php echo $registro['id']; ?>" value="<?php echo htmlspecialchars($calificacion['unidad_3'] ?? 0); ?>" disabled>
+                        </td>
+                        <td class="px-6 py-4">
                             <input type="hidden" name="idmodificar" value="<?php echo $registro['id']; ?>">
                             <button type="button" onclick="modificarCalificaciones(<?php echo $registro['id']; ?>)" class="text-blue-600 hover:text-blue-800 mr-2">
                                 <i class="fas fa-edit"></i>
                             </button>
-                        </form>
+                            <!-- Botón de Confirmar -->
+                            <button type="submit" class="text-green-600 hover:text-green-800 mr-2" id="confirmar-<?php echo $registro['id']; ?>" style="display:none;">
+                                <i class="fa-solid fa-circle-check"></i> 
+                            </button>
+                             
+                            <!-- Botón de Cancelar -->
+                            <button type="button" onclick="cancelarCambios(<?php echo $registro['id']; ?>)" class="text-red-600 hover:text-red-800" id="cancelar-<?php echo $registro['id']; ?>" style="display:none;">
+                                <i class="fa-solid fa-rectangle-xmark"></i>
+                            </button>
 
-                        <!-- Botón de Confirmar -->
-                        <a href="#" onclick="confirmarCambios(<?php echo $registro['id']; ?>)" class="text-green-600 hover:text-green-800 mr-2" id="confirmar-<?php echo $registro['id']; ?>" style="display:none;">
-                            <i class="fa-solid fa-circle-check"></i> 
-                        </a>
-                         
-                        <!-- Botón de Cancelar -->
-                        <a href="#" onclick="cancelarCambios(<?php echo $registro['id']; ?>)" class="text-red-600 hover:text-red-800" id="cancelar-<?php echo $registro['id']; ?>" style="display:none;">
-                            <i class="fa-solid fa-rectangle-xmark"></i>
-                        </a>
-                    </td>
-                </tr>
+                        </td>
+                    </tr>
+                </form>
             <?php endwhile; ?>
         </tbody>
     </table>
