@@ -31,6 +31,10 @@
 			$result = $this->conexion->query($this->sentencia);
 			return $result;
 		}
+		public function obtener_ultimo_id()
+		{
+			return $this->conexion->insert_id;
+		}
 	}
 
 ?>

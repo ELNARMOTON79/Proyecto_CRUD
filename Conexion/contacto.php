@@ -90,7 +90,7 @@
         }
         //Metodo para obtener materias de programas        
         public function obtenerMaterias() {
-            $this->sentencia = "SELECT id, nombre_materia FROM programas";
+            $this->sentencia = "SELECT id, nombre_materia,  objetivos, actividades, unidad FROM programas";
             return $this->obtener_sentencia();
 
         }
@@ -99,6 +99,19 @@
             $this->sentencia = "INSERT INTO programas (nombre_materia, objetivos, unidad) VALUES ('$nombre_materia', '$objetivo', '$unidad')";
             return $this->ejecutar_sentencia();
         }
+
+        //Funcion para obtener las materias de 5 en 5
+        public function obtenerMateriasConLimite($offset, $limite) {
+            $this->sentencia = "SELECT id, nombre_materia, objetivos, actividades, unidad FROM programas LIMIT $offset, $limite";
+            return $this->obtener_sentencia();
+        }
+        
+        public function contarTotalMaterias() {
+            $this->sentencia = "SELECT COUNT(*) as total FROM programas";
+            $resultado = $this->obtener_sentencia();
+            return $resultado->fetch_assoc()['total'];
+        }
+        
         //metodo para eliminar actividades.
         public function eliminar_actividades($id){
             $this->sentencia = "DELETE FROM actividades WHERE id = '$id'";
@@ -119,12 +132,29 @@
             $result = $this->obtener_sentencia();
             return $result;
         }
-        public function subir_users($name, $age, $email, $password, $gender, $role)
+        public function subir_users($name, $age, $email, $password, $gender, $role, $grade, $group)
         {
+            // Insertar el usuario en la tabla usuarios
             $this->sentencia = "INSERT INTO usuarios (nombre, correo, password, genero, edad, tipo_usuario) VALUES ('$name', '$email', '$password', '$gender', '$age', '$role')";
             $result = $this->obtener_sentencia();
-            return $result;
+            
+            // Obtener el ID del usuario recién creado
+            $id = $this->obtener_ultimo_id(); // Ahora puedes llamar a este método
+
+            // Verificar si la inserción del usuario fue exitosa
+            if ($result) {
+                // Insertar el grado junto al id del usuario registrado en la tabla grado
+                $this->sentencia = "INSERT INTO grado (grado, fk_usuario) VALUES ('$grade', '$id')";
+                $this->obtener_sentencia();
+                
+                // Insertar el grupo junto al id del usuario registrado en la tabla grupo
+                $this->sentencia = "INSERT INTO grupo (grupo, fk_usuario) VALUES ('$group', '$id')";
+                $this->obtener_sentencia();
+            }
+            
+            return $result; // Devuelve el resultado de la inserción del usuario
         }
+        
         public function consultaxtipo($tipo_usuario)
         {
             $this->sentencia = "SELECT * FROM usuarios WHERE tipo_usuario = '$tipo_usuario'";
@@ -177,5 +207,35 @@
             $this->sentencia = "UPDATE programas SET nombre_materia = '$nombre', objetivos = '$objetivo', unidad = '$unidad' WHERE id = '$id'";
             return $this->ejecutar_sentencia();
         }
-    }  
+
+        //obtener las materias
+        public function obtenerMateriasConLimite1($offset, $limite) {
+            $this->sentencia = "SELECT * FROM programas LIMIT $offset, $limite";
+            return $this->obtener_sentencia();
+        }
+        
+        public function contarTotalMaterias1() {
+            $this->sentencia = "SELECT COUNT(*) as total FROM programas";
+            $resultado = $this->obtener_sentencia();
+            return $resultado->fetch_assoc()['total'];
+        }
+
+        
+        // Obtener las actividades con paginación
+        public function obtenerActividadesConLimite($offset, $limite) {
+            $this->sentencia = "SELECT actividades.*, programas.nombre_materia FROM actividades 
+                                INNER JOIN programas ON actividades.fk_materia = programas.id 
+                                LIMIT $offset, $limite";
+            return $this->obtener_sentencia();
+        }
+        
+        // Contar el total de actividades
+        public function contarTotalActividades() {
+            $this->sentencia = "SELECT COUNT(*) as total FROM actividades";
+            $resultado = $this->obtener_sentencia();
+            return $resultado->fetch_assoc()['total'];
+        }
+        
+
+    }
 ?>

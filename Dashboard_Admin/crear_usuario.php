@@ -9,6 +9,8 @@
     $password = $_POST['password'];
     $gender = $_POST['gender'];
     $role = $_POST['role'];
+    $grade = $_POST['grade'];
+    $group = $_POST['group'];
 
     if ($age <= 17 || $age > 99)
     {
@@ -17,7 +19,7 @@
         // Simulando la subida de los datos
         require_once("../Conexion/contacto.php");
         $obj = new contacto();
-        $obj->subir_users($name, $age, $email, $password, $gender, $role);
+        $obj->subir_users($name, $age, $email, $password, $gender, $role, $grade, $group);
 
         // Mostrar el modal de éxito
         $mostrarExito = true;
@@ -58,32 +60,59 @@
                     <input type="password" name="password" id="password" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm pr-10" placeholder="Password">
                     <span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password absolute right-2 top-7 cursor-pointer"></span>
                 </div>
-
             </div>
 
-            <div class="mt-4">
-                <label for="gender" class="block text-sm font-medium text-gray-700">
-                    <i class="fa-solid fa-venus-mars mr-2"></i>Gender:
-                </label>
-                <select name="gender" id="gender" required class="block w-full p-2 border border-gray-300 rounded">
-                    <option value="" disabled selected>Select an option</option>
-                    <option value="Hombre">Man</option>
-                    <option value="Mujer">Woman</option>
-                </select>
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 mt-4">
+                <div>
+                    <label for="gender" class="block text-sm font-medium text-gray-700">
+                        <i class="fa-solid fa-venus-mars mr-2"></i>Gender:
+                    </label>
+                    <select name="gender" id="gender" required class="block w-full p-2 border border-gray-300 rounded">
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="Hombre">Man</option>
+                        <option value="Mujer">Woman</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="role" class="block text-sm font-medium text-gray-700">
+                        <i class="fa-solid fa-user-tag mr-2"></i>Role:
+                    </label>
+                    <select name="role" id="role" required class="block w-full p-2 border border-gray-300 rounded" onchange="toggleStudentFields()">
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="Teacher">Teacher</option>
+                        <option value="Student">Student</option>
+                        <option value="Donor">Donator</option>
+                        <option value="Coordinator">Coordinator</option>
+                        <option value="Administrator">Administrator</option>
+                    </select>
+                </div>
             </div>
 
-            <div class="mt-4">
-                <label for="role" class="block text-sm font-medium text-gray-700">
-                    <i class="fa-solid fa-user-tag mr-2"></i>Role:
-                </label>
-                <select name="role" id="role" required class="block w-full p-2 border border-gray-300 rounded">
-                    <option value="" disabled selected>Select an option</option>
-                    <option value="Teacher">Teacher</option>
-                    <option value="Student">Student</option>
-                    <option value="Donor">Donator</option>
-                    <option value="Cordinator">Coordinator</option>
-                    <option value="Administrator">Administrator</option>
-                </select>
+            <!-- Campos para Grado y Grupo -->
+            <div id="studentFields" style="display: none;" class="grid grid-cols-1 gap-6 sm:grid-cols-2 mt-4">
+                <div>
+                    <label for="grade" class="block text-sm font-medium text-gray-700">Grade:</label>
+                    <select name="grade" id="grade" class="block w-full p-2 border border-gray-300 rounded">
+                        <option value="" disabled selected>Select grade</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="group" class="block text-sm font-medium text-gray-700">Group:</label>
+                    <select name="group" id="group" class="block w-full p-2 border border-gray-300 rounded">
+                        <option value="" disabled selected>Select group</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                    </select>
+                </div>
             </div>
 
             <div class="flex justify-end space-x-4 mt-6">
@@ -171,4 +200,13 @@
         this.classList.toggle('fa-eye-slash');
         this.classList.toggle('fa-eye');
     });
+    function toggleStudentFields() {
+        var roleSelect = document.getElementById("role");
+        var studentFields = document.getElementById("studentFields");
+        if (roleSelect.value === "Student") {
+            studentFields.style.display = "block";
+        } else {
+            studentFields.style.display = "none";
+        }
+    }
 </script>
