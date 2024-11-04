@@ -59,7 +59,7 @@ include 'login_var.php';
                         <span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password absolute right-3 top-10 cursor-pointer text-gray-500 hover:text-green-600"></span>
                     </div>
                     <div class="flex items-center justify-between mb-4">
-                        <a class="inline-block align-baseline font-bold text-sm text-green-600 hover:text-green-800" href="#">
+                        <a class="inline-block align-baseline font-bold text-sm text-green-600 hover:text-green-800" href="../forgot_password/forgot.php">
                             Forgot your password?
                         </a>
                     </div>

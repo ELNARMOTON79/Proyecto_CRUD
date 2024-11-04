@@ -236,6 +236,17 @@
             return $resultado->fetch_assoc()['total'];
         }
         
+        public function forgotPassword($email)
+        {
+            $this->sentencia = "SELECT * FROM usuarios WHERE correo = '$email'";
+            $result = $this->obtener_sentencia();
+            
+            if ($result->num_rows > 0) {
+                return $result->fetch_assoc(); // Devuelve un arreglo asociativo
+            } else {
+                return null; // Devuelve null si no se encuentran resultados
+            }
+        }
 
     }
 ?>
