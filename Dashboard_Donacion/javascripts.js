@@ -103,3 +103,5 @@
         document.getElementById("chartRadar"),
         configRadarChart
     );
+
+//Validaciones

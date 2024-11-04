@@ -7,7 +7,7 @@
         public function login($correo, $password)
         {
             // Sentencia SQL para buscar el usuario
-            $this->sentencia = "SELECT nombre, correo, password, tipo_usuario FROM usuarios WHERE correo = '$correo' AND password = '$password';";
+            $this->sentencia = "SELECT id, nombre, correo, password, tipo_usuario FROM usuarios WHERE correo = '$correo' AND password = '$password';";
             $resultado = $this->ejecutar_sentencia();
     
             // Verificar si el usuario existe
@@ -15,6 +15,7 @@
                 if ($row['correo'] == $correo && $row['password'] == $password) {
                     // Iniciar sesión y guardar variables de sesión
                     session_start();
+                    $_SESSION['id'] = $row['id'];
                     $_SESSION['nombre'] = $row['nombre'];
                     $_SESSION['correo'] = $row['correo'];
                     $_SESSION['tipo_usuario'] = $row['tipo_usuario'];
@@ -195,7 +196,7 @@
         }
         public function eliminar_materias($idEliminar)
         {
-            $this->sentencia = "DELETE FROM programas WHERE id = '$idEliminar';";
+            $this->sentencia = "DELETE FROM programas WHERE id = '$idEliminar';";     
             $resultado = $this->ejecutar_sentencia();
         }
         public function obtenerPorIdmateria($idModificar) {
@@ -207,6 +208,45 @@
             $this->sentencia = "UPDATE programas SET nombre_materia = '$nombre', objetivos = '$objetivo', unidad = '$unidad' WHERE id = '$id'";
             return $this->ejecutar_sentencia();
         }
+        public function donor ($cantidad1,$motivo,$fecha, $usuario)
+        {
+            $this->sentencia = "INSERT INTO donaciones (monto, motivo,fecha_don,fk_usuario) VALUES ('$cantidad1','$motivo','$fecha', '$usuario');";
+            $result = $this->obtener_sentencia();
+            return $result;
+        }
+        public function obtenerPorDonaciones() {
+            $this->sentencia = "SELECT * FROM donaciones WHERE fk_usuario = '".$_SESSION['id']."'";
+            return $this->obtener_sentencia();
+        }
+        //Obtener usuario logeado
+        public function obtenerusuario(){
+            // Obtener los datos del usuario utilizando su id en lugar del correo
+            $this->sentencia = "SELECT * FROM usuarios WHERE id = '".$_SESSION['id']."'";
+            $result = $this->obtener_sentencia();
+            return $result;
+        }
+        public function modificar_datos($nombre, $correo, $password){
+            $this->sentencia = "UPDATE usuarios SET nombre = '$nombre', correo = '$correo', password = '$password' WHERE id = '".$_SESSION['id']."'";
+            $result = $this->obtener_sentencia();
+            return $result;
+        }  
+        public function buscarnews(){
+            $this->sentencia = "SELECT * FROM  reporte_gastos";
+            $result = $this->obtener_sentencia();
+            return $result;
+        }   
+        public function buscarPostPorId($id){
+            $this->sentencia = "SELECT * FROM reporte_gastos WHERE id = '$id'";
+            $result = $this->obtener_sentencia();
+            return $result;
+        }
+        public function crearnews($titulo, $contenido, $imagen, $date){
+            $this->sentencia = "INSERT INTO reporte_gastos (titulo, fecha_publi, reporte, image) VALUES ('$titulo', '$date', '$contenido', '$imagen')";
+            $result = $this->obtener_sentencia();
+            return $result;
+        }
+
+        
 
         //obtener las materias
         public function obtenerMateriasConLimite1($offset, $limite) {

@@ -22,7 +22,10 @@
       <div class="nav-items hidden md:flex space-x-4">
         <a href="index.php" class="flex items-center"><i class="uil uil-home mr-1"></i>Home</a>
         <a href="about.php" class="flex items-center"><i class="uil uil-info-circle mr-1"></i>About</a>
+        <a href="news.php" class="flex items-center"><i class="uil uil-document-layout-left mr-1"></i>News</a>
         <a href="logins/login.php" class="flex items-center"><i class="uil uil-document-layout-left mr-1"></i>Login</a>
+        
+
       </div>
     </div>
     <button class="nav-menu-btn md:hidden" aria-label="Toggle menu">
