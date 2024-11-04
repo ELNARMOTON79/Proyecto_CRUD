@@ -246,8 +246,6 @@
             return $result;
         }
 
-        
-
         //obtener las materias
         public function obtenerMateriasConLimite1($offset, $limite) {
             $this->sentencia = "SELECT * FROM programas LIMIT $offset, $limite";
