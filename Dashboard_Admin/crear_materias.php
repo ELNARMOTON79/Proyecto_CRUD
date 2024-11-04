@@ -1,15 +1,15 @@
 
 <form action="" method="post" class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-    <h1 class="text-2xl font-bold mb-6">Create matter</h1>
+    <h1 class="text-2xl font-bold mb-6">Create Subject</h1>
     
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <!-- Nombre de la materia -->
         <div>
             <label for="nombre_materia" class="block text-sm font-medium text-gray-700">
-                <i class="fa-solid fa-tasks mr-2"></i>Name matter
+                <i class="fa-solid fa-tasks mr-2"></i>Name Subject
             </label>
             <input type="text" name="nombre_materia" id="nombre_materia" required
-                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Name matter">
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Name Subject">
         </div>
 
         <!-- Unidad -->
@@ -40,7 +40,7 @@
 
     <!-- Botón de creación -->
     <div class="flex justify-end space-x-4 mt-6">
-        <input type="submit" name="crear" value="Create matter"
+        <input type="submit" name="crear" value="Create Subject"
             class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none transition duration-500">
     </div>
 </form>
@@ -63,7 +63,7 @@
         <?php if ($mostrarExito): ?>
 <div id="modalExito" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
     <div class="bg-green-500 rounded-lg shadow-lg max-w-sm w-full p-8 text-white">
-        <h2 class="text-xl font-semibold mb-4">Matter created successfully</h2>
+        <h2 class="text-xl font-semibold mb-4">Subject created successfully</h2>
     </div>
     <script>
         // Mostrar el modal de éxito por 2 segundos
