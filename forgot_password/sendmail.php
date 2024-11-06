@@ -12,7 +12,7 @@ require 'PHPMailer/SMTP.php';
 // Variables recibidas desde el formulario
 $email = $_POST['email'];
 $nombreDeUsuario = $GLOBALS['nombreDeUsuario'];
-//$codigo = $GLOBALS['codigo'];
+$codigo = $GLOBALS['codigo'];
 
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
@@ -87,12 +87,13 @@ try {
         <body>
         <div class="container">
             <div class="header">
-                <img src="https://drive.google.com/uc?export=view&id=1C_Jx3dXzSyTOiVgqd5xObJS-7w9Yr3VW" class="header-image">
+                <img src="https://drive.google.com/uc?export=view&id=1VOJA1OUhwWTxcfR2zQAwY-vX6nTN0mqK" class="header-image">
                 <h1>Edu4All Support</h1>
             </div>
             <div class="main-content">
                 <h2>Reset Password</h2>
-                <p>Hello $nombreDeUsuario,<br>We have received a request to recover your password.<br><br>Click the button below to recover your password.<br><br><a href="#" class="button">Recover Password</a><br><br>If you did not request this change, please ignore this email.<br>Best regards,<br>Creative Equity Support.</p>
+                <p>Hello $nombreDeUsuario,<br>We have received a request to recover your password.<br><br>Click the button below to recover your password.<br><br><a 
+                    href="http://localhost/proyecto_crud/forgot_password/resetpassword.php?code=$codigo" class="button">Recover Password</a><br><br>If you did not request this change, please ignore this email.<br>Best regards,<br>Edu4All Support.</p>
             </div>
             <div class="footer">
                 <p>Copyright © 2024 All Rights Reserved by Edu4All.</p>

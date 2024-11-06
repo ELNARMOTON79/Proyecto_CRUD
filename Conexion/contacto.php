@@ -258,7 +258,6 @@
             return $resultado->fetch_assoc()['total'];
         }
 
-        
         // Obtener las actividades con paginación
         public function obtenerActividadesConLimite($offset, $limite) {
             $this->sentencia = "SELECT actividades.*, programas.nombre_materia FROM actividades 
@@ -286,5 +285,25 @@
             }
         }
 
+        //Buscar obtener el id del correo
+        public function obtenerIdPorCorreo($email)
+        {
+            $this->sentencia = "SELECT id FROM usuarios WHERE correo = '$email'";
+            $result = $this->obtener_sentencia();
+            return $result->fetch_assoc();
+        }
+
+        public function insertarCodigo($codigo, $id_user)
+        {
+            $this->sentencia = "INSERT INTO codigo (codigo, id_user) VALUES ('$codigo', '$id_user')";
+            return $this->ejecutar_sentencia();
+        }
+
+        public function checkCode($codigo)
+        {
+            $this->sentencia = "SELECT codigo FROM codigo WHERE codigo = '$codigo'";
+            $result = $this->obtener_sentencia();
+
+        }
     }
 ?>
