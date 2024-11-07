@@ -10,7 +10,7 @@
 <body class="bg-gray-200">
     <?php include ("navbar.php"); ?>
     <div class="pt-20"></div>
-    <div class="container mx-auto px-4 py-6">
+    <div class="container mx-auto px-4 py-12">
         <h1 class="text-3xl font-bold text-center mb-6">All news</h1>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <?php
@@ -23,7 +23,7 @@
                     echo "<div class='p-4'>";
                     echo "<h2 class='text-xl font-bold'>".$row['titulo']."</h2>";
                     echo "<p class='text-gray-700 mb-4'>".$row['fecha_publi']."</p>";
-                    echo "<a href='publicaciones.php?id=".$row['id']."'><button class='mt-2 bg-green-500 text-white px-4 py-2 rounded hover:bg-purple-700 focus:outline-none'>Read more</button></a>";
+                    echo "<a href='publicaciones.php?id=".$row['id']."'><button class='mt-2 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none'>Read more</button></a>";
                     echo "</div>";
                     echo "</div>";
                 }

@@ -17,7 +17,10 @@
             $nombreDeUsuario = $usuario['nombre'];
             include 'crearcod.php';
             $codigo = codigo_aleatorio();
-            $id_user = $obj->obtenerIdPorCorreo($email);
+            $id_user = $obj->obtenerIdPorCorreo($email)['id'];
+
+            //Imprime el id obtenido junto con el codigo generado
+            echo $id_user . " " . $codigo;
             //ingresar el codigo en la bd 
             $obj->insertarCodigo($codigo, $id_user);
             include 'sendmail.php';
