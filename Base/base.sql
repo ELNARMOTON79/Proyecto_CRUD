@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-11-2024 a las 05:18:54
+-- Tiempo de generación: 10-11-2024 a las 21:14:07
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.0.30
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,6 +35,76 @@ CREATE TABLE `actividades` (
   `fecha` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `actividades`
+--
+
+INSERT INTO `actividades` (`id`, `nombre_actividad`, `descripcion`, `fk_materia`, `fecha`) VALUES
+(18, 'Programacion', 'xdw', 20, '2024-10-19');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `admin`
+--
+
+CREATE TABLE `admin` (
+  `matricula_admin` int(11) NOT NULL,
+  `contrasena_admin` text NOT NULL,
+  `nombre_admin` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `admin`
+--
+
+INSERT INTO `admin` (`matricula_admin`, `contrasena_admin`, `nombre_admin`) VALUES
+(2018001, 'Víctor123', 'Víctor Manuel'),
+(2018002, 'Francisco123', 'Francisco'),
+(2018003, 'Jorge123', 'Jorge'),
+(2018004, 'Julio123', 'Julio'),
+(2018005, 'César123', 'César');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `alumno`
+--
+
+CREATE TABLE `alumno` (
+  `nom_alum` text NOT NULL,
+  `apelli_alum` text NOT NULL,
+  `grupo_alum` text NOT NULL,
+  `matricula_alum` int(11) NOT NULL,
+  `contrasena_alum` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `alumno`
+--
+
+INSERT INTO `alumno` (`nom_alum`, `apelli_alum`, `grupo_alum`, `matricula_alum`, `contrasena_alum`) VALUES
+('Hugo', 'Martinez Urzua ', 'B', 2020001, 'Hugo123'),
+('Oscar ', 'Ramirez ', 'B', 2020002, 'Oscar123'),
+('Alexis', 'Ixta', 'B', 2020003, 'Alexis123'),
+('Diego', 'Cruz', 'B', 2020004, 'Diego123'),
+('Mario', 'Garcia ', 'B', 2020005, 'Mario123'),
+('Maria', 'Diaz', 'B', 2020006, 'Maria123'),
+('Carlos', 'Perez', 'B', 2020007, 'Carlos123'),
+('Joel', 'Rodriguez', 'B', 2020008, 'Joel123'),
+('Luis', 'Flores', 'B', 2020009, 'Luis123'),
+('Edgar', 'Morales', 'B', 2020010, 'Edgar123'),
+('Sofía', 'Jimenez', 'A', 2020011, 'Sofía123'),
+('Santiago', 'Torres', 'A', 2020012, 'Santiago123'),
+('Sebastián', 'Jimenez', 'A', 2020013, 'Sebastián123'),
+('Matías', 'Reyes', 'A', 2020014, 'Matías123'),
+('Diego', 'Ruiz', 'A', 2020015, 'Diego123'),
+('Daniel', 'Mendoza', 'A', 2020016, 'Daniel123'),
+('Alexander', 'Aguilar', 'A', 2020017, 'Alexander123'),
+('Victoria', 'Moreno', 'A', 2020018, 'Victoria123'),
+('Camila', 'Alvarez', 'A', 2020019, 'Camila123'),
+('Ximena', 'Romero', 'A', 2020020, 'Ximena123');
+
 -- --------------------------------------------------------
 
 --
@@ -47,10 +117,56 @@ CREATE TABLE `calificaciones` (
   `unidad_1` decimal(5,2) DEFAULT NULL,
   `unidad_2` decimal(5,2) DEFAULT NULL,
   `unidad_3` decimal(5,2) DEFAULT NULL,
-  `promedio_unidad` decimal(5,2) DEFAULT NULL,
   `promedio_final` decimal(5,2) DEFAULT NULL,
   `fk_tipo_usuario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `calificacion_general`
+--
+
+CREATE TABLE `calificacion_general` (
+  `matricula_alum` int(11) NOT NULL,
+  `nombre_alum` text NOT NULL,
+  `materia` text NOT NULL,
+  `matricula_profe` int(11) NOT NULL,
+  `nombre_profe` text NOT NULL,
+  `calificacion_general` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `codigo`
+--
+
+CREATE TABLE `codigo` (
+  `id` int(11) NOT NULL,
+  `codigo` varchar(100) NOT NULL,
+  `id_user` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `codigo`
+--
+
+INSERT INTO `codigo` (`id`, `codigo`, `id_user`) VALUES
+(1, '2Meq82xIoxmRzUpPdkrKxN6UZZRi4O5PT10yemDuN2IVqPWPA2DRTYMnDIqDfsskCmJSh6a6rJa1CVyxi7byybf0LfWURmougnYP', 0),
+(2, 'RIiOFi53dFAkytVPqtcFAuU6tdEDUiFfXVucbEoUv9l8VvWgBUbPi4kW1HTG5Uc7WZ1XVAlAfAvDrXUeH5BLD2hZUb0tsYZqst4G', 0),
+(3, 'Ezd88o4Ja269a7ivDnXAaS7A9PiusxdOeJQPqQk26pS1X5BNIrBp3C3rCpAwHDpKa1onJcAOCRIFyL6y66bhjGSsXx2cNpy7iTWm', 0),
+(4, 'fnWedNyAEmlIA2aSyS1LMLxHyhHTisNk6mWNgIhmi10ytPLujMikotgA4CIBTAtFyXLypf6wMm5bBHSSe6HdnszmnPZdf8YsDV27', 0),
+(5, 'QPGak2x4CicBaTSInMrSUMT7dx5Cc6hka0Vo40zRQrPWE7QsCbO3mwcnvLhO6b9iYIKzqK6lgU1FlGulVqNZnUVqWPdmBqeABxxk', 0),
+(6, 'lvYVQvt1NmPODF14SbUHzDsgzfO7T5R9MqH7j7MiCWp0bGYakD50DVOzZ4d9Y7zCNyiMLAcnuUNJEWBo91zyI8Gk9YAjRjeDy7NI', 0),
+(7, 'Oo4fc1SDFO5m4PXHJrdzrLNEZraqISqRKk4zolXCsdEQ4vP1sSIE4bKejmIxWnGX8L2NhKkcIpFtd3DfJm2txadYDU77ddr4aYjC', 0),
+(8, 'vCnbtCKxznMW1cZLjAJN6KMqTAWUj3CVtBiNW3BuOgzbwH0Co1x8R0kgX40yis9NfffQYxjt40srLCkf9I8ggt9lwTHBGKRdSp9H', 0),
+(9, 'IfbbEmLQvpGMenV9csHm5t7ghtZA4jtkvhLNeQcmejmjaGI6UcJQ1ptJr858xRoVe3XgVEvrwCkVaOWel42v0NOgMGmy30UEUkhO', 0),
+(10, 'NNreO8UySMw627nHnowkyFujZHmqWbFDWZc6ndccZ2bMAJJfOtCrt6139x5Nw9eSQKiubEFH4LkLcSbmSsWQsBd48yeAOGQBPWDX', 0),
+(11, 'oo5B3y2Sgmiz9yQV8z6cdQ6Q0Nfr4Lw6QVyMB8sdPIjhaHNCWn8YrxovLCQvcX6vyllBXn4ZeBqCrFnoWLPtg5fLEyOLN2TalCPi', 0),
+(12, 'i3YC1hUCjvwHxld1uY39qX0uCB3D7vTRFztEoo8LcJEvZ8nfaEqQQhKekiY0u5G8tufKXZ7jbJMmgRlf9FjtF02rsCgMlA8IcUHJ', 1),
+(13, 'UgbW6gCX1luxvlJFeIIPSJRkSXRJI01sugE35c31L0Y7z9LvIduv3K00TYzHo8X2KLmQ8ruNkhOdkLXOC3VWTeRG3Zgr6AFviiHw', 1),
+(14, 'JQtSAsd0tOBVjy9rgBVyE7rwLDqXGNBoiooLEDEzVyM56OySVIarFcmAA8ROWixp5FBEffW3tLNHxN1F0DdGWe2OHiUeDTiCMQhw', 1);
 
 -- --------------------------------------------------------
 
@@ -60,30 +176,11 @@ CREATE TABLE `calificaciones` (
 
 CREATE TABLE `donaciones` (
   `id` int(11) NOT NULL,
-  `monto` int(4) DEFAULT NULL,
+  `monto` decimal(10,2) DEFAULT NULL,
   `motivo` varchar(255) DEFAULT NULL,
   `fecha_don` varchar(100) DEFAULT NULL,
-  `fk_usuario` int(11) DEFAULT NULL
+  `fk_tipo_usuario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `donaciones`
---
-
-INSERT INTO `donaciones` (`id`, `monto`, `motivo`, `fecha_don`, `fk_usuario`) VALUES
-(16, 10, 'to help students', '24/10/2024', NULL),
-(17, 5, 'for help students', '25/10/2024', NULL),
-(18, 15, 'for help students', '25/10/2024', NULL),
-(19, 15, 'For help students', '26/10/2024', NULL),
-(20, 15, 'For help students', '26/10/2024', NULL),
-(21, 15, 'for help students', '26/10/2024', NULL),
-(22, 15, 'for help students', '26/10/2024', NULL),
-(23, 15, 'for help students', '26/10/2024', NULL),
-(24, 15, 'for help students', '26/10/2024', NULL),
-(25, 15, 'For help students', '29/10/2024', NULL),
-(26, 15, 'yhngbfv', '29/10/2024', NULL),
-(27, 15, 'for helps students', '29/10/2024', NULL),
-(28, 10, 'for help students', '29/10/2024', 32);
 
 -- --------------------------------------------------------
 
@@ -94,8 +191,15 @@ INSERT INTO `donaciones` (`id`, `monto`, `motivo`, `fecha_don`, `fk_usuario`) VA
 CREATE TABLE `grado` (
   `id` int(11) NOT NULL,
   `grado` varchar(50) DEFAULT NULL,
-  `fk_tipo_usuario` int(11) DEFAULT NULL
+  `fk_usuario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `grado`
+--
+
+INSERT INTO `grado` (`id`, `grado`, `fk_usuario`) VALUES
+(13, '2', 35);
 
 -- --------------------------------------------------------
 
@@ -106,8 +210,15 @@ CREATE TABLE `grado` (
 CREATE TABLE `grupo` (
   `id` int(11) NOT NULL,
   `grupo` varchar(50) DEFAULT NULL,
-  `fk_tipo_usuario` int(11) DEFAULT NULL
+  `fk_usuario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `grupo`
+--
+
+INSERT INTO `grupo` (`id`, `grupo`, `fk_usuario`) VALUES
+(1, 'A', 35);
 
 -- --------------------------------------------------------
 
@@ -133,7 +244,7 @@ CREATE TABLE `programas` (
   `nombre_materia` varchar(100) DEFAULT NULL,
   `objetivos` text DEFAULT NULL,
   `actividades` text DEFAULT NULL,
-  `unidad` varchar(50) DEFAULT NULL
+  `unidad` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -141,12 +252,10 @@ CREATE TABLE `programas` (
 --
 
 INSERT INTO `programas` (`id`, `nombre_materia`, `objetivos`, `actividades`, `unidad`) VALUES
-(18, 'Estructura de Datos', 'To understand and implement fundamental data structures, such as arrays, linked lists, stacks, queues, trees, and graphs, for efficient data management and problem-solving in computer programming.', NULL, '1'),
-(19, 'Estructura de Computadoras', 'To explore the fundamental principles of computer architecture, including the design and functionality of processors, memory systems, and input/output devices, to understand how hardware components interact to execute software efficiently.', NULL, '1'),
-(20, 'Legislación y Derecho Informático ', 'To examine the legal frameworks and regulations governing information technology, focusing on data protection, intellectual property, cybersecurity, and the ethical implications of technology in society.', NULL, '1'),
-(21, 'Matemáticas Discretas ', 'To develop a strong foundation in discrete mathematical structures, including logic, set theory, combinatorics, graph theory, and algorithms, essential for solving complex problems in computer science and related fields.', NULL, '1'),
-(22, 'Metodologías Agiles', 'To understand and apply Agile principles and frameworks, such as Scrum and Kanban, for efficient project management, promoting flexibility, collaboration, and continuous improvement in software development processes.', NULL, '1'),
-(23, 'Bases de Datos', 'To understand the principles of database design, implementation, and management, including relational models, SQL, and normalization, to efficiently store, retrieve, and manipulate data in various applications.', NULL, '1');
+(19, 'Estructura de Computadora', 'To explore the fundamental principles of computer architecture, including the design and functionality of processors, memory systems, and input/output devices, to understand how hardware components interact to execute software efficiently.', NULL, 1),
+(20, 'Legislación y Derecho Informático ', 'To examine the legal frameworks and regulations governing information technology, focusing on data protection, intellectual property, cybersecurity, and the ethical implications of technology in society.', NULL, 1),
+(21, 'Matemáticas Discretas ', 'To develop a strong foundation in discrete mathematical structures, including logic, set theory, combinatorics, graph theory, and algorithms, essential for solving complex problems in computer science and related fields.', NULL, 1),
+(22, 'Metodologías Agiles', 'To understand and apply Agile principles and frameworks, such as Scrum and Kanban, for efficient project management, promoting flexibility, collaboration, and continuous improvement in software development processes.', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -183,7 +292,7 @@ CREATE TABLE `usuarios` (
   `correo` varchar(100) DEFAULT NULL,
   `password` varchar(10) NOT NULL,
   `genero` varchar(10) DEFAULT NULL,
-  `edad` int(11) DEFAULT NULL,
+  `edad` int(2) DEFAULT NULL,
   `tipo_usuario` varchar(50) DEFAULT NULL,
   `fecha_nac` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -193,11 +302,11 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `password`, `genero`, `edad`, `tipo_usuario`, `fecha_nac`) VALUES
-(1, 'Rafael', 'rvuelvas@ucol.mx', '14122005', 'Mujer', 21, 'Administrator', '2005-12-14'),
-(12, 'Luis', 'lalaniz@ucol.mx', '123456', 'Hombre', 24, 'Student', '0000-00-00'),
+(1, 'alexandeo', 'rvuelvas@ucol.mx', '14122005', 'Mujer', 21, 'Administrator', '2005-12-14'),
 (27, 'Samiis', 'hguzman2@ucol.mx', '123456', 'Mujer', 21, 'Teacher', '0000-00-00'),
-(30, 'Jesus', 'jrivera@ucol.mx', '123456', 'Hombre', 24, 'Cordinator', '0000-00-00'),
-(32, 'Samiiis', 'hguzman3@ucol.mx', '12345', 'Mujer', 21, 'Donor', '0000-00-00');
+(28, 'Gerardo', 'ggera@ucol.mx', '123456', 'Hombre', 24, 'Donor', '0000-00-00'),
+(33, 'Juan', 'juan@gmail.com', '123456', 'Hombre', 19, 'Teacher', '0000-00-00'),
+(35, 'Victor', 'vvuelvas@ucol.mx', '123456', 'Hombre', 20, 'Student', '0000-00-00');
 
 --
 -- Índices para tablas volcadas
@@ -219,25 +328,31 @@ ALTER TABLE `calificaciones`
   ADD KEY `fk_nombre_usuario` (`fk_tipo_usuario`);
 
 --
+-- Indices de la tabla `codigo`
+--
+ALTER TABLE `codigo`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `donaciones`
 --
 ALTER TABLE `donaciones`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_tipo_usuario` (`fk_usuario`);
+  ADD KEY `fk_tipo_usuario` (`fk_tipo_usuario`);
 
 --
 -- Indices de la tabla `grado`
 --
 ALTER TABLE `grado`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_tipo_usuario` (`fk_tipo_usuario`);
+  ADD KEY `fk_tipo_usuario` (`fk_usuario`);
 
 --
 -- Indices de la tabla `grupo`
 --
 ALTER TABLE `grupo`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_tipo_usuario` (`fk_tipo_usuario`);
+  ADD KEY `fk_tipo_usuario` (`fk_usuario`);
 
 --
 -- Indices de la tabla `horario`
@@ -272,13 +387,25 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `actividades`
 --
 ALTER TABLE `actividades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT de la tabla `donaciones`
+-- AUTO_INCREMENT de la tabla `codigo`
 --
-ALTER TABLE `donaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+ALTER TABLE `codigo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT de la tabla `grado`
+--
+ALTER TABLE `grado`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT de la tabla `grupo`
+--
+ALTER TABLE `grupo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `programas`
@@ -290,13 +417,13 @@ ALTER TABLE `programas`
 -- AUTO_INCREMENT de la tabla `reporte_gastos`
 --
 ALTER TABLE `reporte_gastos`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- Restricciones para tablas volcadas
@@ -319,19 +446,19 @@ ALTER TABLE `calificaciones`
 -- Filtros para la tabla `donaciones`
 --
 ALTER TABLE `donaciones`
-  ADD CONSTRAINT `donaciones_ibfk_1` FOREIGN KEY (`fk_usuario`) REFERENCES `usuarios` (`id`);
+  ADD CONSTRAINT `donaciones_ibfk_1` FOREIGN KEY (`fk_tipo_usuario`) REFERENCES `usuarios` (`id`);
 
 --
 -- Filtros para la tabla `grado`
 --
 ALTER TABLE `grado`
-  ADD CONSTRAINT `grado_ibfk_1` FOREIGN KEY (`fk_tipo_usuario`) REFERENCES `usuarios` (`id`);
+  ADD CONSTRAINT `grado_ibfk_1` FOREIGN KEY (`fk_usuario`) REFERENCES `usuarios` (`id`);
 
 --
 -- Filtros para la tabla `grupo`
 --
 ALTER TABLE `grupo`
-  ADD CONSTRAINT `grupo_ibfk_1` FOREIGN KEY (`fk_tipo_usuario`) REFERENCES `usuarios` (`id`);
+  ADD CONSTRAINT `grupo_ibfk_1` FOREIGN KEY (`fk_usuario`) REFERENCES `usuarios` (`id`);
 
 --
 -- Filtros para la tabla `horario`
