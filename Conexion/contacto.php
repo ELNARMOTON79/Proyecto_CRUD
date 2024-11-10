@@ -96,8 +96,8 @@
 
         }
         //Metodo para crear materias
-        public function crear_materias($nombre_materia, $objetivo, $unidad) {
-            $this->sentencia = "INSERT INTO programas (nombre_materia, objetivos, unidad) VALUES ('$nombre_materia', '$objetivo', '$unidad')";
+        public function crear_materias($nombre_materia, $objetivo, $unidad, $maestro) {
+            $this->sentencia = "INSERT INTO programas (nombre_materia, objetivos, id_user, unidad) VALUES ('$nombre_materia', '$objetivo', '$maestro', '$unidad')";
             return $this->ejecutar_sentencia();
         }
 
@@ -303,7 +303,12 @@
         {
             $this->sentencia = "SELECT codigo FROM codigo WHERE codigo = '$codigo'";
             $result = $this->obtener_sentencia();
+        }
 
+        public function listarmaestros(){
+            $this->sentencia = "SELECT * FROM usuarios WHERE tipo_usuario = 'Teacher'";
+            $result = $this->obtener_sentencia();
+            return $result;
         }
     }
 ?>
