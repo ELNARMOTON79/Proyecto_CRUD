@@ -29,8 +29,8 @@
         <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
             <button id="toggleUsuarios" class="flex flex-row items-center justify-between w-full focus:outline-none">
                 <span class="text-white hover:text-black">
-                    <i class="fa-solid fa-user"></i>
-                    User
+                    <i class="fa-solid fa-list-check"></i>
+                    Grades
                 </span>
                 <span id="iconUsuarios" class="text-white">
                     <i class="fa fa-plus"></i>
@@ -38,8 +38,8 @@
             </button>
             <div id="submenu" class="ml-6 mt-2 hidden">
                 <a href="?action=listar_usuarios" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
-                    <i class="fa-solid fa-list-check"></i>
-                    List user
+                    <i class="fa-solid fa-pen"></i>
+                    Create grades
                 </a>
             </div>
         </div>
