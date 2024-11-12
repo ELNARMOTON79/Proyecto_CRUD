@@ -15,4 +15,6 @@
     $showForm1 = isset($_GET['action']) && $_GET['action'] == 'donar';
     $showForm2 = isset($_GET['action']) && $_GET['action'] == 'tracking';
     $showForm3 = isset($_GET['action']) && $_GET['action'] == 'settings';
+    $showForm4 = isset($_GET['action']) && $_GET['action'] == 'comunicacion';
+
 ?>

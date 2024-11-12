@@ -310,5 +310,31 @@
             $result = $this->obtener_sentencia();
             return $result;
         }
+
+        //crud noticias//
+        public function eliminarnoticia($id) {  
+            $this->sentencia = "DELETE FROM usuarios WHERE id = '$id'";
+            $resultado = $this->ejecutar_sentencia();
+            return $resultado;
+        }
+        public function consultarnoticia() {
+            $this->sentencia = "SELECT * FROM reporte_gastos;";
+            return $this->obtener_sentencia(); // Retorna el resultado de la consulta
+        }
+        public function eliminar_noticia($idEliminar)
+        {
+            $this->sentencia = "DELETE FROM reporte_gastos WHERE id = '$idEliminar';";     
+            $resultado = $this->ejecutar_sentencia();
+        }
+        public function obtenerPorIdnoticia($idModificar) {
+            $this->sentencia = "SELECT * FROM reporte_gastos WHERE id = '$idModificar'";
+            return $this->obtener_sentencia();
+        }
+        public function modificar_noticia($titulo, $reporte,$image,$id)
+        {
+            $this->sentencia = "UPDATE reporte_gastos  SET titulo = '$titulo', reporte = '$reporte', image = '$image' WHERE id = '$id'";
+            return $this->ejecutar_sentencia();
+        }
+        
     }
 ?>

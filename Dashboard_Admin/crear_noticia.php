@@ -24,7 +24,7 @@
                         <input type="file" id="imagen" name="imagen" class="shadow appearance-none border rounded w-full py-2 px-3 text-primary leading-tight focus:outline-none focus:shadow-outline">
                     </div>
                     <div class="flex items-center justify-between">
-                        <button type="submit" name="crear_post" class="bg-primary hover:bg-primary-dark text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                        <button type="submit" name="crear_post" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700">
                             Create Post
                         </button>
                     </div>
