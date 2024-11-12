@@ -92,14 +92,26 @@
             </div>
         </div>
 
-        <!-- Monitoreo de Desempeño -->
-        <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
-            <a href="?action=crear_noticias" class="flex flex-row space-x-3">
-                <h4 class="text-white hover:text-black">
-                    <i class="fa-solid fa-chart-line"></i>
-                    create news
-                </h4>
-            </a>
+        <div class="p-2 hover:bg-green-700 text-white rounded-md transition duration-500 ease-in-out">
+            <button id="togglenoticias" class="flex flex-row items-center justify-between w-full focus:outline-none">
+                <span class="text-white hover:text-black">
+                <i class="fa-solid fa-bookmark"></i>
+                News
+                </span>
+                <span id="iconNoticias" class="text-white">
+                <i class="fa fa-plus"></i>
+                </span>
+            </button>
+            <div id="submenunoticias" class="ml-6 mt-2 hidden">
+                <a href="?action=crear_noticia" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                <i class="fa-solid fa-pen"></i>
+                Create news
+                </a>
+                <a href="?action=listar_noticia" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                <i class="fa-solid fa-clipboard-list"></i>
+                List news
+                </a>
+            </div>
         </div>
 
         <!-- Recursos -->

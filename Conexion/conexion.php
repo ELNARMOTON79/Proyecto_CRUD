@@ -35,6 +35,8 @@
 		{
 			return $this->conexion->insert_id;
 		}
+
 	}
 
 ?>
+ 
