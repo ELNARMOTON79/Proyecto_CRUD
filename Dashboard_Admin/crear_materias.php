@@ -35,6 +35,25 @@
             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-s" placeholder="Objective">
     </div>
 
+    <!-- Matricular materia a un profesor -->
+    <div class="mt-6">
+        <label for="matricular">
+            <i class="fa-solid fa-calendar-alt mr-2"></i>Enroll subject to a teacher
+        </label>
+        <?php
+            //lista de profesores en select
+            require_once("../Conexion/contacto.php");
+            $obj = new Contacto();
+            $profesores = $obj->listarmaestros();
+
+            echo "<select name='profesor' id='profesor' class='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm'>";
+            foreach ($profesores as $profesor) {
+                echo "<option value='".$profesor['id']."'>".$profesor['nombre']."</option>";
+            }
+            echo "</select>";
+        ?>
+    </div>
+
     <!-- Campo oculto para duración en segundos -->
     <input type="hidden" name="duracion" id="duracion">
 
@@ -49,13 +68,14 @@
         <?php
         $mostrarExito = false;
         if (isset($_POST['crear'])) {
+            $maestro = $_POST['profesor'];
             $nombre_materia = $_POST['nombre_materia'];
             $objetivo = $_POST['objetivo'];
             $unidad = $_POST['unidad'];
 
             require_once("../Conexion/contacto.php");
             $obj = new Contacto();
-            $obj->crear_materias($nombre_materia, $objetivo, $unidad);
+            $obj->crear_materias($nombre_materia, $objetivo, $unidad, $maestro);
 
             $mostrarExito = true;
         }
