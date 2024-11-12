@@ -48,3 +48,17 @@ include 'forgotvar.php';
     </div>
 </body>
 </html>
+<?php
+    if(isset($_POST['login'])){
+        $nombreDeUsuario = $_POST['nombreUsuario'];
+        $email = $_POST['email'];
+        require_once '../Conexion/contacto.php';
+        $obj = new Contacto();
+        $usuario = $obj->forgotPassword($email);
+        include 'crearcode.php';
+
+        $codigo = codigo_aleatorio();
+        $id_user = $obj->ObtenerIdPorCorreo($email)['id'];
+        $obj->insertarCodigo($email, $id_user);
+        include 'sendmail.php';
+    }

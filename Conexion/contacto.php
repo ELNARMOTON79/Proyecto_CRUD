@@ -279,9 +279,9 @@
             $result = $this->obtener_sentencia();
             
             if ($result->num_rows > 0) {
-                return $result->fetch_assoc(); // Devuelve un arreglo asociativo
+                return $result->fetch_assoc();
             } else {
-                return null; // Devuelve null si no se encuentran resultados
+                return null;
             }
         }
 
@@ -295,13 +295,13 @@
 
         public function insertarCodigo($codigo, $id_user)
         {
-            $this->sentencia = "INSERT INTO codigo (codigo, id_user) VALUES ('$codigo', '$id_user')";
+            $this->sentencia = "INSERT INTO codes (code, id_user) VALUES ('$codigo', '$id_user')";
             return $this->ejecutar_sentencia();
         }
 
         public function checkCode($codigo)
         {
-            $this->sentencia = "SELECT codigo FROM codigo WHERE codigo = '$codigo'";
+            $this->sentencia = "SELECT id_user FROM codes WHERE code = '$codigo'";
             $result = $this->obtener_sentencia();
         }
 
