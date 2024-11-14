@@ -10,7 +10,9 @@
     $gender = $_POST['gender'];
     $role = $_POST['role'];
     $grade = $_POST['grade'];
-    $group = $_POST['group'];
+    $group = isset($_POST['grade']) ? $_POST['grade'] : null;
+    $group = isset($_POST['group']) ? $_POST['group'] : null;
+
 
     if ($age <= 17 || $age > 99)
     {
