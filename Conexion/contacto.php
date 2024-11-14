@@ -300,6 +300,12 @@
             return $donaciones;
         }
 
+        // Asignar un nuevo recurso
+        public function asignarRecurso($nombre_recurso, $cant) {
+            $this->sentencia = "INSERT INTO recursos_asignados (nombre_recurso, cant) VALUES ('$nombre_recurso', $cant)";
+            return $this->ejecutar_sentencia();
+        }
+        
 
 
         public function forgotPassword($email)

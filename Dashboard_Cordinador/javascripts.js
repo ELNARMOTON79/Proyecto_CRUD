@@ -48,6 +48,48 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+//Funcion para el modal de agregar recursos
+function abrirModal() {
+  document.getElementById('modalAsignarRecursos').classList.remove('hidden');
+}
+
+function cerrarModal() {
+  document.getElementById('modalAsignarRecursos').classList.add('hidden');
+}
+
+function asignarRecurso() {
+  const nombreRecurso = document.getElementById('nombreRecurso').value;
+  const cantidadRecurso = parseFloat(document.getElementById('cantidadRecurso').value);
+  
+  if (!nombreRecurso || isNaN(cantidadRecurso) || cantidadRecurso <= 0) {
+      alert("Por favor ingrese un nombre de recurso y una cantidad válida.");
+      return;
+  }
+
+  fetch('asignar_recurso.php', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ nombre_recurso: nombreRecurso, cant: cantidadRecurso })
+  })
+  .then(response => response.json())
+  .then(data => {
+      if (data.success) {
+          alert("Recurso asignado exitosamente");
+          cerrarModal();
+          // Opcional: refrescar la página o actualizar la lista de recursos asignados.
+      } else {
+          alert("Error al asignar el recurso");
+      }
+  })
+  .catch(error => {
+      console.error("Error:", error);
+      alert("Error al asignar el recurso");
+  });
+}
+
+
 // Configuración original del gráfico de línea
 const originalLabels = ["January", "February", "March", "April", "May", "June"];
 const originalData = {
@@ -217,4 +259,5 @@ var donutChart = new Chart(
   document.getElementById("donutChart"), // El ID del canvas sigue siendo el mismo
   donutConfig
 );
+
 

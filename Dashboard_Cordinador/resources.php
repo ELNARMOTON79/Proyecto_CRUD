@@ -1,3 +1,4 @@
+
 <div class="flex-auto ml-64">
     <div class="flex flex-col">
         <div class="flex items-center bg-white p-4 space-x-4">
@@ -34,17 +35,43 @@
                     </div>
                 </div>
 
-                <div class="flex items-center bg-white rounded shadow-sm justify-between p-5">
-                    <div class="text-sm text-gray-400">
-                        Recursos asignados
-                        <div class="text-3xl font-medium text-gray-600 p-1">
-                            <?php echo total_estudiantes(); ?>
+                <button onclick="abrirModal()">
+                    <div class="flex items-center bg-white rounded shadow-sm justify-between p-5">
+                        <div class="text-sm text-gray-400">
+                            Asignar recursos
+                            <div class="text-3xl font-medium text-gray-600 p-1">
+                                Presione aqui
+                            </div>
+                        </div>
+                        <div class="text-pink-500">
+                            <i class="fa-solid fa-piggy-bank fa-2x"></i>
                         </div>
                     </div>
-                    <div class="text-pink-500">
-                        <i class="fa-solid fa-circle-arrow-right fa-2x"></i>
+                </button>
+
+                <!-- Modal -->
+                <div id="modalAsignarRecursos" class="modal hidden fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
+                    <div class="bg-white rounded-lg shadow-lg w-1/3 p-5">
+                        <h2 class="text-xl font-bold text-gray-700 mb-4">Asignar Recursos</h2>
+
+                        <form id="formAsignarRecursos">
+                            <div class="mb-4">
+                                <label class="block text-gray-600">Nombre de recurso:</label>
+                                <input type="text" id="nombreRecurso" class="w-full border p-2 rounded" maxlength="50" required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-600">Cantidad:</label>
+                                <input type="number" id="cantidadRecurso" class="w-full border p-2 rounded" step="0.01" required>
+                            </div>
+                            <div class="flex justify-end mt-4">
+                                <button type="button" onclick="cerrarModal()" class="bg-gray-400 text-white px-4 py-2 rounded mr-2">Cancelar</button>
+                                <button type="button" onclick="asignarRecurso()" class="bg-blue-500 text-white px-4 py-2 rounded">Aceptar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
+
+
                 <div class="flex items-center bg-white rounded shadow-sm justify-between p-5">
                     <div class="text-sm text-gray-400">
                         Total de donadores
@@ -61,11 +88,11 @@
             <div class="mt-5 grid lg:grid-cols-3 md:grid-cols-3 p-4 gap-3">
                 <div class="col-span-2 bg-white p-8 flex-col rounded shadow-sm">
                     <b class="flex flex-row text-gray-500">Donaciones en un transcurso de 6 meses</b>
-                    <canvas class="p-5" id="newChartLine"></canvas> 
+                    <canvas id="modalAsignarRecursos" class="p-5"></canvas>  
                 </div>
                 <div class="flex flex-col p-8 bg-white rounded shadow-sm">
                     <div class="flex flex-row text-gray-500">
-                        Historial de transacciones
+                        Historial de donaciones
                         <div><i class="fa-solid fa-clock-rotate-left p-1"></i></div>
                     </div>
                     <table class="w-full mt-3 text-left">
@@ -93,5 +120,3 @@
         </div>
     </div>
 </div>
-
-    
