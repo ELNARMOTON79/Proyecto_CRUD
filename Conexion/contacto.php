@@ -122,11 +122,29 @@
             $this->sentencia = "UPDATE actividades SET nombre_actividad = '$nombre_actividad', descripcion = '$descripcion', fk_materia = '$fk_materia', fecha = '$fecha' WHERE id = '$id'";
             return $this->ejecutar_sentencia();
         }
-        public function obtenerPorIdactividades($id) {
-            $this->sentencia = "SELECT actividades.*, programas.nombre_materia FROM actividades JOIN programas ON actividades.fk_materia = programas.id WHERE actividades.id = '$id'";
+    
+        //Metodo para consultar por ID la calificación
+        public function obtenerPorId_calificaion($id) {
+            $this->sentencia = "SELECT * FROM calificaciones WHERE fk_tipo_usuario = $id";
             return $this->obtener_sentencia();
         }
-        
+        public function obtener_calificaciones()
+        {
+            $this->sentencia="SELECT * FROM calificaciones;";
+            return $this->ejecutar_sentencia();
+
+        }
+         //metodo para crear calificacion
+         public function crear_calificacion($id ,$unidad_1, $unidad_2, $unidad_3){
+            $this->sentencia = "INSERT INTO calificaciones (unidad_1, unidad_2, unidad_3, fk_tipo_usuario) VALUES ('$unidad_1', '$unidad_2', '$unidad_3', $id)";
+            return $this->ejecutar_sentencia();
+         }
+         // Método para modificar calificación
+        public function modificar_calificacion($id, $unidad_1, $unidad_2, $unidad_3) {
+            $this->sentencia = "UPDATE calificaciones SET unidad_1 = '$unidad_1', unidad_2 = '$unidad_2', unidad_3 = '$unidad_3' WHERE fk_tipo_usuario = $id";
+            return $this->ejecutar_sentencia();
+        }
+
         public function subir($name, $age, $email, $password, $gender, $role)
         {
             $this->sentencia = "INSERT INTO usuarios (nombre, correo, password, genero, edad, tipo_usuario) VALUES ('$name', '$email', '$password', '$gender', '$age', '$role')";
@@ -196,11 +214,12 @@
         }
         public function eliminar_materias($idEliminar)
         {
+            $this->sentencia = "DELETE FROM programas WHERE id = $idEliminar;";
             $this->sentencia = "DELETE FROM programas WHERE id = '$idEliminar';";     
             $resultado = $this->ejecutar_sentencia();
         }
         public function obtenerPorIdmateria($idModificar) {
-            $this->sentencia = "SELECT * FROM programas WHERE id = '$idModificar'";
+            $this->sentencia = "SELECT * FROM programas WHERE id = $idModificar";
             return $this->obtener_sentencia();
         }
         public function modificar_materia($id, $nombre, $objetivo, $unidad)

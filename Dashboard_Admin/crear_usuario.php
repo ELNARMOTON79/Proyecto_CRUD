@@ -10,7 +10,9 @@
     $gender = $_POST['gender'];
     $role = $_POST['role'];
     $grade = $_POST['grade'];
-    $group = $_POST['group'];
+    $group = isset($_POST['grade']) ? $_POST['grade'] : null;
+    $group = isset($_POST['group']) ? $_POST['group'] : null;
+
 
     if ($age <= 17 || $age > 99)
     {
@@ -77,7 +79,7 @@
                     <label for="role" class="block text-sm font-medium text-gray-700">
                         <i class="fa-solid fa-user-tag mr-2"></i>Role:
                     </label>
-                    <select name="role" id="role" required class="block w-full p-2 border border-gray-300 rounded" onchange="toggleStudentFields()">
+                    <select name="role" id="role" required class="block w-full p-2 border border-gray-300 rounded" onchange="toggleStudentFields(), toggleTeacherFields()">
                         <option value="" disabled selected>Select an option</option>
                         <option value="Teacher">Teacher</option>
                         <option value="Student">Student</option>
@@ -108,6 +110,21 @@
                         <option value="" disabled selected>Select group</option>
                         <option value="A">A</option>
                         <option value="B">B</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Campos para Grado y Grupo maestro-->
+            <div id="teacherFields" style="display: none;" class="grid grid-cols-1 gap-6 sm:grid-cols-2 mt-4">
+                <div>
+                    <label for="grade" class="block text-sm font-medium text-gray-700">Grade:</label>
+                    <select name="grade" id="grade" class="block w-full p-2 border border-gray-300 rounded">
+                        <option value="" disabled selected>Select grade</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
                     </select>
                 </div>
             </div>
@@ -201,6 +218,15 @@
         var roleSelect = document.getElementById("role");
         var studentFields = document.getElementById("studentFields");
         if (roleSelect.value === "Student") {
+            studentFields.style.display = "block";
+        } else {
+            studentFields.style.display = "none";
+        }
+    }
+    function toggleTeacherFields() {
+        var roleSelect = document.getElementById("role");
+        var studentFields = document.getElementById("teacherFields");
+        if (roleSelect.value === "Teacher") {
             studentFields.style.display = "block";
         } else {
             studentFields.style.display = "none";
