@@ -277,12 +277,7 @@
         {
             $this->sentencia = "SELECT * FROM usuarios WHERE correo = '$email'";
             $result = $this->obtener_sentencia();
-            
-            if ($result->num_rows > 0) {
-                return $result->fetch_assoc();
-            } else {
-                return null;
-            }
+            return $result->fetch_assoc();
         }
 
         //Buscar obtener el id del correo

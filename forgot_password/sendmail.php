@@ -10,7 +10,7 @@ require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
 
 // Variables recibidas desde el formulario
-$email = $_POST['email'];
+$correo = $_POST['email'];
 $nombreDeUsuario = $GLOBALS['nombreDeUsuario'];
 $codigo = $GLOBALS['codigo'];
 

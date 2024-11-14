@@ -1,6 +1,5 @@
 <?php
 session_start();
-include 'forgotvar.php';
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +36,7 @@ include 'forgotvar.php';
                         <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" name="email" type="email" placeholder="E-mail" required>
                     </div>
                     <div class="flex items-center justify-center">
-                        <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" name="login">
+                        <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" name="reset">
                             Send Mail
                         </button>
                     </div>
@@ -49,16 +48,35 @@ include 'forgotvar.php';
 </body>
 </html>
 <?php
-    if(isset($_POST['login'])){
-        $nombreDeUsuario = $_POST['nombreUsuario'];
+    if (isset($_POST['reset'])) {
         $email = $_POST['email'];
-        require_once '../Conexion/contacto.php';
+        // Verificar si el correo existe en la base de datos
+        include_once '../Conexion/contacto.php';
         $obj = new Contacto();
-        $usuario = $obj->forgotPassword($email);
-        include 'crearcode.php';
+        $correo = $obj->forgotPassword($email);
+    
+        if (!$correo) {
+            echo "<script>alert('Correo no encontrado');</script>";
+        } else {
+            // Imprime el correo
+            // echo "<script>alert('Correo encontrado');</script>";
+            // Generar un código aleatorio
+            include 'crearcod.php';
+            $codigo = codigo_aleatorio();
+            // Imprimir código
+            // echo "<script>alert('Codigo: $codigo');</script>";
+            //almacenar id en variable
+            $nombreDeUsuario = $correo['nombre'];
+            $id_user = $obj->obtenerIdPorCorreo($email)['id'];
 
-        $codigo = codigo_aleatorio();
-        $id_user = $obj->ObtenerIdPorCorreo($email)['id'];
-        $obj->insertarCodigo($email, $id_user);
-        include 'sendmail.php';
+            //echo "<script>alert('Id: $id');</script>";
+            // Insertar código en la base de datos
+            //Imprimir id y código y correo
+            //echo "<script>alert('Id: $id, Codigo: $codigo, Correo: $email');</script>";
+            $obj->insertarCodigo($codigo, $id_user);
+            //Enviar por correo el codigo y el nombre de usuario
+            include 'sendmail.php';
+        }
     }
+    
+?>    
