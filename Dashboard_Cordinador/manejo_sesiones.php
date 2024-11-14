@@ -34,12 +34,20 @@
         return $total_estudiantes;
     }
 
+    //Funcion para obtener el total de donadores
     function total_donadores() {
         $contacto = new Contacto();
         // Obtenemos el total directamente sin hacer iteraciones
         $total_donadores = $contacto->contarTotalDonadores();
         return $total_donadores;
     }
+
+    //Funcion para obtener los recursos
+    function total_recursos() {
+        $contacto = new Contacto();
+        return $contacto->obtenerTotalRecursos();
+    }
+    
     
 
     //Show forms para cada acción

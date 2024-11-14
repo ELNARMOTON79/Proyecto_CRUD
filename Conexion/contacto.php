@@ -280,6 +280,14 @@
             return $resultado->fetch_assoc()['total'];
         }
 
+        // Obtener el total de recursos donados
+        public function obtenerTotalRecursos() {
+            $this->sentencia = "SELECT SUM(monto) as total_recursos FROM donaciones";
+            $resultado = $this->obtener_sentencia();
+            return $resultado->fetch_assoc()['total_recursos'] ?? 0;
+        }
+        
+
         public function forgotPassword($email)
         {
             $this->sentencia = "SELECT * FROM usuarios WHERE correo = '$email'";

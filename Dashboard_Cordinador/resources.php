@@ -24,13 +24,16 @@
                     <div class="text-sm text-gray-400">
                         Total de recursos
                         <div class="text-3xl font-medium text-gray-600 p-1">
-                            <?php echo total_maestros(); ?>
+                            <?php echo '$'?>
+                            <?php echo total_recursos(); ?>
+                            <?php echo 'Usd.'?>
                         </div>
                     </div>
                     <div class="text-pink-500">
-                        <i class="fa-solid fa-circle-arrow-left fa-2x"></i>
+                        <i class="fa-solid fa-circle-dollar-to-slot fa-2x"></i>
                     </div>
                 </div>
+
                 <div class="flex items-center bg-white rounded shadow-sm justify-between p-5">
                     <div class="text-sm text-gray-400">
                         Recursos asignados
