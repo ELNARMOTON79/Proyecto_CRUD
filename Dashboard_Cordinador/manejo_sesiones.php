@@ -34,18 +34,13 @@
         return $total_estudiantes;
     }
 
-    // Funcion para obtener el total de donadores
-    function total_donadores(){
+    function total_donadores() {
         $contacto = new Contacto();
-        $result = $contacto->consultar();
-        $total_donadores = 0;
-        while($row = $result->fetch_assoc()){
-            if($row['tipo_usuario'] == 'Donors'){
-                $total_donadores++;
-            }
-        }
+        // Obtenemos el total directamente sin hacer iteraciones
+        $total_donadores = $contacto->contarTotalDonadores();
         return $total_donadores;
     }
+    
 
     //Show forms para cada acción
     $showForm0 = isset($_GET['action']) && $_GET['action'] == 'dashboard';

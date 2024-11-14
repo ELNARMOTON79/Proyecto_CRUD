@@ -273,6 +273,13 @@
             return $resultado->fetch_assoc()['total'];
         }
         
+        // Contar el total de donadores
+        public function contarTotalDonadores() {
+            $this->sentencia = "SELECT COUNT(*) as total FROM donaciones";
+            $resultado = $this->obtener_sentencia();
+            return $resultado->fetch_assoc()['total'];
+        }
+
         public function forgotPassword($email)
         {
             $this->sentencia = "SELECT * FROM usuarios WHERE correo = '$email'";
