@@ -48,6 +48,12 @@
         return $contacto->obtenerTotalRecursos();
     }
     
+    //Funcion para obtener un historial de donaciones
+    function historial_donaciones($limite = 10) {
+        $contacto = new Contacto();
+        return $contacto->obtenerHistorialDonaciones($limite);
+    }
+    
     
 
     //Show forms para cada acción

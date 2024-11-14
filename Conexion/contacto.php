@@ -286,7 +286,21 @@
             $resultado = $this->obtener_sentencia();
             return $resultado->fetch_assoc()['total_recursos'] ?? 0;
         }
-        
+
+        // Obtener el historial de las donaciones más recientes
+        public function obtenerHistorialDonaciones($limite = 10) {
+            // Construimos la sentencia SQL con el límite de donaciones
+            $this->sentencia = "SELECT id, monto, motivo, fecha_don FROM donaciones ORDER BY id DESC LIMIT $limite";
+            $resultado = $this->obtener_sentencia();
+
+            $donaciones = [];
+            while ($fila = $resultado->fetch_assoc()) {
+                $donaciones[] = $fila;
+            }
+            return $donaciones;
+        }
+
+
 
         public function forgotPassword($email)
         {

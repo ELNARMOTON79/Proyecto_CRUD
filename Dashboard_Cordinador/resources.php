@@ -57,15 +57,37 @@
                     </div>
                 </div>
             </div>
-            <!-- Gráficos nuevos -->
+            <!-- Nueva Tabla -->
             <div class="mt-5 grid lg:grid-cols-3 md:grid-cols-3 p-4 gap-3">
                 <div class="col-span-2 bg-white p-8 flex-col rounded shadow-sm">
                     <b class="flex flex-row text-gray-500">Donaciones en un transcurso de 6 meses</b>
                     <canvas class="p-5" id="newChartLine"></canvas> 
                 </div>
                 <div class="flex flex-col p-8 bg-white rounded shadow-sm">
-                    <b class="flex flex-row text-gray-500">Historial de transacciones</b>
-                    <canvas class="p-5" id="donutChart"></canvas> 
+                    <div class="flex flex-row text-gray-500">
+                        Historial de transacciones
+                        <div><i class="fa-solid fa-clock-rotate-left p-1"></i></div>
+                    </div>
+                    <table class="w-full mt-3 text-left">
+                        <thead>
+                            <tr>
+                                <th class="border-b p-2 text-gray-600">Monto</th>
+                                <th class="border-b p-2 text-gray-600">Motivo</th>
+                                <th class="border-b p-2 text-gray-600">Fecha</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
+                            $donaciones = historial_donaciones(5); 
+                            foreach ($donaciones as $donacion): ?>
+                                <tr>
+                                    <td class="border-b p-2 text-gray-800"><?php echo number_format($donacion['monto'], 2); ?></td>
+                                    <td class="border-b p-2 text-gray-800"><?php echo htmlspecialchars($donacion['motivo']); ?></td>
+                                    <td class="border-b p-2 text-gray-800"><?php echo htmlspecialchars($donacion['fecha_don']); ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
