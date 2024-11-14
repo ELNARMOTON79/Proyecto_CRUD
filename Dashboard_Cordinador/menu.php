@@ -37,10 +37,6 @@
                 </span>
             </button>
             <div id="submenu" class="ml-6 mt-2 hidden">
-                <a href="?action=crear_usuario" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
-                    <i class="fa-solid fa-user-plus"></i>
-                    Create user
-                </a>
                 <a href="?action=listar_usuarios" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                     <i class="fa-solid fa-list-check"></i>
                     List user
@@ -48,6 +44,7 @@
             </div>
         </div>
 
+        <!-- Sección desplegable para actividades -->
         <div class="p-2 hover:bg-green-700 text-white rounded-md transition duration-500 ease-in-out">
             <button id="toggleActividades" class="flex flex-row items-center justify-between w-full focus:outline-none">
                 <span class="text-white hover:text-black">
@@ -59,10 +56,6 @@
                 </span>
             </button>
             <div id="submenuActividades" class="ml-6 mt-2 hidden">
-                <a href="?action=crear_actividades" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
-                    <i class="fa-solid fa-pen"></i>
-                    Create activities
-                </a>
                 <a href="?action=listar_actividades" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                     <i class="fa-solid fa-clipboard-list"></i>
                     List activities
@@ -70,6 +63,7 @@
             </div>
         </div>
 
+        <!-- Sección desplegable para Materias -->
         <div class="p-2 hover:bg-green-700 text-white rounded-md transition duration-500 ease-in-out">
             <button id="toggleMaterias" class="flex flex-row items-center justify-between w-full focus:outline-none">
                 <span class="text-white hover:text-black">
@@ -81,10 +75,6 @@
                 </span>
             </button>
             <div id="submenuMaterias" class="ml-6 mt-2 hidden">
-                <a href="?action=crear_materias" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
-                    <i class="fa-solid fa-pen"></i>
-                    Create Subject
-                </a>
                 <a href="?action=listar_materias" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
                     <i class="fa-solid fa-clipboard-list"></i>
                     List Subject
@@ -92,36 +82,24 @@
             </div>
         </div>
 
-        <div class="p-2 hover:bg-green-700 text-white rounded-md transition duration-500 ease-in-out">
-            <button id="togglenoticias" class="flex flex-row items-center justify-between w-full focus:outline-none">
-                <span class="text-white hover:text-black">
-                <i class="fa-solid fa-bookmark"></i>
-                News
-                </span>
-                <span id="iconNoticias" class="text-white">
-                <i class="fa fa-plus"></i>
-                </span>
-            </button>
-            <div id="submenunoticias" class="ml-6 mt-2 hidden">
-                <a href="?action=crear_noticia" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
-                <i class="fa-solid fa-pen"></i>
-                Create news
-                </a>
-                <a href="?action=listar_noticia" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
-                <i class="fa-solid fa-clipboard-list"></i>
-                List news
-                </a>
-            </div>
-        </div>
 
         <!-- Recursos -->
-        <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
-            <a href="#" class="flex flex-row space-x-3">
-                <h4 class="text-white hover:text-black">
+        <div class="p-2 hover:bg-green-700 text-white rounded-md transition duration-500 ease-in-out">
+            <button id="toggleResources" class="flex flex-row items-center justify-between w-full focus:outline-none">
+                <span class="text-white hover:text-black">
                     <i class="fa-solid fa-coins"></i>
                     Resources
-                </h4>
-            </a>
+                </span>
+                <span id="iconResources" class="text-white">
+                    <i class="fa fa-plus"></i>
+                </span>
+            </button>
+            <div id="submenuResources" class="ml-6 mt-2 hidden">
+                <a href="?action=resources" class="block text-white hover:text-black rounded-md transition duration-500 ease-in-out">
+                    <i class="fa-solid fa-chart-column"></i>
+                    List Resources
+                </a>
+            </div>
         </div>
     </div>
 

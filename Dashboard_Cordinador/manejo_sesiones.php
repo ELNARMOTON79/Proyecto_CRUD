@@ -49,19 +49,16 @@
 
     //Show forms para cada acción
     $showForm0 = isset($_GET['action']) && $_GET['action'] == 'dashboard';
-    $showForm1 = isset($_GET['action']) && $_GET['action'] == 'crear_usuario';
-    $showForm2 = isset($_GET['action']) && $_GET['action'] == 'modificar_usuario';
-    $showForm3 = isset($_GET['action']) && $_GET['action'] == 'listar_usuarios';
-    $showForm4 = isset($_GET['action']) && $_GET['action'] == 'eliminar_usuario';
-    $showForm5 = isset($_GET['action']) && $_GET['action'] == 'crear_actividades';
-    $showForm6 = isset($_GET['action']) && $_GET['action'] == 'listar_actividades';
-    $showForm7 = isset($_GET['action']) && $_GET['action'] == 'modificar_actividades';
-    $showForm8 = isset($_GET['action']) && $_GET['action'] == 'eliminar_actividades';
-    $showForm9 = isset($_GET['action']) && $_GET['action'] == 'crear_materias';
-    $showForm10 = isset($_GET['action']) && $_GET['action'] == 'listar_materias';
-    $showForm11 = isset($_GET['action']) && $_GET['action'] == 'modificar_materias';
-    $showForm12 = isset($_GET['action']) && $_GET['action'] == 'eliminar_materias';
-    $showForm13 = isset($_GET['action']) && $_GET['action'] == 'crear_noticia';
-    $showForm14 = isset($_GET['action']) && $_GET['action'] == 'listar_noticia';
-
+    $showForm1 = isset($_GET['action']) && $_GET['action'] == 'listar_usuarios';
+    $showForm2 = isset($_GET['action']) && $_GET['action'] == '#';
+    $showForm3 = isset($_GET['action']) && $_GET['action'] == 'listar_actividades';
+    $showForm4 = isset($_GET['action']) && $_GET['action'] == '#';
+    $showForm5 = isset($_GET['action']) && $_GET['action'] == 'listar_materias';
+    $showForm6 = isset($_GET['action']) && $_GET['action'] == 'resources';
+    $showForm7 = isset($_GET['action']) && $_GET['action'] == '#';
+    $showForm8 = isset($_GET['action']) && $_GET['action'] == '#';
+    $showForm9 = isset($_GET['action']) && $_GET['action'] == '#';
+    $showForm10 = isset($_GET['action']) && $_GET['action'] == '#';
+    $showForm11 = isset($_GET['action']) && $_GET['action'] == '#';
+    $showForm12 = isset($_GET['action']) && $_GET['action'] == '#';
 ?>

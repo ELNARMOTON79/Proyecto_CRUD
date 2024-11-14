@@ -60,11 +60,11 @@ if ($tipo_usuario !== '') {
         <label for="tipo_usuario" class="block mb-2 text-gray-700">Filter by user role:</label>
         <select name="tipo_usuario" id="tipo_usuario" class="block w-full p-2 border border-gray-300 rounded" onchange="document.getElementById('filterForm').submit();">
             <option value="">All Roles</option>
-            <option value="Admin" <?php echo $tipo_usuario == 'Admin' ? 'selected' : ''; ?>>Administrator</option>
+            <option value="Administrator" <?php echo $tipo_usuario == 'Administrator' ? 'selected' : ''; ?>>Administrator</option>
             <option value="Teacher" <?php echo $tipo_usuario == 'Teacher' ? 'selected' : ''; ?>>Teacher</option>
             <option value="Student" <?php echo $tipo_usuario == 'Student' ? 'selected' : ''; ?>>Student</option>
-            <option value="donator" <?php echo $tipo_usuario == 'donator' ? 'selected' : ''; ?>>Donator</option>
-            <option value="coordinator" <?php echo $tipo_usuario == 'coordinator' ? 'selected' : ''; ?>>Cordinator</option>
+            <option value="Donor" <?php echo $tipo_usuario == 'Donor' ? 'selected' : ''; ?>>Donator</option>
+            <option value="Cordinator" <?php echo $tipo_usuario == 'Cordinator' ? 'selected' : ''; ?>>Cordinator</option>
         </select>
     </form>
 
