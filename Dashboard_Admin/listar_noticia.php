@@ -30,7 +30,9 @@ if (isset($_POST['modificar'])) {
     $id = $_POST['id'];
     $titulo = $_POST['titulo'];
     $reporte = $_POST['reporte'];
-    $image = $_POST['image'];
+    $image = $_FILES['image']['name'];
+    $ruta = "../SRC/".$image;
+    move_uploaded_file($_FILES['image']['tmp_name'], $ruta);
     $obj->modificar_noticia($titulo, $reporte, $image, $id);
     $mostrarExito2 = true;
 }
@@ -148,14 +150,14 @@ if (isset($_POST['modificar'])) {
     ?>
     <div id="modalEditar" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
     <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-8">
-        <h2 class="text-xl font-semibold text-gray-700 mb-4">Edit News</h2>
+        <h2 class="text-xl text-green-600 font-semibold mb-4">Edit News</h2>
         <form action="" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?php echo $registroParaModificar['id']; ?>">
 
             <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div>
                     <label for="nombre" class="block text-sm font-medium text-gray-700">
-                        <i class="fa-solid fa-clipboard mr-2"></i>title
+                        <i class="fa-solid fa-clipboard mr-2"></i>Title
                     </label>
                     <input type="text" name="titulo" value="<?php echo $registroParaModificar['titulo']; ?>" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
                 </div>
@@ -163,14 +165,14 @@ if (isset($_POST['modificar'])) {
 
             <div>
                 <label for="fecha" class="block text-sm font-medium text-gray-700">
-                    <i class="fa-solid fa-calendar-alt mr-2"></i>report
+                    <i class="fa-solid fa-calendar-alt mr-2"></i>Report
                 </label>
                 <textarea id="contenido" name="reporte" class="shadow appearance-none border rounded w-full py-2 px-3 text-primary leading-tight focus:outline-none focus:shadow-outline h-40"><?php echo $registroParaModificar['reporte']; ?></textarea>
             </div>
 
             <div>
                 <label for="image" class="block text-sm font-medium text-gray-700">
-                    <i class="fa-solid fa-clipboard mr-2"></i>image
+                    <i class="fa-solid fa-clipboard mr-2"></i>Image
                 </label>
                 <input type="file" name="image" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
             </div>
