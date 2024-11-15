@@ -178,7 +178,11 @@
             
             return $result; // Devuelve el resultado de la inserción del usuario
         }
-        
+        public function consultaxtipousuario($tipo_usuario){
+            $this->sentencia = "SELECT * FROM usuarios WHERE tipo_usuario = '$tipo_usuario'";
+            $result = $this->obtener_sentencia();
+            return $result;
+        }
         public function consultaxtipo($id)
         {
             $this->sentencia = "SELECT u.id, u.nombre, u.correo, u.genero, u.edad

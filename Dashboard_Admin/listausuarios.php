@@ -46,7 +46,7 @@ if (isset($_POST['modificar'])) {
 // Obtener los usuarios
 $tipo_usuario = isset($_POST['tipo_usuario']) ? $_POST['tipo_usuario'] : '';
 if ($tipo_usuario !== '') {
-    $resultado = $obj->consultaxtipo($tipo_usuario);
+    $resultado = $obj->consultaxtipousuario($tipo_usuario);
 } else {
     $resultado = $obj->consultar();
 }
