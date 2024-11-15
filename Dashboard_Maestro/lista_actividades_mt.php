@@ -38,8 +38,9 @@ if (isset($_POST['modificar'])) {
 // Obtener la materia seleccionada para filtrar
 $materia_filtrada = isset($_POST['materia_filtrada']) ? $_POST['materia_filtrada'] : '';
 
+$id = $_SESSION['id'];
 // Consulta para obtener las materias disponibles
-$materias = $obj->obtenerMaterias();
+$materias = $obj->obtenerMateriasid($id);
 
 // Consulta de actividades filtradas por materia
 if ($materia_filtrada !== '') {

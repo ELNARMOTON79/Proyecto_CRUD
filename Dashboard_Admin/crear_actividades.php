@@ -1,4 +1,4 @@
-<div class="max-w-4xl mx-auto mt-10 p-6 space-y-6">
+    <div class="max-w-4xl mx-auto mt-10 p-6 space-y-6">
     <h2 class="text-xl font-semibold text-gray-700 mb-4">Create Activity</h2>
     <form action="" method="post" class="bg-white shadow-md rounded-lg p-6 space-y-6">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -36,7 +36,7 @@
                 <?php
                 require_once("../Conexion/contacto.php");
                 $obj = new Contacto();
-                $resultado = $obj->obtenerMaterias(); // Asegúrate de que este método devuelva las materias con sus IDs
+                $resultado = $obj->obtenerMateriastodas();
 
                 if ($resultado) {
                     while ($materia = $resultado->fetch_assoc()) {

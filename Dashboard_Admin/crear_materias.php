@@ -72,6 +72,7 @@
             $nombre_materia = $_POST['nombre_materia'];
             $objetivo = $_POST['objetivo'];
             $unidad = $_POST['unidad'];
+            $maestro = $_POST['profesor'];
 
             require_once("../Conexion/contacto.php");
             $obj = new Contacto();

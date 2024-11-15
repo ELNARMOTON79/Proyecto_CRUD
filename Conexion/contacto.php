@@ -91,13 +91,18 @@
         }
         //Metodo para obtener materias de programas        
         public function obtenerMaterias() {
-            $this->sentencia = "SELECT id, nombre_materia,  objetivos, actividades, unidad FROM programas";
+            $this->sentencia = "SELECT id, nombre_materia,  objetivos, unidad FROM programas";
+            return $this->obtener_sentencia();
+        }
+        //Metodo para obtener materias de programas        
+        public function obtenerMateriasid($id) {
+            $this->sentencia = "SELECT id, nombre_materia,  objetivos, unidad FROM programas WHERE mtimparte = '$id'";
             return $this->obtener_sentencia();
 
         }
         //Metodo para crear materias
         public function crear_materias($nombre_materia, $objetivo, $unidad, $maestro) {
-            $this->sentencia = "INSERT INTO programas (nombre_materia, objetivos, id_user, unidad) VALUES ('$nombre_materia', '$objetivo', '$maestro', '$unidad')";
+            $this->sentencia = "INSERT INTO programas (nombre_materia, objetivos, unidad, mtimparte) VALUES ('$nombre_materia', '$objetivo', '$unidad', '$maestro')";
             return $this->ejecutar_sentencia();
         }
 
@@ -135,13 +140,13 @@
 
         }
          //metodo para crear calificacion
-         public function crear_calificacion($id ,$unidad_1, $unidad_2, $unidad_3){
-            $this->sentencia = "INSERT INTO calificaciones (unidad_1, unidad_2, unidad_3, fk_tipo_usuario) VALUES ('$unidad_1', '$unidad_2', '$unidad_3', $id)";
+         public function crear_calificacion($id ,$unidad_1, $unidad_2, $unidad_3, $materia){
+            $this->sentencia = "INSERT INTO calificaciones (fk_materia, unidad_1, unidad_2, unidad_3, fk_tipo_usuario) VALUES ('$materia', '$unidad_1', '$unidad_2', '$unidad_3', $id)";
             return $this->ejecutar_sentencia();
          }
          // Método para modificar calificación
-        public function modificar_calificacion($id, $unidad_1, $unidad_2, $unidad_3) {
-            $this->sentencia = "UPDATE calificaciones SET unidad_1 = '$unidad_1', unidad_2 = '$unidad_2', unidad_3 = '$unidad_3' WHERE fk_tipo_usuario = $id";
+        public function modificar_calificacion($id, $unidad_1, $unidad_2, $unidad_3, $materia) {
+            $this->sentencia = "UPDATE calificaciones SET fk_materia = '$materia', unidad_1 = '$unidad_1', unidad_2 = '$unidad_2', unidad_3 = '$unidad_3' WHERE fk_tipo_usuario = $id";
             return $this->ejecutar_sentencia();
         }
 
@@ -174,12 +179,22 @@
             return $result; // Devuelve el resultado de la inserción del usuario
         }
         
-        public function consultaxtipo($tipo_usuario)
+        public function consultaxtipo($id)
         {
-            $this->sentencia = "SELECT * FROM usuarios WHERE tipo_usuario = '$tipo_usuario'";
+            $this->sentencia = "SELECT u.id, u.nombre, u.correo, u.genero, u.edad
+                FROM usuarios u
+                JOIN grado g ON g.id = (
+                    SELECT id
+                    FROM grado
+                    WHERE fk_usuario = '$id'
+                ) AND u.tipo_usuario = 'Student'
+                WHERE g.grado = (
+                    SELECT grado
+                    FROM grado
+                    WHERE fk_usuario = '$id'
+                );";
             $result = $this->obtener_sentencia();
             return $result;
-
         }
         public function consultar_actividades_por_materia($materia_id) {
             $this->sentencia = "
@@ -210,6 +225,14 @@
         //Funcion para obtener las materias de 5 en 5
         public function consultarmaterias() {
             $this->sentencia = "SELECT * FROM programas;";
+            return $this->obtener_sentencia();
+        }
+        public function consultarmateriasid($id) {
+            $this->sentencia = "SELECT id, nombre_materia, objetivos, unidad FROM programas WHERE mtimparte = '$id';";
+            return $this->obtener_sentencia();
+        }
+        public function consultarmateriaspormaestro() {
+            $this->sentencia = "";
             return $this->obtener_sentencia();
         }
         public function eliminar_materias($idEliminar)

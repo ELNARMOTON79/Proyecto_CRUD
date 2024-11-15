@@ -33,7 +33,8 @@ if (isset($_POST['modificar'])) {
 }
 
 // Realizar la consulta para obtener todas las materias
-$resultado = $obj->consultarmaterias(); // No se pasa offset ni límite
+$id = $_SESSION['id'];
+$resultado = $obj->consultarmateriasid($id); // No se pasa offset ni límite
 ?>
 
 <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">

@@ -23,6 +23,7 @@ if (isset($_POST['idmodificar']) && isset($_POST['unidad_1']) && isset($_POST['u
     $unidad_1 = $_POST['unidad_1'];
     $unidad_2 = $_POST['unidad_2'];
     $unidad_3 = $_POST['unidad_3'];
+    $materia = $_POST['materia'];
 
     if($unidad_1 >= 0 && $unidad_1 <= 100 && $unidad_2 >= 0 && $unidad_2 <= 100 && $unidad_3 >= 0 && $unidad_3 <= 100) {
         $mostrarExito1 = true;
@@ -31,10 +32,10 @@ if (isset($_POST['idmodificar']) && isset($_POST['unidad_1']) && isset($_POST['u
         $calificacionExistente = $obj->obtenerPorId_calificaion($id);
         if ($calificacionExistente->num_rows > 0) {
             // Si ya existe, modificar la calificación
-            $obj->modificar_calificacion($id, $unidad_1, $unidad_2, $unidad_3);
+            $obj->modificar_calificacion($id, $unidad_1, $unidad_2, $unidad_3, $materia);
         } else {
             // Si no existe, crear una nueva calificación
-            $obj->crear_calificacion($id, $unidad_1, $unidad_2, $unidad_3);
+            $obj->crear_calificacion($id, $unidad_1, $unidad_2, $unidad_3, $materia);
             $mostrarExito2 = true;
         }
     } else {
@@ -43,11 +44,14 @@ if (isset($_POST['idmodificar']) && isset($_POST['unidad_1']) && isset($_POST['u
 }
 
 // Obtener solo los usuarios de tipo estudiante
+$id = $_SESSION['id'];
 $tipo_usuario = 'Student';
-$resultado = $obj->consultaxtipo($tipo_usuario);
+$resultado = $obj->consultaxtipo($id);
 
 //Obtener todas las calificaciones
 $calificaciones = $obj->obtener_calificaciones();
+$materias = $obj->consultarmateriasid($id);
+
 ?>
 
 <div class="max-w-6xl translate-x-32 mx-auto bg-white p-8 rounded-lg shadow-lg">
@@ -62,9 +66,10 @@ $calificaciones = $obj->obtener_calificaciones();
             <tr class="bg-green-600 text-white">
                 <th class="px-6 py-3 text-left">Name</th>
                 <th class="px-6 py-3 text-left">E-mail</th>
-                <th class="px-6 py-3 text-left">U1</th>
-                <th class="px-6 py-3 text-left">U2</th>
-                <th class="px-6 py-3 text-left">U3</th>
+                <th class="px-6 py-3 text-left">Materia</th>
+                <th class="px-6 py-3 text-left">Unidad 1</th>
+                <th class="px-6 py-3 text-left">Unidad 2</th>
+                <th class="px-6 py-3 text-left">Unidad 3</th>
                 <th class="px-6 py-3 text-left">Actions</th>
             </tr>
         </thead>
@@ -76,10 +81,18 @@ $calificaciones = $obj->obtener_calificaciones();
             ?>
                 <form action="#" method="POST" style="display:inline;">
                     <tr class="even:bg-gray-100 hover:bg-gray-200">
-                    
                         <!-- Botón de Editar -->
                         <td class="px-6 py-4"><?php echo htmlspecialchars($registro["nombre"]); ?></td>
                         <td class="px-6 py-4"><?php echo htmlspecialchars($registro["correo"]); ?></td>
+                        <td class="px-6 py-4">
+                            <select name="materia" id="materia" class="w-40 border rounded-md">
+                                <?php while ($materia = $materias->fetch_assoc()): ?>
+                                    <option value="<?php echo $materia['id']; ?>" <?php if ($calificacion['id'] == $materia['id']) echo 'selected'; ?>>
+                                        <?php echo htmlspecialchars($materia['nombre_materia']); ?>
+                                    </option>
+                                <?php endwhile; ?>
+                            </select>
+                        </td>
                         <!-- Inputs de calificaciones bloqueados inicialmente -->
                         <td class="px-6 py-4">
                             <input type="text" class="w-20 border rounded-md calificacion" name="unidad_1" id="u1-<?php echo $registro['id']; ?>" value="<?php echo htmlspecialchars($calificacion['unidad_1'] ?? 0); ?>" disabled>
