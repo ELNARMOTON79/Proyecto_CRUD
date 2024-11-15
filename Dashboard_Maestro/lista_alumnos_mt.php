@@ -78,6 +78,9 @@ $materias = $obj->consultarmateriasid($id);
                 // Obtener las calificaciones del estudiante actual
                 $calificacionesEstudiante = $obj->obtenerPorId_calificaion($registro['id']);
                 $calificacion = $calificacionesEstudiante->fetch_assoc();
+                
+                // Obtener las materias en cada iteración para reiniciar el resultado
+                $materias = $obj->consultarmateriasid($id); 
             ?>
                 <form action="#" method="POST" style="display:inline;">
                     <tr class="even:bg-gray-100 hover:bg-gray-200">
@@ -87,7 +90,7 @@ $materias = $obj->consultarmateriasid($id);
                         <td class="px-6 py-4">
                             <select name="materia" id="materia-<?php echo $registro['id']; ?>" class="w-40 border rounded-md" disabled>
                                 <?php while ($materia = $materias->fetch_assoc()): ?>
-                                    <option value="<?php echo $materia['id']; ?>" <?php if ($calificacion['id'] == $materia['id']) echo 'selected'; ?>>
+                                    <option value="<?php echo $materia['id']; ?>" <?php if ($calificacion && $calificacion['id'] == $materia['id']) echo 'selected'; ?>>
                                         <?php echo htmlspecialchars($materia['nombre_materia']); ?>
                                     </option>
                                 <?php endwhile; ?>
