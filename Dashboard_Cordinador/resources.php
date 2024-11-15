@@ -80,7 +80,7 @@
                         </div>
                     </div>
                     <div class="text-pink-500">
-                        <i class="fa-solid fa-circle-arrow-right fa-2x"></i>
+                    <i class="fa-solid fa-hand-holding-dollar fa-2x"></i>
                     </div>
                 </div>
             </div>
@@ -88,7 +88,24 @@
             <div class="mt-5 grid lg:grid-cols-3 md:grid-cols-3 p-4 gap-3">
                 <div class="col-span-2 bg-white p-8 flex-col rounded shadow-sm">
                     <b class="flex flex-row text-gray-500">Donaciones en un transcurso de 6 meses</b>
-                    <canvas id="modalAsignarRecursos" class="p-5"></canvas>  
+                    <table class="w-full mt-3 text-left">
+                        <thead>
+                            <tr>
+                                <th class="border-b p-2 text-gray-600">Nombre Recurso</th>
+                                <th class="border-b p-2 text-gray-600">Monto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
+                            $recursos = historial_recursos(5); 
+                            foreach ($recursos as $recurso): ?>
+                                <tr>
+                                    <td class="border-b p-2 text-gray-800"><?php echo htmlspecialchars($recurso['nombre_recurso']); ?></td>
+                                    <td class="border-b p-2 text-gray-800"><?php echo htmlspecialchars($recurso['cant']); ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>                      
                 </div>
                 <div class="flex flex-col p-8 bg-white rounded shadow-sm">
                     <div class="flex flex-row text-gray-500">

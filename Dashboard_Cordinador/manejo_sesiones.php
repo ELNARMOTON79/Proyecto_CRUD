@@ -53,6 +53,10 @@
         $contacto = new Contacto();
         return $contacto->obtenerHistorialDonaciones($limite);
     }
+    function historial_recursos($limite = 10) {
+        $contacto = new Contacto();
+        return $contacto->obtenerHistorialRecursos($limite);
+    }
 
     //Funcion para asignar recursos
     function asignar_recurso($nombre_recurso, $cant) {

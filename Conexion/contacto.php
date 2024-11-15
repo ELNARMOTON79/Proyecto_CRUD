@@ -349,6 +349,16 @@
             }
             return $donaciones;
         }
+        public function obtenerHistorialRecursos($limite = 10){
+            $this->sentencia = "SELECT id, nombre_recurso, cant FROM recursos_asignados ORDER BY id DESC LIMIT $limite";
+            $resultado = $this->obtener_sentencia();
+
+            $recursos = [];
+            while ($fila = $resultado->fetch_assoc()) {
+                $recursos[] = $fila;
+            }
+            return $recursos;
+        }
 
         // Asignar un nuevo recurso
         public function asignarRecurso($nombre_recurso, $cant) {
@@ -415,6 +425,9 @@
             $this->sentencia = "UPDATE reporte_gastos  SET titulo = '$titulo', reporte = '$reporte', image = '$image' WHERE id = '$id'";
             return $this->ejecutar_sentencia();
         }
-        
+        public function asignar_recursos($nombreRecurso, $cantidadRecurso){
+            $this->sentencia = "INSERT INTO recursos_asignados (nombre_recurso, cant) VALUES ('$nombreRecurso', $cantidadRecurso)";
+            return $this->ejecutar_sentencia();
+        }   
     }
 ?>
