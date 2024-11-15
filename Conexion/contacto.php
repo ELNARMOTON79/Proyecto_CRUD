@@ -323,6 +323,41 @@
             return $resultado->fetch_assoc()['total'];
         }
         
+        // Contar el total de donadores
+        public function contarTotalDonadores() {
+            $this->sentencia = "SELECT COUNT(*) as total FROM donaciones";
+            $resultado = $this->obtener_sentencia();
+            return $resultado->fetch_assoc()['total'];
+        }
+
+        // Obtener el total de recursos donados
+        public function obtenerTotalRecursos() {
+            $this->sentencia = "SELECT SUM(monto) as total_recursos FROM donaciones";
+            $resultado = $this->obtener_sentencia();
+            return $resultado->fetch_assoc()['total_recursos'] ?? 0;
+        }
+
+        // Obtener el historial de las donaciones más recientes
+        public function obtenerHistorialDonaciones($limite = 10) {
+            // Construimos la sentencia SQL con el límite de donaciones
+            $this->sentencia = "SELECT id, monto, motivo, fecha_don FROM donaciones ORDER BY id DESC LIMIT $limite";
+            $resultado = $this->obtener_sentencia();
+
+            $donaciones = [];
+            while ($fila = $resultado->fetch_assoc()) {
+                $donaciones[] = $fila;
+            }
+            return $donaciones;
+        }
+
+        // Asignar un nuevo recurso
+        public function asignarRecurso($nombre_recurso, $cant) {
+            $this->sentencia = "INSERT INTO recursos_asignados (nombre_recurso, cant) VALUES ('$nombre_recurso', $cant)";
+            return $this->ejecutar_sentencia();
+        }
+        
+
+
         public function forgotPassword($email)
         {
             $this->sentencia = "SELECT * FROM usuarios WHERE correo = '$email'";

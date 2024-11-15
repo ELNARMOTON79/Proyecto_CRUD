@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div class="text-pink-500">
-                        <i class="fa-solid fa-circle-arrow-left fa-2x"></i>
+                        <i class="fa-solid fa-user-tie fa-2x"></i>
                     </div>
                 </div>
                 <div class="flex items-center bg-white rounded shadow-sm justify-between p-5">
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="text-pink-500">
-                        <i class="fa-solid fa-circle-arrow-right fa-2x"></i>
+                        <i class="fa-solid fa-user-graduate fa-2x"></i>
                     </div>
                 </div>
                 <div class="flex items-center bg-white rounded shadow-sm justify-between p-5">
@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div class="text-pink-500">
-                        <i class="fa-solid fa-circle-arrow-right fa-2x"></i>
+                        <i class="fa-solid fa-coins fa-2x"></i>
                     </div>
                 </div>
             </div>

@@ -45,7 +45,7 @@
                 endif;
 
                 if ($showForm9):
-                    include '#';
+                    include 'asignar_recurso.php';
                 endif;
 
                 if ($showForm10):
