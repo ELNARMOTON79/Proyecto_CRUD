@@ -85,7 +85,7 @@ $materias = $obj->consultarmateriasid($id);
                         <td class="px-6 py-4"><?php echo htmlspecialchars($registro["nombre"]); ?></td>
                         <td class="px-6 py-4"><?php echo htmlspecialchars($registro["correo"]); ?></td>
                         <td class="px-6 py-4">
-                            <select name="materia" id="materia" class="w-40 border rounded-md">
+                            <select name="materia" id="materia-<?php echo $registro['id']; ?>" class="w-40 border rounded-md" disabled>
                                 <?php while ($materia = $materias->fetch_assoc()): ?>
                                     <option value="<?php echo $materia['id']; ?>" <?php if ($calificacion['id'] == $materia['id']) echo 'selected'; ?>>
                                         <?php echo htmlspecialchars($materia['nombre_materia']); ?>
@@ -144,27 +144,31 @@ let valoresOriginales = {};
 
 // Función para desbloquear los inputs del usuario específico
 function modificarCalificaciones(id) {
-    // Obtener los inputs de calificaciones
+    // Obtener los inputs de calificaciones y el select de materia
     const u1 = document.getElementById('u1-' + id);
     const u2 = document.getElementById('u2-' + id);
     const u3 = document.getElementById('u3-' + id);
+    const materiaSelect = document.getElementById('materia-' + id); // Obtener el select de materia específico
 
     // Almacenar los valores originales
     valoresOriginales[id] = {
         u1: u1.value,
         u2: u2.value,
-        u3: u3.value
+        u3: u3.value,
+        materia: materiaSelect.value // Almacenar valor del select
     };
 
-    // Desbloquear los inputs
+    // Desbloquear los inputs y el select
     u1.disabled = false;
     u2.disabled = false;
     u3.disabled = false;
+    materiaSelect.disabled = false; // Desbloquear el select
 
     // Mostrar botones de confirmar y cancelar
     document.getElementById('confirmar-' + id).style.display = 'inline';
     document.getElementById('cancelar-' + id).style.display = 'inline';
 }
+
 
 // Función para confirmar los cambios
 function confirmarCambios(id) {
@@ -183,20 +187,23 @@ function confirmarCambios(id) {
 
 // Función para cancelar los cambios
 function cancelarCambios(id) {
-    // Obtener los inputs de calificaciones
+    // Obtener los inputs de calificaciones y el select de materia específico
     const u1 = document.getElementById('u1-' + id);
     const u2 = document.getElementById('u2-' + id);
     const u3 = document.getElementById('u3-' + id);
+    const materiaSelect = document.getElementById('materia-' + id); // Obtener el select de materia específico
 
     // Restaurar los valores originales
     u1.value = valoresOriginales[id].u1;
     u2.value = valoresOriginales[id].u2;
     u3.value = valoresOriginales[id].u3;
+    materiaSelect.value = valoresOriginales[id].materia; // Restaurar valor del select
 
-    // Bloquear nuevamente los inputs
+    // Bloquear nuevamente los inputs y el select
     u1.disabled = true;
     u2.disabled = true;
     u3.disabled = true;
+    materiaSelect.disabled = true; // Bloquear el select
 
     // Ocultar los botones de confirmar y cancelar
     document.getElementById('confirmar-' + id).style.display = 'none';
