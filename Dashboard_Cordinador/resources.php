@@ -65,7 +65,7 @@
                             </div>
                             <div class="flex justify-end mt-4">
                                 <button type="button" onclick="cerrarModal()" class="bg-gray-400 text-white px-4 py-2 rounded mr-2">Cancelar</button>
-                                <button type="button" onclick="asignarRecurso()" class="bg-blue-500 text-white px-4 py-2 rounded">Aceptar</button>
+                                <button type="button" onclick="asignarRecurso()" class="bg-green-600 text-white px-4 py-2 rounded">Aceptar</button>
                             </div>
                         </form>
                     </div>
