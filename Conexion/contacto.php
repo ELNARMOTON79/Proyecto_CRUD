@@ -178,6 +178,10 @@
             
             return $result; // Devuelve el resultado de la inserción del usuario
         }
+        public function obtenerMateriastodas() {
+            $this->sentencia = "SELECT * FROM programas";
+            return $this->obtener_sentencia();
+        }
         public function consultaxtipousuario($tipo_usuario){
             $this->sentencia = "SELECT * FROM usuarios WHERE tipo_usuario = '$tipo_usuario'";
             $result = $this->obtener_sentencia();
