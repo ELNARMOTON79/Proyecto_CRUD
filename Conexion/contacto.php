@@ -94,6 +94,11 @@
             $this->sentencia = "SELECT id, nombre_materia,  objetivos, unidad FROM programas";
             return $this->obtener_sentencia();
         }
+        public function listarcalificacionesxusuario($id){
+            $this->sentencia = "SELECT u.id AS id_alumno, u.nombre AS nombre_alumno, m.nombre_materia AS materia, c.unidad_1 AS calificacion_unidad_1, c.unidad_2 AS calificacion_unidad_2, c.unidad_3 AS calificacion_unidad_3, c.promedio_final AS promedio FROM usuarios u JOIN calificaciones c ON u.id = c.fk_tipo_usuario JOIN programas m ON m.id = c.fk_materia JOIN grado g ON g.fk_usuario = u.id JOIN grupo gr ON gr.fk_usuario = u.id WHERE u.id = '$id'"; // Cambiado de g.grado a g.fk_usuario
+            $result = $this->obtener_sentencia();
+            return $result;
+        }
         //Metodo para obtener materias de programas        
         public function obtenerMateriasid($id) {
             $this->sentencia = "SELECT id, nombre_materia,  objetivos, unidad FROM programas WHERE mtimparte = '$id'";
@@ -189,18 +194,7 @@
         }
         public function consultaxtipo($id)
         {
-            $this->sentencia = "SELECT u.id, u.nombre, u.correo, u.genero, u.edad
-                FROM usuarios u
-                JOIN grado g ON g.id = (
-                    SELECT id
-                    FROM grado
-                    WHERE fk_usuario = '$id'
-                ) AND u.tipo_usuario = 'Student'
-                WHERE g.grado = (
-                    SELECT grado
-                    FROM grado
-                    WHERE fk_usuario = '$id'
-                );";
+            $this->sentencia = "SELECT u.id, u.nombre, u.correo, g.grado FROM usuarios u INNER JOIN grado g ON u.id = g.fk_usuario WHERE u.tipo_usuario = 'Student' AND g.grado = ( SELECT g2.grado FROM grado g2 INNER JOIN usuarios u2 ON g2.fk_usuario = u2.id WHERE u2.id = '$id' LIMIT 1 );";
             $result = $this->obtener_sentencia();
             return $result;
         }
@@ -366,8 +360,35 @@
             return $this->ejecutar_sentencia();
         }
         
-
-
+        public function listaractividadesxalumno($id){
+            $this->sentencia = "SELECT a.id AS actividad_id, a.nombre_actividad, a.descripcion, a.fecha, p.nombre_materia FROM actividades a JOIN programas p ON a.fk_materia = p.id JOIN grado g ON g.grado = p.unidad WHERE g.fk_usuario = '$id';"; // Cambiado de g.grado a g.fk_usuario
+            $result = $this->obtener_sentencia();
+            return $result;
+        }
+        public function listarmateriasxalumno($id){
+            // Consulta SQL ajustada
+            $this->sentencia = "
+                SELECT 
+                    p.id AS id_materia, 
+                    p.nombre_materia, 
+                    p.objetivos, 
+                    p.unidad
+                FROM 
+                    programas p
+                JOIN 
+                    grado g ON g.fk_usuario = p.mtimparte
+                WHERE 
+                    g.grado = (
+                        SELECT g2.grado 
+                        FROM grado g2 
+                        WHERE g2.fk_usuario = '$id'
+                    );
+            ";
+            // Ejecutar la consulta y devolver los resultados
+            $result = $this->obtener_sentencia();
+            return $result;
+        }
+        
         public function forgotPassword($email)
         {
             $this->sentencia = "SELECT * FROM usuarios WHERE correo = '$email'";

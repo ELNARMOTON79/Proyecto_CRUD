@@ -213,4 +213,3 @@ function cancelarCambios(id) {
     document.getElementById('cancelar-' + id).style.display = 'none';
 }
 </script>
-
