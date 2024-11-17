@@ -452,6 +452,63 @@
         public function asignar_recursos($nombreRecurso, $cantidadRecurso){
             $this->sentencia = "INSERT INTO recursos_asignados (nombre_recurso, cant) VALUES ('$nombreRecurso', $cantidadRecurso)";
             return $this->ejecutar_sentencia();
-        }   
+        }
+        public function consultar_alumnos($id){
+            $this->sentencia = "SELECT DISTINCT u_alumno.id, u_alumno.nombre as nombre_alumno, u_alumno.correo, g_alumno.grado, gr_alumno.grupo FROM usuarios u_alumno INNER JOIN grado g_alumno ON u_alumno.id = g_alumno.fk_usuario INNER JOIN grupo gr_alumno ON u_alumno.id = gr_alumno.fk_usuario INNER JOIN usuarios u_profesor ON u_profesor.tipo_usuario = 'Teacher' INNER JOIN grado g_profesor ON u_profesor.id = g_profesor.fk_usuario WHERE u_alumno.tipo_usuario = 'Student' AND g_alumno.grado = g_profesor.grado AND u_profesor.id = '$id'";
+            $result = $this->obtener_sentencia();
+            return $result;
+        }
+        public function total_aprobados($id) {
+            // Define la consulta
+            $this->sentencia = "SELECT 
+                    estado,
+                    COUNT(*) AS total
+                FROM (
+                    SELECT 
+                        u.id AS id_alumno, 
+                        u.nombre AS nombre_alumno, 
+                        c.unidad_1, 
+                        c.unidad_2, 
+                        c.unidad_3, 
+                        (c.unidad_1 + c.unidad_2 + c.unidad_3) AS suma_total, 
+                        p.nombre_materia, 
+                        g.grado, 
+                        gr.grupo, 
+                        CASE 
+                            WHEN (c.unidad_1 + c.unidad_2 + c.unidad_3) >= 24 THEN 'APROBADO' 
+                            ELSE 'REPROBADO' 
+                        END AS estado
+                    FROM 
+                        usuarios u
+                    INNER JOIN 
+                        calificaciones c ON u.id = c.fk_tipo_usuario
+                    INNER JOIN 
+                        programas p ON c.fk_materia = p.id
+                    INNER JOIN 
+                        grado g ON u.id = g.fk_usuario
+                    INNER JOIN 
+                        grupo gr ON u.id = gr.fk_usuario
+                    WHERE 
+                        p.mtimparte = 34 
+                        AND u.tipo_usuario = 'Student'
+                ) AS subconsulta
+                GROUP BY estado;";
+        
+            // Ejecuta la consulta
+            $result = $this->obtener_sentencia();
+        
+            // Verifica si la consulta fue exitosa
+            if (!$result) {
+                return null; // Manejar errores en el contexto del llamador
+            }
+        
+            // Procesa los resultados
+            $data = [];
+            while ($row = $result->fetch_assoc()) {
+                $data[] = $row; // Agregar cada fila al arreglo
+            }
+        
+            return $data; // Devuelve el arreglo de datos
+        }
     }
 ?>

@@ -16,17 +16,11 @@
         return $total_maestros;
     }
 
-    // Funcion para obtener el total de estudiantes
     function total_estudiantes(){
         $contacto = new Contacto();
-        $result = $contacto->consultar();
-        $total_estudiantes = 0;
-        while($row = $result->fetch_assoc()){
-            if($row['tipo_usuario'] == 'Student'){
-                $total_estudiantes++;
-            }
-        }
-        return $total_estudiantes;
+        $id = $_SESSION['id'];
+        $result = $contacto->consultar_alumnos($id);
+        return $result->num_rows; // Simplemente retorna el número total de filas
     }
 
     // Funcion para obtener el total de donadores
