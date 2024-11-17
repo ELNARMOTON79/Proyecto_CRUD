@@ -23,7 +23,6 @@ if (isset($_POST['idmodificar']) && isset($_POST['unidad_1']) && isset($_POST['u
     $unidad_1 = $_POST['unidad_1'];
     $unidad_2 = $_POST['unidad_2'];
     $unidad_3 = $_POST['unidad_3'];
-    $materia = $_POST['materia'];
 
     if($unidad_1 >= 0 && $unidad_1 <= 100 && $unidad_2 >= 0 && $unidad_2 <= 100 && $unidad_3 >= 0 && $unidad_3 <= 100) {
         $mostrarExito1 = true;
@@ -32,10 +31,10 @@ if (isset($_POST['idmodificar']) && isset($_POST['unidad_1']) && isset($_POST['u
         $calificacionExistente = $obj->obtenerPorId_calificaion($id);
         if ($calificacionExistente->num_rows > 0) {
             // Si ya existe, modificar la calificación
-            $obj->modificar_calificacion($id, $unidad_1, $unidad_2, $unidad_3, $materia);
+            $obj->modificar_calificacion($id, $unidad_1, $unidad_2, $unidad_3);
         } else {
             // Si no existe, crear una nueva calificación
-            $obj->crear_calificacion($id, $unidad_1, $unidad_2, $unidad_3, $materia);
+            $obj->crear_calificacion($id, $unidad_1, $unidad_2, $unidad_3);
             $mostrarExito2 = true;
         }
     } else {
@@ -50,7 +49,6 @@ $resultado = $obj->consultaxtipo($id);
 
 //Obtener todas las calificaciones
 $calificaciones = $obj->obtener_calificaciones();
-$materias = $obj->consultarmateriasid($id);
 
 ?>
 
@@ -66,7 +64,6 @@ $materias = $obj->consultarmateriasid($id);
             <tr class="bg-green-600 text-white">
                 <th class="px-6 py-3 text-left">Name</th>
                 <th class="px-6 py-3 text-left">E-mail</th>
-                <th class="px-6 py-3 text-left">Materia</th>
                 <th class="px-6 py-3 text-left">Unidad 1</th>
                 <th class="px-6 py-3 text-left">Unidad 2</th>
                 <th class="px-6 py-3 text-left">Unidad 3</th>
@@ -87,15 +84,6 @@ $materias = $obj->consultarmateriasid($id);
                         <!-- Botón de Editar -->
                         <td class="px-6 py-4"><?php echo htmlspecialchars($registro["nombre"]); ?></td>
                         <td class="px-6 py-4"><?php echo htmlspecialchars($registro["correo"]); ?></td>
-                        <td class="px-6 py-4">
-                            <select name="materia" id="materia-<?php echo $registro['id']; ?>" class="w-40 border rounded-md" disabled>
-                                <?php while ($materia = $materias->fetch_assoc()): ?>
-                                    <option value="<?php echo $materia['id']; ?>" <?php if ($calificacion && $calificacion['id'] == $materia['id']) echo 'selected'; ?>>
-                                        <?php echo htmlspecialchars($materia['nombre_materia']); ?>
-                                    </option>
-                                <?php endwhile; ?>
-                            </select>
-                        </td>
                         <!-- Inputs de calificaciones bloqueados inicialmente -->
                         <td class="px-6 py-4">
                             <input type="text" class="w-20 border rounded-md calificacion" name="unidad_1" id="u1-<?php echo $registro['id']; ?>" value="<?php echo htmlspecialchars($calificacion['unidad_1'] ?? 0); ?>" disabled>
@@ -151,21 +139,18 @@ function modificarCalificaciones(id) {
     const u1 = document.getElementById('u1-' + id);
     const u2 = document.getElementById('u2-' + id);
     const u3 = document.getElementById('u3-' + id);
-    const materiaSelect = document.getElementById('materia-' + id); // Obtener el select de materia específico
 
     // Almacenar los valores originales
     valoresOriginales[id] = {
         u1: u1.value,
         u2: u2.value,
         u3: u3.value,
-        materia: materiaSelect.value // Almacenar valor del select
     };
 
     // Desbloquear los inputs y el select
     u1.disabled = false;
     u2.disabled = false;
     u3.disabled = false;
-    materiaSelect.disabled = false; // Desbloquear el select
 
     // Mostrar botones de confirmar y cancelar
     document.getElementById('confirmar-' + id).style.display = 'inline';
@@ -194,19 +179,16 @@ function cancelarCambios(id) {
     const u1 = document.getElementById('u1-' + id);
     const u2 = document.getElementById('u2-' + id);
     const u3 = document.getElementById('u3-' + id);
-    const materiaSelect = document.getElementById('materia-' + id); // Obtener el select de materia específico
 
     // Restaurar los valores originales
     u1.value = valoresOriginales[id].u1;
     u2.value = valoresOriginales[id].u2;
     u3.value = valoresOriginales[id].u3;
-    materiaSelect.value = valoresOriginales[id].materia; // Restaurar valor del select
 
     // Bloquear nuevamente los inputs y el select
     u1.disabled = true;
     u2.disabled = true;
     u3.disabled = true;
-    materiaSelect.disabled = true; // Bloquear el select
 
     // Ocultar los botones de confirmar y cancelar
     document.getElementById('confirmar-' + id).style.display = 'none';

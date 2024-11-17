@@ -36,7 +36,8 @@
                 <?php
                 require_once("../Conexion/contacto.php");
                 $obj = new Contacto();
-                $resultado = $obj->obtenerMaterias(); // Asegúrate de que este método devuelva las materias con sus IDs
+                $id = $_SESSION['id'];
+                $resultado = $obj->consultarmateriasid($id);
 
                 if ($resultado) {
                     while ($materia = $resultado->fetch_assoc()) {

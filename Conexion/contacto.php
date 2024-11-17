@@ -148,13 +148,13 @@
 
         }
          //metodo para crear calificacion
-         public function crear_calificacion($id ,$unidad_1, $unidad_2, $unidad_3, $materia){
-            $this->sentencia = "INSERT INTO calificaciones (fk_materia, unidad_1, unidad_2, unidad_3, fk_tipo_usuario) VALUES ('$materia', '$unidad_1', '$unidad_2', '$unidad_3', $id)";
+         public function crear_calificacion($id ,$unidad_1, $unidad_2, $unidad_3){
+            $this->sentencia = "INSERT INTO calificaciones (unidad_1, unidad_2, unidad_3, fk_tipo_usuario) VALUES ('$unidad_1', '$unidad_2', '$unidad_3', $id)";
             return $this->ejecutar_sentencia();
          }
          // Método para modificar calificación
-        public function modificar_calificacion($id, $unidad_1, $unidad_2, $unidad_3, $materia) {
-            $this->sentencia = "UPDATE calificaciones SET fk_materia = '$materia', unidad_1 = '$unidad_1', unidad_2 = '$unidad_2', unidad_3 = '$unidad_3' WHERE fk_tipo_usuario = $id";
+        public function modificar_calificacion($id, $unidad_1, $unidad_2, $unidad_3) {
+            $this->sentencia = "UPDATE calificaciones SET unidad_1 = '$unidad_1', unidad_2 = '$unidad_2', unidad_3 = '$unidad_3' WHERE fk_tipo_usuario = $id";
             return $this->ejecutar_sentencia();
         }
 
