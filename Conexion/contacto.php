@@ -489,26 +489,14 @@
                     INNER JOIN 
                         grupo gr ON u.id = gr.fk_usuario
                     WHERE 
-                        p.mtimparte = 34 
+                        p.mtimparte = $id 
                         AND u.tipo_usuario = 'Student'
                 ) AS subconsulta
                 GROUP BY estado;";
         
             // Ejecuta la consulta
             $result = $this->obtener_sentencia();
-        
-            // Verifica si la consulta fue exitosa
-            if (!$result) {
-                return null; // Manejar errores en el contexto del llamador
-            }
-        
-            // Procesa los resultados
-            $data = [];
-            while ($row = $result->fetch_assoc()) {
-                $data[] = $row; // Agregar cada fila al arreglo
-            }
-        
-            return $data; // Devuelve el arreglo de datos
+            return $result; // Devuelve el arreglo de datos
         }
     }
 ?>
