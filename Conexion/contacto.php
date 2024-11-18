@@ -102,7 +102,7 @@
         }
         //Metodo para obtener materias de programas        
         public function obtenerMateriasid($id) {
-            $this->sentencia = "SELECT id, nombre_materia,  objetivos, unidad FROM programas WHERE mtimparte = '$id'";
+            $this->sentencia = "SELECT u.nombre AS nombre_maestro, p.nombre_materia, a.nombre_actividad, a.descripcion, a.fecha FROM actividades a INNER JOIN programas p ON a.fk_materia = p.id INNER JOIN usuarios u ON p.mtimparte = u.id WHERE p.mtimparte = '$id'";
             return $this->obtener_sentencia();
 
         }
