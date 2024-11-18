@@ -37,49 +37,5 @@ document.addEventListener("DOMContentLoaded", function () {
           icon.innerHTML = '<i class="fa fa-minus"></i>';
       }
   });
-
-  // Gráfica de Barras
-  const ctxBar = document.getElementById('miGrafica').getContext('2d');
-  const miGrafica = new Chart(ctxBar, {
-      type: 'bar',
-      data: {
-          labels: ['1er Año', '2do Año', '3er Año'], // Eje X
-          datasets: [{
-              label: 'Cantidad',
-              data: [35, 15, 25], // Datos para cada categoría
-              backgroundColor: [
-                  'rgba(75, 192, 192, 0.6)',
-                  'rgba(153, 102, 255, 0.6)',
-                  'rgba(255, 159, 64, 0.6)'
-              ],
-              borderColor: [
-                  'rgba(75, 192, 192, 1)',
-                  'rgba(153, 102, 255, 1)',
-                  'rgba(255, 159, 64, 1)'
-              ],
-              borderWidth: 2
-          }]
-      },
-      options: {
-          scales: {
-              y: {
-                  beginAtZero: true,
-                  max: 40, // Máximo valor en Y
-                  ticks: {
-                      stepSize: 5 // Intervalo en Y
-                  }
-              }
-          },
-          responsive: true,
-          plugins: {
-              legend: {
-                  position: 'top',
-              },
-              title: {
-                  display: true,
-                  text: 'Distribución de Alumnos por año'
-              }
-          }
-      }
-  });
+  
 });

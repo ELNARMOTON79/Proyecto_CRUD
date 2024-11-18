@@ -62,12 +62,14 @@
             $result = $this->obtener_sentencia();
             return $result;
         }
-        public function consultar_actividades() {
+        public function consultar_actividades($id) {
             // Modificar la consulta SQL para hacer un JOIN entre actividades y programas
-            $this->sentencia = "
-                SELECT actividades.*, programas.nombre_materia 
-                FROM actividades 
-                JOIN programas ON actividades.fk_materia = programas.id";
+            $this->sentencia = "SELECT a.id, u.nombre AS nombre_maestro, p.nombre_materia, a.nombre_actividad, a.descripcion, a.fecha
+                FROM actividades a
+                INNER JOIN programas p ON a.fk_materia = p.id
+                INNER JOIN usuarios u ON p.mtimparte = u.id
+                WHERE p.mtimparte = '$id';
+                ";
                 
             // Ejecutar la consulta y obtener los resultados
             $resultado = $this->obtener_sentencia();
@@ -146,13 +148,13 @@
 
         }
          //metodo para crear calificacion
-         public function crear_calificacion($id ,$unidad_1, $unidad_2, $unidad_3, $materia){
-            $this->sentencia = "INSERT INTO calificaciones (fk_materia, unidad_1, unidad_2, unidad_3, fk_tipo_usuario) VALUES ('$materia', '$unidad_1', '$unidad_2', '$unidad_3', $id)";
+         public function crear_calificacion($id ,$unidad_1, $unidad_2, $unidad_3){
+            $this->sentencia = "INSERT INTO calificaciones (unidad_1, unidad_2, unidad_3, fk_tipo_usuario) VALUES ('$unidad_1', '$unidad_2', '$unidad_3', $id)";
             return $this->ejecutar_sentencia();
          }
          // Método para modificar calificación
-        public function modificar_calificacion($id, $unidad_1, $unidad_2, $unidad_3, $materia) {
-            $this->sentencia = "UPDATE calificaciones SET fk_materia = '$materia', unidad_1 = '$unidad_1', unidad_2 = '$unidad_2', unidad_3 = '$unidad_3' WHERE fk_tipo_usuario = $id";
+        public function modificar_calificacion($id, $unidad_1, $unidad_2, $unidad_3) {
+            $this->sentencia = "UPDATE calificaciones SET unidad_1 = '$unidad_1', unidad_2 = '$unidad_2', unidad_3 = '$unidad_3' WHERE fk_tipo_usuario = $id";
             return $this->ejecutar_sentencia();
         }
 
@@ -450,6 +452,68 @@
         public function asignar_recursos($nombreRecurso, $cantidadRecurso){
             $this->sentencia = "INSERT INTO recursos_asignados (nombre_recurso, cant) VALUES ('$nombreRecurso', $cantidadRecurso)";
             return $this->ejecutar_sentencia();
-        }   
+        }
+        public function consultar_alumnos($id){
+            $this->sentencia = "SELECT DISTINCT u_alumno.id, u_alumno.nombre as nombre_alumno, u_alumno.correo, g_alumno.grado, gr_alumno.grupo FROM usuarios u_alumno INNER JOIN grado g_alumno ON u_alumno.id = g_alumno.fk_usuario INNER JOIN grupo gr_alumno ON u_alumno.id = gr_alumno.fk_usuario INNER JOIN usuarios u_profesor ON u_profesor.tipo_usuario = 'Teacher' INNER JOIN grado g_profesor ON u_profesor.id = g_profesor.fk_usuario WHERE u_alumno.tipo_usuario = 'Student' AND g_alumno.grado = g_profesor.grado AND u_profesor.id = '$id'";
+            $result = $this->obtener_sentencia();
+            return $result;
+        }
+        public function total_aprobados($id) {
+            // Define la consulta
+            $this->sentencia = "SELECT 
+                    estado,
+                    COUNT(*) AS total
+                FROM (
+                    SELECT 
+                        u.id AS id_alumno, 
+                        u.nombre AS nombre_alumno, 
+                        c.unidad_1, 
+                        c.unidad_2, 
+                        c.unidad_3, 
+                        (c.unidad_1 + c.unidad_2 + c.unidad_3) AS suma_total, 
+                        p.nombre_materia, 
+                        g.grado, 
+                        gr.grupo, 
+                        CASE 
+                            WHEN (c.unidad_1 + c.unidad_2 + c.unidad_3) >= 24 THEN 'APROBADO' 
+                            ELSE 'REPROBADO' 
+                        END AS estado
+                    FROM 
+                        usuarios u
+                    INNER JOIN 
+                        calificaciones c ON u.id = c.fk_tipo_usuario
+                    INNER JOIN 
+                        programas p ON c.fk_materia = p.id
+                    INNER JOIN 
+                        grado g ON u.id = g.fk_usuario
+                    INNER JOIN 
+                        grupo gr ON u.id = gr.fk_usuario
+                    WHERE 
+                        p.mtimparte = $id 
+                        AND u.tipo_usuario = 'Student'
+                ) AS subconsulta
+                GROUP BY estado;";
+        
+            // Ejecuta la consulta
+            $result = $this->obtener_sentencia();
+            return $result; // Devuelve el arreglo de datos
+        }
+        public function listaractividadesxalumnos($id){
+            $this->sentencia = "SELECT COUNT(a.id) AS total_actividades 
+                        FROM actividades a 
+                        JOIN programas p ON a.fk_materia = p.id 
+                        JOIN grado g ON g.grado = p.unidad 
+                        WHERE g.fk_usuario = '$id';";
+            $result = $this->obtener_sentencia();
+            return $result;
+        }
+        public function obtenerPorDonacionesxd($id) {
+            $this->sentencia = "SELECT COUNT(d.id) AS total_donaciones FROM donaciones d WHERE d.fk_usuario = '$id'";
+            return $this->obtener_sentencia();
+        }
+        public function totalusuarios(){
+            $this->sentencia = "SELECT COUNT(*) AS total_usuarios FROM usuarios;";
+            return $this->obtener_sentencia();
+        }
     }
 ?>
