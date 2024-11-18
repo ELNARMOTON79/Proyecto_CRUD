@@ -4,7 +4,7 @@ $obj = new Contacto();
 $id = $_SESSION['id']; // El id del alumno
 
 // Realizar la consulta para obtener todas las materias del grado del alumno
-$resultado = $obj->listarmateriasxalumno($id); // No se pasa offset ni límite
+$resultado = $obj->listarmateriasxalumno($id);
 ?>
 
 <div class="max-w-6xl translate-x-32 mx-auto bg-white p-8 rounded-lg shadow-lg">

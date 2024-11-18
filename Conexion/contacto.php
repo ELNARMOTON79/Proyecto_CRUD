@@ -498,5 +498,18 @@
             $result = $this->obtener_sentencia();
             return $result; // Devuelve el arreglo de datos
         }
+        public function listaractividadesxalumnos($id){
+            $this->sentencia = "SELECT COUNT(a.id) AS total_actividades 
+                        FROM actividades a 
+                        JOIN programas p ON a.fk_materia = p.id 
+                        JOIN grado g ON g.grado = p.unidad 
+                        WHERE g.fk_usuario = '$id';";
+            $result = $this->obtener_sentencia();
+            return $result;
+        }
+        public function obtenerPorDonacionesxd($id) {
+            $this->sentencia = "SELECT COUNT(d.id) AS total_donaciones FROM donaciones d WHERE d.fk_usuario = '$id'";
+            return $this->obtener_sentencia();
+        }
     }
 ?>
