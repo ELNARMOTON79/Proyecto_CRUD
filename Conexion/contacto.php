@@ -511,5 +511,9 @@
             $this->sentencia = "SELECT COUNT(d.id) AS total_donaciones FROM donaciones d WHERE d.fk_usuario = '$id'";
             return $this->obtener_sentencia();
         }
+        public function totaldonaciones(){
+            $this->sentencia = "SELECT SUM(monto) as total_donaciones FROM donaciones";
+            return $this->obtener_sentencia();
+        }
     }
 ?>
