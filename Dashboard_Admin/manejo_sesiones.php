@@ -40,7 +40,7 @@
         $result = $contacto->consultar();
         $total_donadores = 0;
         while($row = $result->fetch_assoc()){
-            if($row['tipo_usuario'] == 'Donors'){
+            if($row['tipo_usuario'] == 'Donor'){
                 $total_donadores++;
             }
         }

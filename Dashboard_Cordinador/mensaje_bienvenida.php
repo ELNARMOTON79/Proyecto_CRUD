@@ -4,11 +4,11 @@ require_once '../Conexion/contacto.php';
 $id = $_SESSION['id'];
 $contacto = new Contacto();
 $id = $_SESSION['id'];
-$result = $contacto->totaldonaciones();
+$result = $contacto->totalusuarios();
 
 $data = 0;
 if ($row = $result->fetch_assoc()) {
-    $data = $row['total_donaciones']; // Tomar el total directamente
+    $data = $row['total_usuarios']; // Tomar el total directamente
 }
 ?>
 <div class="flex-auto ml-64">
@@ -109,9 +109,9 @@ const ctx = document.getElementById('myChart').getContext('2d');
 new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Total Donations'],
+        labels: ['Total Users'],
         datasets: [{
-            label: 'Donations',
+            label: 'Users',
             data: data,
             backgroundColor: [
                 'rgba(54, 162, 235, 0.8)',
@@ -134,7 +134,7 @@ new Chart(ctx, {
         plugins: {
             title: {
                 display: true,
-                text: 'Total Doations',
+                text: 'Total Users',
                 color: '#4b5563',
                 font: {
                     size: 20,
