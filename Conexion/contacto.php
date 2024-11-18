@@ -62,6 +62,16 @@
             $result = $this->obtener_sentencia();
             return $result;
         }
+        public function consultar_actividad(){
+            $this->sentencia = "
+                SELECT actividades.*, programas.nombre_materia 
+                FROM actividades 
+                JOIN programas ON actividades.fk_materia = programas.id";
+                
+            // Ejecutar la consulta y obtener los resultados
+            $resultado = $this->obtener_sentencia();
+            return $resultado;
+        }
         public function consultar_actividades($id) {
             // Modificar la consulta SQL para hacer un JOIN entre actividades y programas
             $this->sentencia = "SELECT a.id, u.nombre AS nombre_maestro, p.nombre_materia, a.nombre_actividad, a.descripcion, a.fecha

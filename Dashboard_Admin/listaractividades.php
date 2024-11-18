@@ -44,7 +44,7 @@ $materias = $obj->obtenerMaterias();
 if ($materia_filtrada !== '') {
     $resultado = $obj->consultar_actividades_por_materia($materia_filtrada);
 } else {
-    $resultado = $obj->consultar_actividades();
+    $resultado = $obj->consultar_actividad();
 }
 ?>
 
