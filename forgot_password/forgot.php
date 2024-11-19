@@ -55,7 +55,7 @@ session_start();
         $obj = new Contacto();
         $correo = $obj->forgotPassword($email);
     
-        if (!$correo) {
+        if ($correo == null) {
             echo "<script>alert('Correo no encontrado');</script>";
         } else {
             // Imprime el correo

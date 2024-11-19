@@ -427,6 +427,7 @@
         {
             $this->sentencia = "SELECT id_user FROM codes WHERE code = '$codigo'";
             $result = $this->obtener_sentencia();
+            return $result->fetch_assoc();
         }
 
         public function listarmaestros(){
@@ -523,6 +524,14 @@
         }
         public function totalusuarios(){
             $this->sentencia = "SELECT COUNT(*) AS total_usuarios FROM usuarios;";
+            return $this->obtener_sentencia();
+        }
+        public function actualizarPassword($usuarioId, $nuevaPassword) {
+            $this->sentencia = "UPDATE usuarios SET password = '$nuevaPassword' WHERE id = '$usuarioId'";
+            return $this->obtener_sentencia();
+        }
+        public function eliminarCodigo($codigo) {
+            $this->sentencia = "DELETE FROM codes WHERE code = '$codigo'";
             return $this->obtener_sentencia();
         }
     }
