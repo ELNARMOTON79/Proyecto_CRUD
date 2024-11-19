@@ -51,10 +51,22 @@
             }
         }
     
-        public function eliminar ($id){  
+        public function eliminar($id) {
+            // First, delete related records in calificaciones
+            $this->sentencia = "DELETE FROM calificaciones WHERE fk_tipo_usuario = '$id'";
+            $this->ejecutar_sentencia();
+            
+            // Then delete related records in other tables
+            $this->sentencia = "DELETE FROM grado WHERE fk_usuario = '$id'";
+            $this->ejecutar_sentencia();
+            
+            $this->sentencia = "DELETE FROM grupo WHERE fk_usuario = '$id'";
+            $this->ejecutar_sentencia();
+            
+            // Finally delete the user
             $this->sentencia = "DELETE FROM usuarios WHERE id = '$id'";
             $resultado = $this->ejecutar_sentencia();
-            
+            return $resultado;
         }
         
         public function consultar(){
