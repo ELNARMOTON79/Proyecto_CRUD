@@ -52,10 +52,8 @@
         <div>
           <label for="role" class="block text-sm font-medium text-green-600">Role:</label>
           <select name="role" id="role" required class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
-            <option value="" disabled selected>Select an option</option>
+            <option value="" disabled selected>Select User</option>
             <option value="Donor">Donor</option>
-            <option value="teacher">Teacher</option>
-            <option value="student">Student</option>
           </select>
         </div>
         <div class="mt-4 flex items-center">
@@ -72,6 +70,7 @@
 </html>
 
 <?php
+  $mostrarMensaje = false;
   if (isset($_POST['enviar'])){
     $name = $_POST['name'];
     $age = $_POST['age'];
@@ -88,10 +87,23 @@
       require_once("Conexion/contacto.php");
       $obj = new contacto();
       $obj-> subir($name, $age, $email, $password, $gender, $role);
-      echo "Datos Guardados";
+      $mostrarMensaje = true;
     }
     
   }
+  if ($mostrarMensaje): ?>
+    <div id="modalExito" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
+        <div class="bg-green-500 rounded-lg shadow-lg max-w-sm w-full p-8 text-white">
+            <h2 class="text-xl font-semibold mb-4">User created successfully</h2>
+        </div>
+        <script>
+            // Mostrar el modal de éxito por 2 segundos
+            setTimeout(function() {
+                document.getElementById('modalExito').classList.add('hidden');
+            }, 2000);
+        </script>
+    </div>
+<?php endif;
 ?>
 
 <script>
