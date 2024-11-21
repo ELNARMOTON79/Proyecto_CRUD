@@ -29,11 +29,10 @@
         <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
             <a href="?action=donar" class="flex flex-row items-center justify-between w-full focus:outline-none">
                 <span class="text-white hover:text-black">
-                    <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-hand-holding-dollar"></i>
                     Donor
                 </span>
                 <span id="iconUsuarios" class="text-white">
-                    <i class="fa fa-plus"></i>
                 </span>
             </a>
         </div>
@@ -41,18 +40,19 @@
         <div class="p-2 hover:bg-green-700 text-white rounded-md transition duration-500 ease-in-out">
             <a href="?action=tracking" class="flex flex-row items-center justify-between w-full focus:outline-none">
                 <span class="text-white hover:text-black">
-                    <i class="fa-solid fa-bookmark"></i>
+                
+                <i class="fa-solid fa-magnifying-glass-dollar"></i>
                     Donation tracking
+
                 </span>
                 <span id="iconActividades" class="text-white">
-                    <i class="fa fa-plus"></i>
                 </span>
             </a>
         </div>
         <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
             <a href="?action=settings" class="flex flex-row space-x-3">
                 <h4 class="text-white hover:text-black">
-                    <i class="fa-solid fa-chart-line"></i>
+                <i class="fa-solid fa-gears"></i>
                     Setting
                 </h4>
             </a>
@@ -60,7 +60,7 @@
         <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
             <a href="?action=comunicacion" class="flex flex-row space-x-3">
                 <h4 class="text-white hover:text-black">
-                    <i class="fa-solid fa-chart-line"></i>
+                <i class="fa-solid fa-paper-plane"></i>
                     Communication
                 </h4>
             </a>
