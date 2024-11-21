@@ -78,4 +78,5 @@
     $showForm8 = isset($_GET['action']) && $_GET['action'] == '#';
     $showForm9 = isset($_GET['action']) && $_GET['action'] == 'asignar_recurso';
     $showForm10 = isset($_GET['action']) && $_GET['action'] == 'settings';
+    $showForm11 = isset($_GET['action']) && $_GET['action'] == 'comunicacion';
 ?>

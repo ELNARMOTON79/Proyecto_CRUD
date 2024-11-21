@@ -86,6 +86,14 @@
                 </h4>
             </a>
         </div>
+        <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
+            <a href="?action=comunicacion" class="flex flex-row space-x-3">
+                <h4 class="text-white hover:text-black">
+                <i class="fa-solid fa-paper-plane"></i>
+                    Communication
+                </h4>
+            </a>
+        </div>
     </div>
 
     <!-- Botón de salir -->

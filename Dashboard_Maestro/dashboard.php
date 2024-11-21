@@ -23,7 +23,7 @@ include 'manejo_sesiones_mt.php';
         ?>
         <main class="flex-1 p-6">
             <?php
-            if ((!$showForm0 && !$showForm3 && !$showForm5 && !$showForm6 && !$showForm7 && !$showForm8 && !$showForm10 && !$showForm11 && !$showForm12 && !$showForm13) || $showForm0):
+            if ((!$showForm0 && !$showForm3 && !$showForm5 && !$showForm6 && !$showForm7 && !$showForm8 && !$showForm10 && !$showForm11 && !$showForm12 && !$showForm13 && !$showForm14) || $showForm0):
                 include 'mensaje_bienvenida_mt.php';
             endif;
 
@@ -45,6 +45,10 @@ include 'manejo_sesiones_mt.php';
             
             if ($showForm13):
                 include 'Setting.php';
+            endif;
+
+            if ($showForm14):
+                include 'comunicacion.php';
             endif;
             ?>
         </main>

@@ -47,4 +47,5 @@
     $showForm11 = isset($_GET['action']) && $_GET['action'] == 'modificar_materias';
     $showForm12 = isset($_GET['action']) && $_GET['action'] == 'eliminar_materias';
     $showForm13 = isset($_GET['action']) && $_GET['action'] == 'settings';
+    $showForm14 = isset($_GET['action']) && $_GET['action'] == 'comunicacion';
 ?>
