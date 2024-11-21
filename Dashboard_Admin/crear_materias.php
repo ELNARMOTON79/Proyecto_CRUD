@@ -80,6 +80,8 @@
 
             $mostrarExito = true;
         }
+        echo "<script>window.location.href = 'dashboard.php?action=listar_materias';</script>";
+        exit();
         ?>
         <?php if ($mostrarExito): ?>
 <div id="modalExito" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">

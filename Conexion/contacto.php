@@ -70,10 +70,12 @@
         }
         
         public function consultar(){
-            $this->sentencia = "SELECT * FROM usuarios";
+            // Excluir usuarios con el rol "Administrator"
+            $this->sentencia = "SELECT * FROM usuarios WHERE tipo_usuario != 'Administrator'";
             $result = $this->obtener_sentencia();
             return $result;
         }
+        
         public function consultar_actividad(){
             $this->sentencia = "
                 SELECT actividades.*, programas.nombre_materia 

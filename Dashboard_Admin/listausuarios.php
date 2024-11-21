@@ -60,7 +60,6 @@ if ($tipo_usuario !== '') {
         <label for="tipo_usuario" class="block mb-2 text-gray-700">Filter by user role:</label>
         <select name="tipo_usuario" id="tipo_usuario" class="block w-full p-2 border border-gray-300 rounded" onchange="document.getElementById('filterForm').submit();">
             <option value="">All Roles</option>
-            <option value="Administrator" <?php echo $tipo_usuario == 'Administrator' ? 'selected' : ''; ?>>Administrator</option>
             <option value="Teacher" <?php echo $tipo_usuario == 'Teacher' ? 'selected' : ''; ?>>Teacher</option>
             <option value="Student" <?php echo $tipo_usuario == 'Student' ? 'selected' : ''; ?>>Student</option>
             <option value="Donor" <?php echo $tipo_usuario == 'Donor' ? 'selected' : ''; ?>>Donator</option>
