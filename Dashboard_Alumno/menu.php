@@ -64,7 +64,7 @@
         <div class="p-2 hover:bg-green-700 text-white rounded-md transition duration-500 ease-in-out">
             <button id="toggleCalificaciones" class="flex flex-row items-center justify-between w-full focus:outline-none">
                 <span class="text-white hover:text-black">
-                    <i class="fa-solid fa-book"></i>
+                <i class="fa-regular fa-chart-bar"></i>
                     Ratings
                 </span>
                 <span id="iconCalificaciones" class="text-white">
