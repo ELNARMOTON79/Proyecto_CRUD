@@ -52,4 +52,5 @@
     $showForm1 = isset($_GET['action']) && $_GET['action'] == 'listar_actividades';
     $showForm2 = isset($_GET['action']) && $_GET['action'] == 'listar_materias';
     $showForm3 = isset($_GET['action']) && $_GET['action'] == 'listar_Calificaciones';
+    $showForm4 = isset($_GET['action']) && $_GET['action'] == 'settings';
 ?>

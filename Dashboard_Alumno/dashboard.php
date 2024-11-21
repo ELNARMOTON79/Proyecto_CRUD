@@ -24,7 +24,7 @@
         ?>
         <main class="flex-1 p-6">
             <?php
-                if ((!$showForm0 && !$showForm1 && !$showForm2 && !$showForm3) || $showForm0):
+                if ((!$showForm0 && !$showForm1 && !$showForm2 && !$showForm3 && !$showForm4) || $showForm0):
                     include 'mensaje_bienvenida.php';
                 endif;
 
@@ -40,6 +40,9 @@
                     include 'listarCalificaciones.php';
                 endif;
 
+                if ($showForm4):
+                    include 'Setting.php';
+                endif;
             ?>
         </main>
         
