@@ -51,9 +51,9 @@ const ctx = document.getElementById('myChart').getContext('2d');
 new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Total Activities'],
+        labels: ['Total Donations '],
         datasets: [{
-            label: 'Activities',
+            label: 'Donations',
             data: data,
             backgroundColor: [
                 'rgba(54, 162, 235, 0.8)',
@@ -76,7 +76,7 @@ new Chart(ctx, {
         plugins: {
             title: {
                 display: true,
-                text: 'Total Activities',
+                text: 'Total Donations',
                 color: '#4b5563',
                 font: {
                     size: 20,
