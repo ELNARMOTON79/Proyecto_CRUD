@@ -47,7 +47,7 @@
         <div class="p-2 hover:bg-green-700 text-white rounded-md transition duration-500 ease-in-out">
             <button id="toggleActividades" class="flex flex-row items-center justify-between w-full focus:outline-none">
                 <span class="text-white hover:text-black">
-                    <i class="fa-solid fa-bookmark"></i>
+                <i class="fa-solid fa-book-open"></i>
                     Activities
                 </span>
                 <span id="iconActividades" class="text-white">
