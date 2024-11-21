@@ -88,6 +88,7 @@
       $obj = new contacto();
       $obj-> subir($name, $age, $email, $password, $gender, $role);
       $mostrarMensaje = true;
+      header("Location: logins/login.php");
     }
     
   }
