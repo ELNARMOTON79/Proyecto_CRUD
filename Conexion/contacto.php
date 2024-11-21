@@ -264,10 +264,16 @@
         }
         public function eliminar_materias($idEliminar)
         {
+            // Primero elimina las actividades relacionadas
+            $this->sentencia = "DELETE FROM actividades WHERE fk_materia = $idEliminar;";
+            $this->ejecutar_sentencia();
+
+            // Ahora elimina la materia
             $this->sentencia = "DELETE FROM programas WHERE id = $idEliminar;";
-            $this->sentencia = "DELETE FROM programas WHERE id = '$idEliminar';";     
             $resultado = $this->ejecutar_sentencia();
+            return $resultado;
         }
+
         public function consultaractividades($idModificar) {
             $this->sentencia = "SELECT * FROM actividades WHERE id = $idModificar";
             return $this->obtener_sentencia();
