@@ -8,7 +8,7 @@
             toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         });
     </script>
-    <h2 class="text-2xl text-green-600 font-bold mb-6 text-primary">Communication</h2>
+    <h2 class="text-2xl text-green-600 font-bold mb-6 text-primary">Communication with an Administrator</h2>
     <form method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
         <div class="mb-4">
             <label for="contenido" class="block text-primary font-bold mb-2 text-green-600 text-lg">Reason</label>
