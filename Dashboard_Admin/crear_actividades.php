@@ -74,6 +74,8 @@
             $obj->crear_actividades($nombre_actividad, $descripcion, $fk_materia, $fecha_fin);
 
             $mostrarMensaje = true;
+            echo "<script>window.location.href = 'dashboard.php?action=listar_actividades';</script>";
+            exit();
         }
         if ($mostrarMensaje): ?>
             <div id="modalExito" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">

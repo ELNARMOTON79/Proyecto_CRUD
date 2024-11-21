@@ -113,16 +113,6 @@
                 </a>
             </div>
         </div>
-
-        <!-- Recursos -->
-        <div class="p-2 hover:bg-green-700 rounded-md transition duration-500 ease-in-out">
-            <a href="#" class="flex flex-row space-x-3">
-                <h4 class="text-white hover:text-black">
-                    <i class="fa-solid fa-coins"></i>
-                    Resources
-                </h4>
-            </a>
-        </div>
     </div>
 
     <!-- Botón de salir -->

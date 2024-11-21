@@ -8,7 +8,7 @@ use PHPMailer\PHPMailer\Exception;
 require 'PHPMailer/Exception.php';
 require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
-
+$mostrarExito = true;
 // Variables recibidas desde el formulario
 $correo = $_POST['email'];
 $nombreDeUsuario = $GLOBALS['nombreDeUsuario'];

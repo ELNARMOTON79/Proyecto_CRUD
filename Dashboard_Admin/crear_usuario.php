@@ -1,30 +1,39 @@
 <?php
-  $mostrarExito = false; // Variable para controlar si se muestra el modal de éxito
+  $mostrarExito = false; 
   $mostrarExito1 = false;
 
-  if (isset($_POST['enviar'])){
-    $name = $_POST['name'];
-    $age = $_POST['age'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $gender = $_POST['gender'];
-    $role = $_POST['role'];
-    $grade = $_POST['grade'];
-    $group = isset($_POST['grade']) ? $_POST['grade'] : null;
-    $group = isset($_POST['group']) ? $_POST['group'] : null;
+  // Variables para retener los valores del formulario
+  $name = '';
+  $age = '';
+  $email = '';
+  $password = '';
+  $gender = '';
+  $role = '';
+  $grade = '';
+  $group = '';
 
+  if (isset($_POST['enviar'])){
+    // Retener los valores del formulario
+    $name = isset($_POST['name']) ? $_POST['name'] : '';
+    $age = isset($_POST['age']) ? $_POST['age'] : '';
+    $email = isset($_POST['email']) ? $_POST['email'] : '';
+    $password = isset($_POST['password']) ? $_POST['password'] : '';
+    $gender = isset($_POST['gender']) ? $_POST['gender'] : '';
+    $role = isset($_POST['role']) ? $_POST['role'] : '';
+    $grade = isset($_POST['grade']) ? $_POST['grade'] : '';
+    $group = isset($_POST['group']) ? $_POST['group'] : '';
 
     if ($age <= 17 || $age > 99)
     {
-        $mostrarExito1 =true;
+        $mostrarExito1 = true;
     } else {
-        // Simulando la subida de los datos
         require_once("../Conexion/contacto.php");
         $obj = new contacto();
         $obj->subir_users($name, $age, $email, $password, $gender, $role, $grade, $group);
 
-        // Mostrar el modal de éxito
         $mostrarExito = true;
+        echo "<script>window.location.href = 'dashboard.php?action=listar_usuarios';</script>";
+        exit();
     }
   }
 ?>
@@ -38,13 +47,13 @@
                     <label for="name" class="block text-sm font-medium text-gray-700">
                         <i class="fa-solid fa-user mr-2"></i>Name:
                     </label>
-                    <input type="text" name="name" id="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" placeholder="Name">
+                    <input type="text" name="name" id="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" placeholder="Name" value="<?php echo htmlspecialchars($name); ?>">
                 </div>
                 <div>
                     <label for="age" class="block text-sm font-medium text-gray-700">
                         <i class="fa-solid fa-hashtag mr-2"></i>Age:
                     </label>
-                    <input type="number" name="age" id="age" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" placeholder="Age">
+                    <input type="number" name="age" id="age" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" placeholder="Age" value="<?php echo htmlspecialchars($age); ?>">
                 </div>
             </div>
 
@@ -53,13 +62,13 @@
                     <label for="email" class="block text-sm font-medium text-gray-700">
                         <i class="fa-solid fa-envelope mr-2"></i>Email:
                     </label>
-                    <input type="email" name="email" id="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" placeholder="youremail@gmail.com">
+                    <input type="email" name="email" id="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" placeholder="youremail@gmail.com" value="<?php echo htmlspecialchars($email); ?>">
                 </div>
                 <div class="relative">
                     <label for="password" class="block text-sm font-medium text-gray-700">
                         <i class="fa-solid fa-lock mr-2"></i>Password:
                     </label>
-                    <input type="password" name="password" id="password" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm pr-10" placeholder="Password">
+                    <input type="password" name="password" id="password" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm pr-10" placeholder="Password" value="<?php echo htmlspecialchars($password); ?>">
                     <span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password absolute right-2 top-7 cursor-pointer"></span>
                 </div>
             </div>
@@ -70,9 +79,9 @@
                         <i class="fa-solid fa-venus-mars mr-2"></i>Gender:
                     </label>
                     <select name="gender" id="gender" required class="block w-full p-2 border border-gray-300 rounded">
-                        <option value="" disabled selected>Select an option</option>
-                        <option value="Hombre">Man</option>
-                        <option value="Mujer">Woman</option>
+                        <option value="" disabled <?php echo empty($gender) ? 'selected' : ''; ?>>Select an option</option>
+                        <option value="Hombre" <?php echo $gender == 'Hombre' ? 'selected' : ''; ?>>Man</option>
+                        <option value="Mujer" <?php echo $gender == 'Mujer' ? 'selected' : ''; ?>>Woman</option>
                     </select>
                 </div>
                 <div>
@@ -80,12 +89,12 @@
                         <i class="fa-solid fa-user-tag mr-2"></i>Role:
                     </label>
                     <select name="role" id="role" required class="block w-full p-2 border border-gray-300 rounded" onchange="toggleStudentFields(), toggleTeacherFields()">
-                        <option value="" disabled selected>Select an option</option>
-                        <option value="Teacher">Teacher</option>
-                        <option value="Student">Student</option>
-                        <option value="Donor">Donator</option>
-                        <option value="Coordinator">Coordinator</option>
-                        <option value="Administrator">Administrator</option>
+                        <option value="" disabled <?php echo empty($role) ? 'selected' : ''; ?>>Select an option</option>
+                        <option value="Teacher" <?php echo $role == 'Teacher' ? 'selected' : ''; ?>>Teacher</option>
+                        <option value="Student" <?php echo $role == 'Student' ? 'selected' : ''; ?>>Student</option>
+                        <option value="Donor" <?php echo $role == 'Donor' ? 'selected' : ''; ?>>Donator</option>
+                        <option value="Coordinator" <?php echo $role == 'Coordinator' ? 'selected' : ''; ?>>Coordinator</option>
+                        <option value="Administrator" <?php echo $role == 'Administrator' ? 'selected' : ''; ?>>Administrator</option>
                     </select>
                 </div>
             </div>
@@ -95,14 +104,14 @@
                 <div>
                     <label for="grade" class="block text-sm font-medium text-gray-700">Grade:</label>
                     <select name="grade" id="grade" class="block w-full p-2 border border-gray-300 rounded">
-                        <option value="" disabled selected>Select grade</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                    </select>
+                    <option value="" disabled <?php echo empty($grade) ? 'selected' : ''; ?>>Select grade</option>
+                    <option value="1" <?php echo $grade == '1' ? 'selected' : ''; ?>>1</option>
+                    <option value="2" <?php echo $grade == '2' ? 'selected' : ''; ?>>2</option>
+                    <option value="3" <?php echo $grade == '3' ? 'selected' : ''; ?>>3</option>
+                    <option value="4" <?php echo $grade == '4' ? 'selected' : ''; ?>>4</option>
+                    <option value="5" <?php echo $grade == '5' ? 'selected' : ''; ?>>5</option>
+                    <option value="6" <?php echo $grade == '6' ? 'selected' : ''; ?>>6</option>
+                </select>
                 </div>
                 <div>
                     <label for="group" class="block text-sm font-medium text-gray-700">Group:</label>

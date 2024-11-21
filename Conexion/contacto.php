@@ -51,16 +51,38 @@
             }
         }
     
-        public function eliminar ($id){  
+        public function eliminar($id) {
+            // First, delete related records in calificaciones
+            $this->sentencia = "DELETE FROM calificaciones WHERE fk_tipo_usuario = '$id'";
+            $this->ejecutar_sentencia();
+            
+            // Then delete related records in other tables
+            $this->sentencia = "DELETE FROM grado WHERE fk_usuario = '$id'";
+            $this->ejecutar_sentencia();
+            
+            $this->sentencia = "DELETE FROM grupo WHERE fk_usuario = '$id'";
+            $this->ejecutar_sentencia();
+            
+            // Finally delete the user
             $this->sentencia = "DELETE FROM usuarios WHERE id = '$id'";
             $resultado = $this->ejecutar_sentencia();
-            
+            return $resultado;
         }
         
         public function consultar(){
             $this->sentencia = "SELECT * FROM usuarios";
             $result = $this->obtener_sentencia();
             return $result;
+        }
+        public function consultar_actividad(){
+            $this->sentencia = "
+                SELECT actividades.*, programas.nombre_materia 
+                FROM actividades 
+                JOIN programas ON actividades.fk_materia = programas.id";
+                
+            // Ejecutar la consulta y obtener los resultados
+            $resultado = $this->obtener_sentencia();
+            return $resultado;
         }
         public function consultar_actividades($id) {
             // Modificar la consulta SQL para hacer un JOIN entre actividades y programas
@@ -242,9 +264,19 @@
         }
         public function eliminar_materias($idEliminar)
         {
+            // Primero elimina las actividades relacionadas
+            $this->sentencia = "DELETE FROM actividades WHERE fk_materia = $idEliminar;";
+            $this->ejecutar_sentencia();
+
+            // Ahora elimina la materia
             $this->sentencia = "DELETE FROM programas WHERE id = $idEliminar;";
-            $this->sentencia = "DELETE FROM programas WHERE id = '$idEliminar';";     
             $resultado = $this->ejecutar_sentencia();
+            return $resultado;
+        }
+
+        public function consultaractividades($idModificar) {
+            $this->sentencia = "SELECT * FROM actividades WHERE id = $idModificar";
+            return $this->obtener_sentencia();
         }
         public function obtenerPorIdmateria($idModificar) {
             $this->sentencia = "SELECT * FROM programas WHERE id = $idModificar";
@@ -417,6 +449,7 @@
         {
             $this->sentencia = "SELECT id_user FROM codes WHERE code = '$codigo'";
             $result = $this->obtener_sentencia();
+            return $result->fetch_assoc();
         }
 
         public function listarmaestros(){
@@ -513,6 +546,14 @@
         }
         public function totalusuarios(){
             $this->sentencia = "SELECT COUNT(*) AS total_usuarios FROM usuarios;";
+            return $this->obtener_sentencia();
+        }
+        public function actualizarPassword($usuarioId, $nuevaPassword) {
+            $this->sentencia = "UPDATE usuarios SET password = '$nuevaPassword' WHERE id = '$usuarioId'";
+            return $this->obtener_sentencia();
+        }
+        public function eliminarCodigo($codigo) {
+            $this->sentencia = "DELETE FROM codes WHERE code = '$codigo'";
             return $this->obtener_sentencia();
         }
     }

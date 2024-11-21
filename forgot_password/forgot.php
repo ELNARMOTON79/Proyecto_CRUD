@@ -48,6 +48,7 @@ session_start();
 </body>
 </html>
 <?php
+    $mostrarExito = false;
     if (isset($_POST['reset'])) {
         $email = $_POST['email'];
         // Verificar si el correo existe en la base de datos
@@ -55,7 +56,7 @@ session_start();
         $obj = new Contacto();
         $correo = $obj->forgotPassword($email);
     
-        if (!$correo) {
+        if ($correo == null) {
             echo "<script>alert('Correo no encontrado');</script>";
         } else {
             // Imprime el correo
@@ -79,4 +80,17 @@ session_start();
         }
     }
     
-?>    
+?>
+<?php if ($mostrarExito): ?>
+<div id="modalExito" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
+    <div class="bg-green-500 rounded-lg shadow-lg max-w-sm w-full p-8 text-white">
+        <h2 class="text-xl font-semibold mb-4">Mail Send Successfully</h2>
+    </div>
+    <script>
+        // Mostrar el modal de éxito por 2 segundos
+        setTimeout(function() {
+            document.getElementById('modalExito').classList.add('hidden');
+        }, 2000);
+    </script>
+</div>
+<?php endif; ?>

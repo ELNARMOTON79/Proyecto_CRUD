@@ -64,22 +64,17 @@ if(isset($_POST["crear_post"])) {
     $mostrarMensaje = true;
     }
 
-if ($mostrarMensaje): ?>
-    <div id="modalExito" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
-        <div class="bg-green-500 rounded-lg shadow-lg max-w-sm w-full p-8 text-white">
-            <h2 class="text-xl font-semibold mb-4">create successfully</h2>
+    if ($mostrarMensaje): ?>
+        <div id="modalExito" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
+            <div class="bg-green-500 rounded-lg shadow-lg max-w-sm w-full p-8 text-white">
+                <h2 class="text-xl font-semibold mb-4">Notice created successfully</h2>
+            </div>
+            <script>
+                // Mostrar el modal de éxito por 2 segundos
+                setTimeout(function() {
+                    document.getElementById('modalExito').classList.add('hidden');
+                }, 2000);
+            </script>
         </div>
-    </div>
-    <script>
-        // Ocultar el formulario y mostrar el mensaje de éxito por 2 segundos
-        document.getElementById('formContainer').style.display = 'none';
-        
-        // Después de 2 segundos, ocultar el mensaje de éxito y mostrar el formulario nuevamente
-        setTimeout(function() {
-            document.getElementById('modalExito').classList.add('hidden');
-            document.getElementById('formContainer').style.display = 'block';
-        }, 2000);
-    </script>
-<?php endif; ?>
-
+    <?php endif;?>
     
