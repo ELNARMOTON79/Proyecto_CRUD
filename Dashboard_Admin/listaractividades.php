@@ -18,7 +18,7 @@ if (isset($_POST['eliminar']) && isset($_POST['id'])) {
 $registroParaModificar = null;
 if (isset($_POST['modificarBtn']) && isset($_POST['idmodificar'])) {
     $idModificar = $_POST['idmodificar'];
-    $resultadoModificar = $obj->consultar_actividades($idModificar);
+    $resultadoModificar = $obj->consultaractividades($idModificar);
     if ($resultadoModificar) {
         $registroParaModificar = $resultadoModificar->fetch_assoc();
     }

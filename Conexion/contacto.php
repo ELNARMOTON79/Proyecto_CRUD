@@ -268,6 +268,10 @@
             $this->sentencia = "DELETE FROM programas WHERE id = '$idEliminar';";     
             $resultado = $this->ejecutar_sentencia();
         }
+        public function consultaractividades($idModificar) {
+            $this->sentencia = "SELECT * FROM actividades WHERE id = $idModificar";
+            return $this->obtener_sentencia();
+        }
         public function obtenerPorIdmateria($idModificar) {
             $this->sentencia = "SELECT * FROM programas WHERE id = $idModificar";
             return $this->obtener_sentencia();
