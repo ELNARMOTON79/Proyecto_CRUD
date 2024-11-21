@@ -17,15 +17,15 @@ $registro = $resultado->fetch_assoc();
                         <!-- Botones de cantidad -->
                         <button type="button" onclick="selectAmount(5, this)"
                             class="w-8 h-8 bg-transparent border border-green-600 rounded-full flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white"
-                            name="cantidad" value="5">5
+                            name="cantidad" value="5">5$
                         </button>
                         <button type="button" onclick="selectAmount(10, this)"
                             class="w-8 h-8 bg-transparent border border-green-600 rounded-full flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white"
-                            name="cantidad" value="10">10
+                            name="cantidad" value="10">10$
                         </button>
                         <button type="button" onclick="selectAmount(15, this)"
                             class="w-8 h-8 bg-transparent border border-green-600 rounded-full flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white"
-                            name="cantidad" value="15">15
+                            name="cantidad" value="15">15$
                         </button>
                         <input type="number" id="otherAmount" min="1" placeholder="Other" oninput="selectOtherAmount(this.value)"
                             class="w-14 h-8 bg-gray-200 rounded-full flex items-center justify-center text-center text-gray-500"
@@ -36,7 +36,7 @@ $registro = $resultado->fetch_assoc();
                 <input type="hidden" id="selectedAmount" name="selectedAmount" value="">
                 Name
                 <input type="text" id="name" placeholder="Name" required
-                    value="<?php echo $registro['nombre']; ?>" class= "border border-gray-300 rounded-lg p-2 w-full mb-3" style= "resize: 10;">
+                    value="<?php echo $registro['nombre']; ?>" class= "border border-gray-300 rounded-lg p-2 w-full mb-3" style= "resize: 10;" disabled>
                 Reason
                 <textarea placeholder="Reason" id="motivo" name="motivo" required
                     class="border border-gray-300 rounded-lg p-2 w-full mb-3 h-24 resize-none"></textarea>
