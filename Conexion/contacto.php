@@ -35,7 +35,7 @@
                         case 'Donor':
                             header("location: ../Dashboard_Donacion/dashboard.php");
                             break;
-                        case 'Cordinator':
+                        case 'Coordinator':
                             header("location: ../Dashboard_Cordinador/dashboard.php");
                             break;
                         default:
