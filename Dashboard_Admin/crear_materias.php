@@ -79,8 +79,8 @@
             $obj->crear_materias($nombre_materia, $objetivo, $unidad, $maestro);
 
             $mostrarExito = true;
+            echo "<script>window.location.href = 'dashboard.php?action=listar_materias';</script>";
         }
-        echo "<script>window.location.href = 'dashboard.php?action=listar_materias';</script>";
         exit();
         ?>
         <?php if ($mostrarExito): ?>
